@@ -9,9 +9,13 @@ public class PlayerController : MonoBehaviour
     float vertical;
     Animator animator;
 
+    private float maxHealth = 10;
+    private float currentHealth;
+
     // Start is called before the first frame update
     void Start()
     {
+        currentHealth = maxHealth;
         rigidbody2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
@@ -26,7 +30,7 @@ public class PlayerController : MonoBehaviour
        
     }
 
-        void FixedUpdate()
+    void FixedUpdate()
     {
         Vector2 position = rigidbody2d.position;
         position.x = position.x + 3.0f * horizontal * Time.deltaTime;
