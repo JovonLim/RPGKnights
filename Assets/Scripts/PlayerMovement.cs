@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D body;
     private Animator anima;
     private BoxCollider2D boxCollider;
+    private float horizontalInput;
     
     // Awake is called when the script instance is being loaded
     private void Awake()
@@ -20,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
+        horizontalInput = Input.GetAxis("Horizontal");
 
         body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
 
@@ -45,11 +46,6 @@ public class PlayerMovement : MonoBehaviour
         anima.SetTrigger("jump");
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        
-    }
-
     // Use a box shape ray from the player to detect whether the ray hit the ground layer. If the player
     // is on the ground, the collider will return a non-null. Vice versa
     private bool isGrounded()
@@ -57,6 +53,11 @@ public class PlayerMovement : MonoBehaviour
         RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, 
             Vector2.down, 0.1f, groundLayer);
         return raycastHit.collider != null;
+    }
+
+    public bool canAttack()
+    {
+        return horizontalInput == 0 && isGrounded();
     }
 
 }

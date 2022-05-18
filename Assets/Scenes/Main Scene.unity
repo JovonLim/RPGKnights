@@ -814,7 +814,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 787962939}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.257263, y: 3.0107589, z: -10.179963}
+  m_LocalPosition: {x: -14.294184, y: 3.0105424, z: -10.179963}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2051,7 +2051,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1388873556, guid: 92f411271b723c949a411c7403a36f98, type: 3}
   m_PrefabInstance: {fileID: 5761944521595046682}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 5761944521595046683}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f2264e89b1ce83144b803079ab3a87fe, type: 3}
@@ -2166,7 +2166,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.9371585, y: 1}
+    m_SensorSize: {x: 1.927928, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -7159,8 +7159,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5761944522982870103, guid: 92f411271b723c949a411c7403a36f98, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a131a615ac4641f4284a46a104886d76, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92f411271b723c949a411c7403a36f98, type: 3}
+--- !u!1 &5761944521595046683 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5761944522982870102, guid: 92f411271b723c949a411c7403a36f98, type: 3}
+  m_PrefabInstance: {fileID: 5761944521595046682}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5761944521595046684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5761944521595046683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72337a09dd797f34fb821eb30afa39be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackSpeed: 2
 --- !u!1001 &6243528216971060347
 PrefabInstance:
   m_ObjectHideFlags: 0
