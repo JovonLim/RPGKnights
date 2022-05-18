@@ -2,18 +2,24 @@ using UnityEngine;
 
 public class PlayerMelee : MonoBehaviour
 {
+
     [SerializeField] private float attackSpeed;
-    private Animator anima;
     private PlayerMovement playerMove;
     private float attackCooldownTimer = float.MaxValue;
+
+    public Animator anima;
+    public Transform attackPoint;
+    public float attackRange = 0.5f;
+    public LayerMask enemyLayer;
 
     private void Awake()
     {
         anima = GetComponent<Animator>();
         playerMove = GetComponent<PlayerMovement>();
     }
-    
-    private void Update()
+
+    // Update is called once per frame
+    void Update()
     {
         if (Input.GetMouseButton(0) && attackCooldownTimer > attackSpeed && playerMove.canAttack())
             Attack();
@@ -21,9 +27,16 @@ public class PlayerMelee : MonoBehaviour
         attackCooldownTimer += Time.deltaTime;
     }
 
-    private void Attack()
+    void Attack()
     {
+        // Play animation
         anima.SetTrigger("melee");
         attackCooldownTimer = 0;
+
+        // Detect enemies in range of attack
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
+
+        // Damage them
+
     }
 }
