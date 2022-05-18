@@ -2,17 +2,19 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour 
 {
-    [SerializeField]private float speed;
+    [SerializeField] private float speed;
+    [SerializeField] private LayerMask groundLayer;
     private Rigidbody2D body;
     private Animator anima;
-    private bool grounded;
-
+    private BoxCollider2D boxCollider;
+    
     // Awake is called when the script instance is being loaded
     private void Awake()
     {
         // Grab references from player object
         body = GetComponent<Rigidbody2D>();
         anima = GetComponent<Animator>();
+        boxCollider = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
@@ -29,24 +31,32 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = new Vector3(-1, 1, 1);
 
         // Player jumping
-        if (Input.GetKey(KeyCode.Space) && grounded)
+        if (Input.GetKey(KeyCode.Space) && isGrounded())
             Jump();
 
         // Set animation parameters
         anima.SetBool("run", horizontalInput != 0);
-        anima.SetBool("grounded", grounded);
+        anima.SetBool("grounded", isGrounded());
     }
 
     private void Jump()
     {
         body.velocity = new Vector2(body.velocity.x, speed);
         anima.SetTrigger("jump");
-        grounded = false;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Ground")
-            grounded = true;
+        
     }
+
+    // Use a box shape ray from the player to detect whether the ray hit the ground layer. If the player
+    // is on the ground, the collider will return a non-null. Vice versa
+    private bool isGrounded()
+    {
+        RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, 
+            Vector2.down, 0.1f, groundLayer);
+        return raycastHit.collider != null;
+    }
+
 }
