@@ -27,8 +27,8 @@ public class PlayerInteraction : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "First Cave Door") {
-            SceneManager.LoadScene(1);
+        if (other.tag == "Cave Doors") {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             
         }
     }

@@ -5,9 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
-  - First Cave Door
   - StartPos
   - Signs
+  - Cave Doors
   layers:
   - Default
   - TransparentFX
