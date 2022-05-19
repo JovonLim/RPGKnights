@@ -20,10 +20,7 @@ public class Sign : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.F) && playerInRange)
         {
-            dialogBox.SetActive(true);
-        } else
-        {
-            dialogBox.SetActive(false);
+            StartCoroutine(waiter());
         }
     }
 
@@ -43,4 +40,11 @@ public class Sign : MonoBehaviour
             playerInRange = false;
         }
     }
+
+    IEnumerator waiter()
+        {
+            dialogBox.SetActive(true);
+            yield return new WaitForSeconds(2);
+            dialogBox.SetActive(false);
+        }
 }
