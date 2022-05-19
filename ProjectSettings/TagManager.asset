@@ -9,6 +9,7 @@ TagManager:
   - Signs
   - Cave Doors
   - Moving Platform
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Player
   - Confiner
   - Ground
-  - 
+  - Enemy
   - 
   - 
   - 

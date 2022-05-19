@@ -10,6 +10,7 @@ public class PlayerMelee : MonoBehaviour
     public Animator anima;
     public Transform attackPoint;
     public float attackRange = 0.5f;
+    [SerializeField] public float attackDamage;
     public LayerMask enemyLayer;
 
     private void Awake()
@@ -37,6 +38,10 @@ public class PlayerMelee : MonoBehaviour
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
 
         // Damage them
+        foreach(Collider2D enemy in hitEnemies)
+        {
+            enemy.GetComponent<Health>().TakeDamage(attackDamage);
+        }
 
     }
 }
