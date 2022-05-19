@@ -28,12 +28,8 @@ public class PlayerInteraction : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Cave Doors") {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            
-        } else if (other.tag == "Moving Platform")
-        {
-            gameObject.transform.parent = other.transform;
-        }
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);  
+        } 
     }
 
 }

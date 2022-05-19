@@ -6,12 +6,13 @@ public class MovingPlatform : MonoBehaviour
 {
     public Transform Pos1, Pos2;
     public float speed;
+    public Transform startPos;
 
-    Vector2 nextPos;
+    Vector3 nextPos;
     // Start is called before the first frame update
     void Start()
     {
-        nextPos = Pos1.position;
+        nextPos = startPos.position;
     }
 
     // Update is called once per frame
@@ -24,6 +25,17 @@ public class MovingPlatform : MonoBehaviour
         {
             nextPos = Pos1.position;
         }
-        transform.position = Vector2.MoveTowards(transform.position, nextPos, speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, nextPos, speed * Time.deltaTime);
     }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        other.transform.SetParent(transform);
+    }
+
+    void OnCollisionExit2D(Collision2D other)
+    {
+        other.transform.SetParent(null);
+    }
+
 }
