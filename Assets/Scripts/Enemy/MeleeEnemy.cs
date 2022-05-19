@@ -22,7 +22,7 @@ public class MeleeEnemy : MonoBehaviour
     private void Awake()
     {
         anima = GetComponent<Animator>();
-        enemyPatrol = GetComponentInParent<EnemyPatrol>();
+      //  enemyPatrol = GetComponentInParent<EnemyPatrol>();
     }
 
     private void Update()

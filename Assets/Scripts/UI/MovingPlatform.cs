@@ -6,13 +6,11 @@ public class MovingPlatform : MonoBehaviour
 {
     public Transform Pos1, Pos2;
     public float speed;
-    public Transform startPos;
-
     Vector3 nextPos;
     // Start is called before the first frame update
     void Start()
     {
-        nextPos = startPos.position;
+        nextPos = Pos1.position;
     }
 
     // Update is called once per frame
