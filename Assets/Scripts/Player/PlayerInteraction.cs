@@ -30,6 +30,9 @@ public class PlayerInteraction : MonoBehaviour
         if (other.tag == "Cave Doors") {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             
+        } else if (other.tag == "Moving Platform")
+        {
+            gameObject.transform.parent = other.transform;
         }
     }
 

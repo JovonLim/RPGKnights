@@ -8,6 +8,7 @@ TagManager:
   - StartPos
   - Signs
   - Cave Doors
+  - Moving Platform
   layers:
   - Default
   - TransparentFX
