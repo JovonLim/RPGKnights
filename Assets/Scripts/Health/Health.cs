@@ -35,8 +35,8 @@ public class Health : MonoBehaviour
                 if (GetComponent<MeleeEnemy>() != null)
                     GetComponent<MeleeEnemy>().enabled = false;
 
-                if (GetComponentInParent<EnemyPatrol>() != null)
-                    GetComponentInParent<EnemyPatrol>().enabled = false;
+                if (GetComponentInParent<Patrol>() != null)
+                    GetComponentInParent<Patrol>().enabled = false;
 
                 // For player
                 if (GetComponent<PlayerMovement>() != null)

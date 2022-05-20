@@ -17,12 +17,12 @@ public class MeleeEnemy : MonoBehaviour
     private Health playerHealth;
 
     //For Patrolling
-    private EnemyPatrol enemyPatrol;
+    private Patrol patrol;
 
     private void Awake()
     {
         anima = GetComponent<Animator>();
-      //  enemyPatrol = GetComponentInParent<EnemyPatrol>();
+        patrol = GetComponentInParent<Patrol>();
     }
 
     private void Update()
@@ -37,6 +37,9 @@ public class MeleeEnemy : MonoBehaviour
                 anima.SetTrigger("meleeAttack");
             }
         }
+
+        if (patrol != null)
+            patrol.enabled = !PlayerInSight();
 
     }
 
