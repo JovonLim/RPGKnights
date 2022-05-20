@@ -22,11 +22,13 @@ public class Chests : MonoBehaviour
             {
                 anima.SetBool("Opening", true);
                 chestOpened = true;
+                this.GetComponent<CoinSpawn>().Spawn();
             }
         }
         else
         {
             anima.SetBool("Opened", true);
+            this.GetComponent<Collider2D>().enabled = false;
         }
         
     }
