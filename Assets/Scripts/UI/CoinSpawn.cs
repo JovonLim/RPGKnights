@@ -4,7 +4,16 @@ using UnityEngine;
 
 public class CoinSpawn : MonoBehaviour
 {
-  
+
+    private int minCoin = 3;
+    private int maxCoin = 6;
+    private int count;
+
+    void Start()
+    {
+        count = Random.Range(minCoin, maxCoin);
+    }
+
     public GameObject prefab = null;
 
     public GameObject Prefab
@@ -15,9 +24,10 @@ public class CoinSpawn : MonoBehaviour
 
     public void Spawn()
     {
-        Instantiate(this.prefab, new Vector2(this.transform.position.x - 0.2f, this.transform.position.y), Quaternion.identity);
-        Instantiate(this.prefab, this.transform.position, Quaternion.identity);
-        Instantiate(this.prefab, new Vector2(this.transform.position.x + 0.2f, this.transform.position.y), Quaternion.identity);
-
+        for (int i = 0; i < count; i++)
+        {
+            Instantiate(this.prefab, new Vector2(this.transform.position.x - 0.1f * count,
+                this.transform.position.y), Quaternion.identity);
+        }
     }
 }
