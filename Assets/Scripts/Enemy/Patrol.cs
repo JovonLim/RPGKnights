@@ -17,7 +17,7 @@ public class Patrol : MonoBehaviour
     {
   
         newPos = pos1.position;
-        anima = GetComponentInParent<Animator>();
+        anima = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -36,6 +36,11 @@ public class Patrol : MonoBehaviour
         }
         anima.SetBool("moving", true);
         transform.position = Vector3.MoveTowards(transform.position, newPos, speed * Time.deltaTime);
+    }
+
+    private void OnDisable()
+    {
+        anima.SetBool("moving", false);
     }
 }
 
