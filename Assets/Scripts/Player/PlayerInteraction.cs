@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerInteraction : MonoBehaviour
 {
     public static PlayerInteraction instance;
+    private Health playerHealth;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +29,9 @@ public class PlayerInteraction : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Cave Doors") {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);  
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            playerHealth = this.GetComponent<Health>();
+            playerHealth.GainHealth(3);
         } 
     }
 

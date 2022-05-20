@@ -50,7 +50,7 @@ GameObject:
   - component: {fileID: 1949877067971610857}
   m_Layer: 7
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -235,6 +235,7 @@ MonoBehaviour:
   anima: {fileID: 5761944522982870088}
   attackPoint: {fileID: 415745996}
   attackRange: 0.5
+  attackDamage: 0
   enemyLayer:
     serializedVersion: 2
     m_Bits: 0
