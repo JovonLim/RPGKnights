@@ -33,7 +33,11 @@ public class Health : MonoBehaviour
 
                 // For enemy
                 if (GetComponent<MeleeEnemy>() != null)
+                {
                     GetComponent<MeleeEnemy>().enabled = false;
+                    GetComponent<CoinSpawn>().Spawn();
+                }
+                    
 
                 if (GetComponentInParent<Patrol>() != null)
                     GetComponentInParent<Patrol>().enabled = false;

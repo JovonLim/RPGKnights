@@ -8009,7 +8009,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2002780164619503152, guid: 5245e38b2784a5646b8b084fb6f29329, type: 3}
       propertyPath: m_Name
-      value: Health Bar
+      value: UI
       objectReference: {fileID: 0}
     - target: {fileID: 2002780164619503156, guid: 5245e38b2784a5646b8b084fb6f29329, type: 3}
       propertyPath: m_Pivot.x
@@ -8099,6 +8099,14 @@ PrefabInstance:
       propertyPath: playerHealth
       value: 
       objectReference: {fileID: 1388873556}
+    - target: {fileID: 8982406395357286787, guid: 5245e38b2784a5646b8b084fb6f29329, type: 3}
+      propertyPath: m_fontSize
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982406395357286787, guid: 5245e38b2784a5646b8b084fb6f29329, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5245e38b2784a5646b8b084fb6f29329, type: 3}
 --- !u!1001 &3443898342563435487

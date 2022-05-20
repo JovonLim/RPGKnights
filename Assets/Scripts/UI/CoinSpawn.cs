@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class CoinSpawn : MonoBehaviour
 {
-
+    [SerializeField]
     private int minCoin = 3;
+    [SerializeField]
     private int maxCoin = 6;
     private int count;
 
@@ -26,7 +27,7 @@ public class CoinSpawn : MonoBehaviour
     {
         for (int i = 0; i < count; i++)
         {
-            Instantiate(this.prefab, new Vector2(this.transform.position.x - 0.1f * count,
+            Instantiate(this.prefab, new Vector2(this.transform.position.x - 0.1f * i,
                 this.transform.position.y), Quaternion.identity);
         }
     }
