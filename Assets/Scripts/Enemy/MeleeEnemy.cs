@@ -55,7 +55,7 @@ public class MeleeEnemy : MonoBehaviour
         return hit.collider != null;
     }
 
-    private void onDrawGizmos()
+    private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(boxCollider.bounds.center + transform.right * attackRange * transform.localScale.x * colliderDistance,
