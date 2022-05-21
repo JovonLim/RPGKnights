@@ -270,10 +270,6 @@ PrefabInstance:
       propertyPath: Pos2
       value: 
       objectReference: {fileID: 587976041}
-    - target: {fileID: 3267093067617321339, guid: 2076df658f6078b42ab2782e35ada40b, type: 3}
-      propertyPath: startPos
-      value: 
-      objectReference: {fileID: 2048517037}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2076df658f6078b42ab2782e35ada40b, type: 3}
 --- !u!1 &81069054
@@ -17621,7 +17617,7 @@ CompositeCollider2D:
   m_GameObject: {fileID: 1399531646}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 5b55f876db9623b4f9554460d4c6dde0, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -20539,4 +20535,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b51cd02f283cb40a549f9433285d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minCoin: 3
+  maxCoin: 6
   prefab: {fileID: 0}
