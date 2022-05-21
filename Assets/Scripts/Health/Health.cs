@@ -35,11 +35,6 @@ public class Health : MonoBehaviour
                 if (GetComponent<MeleeEnemy>() != null)
                 {
                     GetComponent<MeleeEnemy>().enabled = false;
-                    foreach (BoxCollider2D c in GetComponents<BoxCollider2D>())
-                    {
-                        c.enabled = false;
-                    }
-                    Destroy(GetComponent<Rigidbody2D>());
                     GetComponent<CoinSpawn>().Spawn();
                     isDead = true;
                 }

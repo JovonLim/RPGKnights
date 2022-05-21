@@ -31559,6 +31559,10 @@ PrefabInstance:
       propertyPath: pos2
       value: 
       objectReference: {fileID: 267869595}
+    - target: {fileID: 4153608921309694774, guid: dd0511c5f33bfde48bcb40d96719ba17, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4950031981800853034, guid: dd0511c5f33bfde48bcb40d96719ba17, type: 3}
       propertyPath: m_RootOrder
       value: 0
