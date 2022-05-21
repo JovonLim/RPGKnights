@@ -10,6 +10,7 @@ TagManager:
   - Cave Doors
   - Moving Platform
   - Enemy
+  - UI
   layers:
   - Default
   - TransparentFX

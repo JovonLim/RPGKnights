@@ -36,17 +36,25 @@ public class Health : MonoBehaviour
                 {
                     GetComponent<MeleeEnemy>().enabled = false;
                     GetComponent<CoinSpawn>().Spawn();
+                    isDead = true;
                 }
                     
 
                 if (GetComponentInParent<Patrol>() != null)
+                {
                     GetComponentInParent<Patrol>().enabled = false;
-
+                    isDead = true;
+                }
+                    
                 // For player
                 if (GetComponent<PlayerMovement>() != null)
+                {
                     GetComponent<PlayerMovement>().enabled = false;
+                    GetComponent<PlayerInteraction>().Respawn();
+                }
+                    
 
-                isDead = true;
+                
             }
             
         }

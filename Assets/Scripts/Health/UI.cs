@@ -12,7 +12,7 @@ public class UI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (instance != null)
+       if (instance != null)
         {
             Destroy(gameObject);
         } else
@@ -20,14 +20,14 @@ public class UI : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        coinAmt.text = "x:" + coins;
+        coinAmt.text = coins.ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-            coinAmt.text = "x:" + coins;
+
+        coinAmt.text = coins.ToString();
       
 
     }

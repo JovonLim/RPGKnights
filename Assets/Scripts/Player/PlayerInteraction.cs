@@ -36,4 +36,24 @@ public class PlayerInteraction : MonoBehaviour
         } 
     }
 
+    public void Respawn()
+    {      
+        StartCoroutine(Reload());
+    }
+
+    IEnumerator Reload()
+    {
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        GameObject[] UIs = GameObject.FindGameObjectsWithTag("UI");
+        yield return new WaitForSeconds(2);
+        foreach (GameObject player in players)
+        {
+            Destroy(player);
+        }
+        foreach (GameObject UI in UIs)
+        {
+            Destroy(UI);
+        }
+        SceneManager.LoadScene(0);
+    }
 }
