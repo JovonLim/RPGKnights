@@ -254,12 +254,12 @@ TextureImporter:
       name: Death_7
       rect:
         serializedVersion: 2
-        x: 644
-        y: 32
-        width: 59
-        height: 15
-      alignment: 9
-      pivot: {x: 1.5, y: 1.5}
+        x: 643
+        y: 29
+        width: 61
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

@@ -38,7 +38,14 @@ public class Health : MonoBehaviour
                     GetComponent<CoinSpawn>().Spawn();
                     isDead = true;
                 }
-                    
+
+                if (GetComponent<RangeEnemy>() != null)
+                {
+                    GetComponent<RangeEnemy>().enabled = false;
+                    GetComponent<CoinSpawn>().Spawn();
+                    isDead = true;
+                }
+
 
                 if (GetComponentInParent<Patrol>() != null)
                 {
@@ -66,4 +73,8 @@ public class Health : MonoBehaviour
         currentHealth = Mathf.Clamp(currentHealth + damage, 0, startingHealth);
     }
 
+    public bool IsDefeated()
+    {
+        return isDead;
+    }
 }
