@@ -18,14 +18,10 @@ public class RangeEnemy : MonoBehaviour
 
     // Reference variables
     private Animator anima;
-    
-    //For Patrolling
-    private Patrol patrol;
 
     private void Awake()
     {
         anima = GetComponent<Animator>();
-        patrol = GetComponentInParent<Patrol>();
     }
 
     private void Update()
@@ -41,9 +37,6 @@ public class RangeEnemy : MonoBehaviour
             }
         }
 
-        if (patrol != null)
-            patrol.enabled = !PlayerInSight();
-
     }
 
     private bool PlayerInSight()
@@ -55,7 +48,7 @@ public class RangeEnemy : MonoBehaviour
         return hit.collider != null;
     }
 
-    private void onDrawGizmos()
+    private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(boxCollider.bounds.center + transform.right * attackRange * transform.localScale.x * colliderDistance,
