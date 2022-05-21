@@ -4,15 +4,20 @@ public class RangeEnemy : MonoBehaviour
 {
     [SerializeField] private float attackSpeed;
     [SerializeField] private float attackRange;
-    [SerializeField] private int damage;
 
     [SerializeField] private float colliderDistance;
     [SerializeField] private BoxCollider2D boxCollider;
     [SerializeField] private LayerMask playerLayer;
 
     [SerializeField] private Transform projectileLaunchPoint;
-    [SerializeField] private GameObject[] projectileStorage;
 
+    [SerializeField] GameObject prefab = null;
+
+    [SerializeField] private GameObject Prefab
+    {
+        get { return this.prefab; }
+        set { this.prefab = value; }
+    }
 
     private float attackCooldownTimer = float.MaxValue;
 
@@ -55,22 +60,13 @@ public class RangeEnemy : MonoBehaviour
             new Vector3(boxCollider.bounds.size.x * attackRange, boxCollider.bounds.size.y, boxCollider.bounds.size.z));
     }
 
+   
     private void LaunchProjectile()
     {
         attackCooldownTimer = 0;
 
         // Launch the projectile
-        projectileStorage[FindProjectile()].transform.position = projectileLaunchPoint.position;
-        projectileStorage[FindProjectile()].GetComponent<EnemyProjectile>().ActivateProjectile();
-    }
-
-    private int FindProjectile()
-    {
-        for (int i = 0; i < projectileStorage.Length; i++)
-        {
-            if (projectileStorage[i].activeInHierarchy)
-                return i;
-        }
-        return 0;
+        GameObject fireball = Instantiate(this.prefab, projectileLaunchPoint.position, Quaternion.identity);
+        fireball.GetComponent<EnemyProjectile>().ActivateProjectile();
     }
 }
