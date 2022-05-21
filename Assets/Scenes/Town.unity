@@ -915,7 +915,6 @@ GameObject:
   m_Component:
   - component: {fileID: 829022966}
   - component: {fileID: 829022968}
-  - component: {fileID: 829022967}
   m_Layer: 5
   m_Name: DialogBox
   m_TagString: Untagged
@@ -944,36 +943,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &829022967
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 829022965}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d52ce65c42b3f0f42a2c01edc81c5805, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &829022968
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7588,7 +7557,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1829870596}
   - component: {fileID: 1829870598}
-  - component: {fileID: 1829870597}
   m_Layer: 5
   m_Name: DialogBox (1)
   m_TagString: Untagged
@@ -7617,36 +7585,6 @@ RectTransform:
   m_AnchoredPosition: {x: 47.03008, y: -0.22799999}
   m_SizeDelta: {x: 0.1962, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1829870597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1829870595}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d52ce65c42b3f0f42a2c01edc81c5805, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1829870598
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7933,7 +7871,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2089757811}
   - component: {fileID: 2089757813}
-  - component: {fileID: 2089757812}
   m_Layer: 5
   m_Name: DialogBox (2)
   m_TagString: Untagged
@@ -7962,36 +7899,6 @@ RectTransform:
   m_AnchoredPosition: {x: 85.5, y: -4.28}
   m_SizeDelta: {x: 1.0291, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2089757812
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2089757810}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d52ce65c42b3f0f42a2c01edc81c5805, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &2089757813
 CanvasRenderer:
   m_ObjectHideFlags: 0
