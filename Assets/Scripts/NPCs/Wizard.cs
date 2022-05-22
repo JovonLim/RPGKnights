@@ -7,7 +7,7 @@ public class Wizard : MonoBehaviour
     private bool playerInRange;
     [SerializeField] GameObject questDialog;
     private bool playerClicked;
-    [SerializeField] GameObject player;
+    //[SerializeField] GameObject player;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,8 +48,8 @@ public class Wizard : MonoBehaviour
 
     public void AcceptQuest()
     {
-        player.GetComponent<PlayerInteraction>().questActive = true;
         playerClicked = false;
+        PlayerInteraction.instance.questActive = true;
     }
 
     public void DeclineQuest()

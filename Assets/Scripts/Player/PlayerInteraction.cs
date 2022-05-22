@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerInteraction : MonoBehaviour
 {
     public static PlayerInteraction instance;
-    public bool questActive = false;
+    public bool questActive;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,8 +22,7 @@ public class PlayerInteraction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-
+      
     }
 
     void OnTriggerEnter2D(Collider2D other)

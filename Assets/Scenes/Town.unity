@@ -900,7 +900,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questDialog: {fileID: 2038668793}
-  player: {fileID: 1510413164}
 --- !u!61 &571876326
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3562,8 +3561,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "The Wizard has found a secret vault in the second room of the dungeon
-    and requires assistance. He promises to give 80 percent of the loot if you accept.
-    \nReward: 100 Coins"
+    and requires assistance. He promises to give 80 percent of the loot if you helped
+    him clear the mobs. \nReward: 100 Coins"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 039badbc4f26eff4b9ac5e62a8e18b4e, type: 2}
   m_sharedMaterial: {fileID: 6460576862536902650, guid: 039badbc4f26eff4b9ac5e62a8e18b4e, type: 2}
@@ -3645,7 +3644,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1388873556, guid: 92f411271b723c949a411c7403a36f98, type: 3}
   m_PrefabInstance: {fileID: 5761944521595046682}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1510413164}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f2264e89b1ce83144b803079ab3a87fe, type: 3}
@@ -3732,11 +3731,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89f67f6b5927f2849a4db151b52f9a41, type: 3}
---- !u!1 &1510413164 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5761944522982870102, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-  m_PrefabInstance: {fileID: 5761944521595046682}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1602072453 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6243528216225572878, guid: 357fd564f3d5d4c44ab2d8aef65cd01b, type: 3}
@@ -8773,14 +8767,13 @@ GameObject:
   - component: {fileID: 2038668794}
   - component: {fileID: 2038668796}
   - component: {fileID: 2038668795}
-  - component: {fileID: 2038668797}
   m_Layer: 5
   m_Name: WizardDialogue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2038668794
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8843,50 +8836,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2038668793}
   m_CullTransparentMesh: 1
---- !u!114 &2038668797
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2038668793}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 2038668795}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1001 &2081969602
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9272,13 +9221,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5761944521595046690, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: attackDamage
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5761944521595046690, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: enemyLayer.m_Bits
-      value: 1024
+    - target: {fileID: 1949877067971610857, guid: 92f411271b723c949a411c7403a36f98, type: 3}
+      propertyPath: questActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5761944522982870100, guid: 92f411271b723c949a411c7403a36f98, type: 3}
       propertyPath: m_RootOrder
@@ -9326,10 +9271,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5761944522982870102, guid: 92f411271b723c949a411c7403a36f98, type: 3}
       propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5761944522982870102, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []

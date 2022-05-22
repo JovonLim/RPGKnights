@@ -235,10 +235,10 @@ MonoBehaviour:
   anima: {fileID: 5761944522982870088}
   attackPoint: {fileID: 415745996}
   attackRange: 0.5
-  attackDamage: 0
+  attackDamage: 2
   enemyLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
 --- !u!114 &1949877067971610857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,3 +251,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddf163f29c8815341bfae5d211b1d9f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  questActive: 0
