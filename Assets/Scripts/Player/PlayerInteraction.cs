@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerInteraction : MonoBehaviour
 {
     public static PlayerInteraction instance;
+    public bool questActive = false;
     // Start is called before the first frame update
     void Start()
     {
