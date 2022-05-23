@@ -7,6 +7,7 @@ public class MovingPlatform : MonoBehaviour
     public Transform Pos1, Pos2;
     public float speed;
     Vector3 nextPos;
+    private GameObject parent;
     // Start is called before the first frame update
     void Start()
     {

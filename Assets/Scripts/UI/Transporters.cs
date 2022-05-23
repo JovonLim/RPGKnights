@@ -3,34 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class DoorRequirements : MonoBehaviour
+public class Transporters : MonoBehaviour
 {
-    [SerializeField] private GameObject miniBoss;
+    [SerializeField] int sceneNum;
     bool playerInRange = false;
     GameObject player;
-    // Start is called before the first frame update
-    void Start()
-    {
-       
-    }
 
-    // Update is called once per frame
     void Update()
     {
-        if (miniBoss.GetComponent<Health>().IsDefeated() && playerInRange)
+        if (Input.GetKeyDown(KeyCode.F) && playerInRange)
         {
+            SceneManager.LoadScene(sceneNum);
+            DontDestroyOnLoad(player);
             player.GetComponent<Health>().GainHealth(1);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            
         }
     }
-
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
-            player = other.gameObject;
             playerInRange = true;
+            player = other.gameObject;
         }
     }
 
@@ -41,5 +34,5 @@ public class DoorRequirements : MonoBehaviour
             playerInRange = false;
         }
     }
-}
 
+}

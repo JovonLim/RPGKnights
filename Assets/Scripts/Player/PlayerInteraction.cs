@@ -5,18 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class PlayerInteraction : MonoBehaviour
 {
-    public static PlayerInteraction instance;
     public bool questActive;
     // Start is called before the first frame update
     void Start()
     {
-        if (instance != null)
-        {
-            Destroy(gameObject);
-        }
-        instance = this;
-        DontDestroyOnLoad(gameObject);
-        
+    
     }
 
     // Update is called once per frame
@@ -25,13 +18,6 @@ public class PlayerInteraction : MonoBehaviour
       
     }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag == "Cave Doors")
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
-    }
 
     public void Respawn()
     {      

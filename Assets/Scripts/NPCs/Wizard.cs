@@ -7,26 +7,37 @@ public class Wizard : MonoBehaviour
     private bool playerInRange;
     [SerializeField] GameObject questDialog;
     private bool playerClicked;
+    private bool questAccepted;
+    GameObject player;
     //[SerializeField] GameObject player;
     // Start is called before the first frame update
     void Start()
     {
         playerClicked = false;
+        questAccepted = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.F)) {
-            playerClicked = true;
-        }
-        if (playerClicked && playerInRange)
+        if (!questAccepted)
         {
-            questDialog.SetActive(true);
+            if (Input.GetKey(KeyCode.F))
+            {
+                playerClicked = true;
+            }
+            if (playerClicked && playerInRange)
+            {
+                questDialog.SetActive(true);
+            }
+            else
+            {
+                questDialog.SetActive(false);
+                playerClicked = false;
+            }
         } else
         {
             questDialog.SetActive(false);
-            playerClicked = false;
         }
     }
 
@@ -34,6 +45,7 @@ public class Wizard : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            player = other.gameObject;
             playerInRange = true;
         }
     }
@@ -48,8 +60,8 @@ public class Wizard : MonoBehaviour
 
     public void AcceptQuest()
     {
-        playerClicked = false;
-        PlayerInteraction.instance.questActive = true;
+        questAccepted = true;
+        player.GetComponent<PlayerInteraction>().questActive = true;
     }
 
     public void DeclineQuest()

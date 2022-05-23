@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dungeon Second Room.unity
     guid: cf1cce9a46c047646ae396dedc3f7da5
+  - enabled: 1
+    path: Assets/Scenes/SecretVault.unity
+    guid: 310f71b626228ff46a610660bb6a53a6
   m_configObjects: {}

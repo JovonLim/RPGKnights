@@ -15,9 +15,11 @@ public class CoinSpawn : MonoBehaviour
         count = Random.Range(minCoin, maxCoin);
     }
 
-    public GameObject prefab = null;
+    [SerializeField]
+    private GameObject prefab = null;
 
-    public GameObject Prefab
+    [SerializeField]
+    private GameObject Prefab
     {
         get { return this.prefab; }
         set { this.prefab = value; }
