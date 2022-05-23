@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator anima;
     private BoxCollider2D boxCollider;
     private float horizontalInput;
+    private bool canDouble = false;
     
     // Awake is called when the script instance is being loaded
     private void Awake()
@@ -32,9 +33,18 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = new Vector3(-1, 1, 1);
 
         // Player jumping
-        if (Input.GetKey(KeyCode.Space) && isGrounded())
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded())
+        {
             Jump();
+            canDouble = true;
+        } else if (Input.GetKeyDown(KeyCode.Space) && canDouble)
+        {
+            Jump();
+            canDouble = false;
+        }
 
+        anima.SetFloat("yPos", body.velocity.y);
+            
         // Set animation parameters
         anima.SetBool("run", horizontalInput != 0);
         anima.SetBool("grounded", isGrounded());
@@ -42,8 +52,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
-        body.velocity = new Vector2(body.velocity.x, speed);
-        anima.SetTrigger("jump");
+        body.velocity = new Vector2(body.velocity.x, speed);   
     }
 
     // Use a box shape ray from the player to detect whether the ray hit the ground layer. If the player
