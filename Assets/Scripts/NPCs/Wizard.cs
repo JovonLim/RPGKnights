@@ -61,7 +61,7 @@ public class Wizard : MonoBehaviour
     public void AcceptQuest()
     {
         questAccepted = true;
-        player.GetComponent<PlayerInteraction>().questActive = true;
+        PlayerInteraction.questActive = true;
     }
 
     public void DeclineQuest()

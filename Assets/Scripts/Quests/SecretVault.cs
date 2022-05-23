@@ -16,7 +16,7 @@ public class SecretVault : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player.GetComponent<PlayerInteraction>().questActive)
+        if (PlayerInteraction.questActive)
         {
             vaultClosed.SetActive(false);
             vaultOpened.SetActive(true);

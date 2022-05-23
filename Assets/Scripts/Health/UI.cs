@@ -20,6 +20,7 @@ public class UI : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
+     
         coinAmt.text = coins.ToString();
     }
 

@@ -29,8 +29,7 @@ public class CoinSpawn : MonoBehaviour
     {
         for (int i = 0; i < count; i++)
         {
-            Instantiate(this.prefab, new Vector2(this.transform.position.x - 0.1f * i,
-                this.transform.position.y), Quaternion.identity);
+            Instantiate(this.prefab, transform.position, Quaternion.identity);
         }
     }
 }

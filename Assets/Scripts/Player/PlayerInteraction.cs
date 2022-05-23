@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerInteraction : MonoBehaviour
 {
-    public bool questActive;
+    public static bool questActive;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,9 +26,10 @@ public class PlayerInteraction : MonoBehaviour
 
     IEnumerator Reload()
     {
+        yield return new WaitForSeconds(2);
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
         GameObject[] UIs = GameObject.FindGameObjectsWithTag("UI");
-        yield return new WaitForSeconds(2);
+        
         foreach (GameObject player in players)
         {
             Destroy(player);
@@ -37,6 +38,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             Destroy(UI);
         }
+        
         SceneManager.LoadScene(0);
     }
 }
