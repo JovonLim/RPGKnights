@@ -2313,7 +2313,7 @@ GameObject:
   - component: {fileID: 1171420896}
   - component: {fileID: 1171420895}
   m_Layer: 8
-  m_Name: Camera Confinder
+  m_Name: Camera Confiner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19492,7 +19492,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.8975409, y: 1}
+    m_SensorSize: {x: 1.9087137, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

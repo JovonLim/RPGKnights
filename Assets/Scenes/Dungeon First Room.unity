@@ -683,7 +683,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.8975409, y: 1}
+    m_SensorSize: {x: 1.9087137, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -28828,7 +28828,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1265473253}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 41.583065, y: 1.5304799, z: -22.211168}
+  m_LocalPosition: {x: 41.638924, y: 1.53043, z: -22.211168}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -30776,7 +30776,7 @@ GameObject:
   - component: {fileID: 1847481577}
   - component: {fileID: 1847481576}
   m_Layer: 8
-  m_Name: Camera Confinder
+  m_Name: Camera Confiner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

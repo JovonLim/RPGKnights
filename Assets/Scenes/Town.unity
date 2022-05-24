@@ -528,7 +528,7 @@ GameObject:
   - component: {fileID: 383557643}
   - component: {fileID: 383557642}
   m_Layer: 8
-  m_Name: CameraConfinder
+  m_Name: CameraConfiner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
