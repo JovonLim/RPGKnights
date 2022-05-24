@@ -4,11 +4,17 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private float fallThreshold;
     private Rigidbody2D body;
     private Animator anima;
     private BoxCollider2D boxCollider;
     private float horizontalInput;
     private bool canDouble = false;
+    private bool firstTime = true;
+    private bool isFalling = false;
+    private Vector3 previousPosition;
+    private float highestPosition;
+    
     
     // Awake is called when the script instance is being loaded
     private void Awake()
@@ -17,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         anima = GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
+        previousPosition = transform.position;
     }
 
     // Update is called once per frame
@@ -44,6 +51,28 @@ public class PlayerMovement : MonoBehaviour
         }
 
         anima.SetFloat("yPos", body.velocity.y);
+
+        if (!isGrounded())
+        {
+            if (transform.position.y < previousPosition.y && firstTime)
+            {
+                firstTime = false;
+                isFalling = true;
+                highestPosition = transform.position.y;
+            }
+            previousPosition = transform.position;
+        }
+
+        if (isGrounded() && isFalling)
+        {
+            if (highestPosition - transform.position.y > fallThreshold)
+            {
+                fallDamage();
+            }
+            isFalling = false;
+            firstTime = true;
+        }
+
             
         // Set animation parameters
         anima.SetBool("run", horizontalInput != 0);
@@ -67,6 +96,11 @@ public class PlayerMovement : MonoBehaviour
     public bool canAttack()
     {
         return isGrounded();
+    }
+
+    void fallDamage()
+    {
+        GetComponent<Health>().TakeDamage(1);
     }
 
 }
