@@ -41,6 +41,7 @@ public class SecretVaultClear : MonoBehaviour
             {
                 StartCoroutine(giveRewards());
                 questCompleted = true;
+                PlayerInteraction.questActive = false;
             }
 
 

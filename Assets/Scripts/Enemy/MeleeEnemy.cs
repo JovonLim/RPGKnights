@@ -4,7 +4,7 @@ public class MeleeEnemy : MonoBehaviour
 {
     [SerializeField] private float attackSpeed;
     [SerializeField] private float attackRange;
-    [SerializeField] private int damage;
+    [SerializeField] private float damage;
 
     [SerializeField] private float colliderDistance;
     [SerializeField] private BoxCollider2D boxCollider;

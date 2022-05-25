@@ -10,7 +10,6 @@ public class DoorRequirements : MonoBehaviour
     [SerializeField] private GameObject mobsText;
     [SerializeField] private GameObject objectiveCleared;
     [SerializeField] private int sceneNum;
-    [SerializeField] private GameObject miniBoss;
     private GameObject[] mobs;
     private GameObject player;
     private bool cleared = false;
@@ -30,7 +29,14 @@ public class DoorRequirements : MonoBehaviour
     void Start()
     {
         StartCoroutine(Begin());
-        mobs = GameObject.FindGameObjectsWithTag("Enemy");
+        if (objective == Objective.miniBoss)
+        {
+            mobs = GameObject.FindGameObjectsWithTag("MiniBoss");
+        } else
+        {
+            mobs = GameObject.FindGameObjectsWithTag("Enemy");
+        }
+        
     }
 
     // Update is called once per frame
@@ -38,32 +44,26 @@ public class DoorRequirements : MonoBehaviour
     {
         if (!cleared)
         {
-            if (objective == Objective.miniBoss)
+            if (checkDefeated())
             {
-                if (miniBoss.GetComponent<Health>().IsDefeated()) {
-                    cleared = true;
-                    StartCoroutine(End());
-                }
+                cleared = true;
+                StartCoroutine(End());
             }
             else
             {
-                if (checkDefeated())
-                {
-                    cleared = true;
-                    StartCoroutine(End());
-                }
-                else
-                {
-                    defeated = 0;
-                }
+                defeated = 0;
             }
         }
-
-        if (playerInRange && Input.GetKeyDown(KeyCode.F))
+        else
         {
-            player.GetComponent<Health>().GainHealth(1);
-            SceneManager.LoadScene(sceneNum);
-        }   
+            if (playerInRange && Input.GetKeyDown(KeyCode.F))
+            {
+                DontDestroyOnLoad(player);
+                player.GetComponent<Health>().GainHealth(1);
+                SceneManager.LoadScene(sceneNum);
+            }
+
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)

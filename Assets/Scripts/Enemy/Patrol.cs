@@ -26,12 +26,12 @@ public class Patrol : MonoBehaviour
         if (transform.position == pos2.position)
         {
             newPos = pos1.position;
-            transform.localScale = Vector3.one;
+            transform.localScale = new Vector3(1, transform.localScale.y, 1);
 
         } else if (transform.position == pos1.position)
         {
             newPos = pos2.position;
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(-1, transform.localScale.y, 1);
 
         }
         anima.SetBool("moving", true);
