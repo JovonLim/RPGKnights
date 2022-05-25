@@ -4,7 +4,9 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField] private float projectileSpeed;
     private bool hit;
-    private float direction;
+    [SerializeField] private float projectileResetTime;
+    private float projectileLifetime;
+    [SerializeField] private float projectileDamage;
 
     // References
     private BoxCollider2D boxCollider;
@@ -16,35 +18,38 @@ public class Projectile : MonoBehaviour
         anima = GetComponent<Animator>();
     }
 
+    public void ActivateProjectile()
+    {
+        hit = false;
+        projectileLifetime = 0;
+        gameObject.SetActive(true);
+
+    }
+
     private void Update()
     {
         if (hit) return;
 
         // Move the projectile every frame if it does not hit anything
-        float movementSpeed = projectileSpeed * Time.deltaTime * direction;
-        transform.Translate(movementSpeed, 0, 0);
+        float movementSpeed = projectileSpeed * Time.deltaTime;
+        transform.Translate(movementSpeed * transform.localScale.x, 0, 0);
+
+        projectileLifetime += Time.deltaTime;
+        // If projectile does not hit anything for a duration, the projectile will be destroyed
+        if (projectileLifetime > projectileResetTime)
+            gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D collison)
     {
-        hit = true;
-        boxCollider.enabled = false;
-        anima.SetTrigger("explode");
-    }
-
-    public void SetDirection(float dir)
-    {
-        direction = dir;
-        gameObject.SetActive(true);
-        hit = false;
-        boxCollider.enabled = true;
-
-        // Make sure projectile shot is same direction as the character
-        float localScaleX = transform.localScale.x;
-        if (Mathf.Sign(localScaleX) != dir)
-            localScaleX = -localScaleX;
-
-        transform.localScale = new Vector3(localScaleX, transform.localScale.y, transform.localScale.z);
+        if (collison.tag == "Enemy")
+        {
+            hit = true;
+            boxCollider.enabled = false;
+            collison.GetComponent<Health>().TakeDamage(projectileDamage);
+            anima.SetTrigger("explode");
+        }
+        
     }
 
     private void Deactivate()
