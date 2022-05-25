@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Wizard : MonoBehaviour
+public class Archer : MonoBehaviour
 {
     private bool playerInRange;
     [SerializeField] GameObject questDialog;
     private bool playerClicked;
     private bool questAccepted;
     GameObject player;
-    private int questNum = 1;
+    private int questNum = 4;
     //[SerializeField] GameObject player;
     // Start is called before the first frame update
     void Start()
@@ -36,7 +36,8 @@ public class Wizard : MonoBehaviour
                 questDialog.SetActive(false);
                 playerClicked = false;
             }
-        } else
+        }
+        else
         {
             questDialog.SetActive(false);
         }
