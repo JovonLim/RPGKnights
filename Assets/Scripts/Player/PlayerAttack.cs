@@ -1,7 +1,7 @@
 using UnityEngine;
 
 
-public class PlayerMelee : MonoBehaviour
+public class PlayerAttack : MonoBehaviour
 {
 
     [SerializeField] private float attackSpeed;
@@ -17,9 +17,21 @@ public class PlayerMelee : MonoBehaviour
     private int combo = 0;
     private float resetTimer;
 
-   // public static PlayerMelee instance;
-   // public bool isAttacking = false;
-    
+    private bool isMelee = false;
+    private bool isRange = false;
+
+    [SerializeField] private Transform projectileLaunchPoint;
+    [SerializeField] GameObject prefab = null;
+
+    [SerializeField] private GameObject Prefab
+    {
+        get { return this.prefab; }
+        set { this.prefab = value; }
+    }
+
+    // public static PlayerMelee instance;
+    // public bool isAttacking = false;
+
     private void Awake()
     {
         anima = GetComponent<Animator>();
@@ -30,17 +42,25 @@ public class PlayerMelee : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetMouseButtonDown(0) && attackCooldownTimer > attackSpeed && playerMove.canAttack())
+        // Melee Attack
+        if (Input.GetMouseButtonDown(0) && attackCooldownTimer > attackSpeed && playerMove.canAttack() && !isRange)
         {
-            Attack();
+            isMelee = true;
+            MeleeAttack();
+        }
+
+        // Ranged Attack
+        if (Input.GetMouseButtonDown(1) && attackCooldownTimer > attackSpeed && playerMove.canAttack() && !isMelee)
+        {
+            isRange = true;
+            RangedAttack();
         }
       
         resetTimer += Time.deltaTime;
         attackCooldownTimer += Time.deltaTime;
     }
     
-    void Attack()
+    void MeleeAttack()
     {
         if (resetTimer > 4.0f)
         {
@@ -74,9 +94,25 @@ public class PlayerMelee : MonoBehaviour
         {
             enemy.GetComponent<Health>().TakeDamage(attackDamage);
         }
+        isMelee = false;
 
     }
- 
 
-  
+    void RangedAttack()
+    {
+        isRange = false;
+        anima.SetTrigger("ranged");
+    }
+
+    private void LaunchProjectile()
+    {
+        attackCooldownTimer = 0;
+
+        // Launch the projectile
+        GameObject projectile = Instantiate(this.prefab, projectileLaunchPoint.position, Quaternion.identity);
+        projectile.transform.localScale = new Vector3(projectileLaunchPoint.transform.localScale.x, 1, 1);
+        projectile.GetComponent<EnemyProjectile>().ActivateProjectile();
+    }
+
+
 }
