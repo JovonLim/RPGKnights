@@ -17,8 +17,9 @@ public class PlayerAttack : MonoBehaviour
     private int combo = 0;
     private float resetTimer;
 
-    private bool isMelee = false;
+    private bool isMelee = true;
     private bool isRange = false;
+    public static bool rangedUnlock = false;
 
     [SerializeField] private Transform projectileLaunchPoint;
     [SerializeField] GameObject prefab = null;
@@ -28,9 +29,6 @@ public class PlayerAttack : MonoBehaviour
         get { return this.prefab; }
         set { this.prefab = value; }
     }
-
-    // public static PlayerMelee instance;
-    // public bool isAttacking = false;
 
     private void Awake()
     {
@@ -42,20 +40,25 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Melee Attack
-        if (Input.GetMouseButtonDown(0) && attackCooldownTimer > attackSpeed && playerMove.canAttack() && !isRange)
+        if (Input.GetKeyDown(KeyCode.X) && rangedUnlock)
         {
-            isMelee = true;
+            SwitchStance();
+        }
+        // Melee Attack
+        if (Input.GetMouseButtonDown(0) && attackCooldownTimer > attackSpeed && playerMove.canAttack() && isMelee)
+        {
             MeleeAttack();
         }
 
-        // Ranged Attack
-        if (Input.GetMouseButtonDown(1) && attackCooldownTimer > attackSpeed && playerMove.canAttack() && !isMelee)
+        if (rangedUnlock)
         {
-            isRange = true;
-            RangedAttack();
+            // Ranged Attack
+            if (Input.GetMouseButtonDown(0) && attackCooldownTimer > attackSpeed && playerMove.canAttack() && isRange)
+            { 
+                RangedAttack();
+            }
+
         }
-      
         resetTimer += Time.deltaTime;
         attackCooldownTimer += Time.deltaTime;
     }
@@ -94,13 +97,12 @@ public class PlayerAttack : MonoBehaviour
         {
             enemy.GetComponent<Health>().TakeDamage(attackDamage);
         }
-        isMelee = false;
+      
 
     }
 
     void RangedAttack()
     {
-        isRange = false;
         anima.SetTrigger("ranged");
     }
 
@@ -114,5 +116,9 @@ public class PlayerAttack : MonoBehaviour
         projectile.GetComponent<EnemyProjectile>().ActivateProjectile();
     }
 
-
+    void SwitchStance()
+    {
+        isMelee = !isMelee;
+        isRange = !isRange;
+    }
 }
