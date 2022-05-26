@@ -19,7 +19,7 @@ public class PlayerAttack : MonoBehaviour
 
     private bool isMelee = true;
     private bool isRange = false;
-    public static bool rangedUnlock = true;
+    public static bool rangedUnlock = false;
 
     [SerializeField] private Transform projectileLaunchPoint;
     [SerializeField] GameObject prefab = null;
