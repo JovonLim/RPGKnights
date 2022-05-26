@@ -7,6 +7,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] private float projectileResetTime;
     private float projectileLifetime;
     [SerializeField] private float projectileDamage;
+    private float direction;
 
     // References
     private BoxCollider2D boxCollider;
@@ -50,6 +51,21 @@ public class Projectile : MonoBehaviour
             anima.SetTrigger("explode");
         }
         
+    }
+
+    public void SetDirection(float dir)
+    {
+        direction = dir;
+        hit = false;
+        projectileLifetime = 0;
+        gameObject.SetActive(true);
+        boxCollider.enabled = true;
+
+        float localScaleX = transform.localScale.x;
+        if (Mathf.Sign(localScaleX) != dir)
+            localScaleX = -localScaleX;
+
+        transform.localScale = new Vector3(localScaleX, transform.localScale.y, transform.localScale.z);
     }
 
     private void Deactivate()
