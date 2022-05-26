@@ -43,7 +43,7 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collison)
     {
-        if (collison.tag == "Enemy")
+        if (collison.CompareTag("Enemy") || collison.CompareTag("MiniBoss"))
         {
             hit = true;
             boxCollider.enabled = false;

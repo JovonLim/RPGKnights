@@ -6,7 +6,7 @@ public class Coin : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player")
+        if (other.CompareTag("Player"))
         {
             UI.coins += 5;
             Destroy(gameObject);
