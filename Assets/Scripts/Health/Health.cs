@@ -8,6 +8,7 @@ public class Health : MonoBehaviour
     private Animator anima;
     private bool isDead;
 
+    public GameObject damageIndicator;
     private void Awake()
     {
         currentHealth = startingHealth;
@@ -16,6 +17,9 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(float damage) 
     {
+        GameObject damageInd = Instantiate(damageIndicator, transform.position, Quaternion.identity) as GameObject;
+        damageInd.transform.GetChild(0).GetComponent<TextMesh>().text = damage.ToString();
+
         // Ensure the current health of player stays within 0 and the starting health
         currentHealth = Mathf.Clamp(currentHealth - damage, 0, startingHealth);
 
