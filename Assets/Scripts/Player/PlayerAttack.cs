@@ -19,7 +19,7 @@ public class PlayerAttack : MonoBehaviour
 
     private bool isMelee = true;
     private bool isRange = false;
-    public static bool rangedUnlock = false;
+    public static bool rangedUnlock = true;
 
     [SerializeField] private Transform projectileLaunchPoint;
     [SerializeField] GameObject prefab = null;
@@ -113,7 +113,7 @@ public class PlayerAttack : MonoBehaviour
         // Launch the projectile
         GameObject projectile = Instantiate(this.prefab, projectileLaunchPoint.position, Quaternion.identity);
         projectile.transform.localScale = new Vector3(projectileLaunchPoint.transform.localScale.x, 1, 1);
-        projectile.GetComponent<EnemyProjectile>().ActivateProjectile();
+        projectile.GetComponent<Projectile>().SetDirection(Mathf.Sign(transform.localScale.x));
     }
 
     void SwitchStance()
