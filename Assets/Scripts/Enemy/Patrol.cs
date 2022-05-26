@@ -10,7 +10,7 @@ public class Patrol : MonoBehaviour
 
     Animator anima;
     Vector3 newPos;
-    private Vector3 initialEnemyScale;
+    float timer = 1.0f;
   
     // Start is called before the first frame update
     void Start()
@@ -26,21 +26,49 @@ public class Patrol : MonoBehaviour
         if (transform.position == pos2.position)
         {
             newPos = pos1.position;
-            transform.localScale = new Vector3(1, transform.localScale.y, 1);
-
-        } else if (transform.position == pos1.position)
+            if (timer > 0)
+            {
+                OnDisable();
+                timer -= Time.deltaTime;
+            } else
+            {
+                transform.localScale = new Vector3(1, transform.localScale.y, 1);
+                Move();
+            }
+        }
+        else if (transform.position == pos1.position)
         {
             newPos = pos2.position;
-            transform.localScale = new Vector3(-1, transform.localScale.y, 1);
+            if (timer > 0)
+            {
+                OnDisable();
+                timer -= Time.deltaTime;
+            }
+            else
+            {
+                transform.localScale = new Vector3(-1, transform.localScale.y, 1);
+                Move();
 
+            }
+        } else
+        {
+            timer = 1.0f;
+            Move();
         }
-        anima.SetBool("moving", true);
-        transform.position = Vector3.MoveTowards(transform.position, newPos, speed * Time.deltaTime);
+        
+        
     }
+        
 
     private void OnDisable()
     {
         anima.SetBool("moving", false);
+    }
+
+    private void Move()
+    {
+        anima.SetBool("moving", true);
+        transform.position = Vector3.MoveTowards(transform.position, newPos, speed * Time.deltaTime);
     }
 }
 
