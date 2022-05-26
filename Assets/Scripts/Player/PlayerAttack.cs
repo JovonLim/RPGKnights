@@ -121,4 +121,9 @@ public class PlayerAttack : MonoBehaviour
         isMelee = !isMelee;
         isRange = !isRange;
     }
+
+    public void AddAttack()
+    {
+        attackDamage += 1;
+    }
 }

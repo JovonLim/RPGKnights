@@ -8,9 +8,7 @@ public class Wizard : MonoBehaviour
     [SerializeField] GameObject questDialog;
     private bool playerClicked;
     private bool questAccepted;
-    GameObject player;
     private int questNum = 1;
-    //[SerializeField] GameObject player;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,7 +44,6 @@ public class Wizard : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            player = other.gameObject;
             playerInRange = true;
         }
     }

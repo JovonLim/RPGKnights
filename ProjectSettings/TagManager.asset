@@ -5,12 +5,15 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
-  - StartPos
   - Signs
   - Moving Platform
   - Enemy
   - UI
   - MiniBoss
+  - Cave Doors
+  - Health
+  - Defense
+  - Attack
   layers:
   - Default
   - TransparentFX

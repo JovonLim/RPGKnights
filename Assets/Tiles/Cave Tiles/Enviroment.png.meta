@@ -3264,7 +3264,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Enviroment_114: 1959046029
+      Enviroment_30: -2047698287
       Enviroment_28: -559220187
       Enviroment_89: 778636211
       Enviroment_113: -1416556428
@@ -3411,8 +3411,8 @@ TextureImporter:
       Enviroment_145: -185701300
       Enviroment_8: 171963861
       Enviroment_95: 13570836
-      Enviroment_30: -2047698287
       Enviroment_86: 537160722
+      Enviroment_114: 1959046029
       Enviroment_49: -96718689
   spritePackingTag: 
   pSDRemoveMatte: 0
