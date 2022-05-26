@@ -8,7 +8,7 @@ public class Health : MonoBehaviour
     private Animator anima;
     private bool isDead;
 
-    private float Defense = 0;
+    [SerializeField] private float Defense = 0;
 
     public GameObject damageIndicator;
     private void Awake()

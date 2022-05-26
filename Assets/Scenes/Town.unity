@@ -2286,7 +2286,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 787962939}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.232039, y: 2.9926598, z: -10}
+  m_LocalPosition: {x: -14.462648, y: 2.9921, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2450,7 +2450,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.9087137, y: 1}
+    m_SensorSize: {x: 1.8510638, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -10320,7 +10320,7 @@ PrefabInstance:
     - target: {fileID: 5761944521595046690, guid: 92f411271b723c949a411c7403a36f98, type: 3}
       propertyPath: prefab
       value: 
-      objectReference: {fileID: 5831693231753335312, guid: 5857c47d299303b4aa0eed82bb756532, type: 3}
+      objectReference: {fileID: 8159956084251475531, guid: 5857c47d299303b4aa0eed82bb756532, type: 3}
     - target: {fileID: 5761944521595046690, guid: 92f411271b723c949a411c7403a36f98, type: 3}
       propertyPath: attackSpeed
       value: 0.5
