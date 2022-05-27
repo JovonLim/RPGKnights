@@ -38,7 +38,7 @@ public class Projectile : MonoBehaviour
         projectileLifetime += Time.deltaTime;
         // If projectile does not hit anything for a duration, the projectile will be destroyed
         if (projectileLifetime > projectileResetTime)
-            gameObject.SetActive(false);
+            Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collison)
