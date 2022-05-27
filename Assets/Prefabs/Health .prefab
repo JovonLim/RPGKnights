@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1296130278}
   m_Layer: 0
   m_Name: 'Health '
-  m_TagString: Health
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -145,8 +145,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f71299aad5078c42960441ecde41937, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectible: {fileID: 4117221201301829848}
   player: {fileID: 5761944522982870102, guid: 92f411271b723c949a411c7403a36f98, type: 3}
   purchaseDialog: {fileID: 0}
   insufficientFunds: {fileID: 0}
   cost: 50
+  stat: 2

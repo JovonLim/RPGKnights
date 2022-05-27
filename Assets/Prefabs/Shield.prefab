@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5306422756565133739}
   m_Layer: 0
   m_Name: Shield
-  m_TagString: Defense
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,8 +124,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f71299aad5078c42960441ecde41937, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectible: {fileID: 8108587917574746517}
   player: {fileID: 5761944522982870102, guid: 92f411271b723c949a411c7403a36f98, type: 3}
   purchaseDialog: {fileID: 0}
   insufficientFunds: {fileID: 0}
   cost: 75
+  stat: 1

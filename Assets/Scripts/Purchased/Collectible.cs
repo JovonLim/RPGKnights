@@ -6,13 +6,19 @@ public class Collectible : MonoBehaviour
 {
     private bool playerInRange;
     private bool playerClicked;
-    [SerializeField] private GameObject collectible;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject purchaseDialog;
     [SerializeField] private GameObject insufficientFunds;
     [SerializeField] private int cost;
- 
-  
+
+    public enum Stat
+    {
+        Attack,
+        Defense,
+        Health,
+    }
+
+    public Stat stat;
 
     // Update is called once per frame
     void Update()
@@ -53,17 +59,25 @@ public class Collectible : MonoBehaviour
     {
         if (UI.coins >= cost)
         {
-            if (collectible.CompareTag("Health"))
+            switch (stat)
             {
-                player.GetComponent<Health>().AddHealth();
+                case Stat.Attack:
+                {
+                        player.GetComponent<PlayerAttack>().AddAttack();
+                        break;
+                }
 
-            } else if (collectible.CompareTag("Defense"))
-            {
-                player.GetComponent<Health>().AddDefense();
+                case Stat.Defense:
+                    {
+                        player.GetComponent<Health>().AddDefense();
+                        break;
+                    }
 
-            } else if (collectible.CompareTag("Attack"))
-            {
-                player.GetComponent<PlayerAttack>().AddAttack();
+                case Stat.Health:
+                    {
+                        player.GetComponent<Health>().AddHealth();
+                        break;
+                    }
             }
             UI.coins -= cost;
             Destroy(purchaseDialog);
