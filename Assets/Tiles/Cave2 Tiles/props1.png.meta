@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -1817,32 +1817,32 @@ TextureImporter:
       props1_3: 851498849
       props1_57: 331174679
       props1_2: -993859756
-      props1_33: 201512116
+      props1_67: -980065905
+      props1_73: -1156421663
       props1_6: -1119690719
-      props1_12: 2102653331
-      props1_30: 147900656
+      props1_33: 201512116
       props1_72: -404128420
-      props1_76: -387866009
-      props1_20: 1310239880
+      props1_30: 147900656
       props1_66: 963226371
+      props1_78: 1653541295
+      props1_76: -387866009
+      props1_77: 63174949
       props1_9: 602917771
       props1_32: -268037664
-      props1_73: -1156421663
-      props1_44: 1705474977
+      props1_20: 1310239880
+      props1_12: 2102653331
       props1_29: 1693096925
-      props1_77: 63174949
       props1_74: -444029694
       props1_23: -2021656098
       props1_46: 1649285620
-      props1_67: -980065905
       props1_58: -960220885
       props1_60: -1381374611
+      props1_44: 1705474977
       props1_69: -1345084335
-      props1_78: 1653541295
       props1_16: -1705623028
       props1_8: 1968310803
-      props1_75: 1627274025
       props1_52: 1169107486
+      props1_75: 1627274025
       props1_61: -800919037
       props1_34: 525622612
       props1_10: 1515378887
