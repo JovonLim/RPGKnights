@@ -4,14 +4,10 @@ using UnityEngine;
 
 public class SecretVaultClear : MonoBehaviour
 {
-    GameObject[] enemies;
+    GameObject[] mobs;
     bool cleared;
     bool questCompleted = false;
-    int enemiesDefeated;
-    GameObject[] questRewards = new GameObject[3];
-    [SerializeField] GameObject chest1;
-    [SerializeField] GameObject chest2;
-    [SerializeField] GameObject transporter;
+    [SerializeField] GameObject[] questRewards;
     [SerializeField] GameObject questDialog;
     [SerializeField] GameObject startingText;
     [SerializeField] GameObject endingText;
@@ -20,11 +16,7 @@ public class SecretVaultClear : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        questRewards[0] = chest1;
-        questRewards[1] = chest2;
-        questRewards[2] = transporter;
-        enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        enemiesDefeated = 0;
+        mobs = GameObject.FindGameObjectsWithTag("Enemy");
         foreach(GameObject reward in questRewards)
         {
             reward.SetActive(false);
@@ -44,29 +36,27 @@ public class SecretVaultClear : MonoBehaviour
                 PlayerInteraction.questActive = false;
             }
 
-
-
             if (checkProgress())
             {
                 cleared = true;
             }
-            else
-            {
-                enemiesDefeated = 0;
-            }
+           
         }
     }
         
 
     bool checkProgress()
     {
-        for (int i = 0; i < enemies.Length; i++)
+        int defeated = 0;
+        foreach (GameObject mob in mobs)
         {
-            if (enemies[i].GetComponent<Health>().IsDefeated())
-                enemiesDefeated++;
+            if (mob.GetComponent<Health>().IsDefeated())
+            {
+                defeated++;
+            }
         }
 
-        return enemiesDefeated == enemies.Length;
+        return defeated == mobs.Length;
         
         
     }

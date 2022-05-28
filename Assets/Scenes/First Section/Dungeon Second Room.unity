@@ -186,7 +186,7 @@ SpriteRenderer:
   m_SortingLayerID: 307672063
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a4279138a3b67604d91bf91cf69a91e1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f776570615d3ec446ac2da62beaa0cc5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -19261,7 +19261,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.9087137, y: 1}
+    m_SensorSize: {x: 1.8975409, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

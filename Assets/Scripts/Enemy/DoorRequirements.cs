@@ -14,7 +14,6 @@ public class DoorRequirements : MonoBehaviour
     private GameObject player;
     private bool cleared = false;
     private bool playerInRange = false;
-    private int defeated = 0;
     
 
     public enum Objective
@@ -49,10 +48,6 @@ public class DoorRequirements : MonoBehaviour
                 cleared = true;
                 StartCoroutine(End());
             }
-            else
-            {
-                defeated = 0;
-            }
         }
         else
         {
@@ -85,6 +80,7 @@ public class DoorRequirements : MonoBehaviour
 
     bool checkDefeated()
     {
+        int defeated = 0;
         foreach (GameObject mob in mobs)
         {
             if (mob.GetComponent<Health>().IsDefeated())

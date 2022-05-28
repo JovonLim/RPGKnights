@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
+        horizontalInput = Input.GetAxisRaw("Horizontal");
 
         body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
 

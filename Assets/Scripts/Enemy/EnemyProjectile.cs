@@ -33,10 +33,10 @@ public class EnemyProjectile : EnemyDamage
 
         projectileLifetime += Time.deltaTime;
         if (projectileLifetime > projectileResetTime)
-            Destroy(gameObject);
+            Deactivate();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private new void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
