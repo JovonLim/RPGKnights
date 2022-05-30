@@ -64,7 +64,6 @@ public class Archer : MonoBehaviour
     {
         questAccepted = true;
         PlayerInteraction.questActive = true;
-        PlayerInteraction.questNum = questNum;
     }
 
     public void DeclineQuest()

@@ -418,7 +418,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7539173459142366055, guid: 0dc6d3426c656fa46a79a42194b4fd38, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7539173459142366055, guid: 0dc6d3426c656fa46a79a42194b4fd38, type: 3}
       propertyPath: m_LocalScale.x
@@ -983,7 +983,7 @@ PrefabInstance:
       objectReference: {fileID: 4997623711577133293, guid: 555ca5c4a4a0517489f53b54e10f9cee, type: 3}
     - target: {fileID: 5761944522982870100, guid: 92f411271b723c949a411c7403a36f98, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5761944522982870100, guid: 92f411271b723c949a411c7403a36f98, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1225,9 +1225,17 @@ PrefabInstance:
       propertyPath: attackSpeed
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7294359234555779725, guid: 39009279321f48448814ba3d4c30efea, type: 3}
+      propertyPath: Defense
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7294359234555779725, guid: 39009279321f48448814ba3d4c30efea, type: 3}
+      propertyPath: startingHealth
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7294359234555779727, guid: 39009279321f48448814ba3d4c30efea, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7294359234555779727, guid: 39009279321f48448814ba3d4c30efea, type: 3}
       propertyPath: m_LocalScale.x
@@ -7142,9 +7150,17 @@ PrefabInstance:
       propertyPath: attackSpeed
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7294359234555779725, guid: 39009279321f48448814ba3d4c30efea, type: 3}
+      propertyPath: Defense
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7294359234555779725, guid: 39009279321f48448814ba3d4c30efea, type: 3}
+      propertyPath: startingHealth
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7294359234555779727, guid: 39009279321f48448814ba3d4c30efea, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7294359234555779727, guid: 39009279321f48448814ba3d4c30efea, type: 3}
       propertyPath: m_LocalScale.x
@@ -7266,7 +7282,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8211369918576667466
 SpriteRenderer:

@@ -6,22 +6,23 @@ using UnityEngine.SceneManagement;
 public class PlayerInteraction : MonoBehaviour
 {
     public static bool questActive;
-    public static int questNum;
+
+    public static Quest quest;
     // Start is called before the first frame update
     void Start()
     {
         questActive = false;
+        
+
     }
 
-    // Update is called once per frame
     void Update()
     {
-      
+  
     }
 
-
     public void Respawn()
-    {      
+    {
         StartCoroutine(Reload());
     }
 
@@ -30,7 +31,7 @@ public class PlayerInteraction : MonoBehaviour
         yield return new WaitForSeconds(2);
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
         GameObject[] UIs = GameObject.FindGameObjectsWithTag("UI");
-        
+
         foreach (GameObject player in players)
         {
             Destroy(player);
@@ -39,7 +40,9 @@ public class PlayerInteraction : MonoBehaviour
         {
             Destroy(UI);
         }
-        
+
         SceneManager.LoadScene(0);
     }
+
 }
+

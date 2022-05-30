@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0b414e7ca7adc304885dc8cf9c24ad09
+guid: 2af3bf3f9388322438ce92d186a8e18c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pixel GUI_0
+      name: GUI_0
       rect:
         serializedVersion: 2
-        x: 384
-        y: 1408
-        width: 255
-        height: 261
+        x: 0
+        y: 175
+        width: 48
+        height: 33
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,20 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 34ffba627c3751d489e5aa0e7e3c4f24
-      internalID: 427314495
+      spriteID: 9e045edcb627c3d4f97f04dae1c1e668
+      internalID: 1011587835
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixel GUI_1
+      name: GUI_1
       rect:
         serializedVersion: 2
-        x: 1156
-        y: 1542
-        width: 378
-        height: 113
+        x: 51
+        y: 229
+        width: 10
+        height: 10
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,62 +139,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ddb8fb61ab59ff44da75a88d61316642
-      internalID: -2015820396
+      spriteID: 5eaa9561491c2084c9ba3a8f2e392630
+      internalID: 1090245419
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixel GUI_2
+      name: GUI_2
       rect:
         serializedVersion: 2
-        x: 560
-        y: 2201
-        width: 418
-        height: 91
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 05cccda578559464da24556047544911
-      internalID: 1021946298
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pixel GUI_3
-      rect:
-        serializedVersion: 2
-        x: 1051
-        y: 2187
-        width: 465
-        height: 111
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e302fb4b3d9302c438b228800bd88ac7
-      internalID: -1415843206
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pixel GUI_4
-      rect:
-        serializedVersion: 2
-        x: 646
-        y: 1413
-        width: 247
-        height: 254
+        x: 16
+        y: 208
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,8 +160,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bbfc25a113308ee41b10ca1391e17c9e
-      internalID: -275042942
+      spriteID: 79469701221fd484f8e43d2bedf7a13e
+      internalID: -1254343444
       vertices: []
       indices: 
       edges: []
@@ -219,11 +177,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Pixel GUI_2: 1021946298
-      Pixel GUI_3: -1415843206
-      Pixel GUI_1: -2015820396
-      Pixel GUI_0: -109913257
-      Pixel GUI_4: -275042942
+      GUI_0: 1011587835
+      GUI_2: -1254343444
+      GUI_1: 1090245419
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

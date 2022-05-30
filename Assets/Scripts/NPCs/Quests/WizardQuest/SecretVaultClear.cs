@@ -8,6 +8,7 @@ public class SecretVaultClear : MonoBehaviour
     bool cleared;
     bool questCompleted = false;
     [SerializeField] GameObject[] questRewards;
+    [SerializeField] GameObject questLog;
     [SerializeField] GameObject questDialog;
     [SerializeField] GameObject startingText;
     [SerializeField] GameObject endingText;
@@ -33,7 +34,11 @@ public class SecretVaultClear : MonoBehaviour
             {
                 StartCoroutine(giveRewards());
                 questCompleted = true;
+                WizardQuestLog.questStatus[PlayerInteraction.quest.questNum] = true;
+                WizardQuestLog.added = false;
                 PlayerInteraction.questActive = false;
+                PlayerInteraction.quest = null;
+                
             }
 
             if (checkProgress())
@@ -76,7 +81,7 @@ public class SecretVaultClear : MonoBehaviour
         {
             reward.SetActive(true);
         }
-        UI.coins += 100;
+        UI.coins += 125;
         questDialog.SetActive(true);
         endingText.SetActive(true);
         yield return new WaitForSeconds(2);

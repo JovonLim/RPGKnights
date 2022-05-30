@@ -4,41 +4,40 @@ using UnityEngine;
 
 public class Wizard : MonoBehaviour
 {
-    private bool playerInRange;
     [SerializeField] GameObject questDialog;
+    public Quest[] quests;
+    private bool playerInRange;
+    
     private bool playerClicked;
-    private bool questAccepted;
-    private int questNum = 1;
+    public static bool unlockedSkills = false;
     // Start is called before the first frame update
     void Start()
     {
         playerClicked = false;
-        questAccepted = false;
+        foreach (Quest quest in quests)
+        {
+            questDialog.GetComponent<WizardQuestLog>().AddQuest(quest);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!questAccepted && !PlayerInteraction.questActive)
+        if (Input.GetKey(KeyCode.F))
         {
-            if (Input.GetKey(KeyCode.F))
-            {
-                playerClicked = true;
-            }
-            if (playerClicked && playerInRange)
-            {
-                questDialog.SetActive(true);
-            }
-            else
-            {
-                questDialog.SetActive(false);
-                playerClicked = false;
-            }
-        } else
+            playerClicked = true;
+        }
+        if (playerClicked && playerInRange)
+        {
+            questDialog.SetActive(true);
+        }
+        else
         {
             questDialog.SetActive(false);
+            playerClicked = false;
         }
     }
+
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -56,16 +55,8 @@ public class Wizard : MonoBehaviour
         }
     }
 
-    public void AcceptQuest()
-    {
-        questAccepted = true;
-        PlayerInteraction.questActive = true;
-        PlayerInteraction.questNum = questNum;
-    }
-
-    public void DeclineQuest()
+    public void Exit()
     {
         playerClicked = false;
     }
-
 }

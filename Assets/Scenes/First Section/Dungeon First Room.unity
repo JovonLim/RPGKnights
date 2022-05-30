@@ -31081,17 +31081,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7294359234555779725, guid: 39009279321f48448814ba3d4c30efea, type: 3}
-      propertyPath: damageIndicator
-      value: 
-      objectReference: {fileID: 4121909687491731269, guid: 4c3bed24503b8b14a98146d0bcfcc064, type: 3}
     - target: {fileID: 7294359234555779727, guid: 39009279321f48448814ba3d4c30efea, type: 3}
       propertyPath: m_RootOrder
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7294359234555779727, guid: 39009279321f48448814ba3d4c30efea, type: 3}
-      propertyPath: m_LocalScale.x
-      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7294359234555779727, guid: 39009279321f48448814ba3d4c30efea, type: 3}
       propertyPath: m_LocalPosition.x
@@ -31136,14 +31128,6 @@ PrefabInstance:
     - target: {fileID: 7294359234555779731, guid: 39009279321f48448814ba3d4c30efea, type: 3}
       propertyPath: m_Name
       value: Fireworm
-      objectReference: {fileID: 0}
-    - target: {fileID: 7294359234555779731, guid: 39009279321f48448814ba3d4c30efea, type: 3}
-      propertyPath: m_TagString
-      value: MiniBoss
-      objectReference: {fileID: 0}
-    - target: {fileID: 7294359234914807886, guid: 39009279321f48448814ba3d4c30efea, type: 3}
-      propertyPath: m_LocalScale.x
-      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39009279321f48448814ba3d4c30efea, type: 3}
