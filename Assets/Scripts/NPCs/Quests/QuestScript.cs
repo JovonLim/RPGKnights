@@ -6,6 +6,11 @@ using TMPro;
 public class QuestScript : MonoBehaviour
 {
     public Quest MyQuest { get; set;  }
+    public enum NPC {
+        wizard, archer,
+    }
+
+    public NPC npc;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +27,14 @@ public class QuestScript : MonoBehaviour
     public void Select()
     {
         GetComponent<TextMeshProUGUI>().color = Color.red;
-        WizardQuestLog.myInstance.ShowDescription(MyQuest);
+        if (npc == NPC.archer)
+        {
+            ArcherQuestLog.myInstance.ShowDescription(MyQuest);
+        } else
+        {
+            WizardQuestLog.myInstance.ShowDescription(MyQuest);
+        }
+       
     }
 
     public void DeSelect()

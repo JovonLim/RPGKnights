@@ -3,26 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class WizardQuestLog : MonoBehaviour
+public class ArcherQuestLog : MonoBehaviour
 {
     [SerializeField] private GameObject questPrefab;
     [SerializeField] private Transform questParent;
     [SerializeField] private TextMeshProUGUI description;
 
-    private static WizardQuestLog instance;
+    private static ArcherQuestLog instance;
     private Quest selected;
     private List<GameObject> listOfQuests = new List<GameObject>();
-    public static bool[] questStatus = new bool[1];
+    public static bool[] questStatus = new bool[4];
     public static bool added;
 
-    public static WizardQuestLog myInstance
+    public static ArcherQuestLog myInstance
     {
         get
         {
             if (instance == null)
             {
-                instance = FindObjectOfType<WizardQuestLog>();
-            } 
+                instance = FindObjectOfType<ArcherQuestLog>();
+            }
             return instance;
         }
     }
@@ -73,29 +73,17 @@ public class WizardQuestLog : MonoBehaviour
     {
         if (!PlayerInteraction.questActive && !selected.isCompleted)
         {
-            if (selected.questNum == 3 || selected.questNum == 4)
-            {
-                if (Wizard.unlockedSkills)
-                {
-                    selected.myQuestScript.AddActive();
-                    PlayerInteraction.WizardQuest = selected;
-                    PlayerInteraction.questActive = true;
-                }
-            } else
-            {
-                selected.myQuestScript.AddActive();
-                PlayerInteraction.WizardQuest = selected;
-                PlayerInteraction.questActive = true;
-            }
-            
+            selected.myQuestScript.AddActive();
+            PlayerInteraction.ArcherQuest = selected;
+            PlayerInteraction.questActive = true;
         }
-        
     }
 
     public void Untrack()
     {
         selected.myQuestScript.RemoveActive();
-        PlayerInteraction.WizardQuest = null;
+        PlayerInteraction.ArcherQuest = null;
         PlayerInteraction.questActive = false;
     }
 }
+

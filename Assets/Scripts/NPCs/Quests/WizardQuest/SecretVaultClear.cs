@@ -34,10 +34,10 @@ public class SecretVaultClear : MonoBehaviour
             {
                 StartCoroutine(giveRewards());
                 questCompleted = true;
-                WizardQuestLog.questStatus[PlayerInteraction.quest.questNum] = true;
+                WizardQuestLog.questStatus[PlayerInteraction.WizardQuest.questNum] = true;
                 WizardQuestLog.added = false;
                 PlayerInteraction.questActive = false;
-                PlayerInteraction.quest = null;
+                PlayerInteraction.WizardQuest = null;
                 
             }
 

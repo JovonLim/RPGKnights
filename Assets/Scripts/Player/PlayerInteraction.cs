@@ -7,7 +7,8 @@ public class PlayerInteraction : MonoBehaviour
 {
     public static bool questActive;
 
-    public static Quest quest;
+    public static Quest ArcherQuest;
+    public static Quest WizardQuest;
     // Start is called before the first frame update
     void Start()
     {

@@ -20,7 +20,7 @@ public class DemonEmerges : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PlayerInteraction.questActive)
+        if (PlayerInteraction.questActive && PlayerInteraction.ArcherQuest.questNum == 0)
         {
             door.SetActive(false);
             bossPatrol.SetActive(true);
@@ -32,7 +32,10 @@ public class DemonEmerges : MonoBehaviour
             {
                 StartCoroutine(GiveRewards());
                 questCompleted = true;
+                ArcherQuestLog.added = false;
+                ArcherQuestLog.questStatus[PlayerInteraction.ArcherQuest.questNum] = true;
                 PlayerInteraction.questActive = false;
+                PlayerInteraction.ArcherQuest = null;
                 PlayerAttack.rangedUnlock = true;
             }
         }
