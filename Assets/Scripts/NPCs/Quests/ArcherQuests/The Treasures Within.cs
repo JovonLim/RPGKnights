@@ -2,25 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SecretVaultClear : MonoBehaviour
+public class TheTreasuresWithin : MonoBehaviour
 {
-    GameObject[] mobs;
-    bool cleared;
-    bool questCompleted = false;
-    [SerializeField] GameObject[] questRewards;
+
+    private GameObject[] chests;
+    private bool questCompleted = false;
     [SerializeField] GameObject questDialog;
     [SerializeField] GameObject startingText;
     [SerializeField] GameObject endingText;
 
-
     // Start is called before the first frame update
     void Start()
     {
-        mobs = GameObject.FindGameObjectsWithTag("Enemy");
-        foreach(GameObject reward in questRewards)
-        {
-            reward.SetActive(false);
-        }
+        chests = GameObject.FindGameObjectsWithTag("Chest");
         StartCoroutine(Begin());
     }
 
@@ -29,40 +23,29 @@ public class SecretVaultClear : MonoBehaviour
     {
         if (!questCompleted)
         {
-            if (cleared)
+            if (allOpened())
             {
                 StartCoroutine(giveRewards());
                 questCompleted = true;
-                WizardQuestLog.questStatus[PlayerInteraction.WizardQuest.questNum] = true;
-                WizardQuestLog.added = false;
+                ArcherQuestLog.questStatus[PlayerInteraction.ArcherQuest.questNum] = true;
+                ArcherQuestLog.added = false;
                 PlayerInteraction.questActive = false;
                 PlayerInteraction.WizardQuest = null;
-                
             }
-
-            if (checkProgress())
-            {
-                cleared = true;
-            }
-           
         }
     }
-        
 
-    bool checkProgress()
+    bool allOpened()
     {
-        int defeated = 0;
-        foreach (GameObject mob in mobs)
+        int count = 0;
+        foreach (GameObject chest in chests)
         {
-            if (mob.GetComponent<Health>().IsDefeated())
+            if (chest.GetComponent<Chests>().chestOpened)
             {
-                defeated++;
+                count++;
             }
         }
-
-        return defeated == mobs.Length;
-        
-        
+        return count == chests.Length;
     }
 
     IEnumerator Begin()
@@ -76,10 +59,6 @@ public class SecretVaultClear : MonoBehaviour
 
     IEnumerator giveRewards()
     {
-        foreach (GameObject reward in questRewards)
-        {
-            reward.SetActive(true);
-        }
         UI.coins += 125;
         questDialog.SetActive(true);
         endingText.SetActive(true);

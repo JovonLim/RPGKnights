@@ -6,7 +6,7 @@ public class Chests : MonoBehaviour
 {
     Animator anima;
     bool playerInRange = false;
-    bool chestOpened = false;
+    public bool chestOpened = false;
     // Start is called before the first frame update
     void Start()
     {
