@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class QuestEnd : QuestProgress
+public class QuestEnd : MonoBehaviour
 {
     [SerializeField] GameObject[] questRewards;
     [SerializeField] GameObject questDialog;
@@ -31,12 +31,14 @@ public class QuestEnd : QuestProgress
     // Update is called once per frame
     void Update()
     {
+     
         if (!cleared)
         {
-            if (questCompleted)
+            if (GetComponent<QuestProgress>().questCompleted)
             {
                 StartCoroutine(giveRewards());
                 ClearQuest();
+                cleared = true;
             }
         }
        
@@ -71,7 +73,7 @@ public class QuestEnd : QuestProgress
             ArcherQuestLog.added = false;
             PlayerInteraction.ArcherQuest = null;
         }
+     
         PlayerInteraction.questActive = false;
-        cleared = true;
     }
 }

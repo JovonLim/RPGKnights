@@ -11,6 +11,8 @@ TagManager:
   - MiniBoss
   - Cave Doors
   - Quest
+  - Boss
+  - Chest
   layers:
   - Default
   - TransparentFX

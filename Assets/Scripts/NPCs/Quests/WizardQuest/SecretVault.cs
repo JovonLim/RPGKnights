@@ -16,10 +16,13 @@ public class SecretVault : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PlayerInteraction.questActive && PlayerInteraction.WizardQuest.questNum == 0)
+        if (PlayerInteraction.questActive && PlayerInteraction.WizardQuest != null)
         {
-            vaultClosed.SetActive(false);
-            vaultOpened.SetActive(true);
+            if (PlayerInteraction.WizardQuest.questNum == 0)
+            {
+                vaultClosed.SetActive(false);
+                vaultOpened.SetActive(true);
+            }
         }
     }
 }

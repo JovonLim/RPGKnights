@@ -11,23 +11,30 @@ public class QuestProgress : QuestObjective
     // Start is called before the first frame update
     void Start()
     {
-       if (objective == Objective.chests)
-        {
-            questObjects = GameObject.FindGameObjectsWithTag("chests");
-        } else if (objective == Objective.boss)
-        {
-            questObjects = GameObject.FindGameObjectsWithTag("Boss");
-        } else
-        {
-            questObjects = GameObject.FindGameObjectsWithTag("Enemy");
-        }
+       
     }
 
     // Update is called once per frame
     void Update()
     {
+       
         if (!questCompleted)
         {
+            if (questObjects == null)
+            {
+                if (objective == Objective.chests)
+                {
+                    questObjects = GameObject.FindGameObjectsWithTag("Chest");
+                }
+                else if (objective == Objective.boss)
+                {
+                    questObjects = GameObject.FindGameObjectsWithTag("Boss");
+                }
+                else
+                {
+                    questObjects = GameObject.FindGameObjectsWithTag("Enemy");
+                }
+            }
             if (checkProgress())
             {
                 questCompleted = true;

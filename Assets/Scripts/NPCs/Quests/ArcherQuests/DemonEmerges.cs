@@ -6,10 +6,7 @@ public class DemonEmerges : MonoBehaviour
 {
     [SerializeField] GameObject door;
     [SerializeField] GameObject bossPatrol;
-    [SerializeField] GameObject boss;
-    [SerializeField] GameObject chest;
-    [SerializeField] GameObject questDialog;
-    bool questCompleted;
+    bool unlocked;
 
     // Start is called before the first frame update
     void Start()
@@ -20,36 +17,22 @@ public class DemonEmerges : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PlayerInteraction.questActive && PlayerInteraction.ArcherQuest.questNum == 0)
+        if (PlayerInteraction.questActive && PlayerInteraction.ArcherQuest != null)
         {
-            door.SetActive(false);
-            bossPatrol.SetActive(true);
-        }
-
-        if (!questCompleted)
-        {
-            if (boss.GetComponent<Health>().IsDefeated())
+            if (PlayerInteraction.ArcherQuest.questNum == 0)
             {
-                StartCoroutine(GiveRewards());
-                questCompleted = true;
-                ArcherQuestLog.added = false;
-                ArcherQuestLog.questStatus[PlayerInteraction.ArcherQuest.questNum] = true;
-                PlayerInteraction.questActive = false;
-                PlayerInteraction.ArcherQuest = null;
-                PlayerAttack.rangedUnlock = true;
+                door.SetActive(false);
+                bossPatrol.SetActive(true);
+                GetComponent<QuestProgress>().enabled = true;
+                GetComponent<QuestEnd>().enabled = true;
             }
         }
-       
-    }
 
-    IEnumerator GiveRewards()
-    {
-        UI.coins += 150;
-        questDialog.SetActive(true);
-        chest.SetActive(true);
-        yield return new WaitForSeconds(2);
-        questDialog.SetActive(false);
-      
+        if (!unlocked && GetComponent<QuestProgress>().questCompleted)
+        {
+           PlayerAttack.rangedUnlock = true;
+           unlocked = true;
+        } 
     }
 }
 
