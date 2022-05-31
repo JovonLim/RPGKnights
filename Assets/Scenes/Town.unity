@@ -265,6 +265,17 @@ MonoBehaviour:
       if you take out the threat. Reward: Unlocks Bow + 150Coins'
     questNum: 0
     isCompleted: 0
+  - title: The Treasures within
+    description: 'The Archer has found treasures contained in a dangerous location
+      filled with parkour elements in the fourth room and ask whether you are up
+      for the challenge.         Rewards: 125 coins.'
+    questNum: 1
+    isCompleted: 0
+  - title: The Rival
+    description: 'The Archer''s rival has appeared in the sixth room and he wishes
+      for you to take him out.        Rewards: Better Bow + 175 coins'
+    questNum: 2
+    isCompleted: 0
 --- !u!61 &308245278
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11093,103 +11104,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf201faa39e7a9449ba64f69fb802c32, type: 3}
---- !u!1001 &8356728044468992135
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2404278316926702160, guid: 56fa14856dfc11348926f0606390ab32, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2404278316926702160, guid: 56fa14856dfc11348926f0606390ab32, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2404278316926702160, guid: 56fa14856dfc11348926f0606390ab32, type: 3}
-      propertyPath: m_RootOrder
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 2404278316926702160, guid: 56fa14856dfc11348926f0606390ab32, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2404278316926702160, guid: 56fa14856dfc11348926f0606390ab32, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2404278316926702160, guid: 56fa14856dfc11348926f0606390ab32, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2404278316926702160, guid: 56fa14856dfc11348926f0606390ab32, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2404278316926702160, guid: 56fa14856dfc11348926f0606390ab32, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2404278316926702160, guid: 56fa14856dfc11348926f0606390ab32, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2404278316926702160, guid: 56fa14856dfc11348926f0606390ab32, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2404278316926702160, guid: 56fa14856dfc11348926f0606390ab32, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2404278316926702160, guid: 56fa14856dfc11348926f0606390ab32, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2404278316926702160, guid: 56fa14856dfc11348926f0606390ab32, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2404278316926702160, guid: 56fa14856dfc11348926f0606390ab32, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2404278316926702160, guid: 56fa14856dfc11348926f0606390ab32, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2404278316926702160, guid: 56fa14856dfc11348926f0606390ab32, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2404278316926702160, guid: 56fa14856dfc11348926f0606390ab32, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2404278316926702160, guid: 56fa14856dfc11348926f0606390ab32, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2404278316926702160, guid: 56fa14856dfc11348926f0606390ab32, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2404278316926702160, guid: 56fa14856dfc11348926f0606390ab32, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2404278316926702160, guid: 56fa14856dfc11348926f0606390ab32, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4286668764767929235, guid: 56fa14856dfc11348926f0606390ab32, type: 3}
-      propertyPath: m_Name
-      value: ArcherQuest
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 56fa14856dfc11348926f0606390ab32, type: 3}
 --- !u!1001 &8452325472495892248
 PrefabInstance:
   m_ObjectHideFlags: 0
