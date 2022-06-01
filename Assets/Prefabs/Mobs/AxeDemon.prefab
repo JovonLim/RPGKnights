@@ -171,6 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 30
+  Defense: 0
   damageIndicator: {fileID: 4997623711577133293, guid: 555ca5c4a4a0517489f53b54e10f9cee, type: 3}
 --- !u!114 &259894607
 MonoBehaviour:
@@ -186,6 +187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pos1: {fileID: 0}
   pos2: {fileID: 0}
+  speed: 3
 --- !u!114 &259894608
 MonoBehaviour:
   m_ObjectHideFlags: 0

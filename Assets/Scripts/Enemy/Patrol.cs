@@ -6,7 +6,7 @@ public class Patrol : MonoBehaviour
 {
     public Transform pos1;
     public Transform pos2;
-    private float speed = 3.0f;
+    [SerializeField] private float speed;
 
     Animator anima;
     Vector3 newPos;

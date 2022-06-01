@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Second Section/Dungeon Fourth Room.unity
     guid: 3954638cc3a0da644b4bbfab8c06fa54
+  - enabled: 1
+    path: Assets/Scenes/Second Section/Parkour Room.unity
+    guid: e24fb07c37e748e4e940f5d508582411
   m_configObjects: {}

@@ -15,13 +15,15 @@ GameObject:
   - component: {fileID: 141634870}
   - component: {fileID: 141634868}
   - component: {fileID: 141634869}
+  - component: {fileID: 8493307989576101184}
+  - component: {fileID: 3619486882567372343}
   m_Layer: 10
   m_Name: NightBorne
   m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4677545481968304326
 Transform:
   m_ObjectHideFlags: 0
@@ -170,7 +172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackSpeed: 0.5
   attackRange: 2
-  damage: 4
+  damage: 0
   colliderDistance: 0.6
   boxCollider: {fileID: 141634867}
   playerLayer:
@@ -188,6 +190,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2264e89b1ce83144b803079ab3a87fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 30
-  Defense: 2
+  startingHealth: 1
+  Defense: 0
   damageIndicator: {fileID: 4997623711577133293, guid: 555ca5c4a4a0517489f53b54e10f9cee, type: 3}
+--- !u!114 &8493307989576101184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7234636641531540568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f20bc37f9403f4248ac2315d1acea7b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pos1: {fileID: 0}
+  pos2: {fileID: 0}
+  speed: 5
+--- !u!114 &3619486882567372343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7234636641531540568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49b51cd02f283cb40a549f9433285d2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minCoin: 15
+  maxCoin: 20
+  prefab: {fileID: 5015637550736375931, guid: 7fd6ab4c788ddee49839223a767d1cde, type: 3}

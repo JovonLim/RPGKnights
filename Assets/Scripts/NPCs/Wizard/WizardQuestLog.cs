@@ -12,7 +12,7 @@ public class WizardQuestLog : MonoBehaviour
     private static WizardQuestLog instance;
     private Quest selected;
     private List<GameObject> listOfQuests = new List<GameObject>();
-    public static bool[] questStatus = new bool[1];
+    public static bool[] questStatus = new bool[2];
     public static bool added;
 
     public static WizardQuestLog myInstance
