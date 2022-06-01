@@ -172,7 +172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 3
   Defense: 0
-  damageIndicator: {fileID: 4997623711577133293, guid: 555ca5c4a4a0517489f53b54e10f9cee, type: 3}
+  prefab: {fileID: 4997623711577133293, guid: 555ca5c4a4a0517489f53b54e10f9cee, type: 3}
 --- !u!114 &4950031981800853029
 MonoBehaviour:
   m_ObjectHideFlags: 0

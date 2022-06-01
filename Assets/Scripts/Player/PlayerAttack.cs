@@ -22,13 +22,7 @@ public class PlayerAttack : MonoBehaviour
     public static bool rangedUnlock = false;
 
     [SerializeField] private Transform projectileLaunchPoint;
-    [SerializeField] GameObject prefab = null;
-
-    [SerializeField] private GameObject Prefab
-    {
-        get { return this.prefab; }
-        set { this.prefab = value; }
-    }
+    [SerializeField] private GameObject prefab;
 
     private void Awake()
     {

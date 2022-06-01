@@ -9,8 +9,7 @@ public class Health : MonoBehaviour
     private bool isDead;
 
     [SerializeField] private float Defense = 0;
-
-    public GameObject damageIndicator;
+    [SerializeField] private GameObject prefab;
     private void Awake()
     {
         currentHealth = startingHealth;
@@ -20,7 +19,7 @@ public class Health : MonoBehaviour
     public void TakeDamage(float damage) 
     {
         float netDamage = damage - Defense;
-        GameObject damageInd = Instantiate(damageIndicator, transform.position, Quaternion.identity) as GameObject;
+        GameObject damageInd = Instantiate(prefab, transform.position, Quaternion.identity);
         damageInd.transform.GetChild(0).GetComponent<TextMesh>().text = netDamage.ToString();
 
         // Ensure the current health of player stays within 0 and the starting health

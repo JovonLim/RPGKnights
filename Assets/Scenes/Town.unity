@@ -1520,7 +1520,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 787962939}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.621015, y: 2.99414, z: -10}
+  m_LocalPosition: {x: -14.2439375, y: 2.99263, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1684,7 +1684,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.0614755, y: 1}
+    m_SensorSize: {x: 1.9057378, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -9356,37 +9356,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8452325473871829061, guid: 02831e4d91aa4aa47b5c36f9f5140ad2, type: 3}
   m_PrefabInstance: {fileID: 2081969602}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2021855708
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2021855709}
-  m_Layer: 7
-  m_Name: PlayerProjectileLaunchPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2021855709
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2021855708}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.597, y: -0.116, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1388873564}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2081969602
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10671,7 +10640,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2002780164619503156, guid: 5245e38b2784a5646b8b084fb6f29329, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2002780164619503156, guid: 5245e38b2784a5646b8b084fb6f29329, type: 3}
       propertyPath: m_AnchorMax.x
@@ -10880,49 +10849,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 415745995, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1388873556, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: damageIndicator
-      value: 
-      objectReference: {fileID: 4997623711577133293, guid: 555ca5c4a4a0517489f53b54e10f9cee, type: 3}
-    - target: {fileID: 1949877067971610857, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: questDialog
-      value: 
-      objectReference: {fileID: 1655641802}
-    - target: {fileID: 1949877067971610857, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: quests.Array.size
+      propertyPath: canPersist
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1949877067971610857, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: quests.Array.data[0].title
-      value: The Secret Vault
-      objectReference: {fileID: 0}
-    - target: {fileID: 1949877067971610857, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: quests.Array.data[1].title
-      value: The Secret Vault
-      objectReference: {fileID: 0}
     - target: {fileID: 5761944521595046690, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: prefab
-      value: 
-      objectReference: {fileID: 8159956084251475531, guid: 5857c47d299303b4aa0eed82bb756532, type: 3}
-    - target: {fileID: 5761944521595046690, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: attackSpeed
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5761944521595046690, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: attackDamage
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5761944521595046690, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: projectileLaunchPoint
-      value: 
-      objectReference: {fileID: 2021855709}
-    - target: {fileID: 5761944522982870089, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: fallThreshold
-      value: 6
+      propertyPath: canPersist
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5761944522982870100, guid: 92f411271b723c949a411c7403a36f98, type: 3}
       propertyPath: m_RootOrder
@@ -10971,14 +10904,6 @@ PrefabInstance:
     - target: {fileID: 5761944522982870102, guid: 92f411271b723c949a411c7403a36f98, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5761944522982870103, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: a131a615ac4641f4284a46a104886d76, type: 3}
-    - target: {fileID: 5761944522982870103, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92f411271b723c949a411c7403a36f98, type: 3}
@@ -11052,7 +10977,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1449486791055217694, guid: cf201faa39e7a9449ba64f69fb802c32, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1449486791055217694, guid: cf201faa39e7a9449ba64f69fb802c32, type: 3}
       propertyPath: m_LocalPosition.x

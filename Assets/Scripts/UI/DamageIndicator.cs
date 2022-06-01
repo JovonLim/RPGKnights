@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class DamageIndicator : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnEnable()
     {
         Destroy(gameObject, 0.7f);
         transform.localPosition += new Vector3(0, 0.3f, 0);
+        
     }
 
     // Update is called once per frame

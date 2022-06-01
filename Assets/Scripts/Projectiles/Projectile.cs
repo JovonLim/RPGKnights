@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class Projectile : MonoBehaviour
 {
@@ -29,7 +30,10 @@ public class Projectile : MonoBehaviour
 
     private void Update()
     {
-        if (hit) return;
+        if (hit)
+        {
+            return;
+        }
 
         // Move the projectile every frame if it does not hit anything
         float movementSpeed = projectileSpeed * Time.deltaTime;
@@ -43,12 +47,13 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collison)
     {
-        if (collison.CompareTag("Enemy") || collison.CompareTag("MiniBoss"))
+        if (collison.gameObject.layer == 10)
         {
             hit = true;
             boxCollider.enabled = false;
             collison.GetComponent<Health>().TakeDamage(projectileDamage);
             anima.SetTrigger("explode");
+            StartCoroutine(Impact());
         }
         
     }
@@ -61,15 +66,23 @@ public class Projectile : MonoBehaviour
         gameObject.SetActive(true);
         boxCollider.enabled = true;
 
-        float localScaleX = transform.localScale.x;
+       float localScaleX = transform.localScale.x;
         if (Mathf.Sign(localScaleX) != dir)
             localScaleX = -localScaleX;
 
         transform.localScale = new Vector3(localScaleX, transform.localScale.y, transform.localScale.z);
+      
+      
     }
 
     private void Deactivate()
     {
         gameObject.SetActive(false);
+    }
+
+    IEnumerator Impact()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Deactivate();
     }
 }

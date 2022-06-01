@@ -23,7 +23,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4677545481968304326
 Transform:
   m_ObjectHideFlags: 0
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackSpeed: 0.5
   attackRange: 2
-  damage: 0
+  damage: 4
   colliderDistance: 0.6
   boxCollider: {fileID: 141634867}
   playerLayer:
@@ -190,9 +190,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2264e89b1ce83144b803079ab3a87fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 1
-  Defense: 0
-  damageIndicator: {fileID: 4997623711577133293, guid: 555ca5c4a4a0517489f53b54e10f9cee, type: 3}
+  startingHealth: 30
+  Defense: 2
+  prefab: {fileID: 4997623711577133293, guid: 555ca5c4a4a0517489f53b54e10f9cee, type: 3}
 --- !u!114 &8493307989576101184
 MonoBehaviour:
   m_ObjectHideFlags: 0
