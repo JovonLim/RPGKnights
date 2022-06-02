@@ -29542,7 +29542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d163b0dbec249fb448de5f61b02d9657, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneNum: 7
+  sceneNum: 8
 --- !u!212 &8211369918378052420
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -29671,7 +29671,7 @@ MonoBehaviour:
   miniBossText: {fileID: 1559622402}
   mobsText: {fileID: 1268357498}
   objectiveCleared: {fileID: 2012198544}
-  sceneNum: 8
+  sceneNum: 7
   objective: 1
 --- !u!4 &8211369918576667465
 Transform:
