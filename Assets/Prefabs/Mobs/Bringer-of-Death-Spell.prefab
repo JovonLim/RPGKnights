@@ -145,5 +145,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49cd5d0c948937d49ad9bcf4a154aaef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyDamage: 2.5
+  enemyDamage: 4
   projectileResetTime: 2

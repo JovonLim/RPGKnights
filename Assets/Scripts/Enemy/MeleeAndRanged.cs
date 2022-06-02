@@ -33,7 +33,15 @@ public class MeleeAndRanged : MonoBehaviour
     private void Update()
     {
         if (patrol != null)
-            patrol.enabled = !PlayerInRangedSight() && !PlayerInMeleeSight();
+        {
+            if (PlayerInRangedSight())
+            {
+                patrol.enabled = false;
+            } else
+            {
+                StartCoroutine(EnablePatrol());
+            }
+        }
 
         attackCooldownTimer += Time.deltaTime;
 
@@ -110,6 +118,12 @@ public class MeleeAndRanged : MonoBehaviour
         // Launch the projectile
         GameObject spell = Instantiate(this.prefab, new Vector2(player.transform.position.x, player.transform.position.y + 1.2f), Quaternion.identity);
         spell.GetComponent<BringerOfDeathSpell>().ActivateProjectile();
+    }
+
+    IEnumerator EnablePatrol()
+    {
+        yield return new WaitForSeconds(0.5f);
+        patrol.enabled = true;
     }
 
 }

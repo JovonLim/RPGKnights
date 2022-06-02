@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class MeleeEnemy : MonoBehaviour
 {
@@ -27,7 +28,20 @@ public class MeleeEnemy : MonoBehaviour
 
     private void Update()
     {
+        if (patrol != null)
+        {
+            if (PlayerInSight())
+            {
+                patrol.enabled = false;
+            } else
+            {
+                StartCoroutine(EnablePatrol());
+            }
+        }
+          
+
         attackCooldownTimer += Time.deltaTime;
+
 
         if (PlayerInSight())
         {
@@ -38,8 +52,7 @@ public class MeleeEnemy : MonoBehaviour
             }
         }
 
-        if (patrol != null)
-            patrol.enabled = !PlayerInSight();
+       
 
     }
 
@@ -70,4 +83,9 @@ public class MeleeEnemy : MonoBehaviour
         }
     }
 
+    IEnumerator EnablePatrol()
+    {
+        yield return new WaitForSeconds(0.5f);
+        patrol.enabled = true;
+    }
 }

@@ -283,10 +283,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackSpeed: 1
   meleeAttackRange: 2
-  rangedAttackRange: 4
-  damage: 2
+  rangedAttackRange: 5
+  damage: 3.5
   meleeColliderDistance: -0.5
-  rangedColliderDistance: -0.58
+  rangedColliderDistance: -0.55
   boxCollider: {fileID: 4302673381509020312}
   playerLayer:
     serializedVersion: 2
