@@ -16,13 +16,17 @@ public class PlayerAttack : MonoBehaviour
 
     private int combo = 0;
     private float resetTimer;
+    private float spellTimer;
 
     private bool isMelee = true;
     private bool isRange = false;
     public static bool rangedUnlock = false;
+    public static bool spellUnlock = false;
 
     [SerializeField] private Transform projectileLaunchPoint;
     [SerializeField] private GameObject prefab;
+    [SerializeField] private Spell spellToCast;
+    
 
     private void Awake()
     {
@@ -53,6 +57,17 @@ public class PlayerAttack : MonoBehaviour
             }
 
         }
+
+        if (spellUnlock)
+        {
+            
+            if (Input.GetKeyDown(KeyCode.Q) && spellTimer > spellToCast.spell.cooldownTime && playerMove.canAttack())
+            {
+                CastSpell();
+            }
+
+        }
+        spellTimer += Time.deltaTime;
         resetTimer += Time.deltaTime;
         attackCooldownTimer += Time.deltaTime;
     }
@@ -119,5 +134,16 @@ public class PlayerAttack : MonoBehaviour
     public void AddAttack()
     {
         attackDamage += 1;
+    }
+
+    private void CastSpell()
+    {
+        anima.SetTrigger("cast");
+    }
+    private void LaunchSpell()
+    {
+        spellTimer = 0;
+        spellToCast.dir = transform.localScale.x;
+        Instantiate(spellToCast, projectileLaunchPoint.position, Quaternion.identity);
     }
 }

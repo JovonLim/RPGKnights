@@ -5,6 +5,7 @@ using UnityEngine;
 public class TheArtOfCasting : MonoBehaviour
 {
     [SerializeField] GameObject bossPatrol;
+    bool unlocked;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,12 @@ public class TheArtOfCasting : MonoBehaviour
                 GetComponent<QuestProgress>().enabled = true;
                 GetComponent<QuestEnd>().enabled = true;
             }
+        }
+
+        if (!unlocked && GetComponent<QuestProgress>().questCompleted)
+        {
+            PlayerAttack.spellUnlock = true;
+            unlocked = true;
         }
     }
 }
