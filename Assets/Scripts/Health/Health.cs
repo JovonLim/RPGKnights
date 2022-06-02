@@ -19,6 +19,10 @@ public class Health : MonoBehaviour
     public void TakeDamage(float damage) 
     {
         float netDamage = damage - Defense;
+        if (netDamage < 0)
+        {
+            netDamage = 0;
+        }
         GameObject damageInd = Instantiate(prefab, transform.position, Quaternion.identity);
         damageInd.transform.GetChild(0).GetComponent<TextMesh>().text = netDamage.ToString();
 
@@ -54,6 +58,13 @@ public class Health : MonoBehaviour
                     isDead = true;
                 }
 
+                if (GetComponent<MeleeAndRanged>() != null)
+                {
+                    GetComponent<MeleeAndRanged>().enabled = false;
+                    GetComponent<BoxCollider2D>().enabled = false;
+                    GetComponent<CoinSpawn>().Spawn();
+                    isDead = true;
+                }
 
                 if (GetComponentInParent<Patrol>() != null)
                 {
