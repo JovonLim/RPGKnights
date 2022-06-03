@@ -430,7 +430,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6086993072406875299, guid: cf201faa39e7a9449ba64f69fb802c32, type: 3}
       propertyPath: m_Name
-      value: 'Cave Door '
+      value: Exit
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf201faa39e7a9449ba64f69fb802c32, type: 3}
@@ -19017,6 +19017,7 @@ MonoBehaviour:
   objectiveBox: {fileID: 1910306051}
   miniBossText: {fileID: 1910306053}
   mobsText: {fileID: 1910306054}
+  bossText: {fileID: 1910306055}
   objectiveCleared: {fileID: 1910306052}
   sceneNum: 4
   objective: 1
@@ -19184,6 +19185,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1284196440, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
   m_PrefabInstance: {fileID: 1910306050}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1910306055 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7959341357040267217, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
+  m_PrefabInstance: {fileID: 1910306050}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1919817659
 GameObject:
   m_ObjectHideFlags: 0
@@ -19261,7 +19267,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.8975409, y: 1}
+    m_SensorSize: {x: 2.0192308, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

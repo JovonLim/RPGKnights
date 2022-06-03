@@ -21912,8 +21912,9 @@ MonoBehaviour:
   objectiveBox: {fileID: 60145124}
   miniBossText: {fileID: 569030488}
   mobsText: {fileID: 1094355486}
+  bossText: {fileID: 1405058544}
   objectiveCleared: {fileID: 90605100}
-  sceneNum: 7
+  sceneNum: 11
   objective: 0
 --- !u!61 &952325061
 BoxCollider2D:
@@ -22423,6 +22424,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
+--- !u!1 &1405058544 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7959341357040267217, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
+  m_PrefabInstance: {fileID: 1405058543}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1406673912
 GameObject:
   m_ObjectHideFlags: 0

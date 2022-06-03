@@ -683,7 +683,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.8975409, y: 1}
+    m_SensorSize: {x: 2.0192308, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -28823,7 +28823,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1265473253}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 41.583065, y: 1.5304799, z: -22.211168}
+  m_LocalPosition: {x: 42.191498, y: 1.53009, z: -22.211168}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -30986,7 +30986,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6086993072406875299, guid: cf201faa39e7a9449ba64f69fb802c32, type: 3}
       propertyPath: m_Name
-      value: 'Cave Door '
+      value: Exit
       objectReference: {fileID: 0}
     - target: {fileID: 6086993072406875299, guid: cf201faa39e7a9449ba64f69fb802c32, type: 3}
       propertyPath: m_TagString
@@ -31014,6 +31014,7 @@ MonoBehaviour:
   objectiveBox: {fileID: 9219801673285114659}
   miniBossText: {fileID: 1400219013}
   mobsText: {fileID: 1284196440}
+  bossText: {fileID: 9219801673285114658}
   objectiveCleared: {fileID: 1750333289}
   sceneNum: 2
   objective: 0
@@ -31244,6 +31245,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
+--- !u!1 &9219801673285114658 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7959341357040267217, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
+  m_PrefabInstance: {fileID: 9219801673285114657}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &9219801673285114659 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5405677235792910029, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}

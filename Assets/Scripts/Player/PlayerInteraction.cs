@@ -19,7 +19,7 @@ public class PlayerInteraction : MonoBehaviour
 
     void Update()
     {
-  
+        
     }
 
     public void Respawn()

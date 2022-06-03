@@ -12,7 +12,7 @@ public class WizardQuestLog : MonoBehaviour
     private static WizardQuestLog instance;
     private Quest selected;
     private List<GameObject> listOfQuests = new List<GameObject>();
-    public static bool[] questStatus = new bool[2];
+    public static bool[] questStatus = new bool[4];
     public static bool added;
 
     public static WizardQuestLog myInstance
@@ -73,7 +73,7 @@ public class WizardQuestLog : MonoBehaviour
     {
         if (!PlayerInteraction.questActive && !selected.isCompleted)
         {
-            if (selected.questNum == 3 || selected.questNum == 4)
+            if (selected.questNum == 2 || selected.questNum == 3)
             {
                 if (Wizard.unlockedSkills)
                 {

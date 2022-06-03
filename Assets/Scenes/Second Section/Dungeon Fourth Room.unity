@@ -279,7 +279,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.9057378, y: 1}
+    m_SensorSize: {x: 2.0192308, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -28859,6 +28859,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
+--- !u!1 &1266384916 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7959341357040267217, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
+  m_PrefabInstance: {fileID: 1266384915}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1268357498 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1284196440, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
@@ -29670,6 +29675,7 @@ MonoBehaviour:
   objectiveBox: {fileID: 2112640287}
   miniBossText: {fileID: 1559622402}
   mobsText: {fileID: 1268357498}
+  bossText: {fileID: 1266384916}
   objectiveCleared: {fileID: 2012198544}
   sceneNum: 7
   objective: 1

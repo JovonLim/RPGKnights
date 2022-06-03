@@ -8,6 +8,7 @@ public class DoorRequirements : MonoBehaviour
     [SerializeField] private GameObject objectiveBox;
     [SerializeField] private GameObject miniBossText;
     [SerializeField] private GameObject mobsText;
+    [SerializeField] private GameObject bossText;
     [SerializeField] private GameObject objectiveCleared;
     [SerializeField] private int sceneNum;
     private GameObject[] mobs;
@@ -20,6 +21,7 @@ public class DoorRequirements : MonoBehaviour
     {
         miniBoss,
         mobs,
+        boss,
     };
     public Objective objective;
 
@@ -28,13 +30,25 @@ public class DoorRequirements : MonoBehaviour
     void Start()
     {
         StartCoroutine(Begin());
-        if (objective == Objective.miniBoss)
+        switch (objective)
         {
-            mobs = GameObject.FindGameObjectsWithTag("MiniBoss");
-        } else
-        {
-            mobs = GameObject.FindGameObjectsWithTag("Enemy");
+            case Objective.miniBoss:
+                {
+                    mobs = GameObject.FindGameObjectsWithTag("MiniBoss");
+                    break;
+                }
+            case Objective.mobs:
+                {
+                    mobs = GameObject.FindGameObjectsWithTag("Enemy");
+                    break;
+                }
+            case Objective.boss:
+                {
+                    mobs = mobs = GameObject.FindGameObjectsWithTag("Boss");
+                    break;
+                }
         }
+        
         
     }
 
@@ -94,17 +108,29 @@ public class DoorRequirements : MonoBehaviour
     IEnumerator Begin()
     {
         objectiveBox.SetActive(true);
-        if (objective == Objective.miniBoss)
+        switch (objective)
         {
-            miniBossText.SetActive(true);
-        } else
-        {
-            mobsText.SetActive(true);
-        }
+            case Objective.miniBoss:
+                {
+                    miniBossText.SetActive(true);
+                    break;
+                }
+            case Objective.mobs:
+                {
+                    mobsText.SetActive(true);
+                    break;
+                }
+            case Objective.boss:
+                {
+                    bossText.SetActive(true);
+                    break;
+                }
+        }       
         yield return new WaitForSeconds(2);
         objectiveBox.SetActive(false);
         miniBossText.SetActive(false);
         mobsText.SetActive(false);
+        bossText.SetActive(false);
 
     }
 
