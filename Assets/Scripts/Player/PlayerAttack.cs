@@ -18,14 +18,14 @@ public class PlayerAttack : MonoBehaviour
     private float resetTimer;
     private float spellTimer;
 
-    private bool isMelee = true;
-    private bool isRange = false;
+    
     public static bool rangedUnlock = false;
-    public static bool spellUnlock = false;
+    public static bool spellUnlock = true;
 
     [SerializeField] private Transform projectileLaunchPoint;
     [SerializeField] private GameObject prefab;
     [SerializeField] private Spell spellToCast;
+    
     
 
     private void Awake()
@@ -33,17 +33,14 @@ public class PlayerAttack : MonoBehaviour
         anima = GetComponent<Animator>();
         playerMove = GetComponent<PlayerMovement>();
         resetTimer = 0;
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.X) && rangedUnlock)
-        {
-            SwitchStance();
-        }
         // Melee Attack
-        if (Input.GetMouseButtonDown(0) && attackCooldownTimer > attackSpeed && playerMove.canAttack() && isMelee)
+        if (Input.GetMouseButtonDown(0) && attackCooldownTimer > attackSpeed && playerMove.canAttack())
         {
             MeleeAttack();
         }
@@ -51,7 +48,7 @@ public class PlayerAttack : MonoBehaviour
         if (rangedUnlock)
         {
             // Ranged Attack
-            if (Input.GetMouseButtonDown(0) && attackCooldownTimer > attackSpeed && playerMove.canAttack() && isRange)
+            if (Input.GetMouseButtonDown(1) && attackCooldownTimer > attackSpeed && playerMove.canAttack())
             { 
                 RangedAttack();
             }
@@ -64,6 +61,7 @@ public class PlayerAttack : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Q) && spellTimer > spellToCast.spell.cooldownTime && playerMove.canAttack())
             {
                 CastSpell();
+                spellTimer = 0;
             }
 
         }
@@ -125,12 +123,6 @@ public class PlayerAttack : MonoBehaviour
         projectile.GetComponent<Projectile>().SetDirection(Mathf.Sign(transform.localScale.x));
     }
 
-    void SwitchStance()
-    {
-        isMelee = !isMelee;
-        isRange = !isRange;
-    }
-
     public void AddAttack()
     {
         attackDamage += 1;
@@ -142,8 +134,22 @@ public class PlayerAttack : MonoBehaviour
     }
     private void LaunchSpell()
     {
-        spellTimer = 0;
-        spellToCast.dir = transform.localScale.x;
-        Instantiate(spellToCast, projectileLaunchPoint.position, Quaternion.identity);
+        
+        if (spellToCast.GetComponent<ProjectileBased>() != null)
+        {
+            spellToCast.GetComponent<ProjectileBased>().dir = transform.localScale.x;
+            float distance = spellToCast.GetComponent<ProjectileBased>().offset + projectileLaunchPoint.position.y;
+            Instantiate(spellToCast, new Vector2(projectileLaunchPoint.position.x, distance), Quaternion.identity);
+        } else if (spellToCast.GetComponent<SpawnBased>() != null)
+        {
+            float distance = spellToCast.GetComponent<SpawnBased>().range * transform.localScale.x;
+            Collider2D enemyInRange = Physics2D.OverlapArea(projectileLaunchPoint.position, 
+                new Vector2(projectileLaunchPoint.position.x + distance, projectileLaunchPoint.position.y),
+                enemyLayer);
+            if (enemyInRange != null)
+            Instantiate(spellToCast, enemyInRange.gameObject.transform.position, Quaternion.identity);
+        }
     }
+
+   
 }

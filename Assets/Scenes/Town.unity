@@ -856,15 +856,15 @@ MonoBehaviour:
     questNum: 1
     isCompleted: 0
   - title: Oh Lord Zeus!
-    description: 'The Wizard wishes to assess your ability before teaching such dangerous
-      skills. Clear the extra room in the fifth room to unlock the ability to use
-      lightning. Reward: 100 coins + lightning ability.'
+    description: 'The Wizard wishes to assess your ability before upgrading such
+      dangerous skills. Clear the extra room in the fifth room to unlock the upgraded
+      ability. Reward: 100 coins + upgraded lightning ability.'
     questNum: 2
     isCompleted: 0
   - title: The Fearsome Vortex!
-    description: 'The Wizard wishes to assess your ability before teaching such dangerous
-      skills. Clear the extra miniboss in the fifth room to unlock the ability to
-      use hydro. Reward: 100 coins + hydro ability.'
+    description: 'The Wizard wishes to assess your ability before upgrading such
+      dangerous skills. Clear the extra miniboss in the fifth room to unlock the
+      upgraded ability. Reward: 100 coins + upgraded hydro ability.'
     questNum: 3
     isCompleted: 0
 --- !u!1 &607443464
@@ -10860,7 +10860,7 @@ PrefabInstance:
     - target: {fileID: 5761944521595046690, guid: 92f411271b723c949a411c7403a36f98, type: 3}
       propertyPath: spellToCast
       value: 
-      objectReference: {fileID: 5175091635343005432, guid: 76adc9e1317d8404a8fc8834486ae0ff, type: 3}
+      objectReference: {fileID: 5237767792496804644, guid: e85cb3528408e7b4fa02f0a58cabca7c, type: 3}
     - target: {fileID: 5761944522982870100, guid: 92f411271b723c949a411c7403a36f98, type: 3}
       propertyPath: m_RootOrder
       value: 2
