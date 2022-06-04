@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4302673380021401459}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.56, y: -0.4, z: 0}
+  m_LocalPosition: {x: -56.76, y: -1.07, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -89,7 +89,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4302673381709117158}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.87, y: -0.4, z: 0}
+  m_LocalPosition: {x: 2.87, y: -0.93, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -111,11 +111,11 @@ GameObject:
   - component: {fileID: 4302673381509020315}
   - component: {fileID: 8701580875259986543}
   - component: {fileID: 4302673381509020316}
-  - component: {fileID: 4302673381509020318}
   - component: {fileID: 4302673380595227118}
+  - component: {fileID: 2026861992}
   m_Layer: 10
   m_Name: Bringer-of-Death
-  m_TagString: MiniBoss
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -292,21 +292,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   prefab: {fileID: 2896137453247173435, guid: 0997681c70fab0a42bbae29a701b9ece, type: 3}
---- !u!114 &4302673381509020318
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5210619565112353213}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f20bc37f9403f4248ac2315d1acea7b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pos1: {fileID: 4302673380021401458}
-  pos2: {fileID: 4302673381709117161}
-  speed: 4
 --- !u!114 &4302673380595227118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -322,3 +307,24 @@ MonoBehaviour:
   minCoin: 20
   maxCoin: 23
   prefab: {fileID: 5015637550736375931, guid: 7fd6ab4c788ddee49839223a767d1cde, type: 3}
+--- !u!114 &2026861992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5210619565112353213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be86478fa3dac0e4aad223d362d02045, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pos1: {fileID: 4302673380021401458}
+  pos2: {fileID: 4302673381709117161}
+  speed: 4
+  player: {fileID: 0}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  offset: 0.6
+  et: 1

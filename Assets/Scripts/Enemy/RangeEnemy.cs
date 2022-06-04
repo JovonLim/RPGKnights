@@ -44,7 +44,7 @@ public class RangeEnemy : MonoBehaviour
 
     }
 
-    private bool PlayerInSight()
+    public bool PlayerInSight()
     {
         RaycastHit2D hit = Physics2D.BoxCast(boxCollider.bounds.center + transform.right * attackRange * transform.localScale.x * colliderDistance,
             new Vector3(boxCollider.bounds.size.x * attackRange, boxCollider.bounds.size.y, boxCollider.bounds.size.z),

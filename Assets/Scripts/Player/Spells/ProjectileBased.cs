@@ -42,11 +42,14 @@ public class ProjectileBased : Spell
     {
         if (collison.gameObject.layer == 10)
         {
-            hit = true;
-            boxCollider.enabled = false;
-            collison.GetComponent<Health>().TakeDamage(spell.damage);
-            anima.SetTrigger("explode");
-            StartCoroutine(Impact());
+            if (GameObject.Find("Arcane Archer") == null || collison.gameObject != GameObject.Find("Arcane Archer"))
+            {
+                hit = true;
+                boxCollider.enabled = false;
+                collison.GetComponent<Health>().TakeDamage(spell.damage);
+                anima.SetTrigger("explode");
+                StartCoroutine(Impact());
+            }
         }
 
     }

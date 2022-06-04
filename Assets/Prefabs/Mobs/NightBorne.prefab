@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 141634870}
   - component: {fileID: 141634868}
   - component: {fileID: 141634869}
-  - component: {fileID: 8493307989576101184}
   - component: {fileID: 3619486882567372343}
+  - component: {fileID: 8413793719422780576}
   m_Layer: 10
   m_Name: NightBorne
   m_TagString: Boss
@@ -125,7 +125,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.2856369, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -136,7 +136,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.1875, y: 1.875}
+  m_Size: {x: 1.6162262, y: 1.875}
   m_EdgeRadius: 0
 --- !u!95 &141634870
 Animator:
@@ -193,21 +193,6 @@ MonoBehaviour:
   startingHealth: 30
   Defense: 2
   prefab: {fileID: 4997623711577133293, guid: 555ca5c4a4a0517489f53b54e10f9cee, type: 3}
---- !u!114 &8493307989576101184
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7234636641531540568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f20bc37f9403f4248ac2315d1acea7b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pos1: {fileID: 0}
-  pos2: {fileID: 0}
-  speed: 5
 --- !u!114 &3619486882567372343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,3 +208,24 @@ MonoBehaviour:
   minCoin: 15
   maxCoin: 20
   prefab: {fileID: 5015637550736375931, guid: 7fd6ab4c788ddee49839223a767d1cde, type: 3}
+--- !u!114 &8413793719422780576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7234636641531540568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be86478fa3dac0e4aad223d362d02045, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pos1: {fileID: 0}
+  pos2: {fileID: 0}
+  speed: 4
+  player: {fileID: 0}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  offset: 0
+  et: 2

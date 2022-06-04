@@ -44,7 +44,7 @@ public class Health : MonoBehaviour
                 // For enemy
                 if (GetComponent<MeleeEnemy>() != null)
                 {
-                    Destroy(GetComponent<MeleeEnemy>());
+                    GetComponent<MeleeEnemy>().enabled = false;
                     GetComponent<BoxCollider2D>().enabled = false;
                     GetComponent<CoinSpawn>().Spawn();
                     isDead = true;
@@ -60,16 +60,22 @@ public class Health : MonoBehaviour
 
                 if (GetComponent<MeleeAndRanged>() != null)
                 {
-                    Destroy(GetComponent<MeleeAndRanged>());
+                    GetComponent<MeleeAndRanged>().enabled = false;
                     GetComponent<BoxCollider2D>().enabled = false;
                     GetComponent<CoinSpawn>().Spawn();
                     isDead = true;
                 }
 
-                if (GetComponentInParent<Patrol>() != null)
+                if (GetComponent<ArcaneArcher>() != null)
                 {
-                    GetComponentInParent<Patrol>().enabled = false;
+                    GetComponent<ArcaneArcher>().enabled = false;
+                    GetComponent<BoxCollider2D>().enabled = false;
+                    GetComponent<CoinSpawn>().Spawn();
                     isDead = true;
+                }
+                if (GetComponent<Aggro>() != null)
+                {
+                    GetComponentInParent<Aggro>().enabled = false;
                 }
                     
                 // For player

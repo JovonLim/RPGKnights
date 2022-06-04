@@ -13,6 +13,7 @@ TagManager:
   - Quest
   - Boss
   - Chest
+  - PlayerProjectile
   layers:
   - Default
   - TransparentFX

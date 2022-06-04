@@ -46,11 +46,11 @@ GameObject:
   - component: {fileID: 1110313303840610218}
   - component: {fileID: 7675277323119872060}
   - component: {fileID: 3152015915383099659}
-  - component: {fileID: 6723534863556284184}
   - component: {fileID: 1959832036877622299}
   - component: {fileID: 1907423129930266310}
   - component: {fileID: 9013404433543950132}
   - component: {fileID: 4927827378758511870}
+  - component: {fileID: 3998970765818918773}
   m_Layer: 10
   m_Name: ImpDemon
   m_TagString: Enemy
@@ -165,21 +165,6 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 128
---- !u!114 &6723534863556284184
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5136352805044766022}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f20bc37f9403f4248ac2315d1acea7b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pos1: {fileID: 7675277323531777989}
-  pos2: {fileID: 7675277322311680728}
-  speed: 3.5
 --- !u!61 &1959832036877622299
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -257,6 +242,27 @@ MonoBehaviour:
   minCoin: 8
   maxCoin: 11
   prefab: {fileID: 5015637550736375931, guid: 7fd6ab4c788ddee49839223a767d1cde, type: 3}
+--- !u!114 &3998970765818918773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5136352805044766022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be86478fa3dac0e4aad223d362d02045, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pos1: {fileID: 7675277322311680728}
+  pos2: {fileID: 7675277323531777989}
+  speed: 3
+  player: {fileID: 0}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  offset: 0.3
+  et: 2
 --- !u!1 &7675277322311680729
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,7 +287,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7675277322311680729}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.0346165, y: -2.771722, z: 0}
+  m_LocalPosition: {x: -5.07, y: -2.39, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -312,7 +318,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7675277323531777986}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.7553825, y: -2.671722, z: 0}
+  m_LocalPosition: {x: 9.42, y: -2.28, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

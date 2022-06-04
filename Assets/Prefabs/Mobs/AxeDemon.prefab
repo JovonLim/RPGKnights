@@ -14,12 +14,12 @@ GameObject:
   - component: {fileID: 259894603}
   - component: {fileID: 259894604}
   - component: {fileID: 2275436717798606324}
-  - component: {fileID: 259894607}
   - component: {fileID: 259894608}
   - component: {fileID: 8132907877290221978}
+  - component: {fileID: 1324590620365905125}
   m_Layer: 10
   m_Name: AxeDemon
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -171,23 +171,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 30
-  Defense: 0
+  Defense: 1
   prefab: {fileID: 4997623711577133293, guid: 555ca5c4a4a0517489f53b54e10f9cee, type: 3}
---- !u!114 &259894607
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4379145109735915172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f20bc37f9403f4248ac2315d1acea7b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pos1: {fileID: 0}
-  pos2: {fileID: 0}
-  speed: 3
 --- !u!114 &259894608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,7 +187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackSpeed: 1
   attackRange: 2
-  damage: 3
+  damage: 2
   colliderDistance: 0.5
   boxCollider: {fileID: 259894604}
   playerLayer:
@@ -223,3 +208,24 @@ MonoBehaviour:
   minCoin: 8
   maxCoin: 16
   prefab: {fileID: 5015637550736375931, guid: 7fd6ab4c788ddee49839223a767d1cde, type: 3}
+--- !u!114 &1324590620365905125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4379145109735915172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be86478fa3dac0e4aad223d362d02045, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pos1: {fileID: 0}
+  pos2: {fileID: 0}
+  speed: 3
+  player: {fileID: 0}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  offset: 1.2
+  et: 2

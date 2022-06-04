@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class EnemyProjectile : EnemyDamage
 {
@@ -47,7 +48,10 @@ public class EnemyProjectile : EnemyDamage
 
 
             if (anima != null)
+            {
                 anima.SetTrigger("explode");
+                StartCoroutine(Impact());
+            }
             else
                 gameObject.SetActive(false);
         }
@@ -57,5 +61,10 @@ public class EnemyProjectile : EnemyDamage
     {
         gameObject.SetActive(false);
     }
-   
+
+    IEnumerator Impact()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Deactivate();
+    }
 }

@@ -21,28 +21,14 @@ public class MeleeAndRanged : MonoBehaviour
     private GameObject player;
 
 
-    //For Patrolling
-    private Patrol patrol;
-
     private void Awake()
     {
         anima = GetComponent<Animator>();
-        patrol = GetComponentInParent<Patrol>();
+        
     }
 
     private void Update()
     {
-        if (patrol != null)
-        {
-            if (PlayerInRangedSight())
-            {
-                patrol.enabled = false;
-            } else
-            {
-                StartCoroutine(EnablePatrol());
-            }
-        }
-
         attackCooldownTimer += Time.deltaTime;
 
         if (PlayerInMeleeSight())
@@ -97,7 +83,7 @@ public class MeleeAndRanged : MonoBehaviour
         }
     }
 
-    private bool PlayerInRangedSight()
+    public bool PlayerInRangedSight()
     {
         RaycastHit2D hit = Physics2D.BoxCast(boxCollider.bounds.center + transform.right * rangedAttackRange * transform.localScale.x * rangedColliderDistance,
             new Vector3(boxCollider.bounds.size.x * rangedAttackRange, boxCollider.bounds.size.y, boxCollider.bounds.size.z),
@@ -120,10 +106,5 @@ public class MeleeAndRanged : MonoBehaviour
         spell.GetComponent<BringerOfDeathSpell>().ActivateProjectile();
     }
 
-    IEnumerator EnablePatrol()
-    {
-        yield return new WaitForSeconds(0.5f);
-        patrol.enabled = true;
-    }
 
 }

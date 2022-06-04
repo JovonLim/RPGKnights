@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 899208820274557677}
   m_Layer: 0
   m_Name: Thunder Projectile 2
-  m_TagString: Untagged
+  m_TagString: PlayerProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,9 +148,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spell: {fileID: 11400000, guid: 84ac100d23cad3445bae1d00a19ce9d3, type: 2}
-  player: {fileID: 0}
-  boxCollider: {fileID: 0}
-  anima: {fileID: 0}
 --- !u!114 &-606854536259269028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,10 +161,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spell: {fileID: 11400000, guid: 84ac100d23cad3445bae1d00a19ce9d3, type: 2}
-  player: {fileID: 0}
-  boxCollider: {fileID: 0}
-  anima: {fileID: 0}
   dir: 0
+  offset: 0
 --- !u!50 &899208820274557677
 Rigidbody2D:
   serializedVersion: 4

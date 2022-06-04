@@ -29,10 +29,13 @@ public class SpawnBased : Spell
     {
         if (collison.gameObject.layer == 10)
         {
-            boxCollider.enabled = false;
-            collison.GetComponent<Health>().TakeDamage(spell.damage);
-            anima.SetTrigger("explode");
-            StartCoroutine(Impact());
+            if (GameObject.Find("Arcane Archer") == null || collison.gameObject != GameObject.Find("Arcane Archer"))
+            {
+                boxCollider.enabled = false;
+                collison.GetComponent<Health>().TakeDamage(spell.damage);
+                anima.SetTrigger("explode");
+                StartCoroutine(Impact());
+            }
         }
 
     }

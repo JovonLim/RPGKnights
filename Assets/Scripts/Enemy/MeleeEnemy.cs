@@ -17,32 +17,16 @@ public class MeleeEnemy : MonoBehaviour
     private Animator anima;
     private Health playerHealth;
 
-    //For Patrolling
-    private Patrol patrol;
 
     private void Awake()
     {
         anima = GetComponent<Animator>();
-        patrol = GetComponentInParent<Patrol>();
+       
     }
 
     private void Update()
     {
-        if (patrol != null)
-        {
-            if (PlayerInSight())
-            {
-                patrol.enabled = false;
-            } else
-            {
-                StartCoroutine(EnablePatrol());
-            }
-        }
-          
-
         attackCooldownTimer += Time.deltaTime;
-
-
         if (PlayerInSight())
         {
             if (attackCooldownTimer >= attackSpeed)
@@ -56,7 +40,7 @@ public class MeleeEnemy : MonoBehaviour
 
     }
 
-    private bool PlayerInSight()
+    public bool PlayerInSight()
     {
         RaycastHit2D hit = Physics2D.BoxCast(boxCollider.bounds.center + transform.right * attackRange * transform.localScale.x * colliderDistance,
             new Vector3(boxCollider.bounds.size.x * attackRange, boxCollider.bounds.size.y, boxCollider.bounds.size.z), 
@@ -81,11 +65,5 @@ public class MeleeEnemy : MonoBehaviour
         {
             playerHealth.TakeDamage(damage);
         }
-    }
-
-    IEnumerator EnablePatrol()
-    {
-        yield return new WaitForSeconds(0.5f);
-        patrol.enabled = true;
     }
 }

@@ -110,9 +110,9 @@ GameObject:
   - component: {fileID: 6008672639439818560}
   - component: {fileID: 17130527379481275}
   - component: {fileID: 8994620680720682575}
-  - component: {fileID: 7280040225202934050}
   - component: {fileID: 1372944636731528839}
   - component: {fileID: 2469327674679102084}
+  - component: {fileID: 3533828615794455718}
   m_Layer: 10
   m_Name: Cultist Priest
   m_TagString: MiniBoss
@@ -269,21 +269,6 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 128
---- !u!114 &7280040225202934050
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5063366915178251487}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f20bc37f9403f4248ac2315d1acea7b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pos1: {fileID: 2444242223305006721}
-  pos2: {fileID: 2970539623779158917}
-  speed: 4
 --- !u!114 &1372944636731528839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,3 +304,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3533828615794455718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5063366915178251487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be86478fa3dac0e4aad223d362d02045, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pos1: {fileID: 2970539623779158917}
+  pos2: {fileID: 2444242223305006721}
+  speed: 3
+  player: {fileID: 0}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  offset: 0
+  et: 2

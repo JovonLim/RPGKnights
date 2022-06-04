@@ -193,7 +193,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 21106412}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 31.57, y: -18.4, z: 0}
+  m_LocalPosition: {x: 31.82, y: -19.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -587,7 +587,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.0192308, y: 1}
+    m_SensorSize: {x: 2.0233517, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -651,6 +651,14 @@ PrefabInstance:
       propertyPath: damage
       value: 3.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1324590620365905125, guid: fa5358d2fd6eba6448b798675f0cf055, type: 3}
+      propertyPath: pos1
+      value: 
+      objectReference: {fileID: 1095154486}
+    - target: {fileID: 1324590620365905125, guid: fa5358d2fd6eba6448b798675f0cf055, type: 3}
+      propertyPath: pos2
+      value: 
+      objectReference: {fileID: 21106413}
     - target: {fileID: 2275436717798606324, guid: fa5358d2fd6eba6448b798675f0cf055, type: 3}
       propertyPath: Defense
       value: 1.5
@@ -1038,7 +1046,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 630835989}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.87, y: -2.63, z: 0}
+  m_LocalPosition: {x: -9.1, y: -4.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1974,7 +1982,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 860620834}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.75, y: -2.63, z: 0}
+  m_LocalPosition: {x: 7.78, y: -3.72, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2270,7 +2278,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1095154485}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.86, y: -18.4, z: 0}
+  m_LocalPosition: {x: 16.88, y: -19.41, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2441,6 +2449,14 @@ PrefabInstance:
       propertyPath: damage
       value: 3.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1324590620365905125, guid: fa5358d2fd6eba6448b798675f0cf055, type: 3}
+      propertyPath: pos1
+      value: 
+      objectReference: {fileID: 630835990}
+    - target: {fileID: 1324590620365905125, guid: fa5358d2fd6eba6448b798675f0cf055, type: 3}
+      propertyPath: pos2
+      value: 
+      objectReference: {fileID: 860620835}
     - target: {fileID: 2275436717798606324, guid: fa5358d2fd6eba6448b798675f0cf055, type: 3}
       propertyPath: Defense
       value: 1.5

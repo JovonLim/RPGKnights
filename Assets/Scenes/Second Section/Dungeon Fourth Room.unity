@@ -517,7 +517,7 @@ Transform:
   - {fileID: 1231424308}
   - {fileID: 1439983140}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &248316109
 GameObject:
@@ -28779,7 +28779,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4901881530744513867, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4901881530744513867, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
       propertyPath: m_AnchorMax.x
@@ -29361,22 +29361,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PatrollingImp
       objectReference: {fileID: 0}
-    - target: {fileID: 7675277322311680728, guid: 69b1c20c11765d6488add6fb94ccb6ab, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -5.07
-      objectReference: {fileID: 0}
-    - target: {fileID: 7675277322311680728, guid: 69b1c20c11765d6488add6fb94ccb6ab, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.39
-      objectReference: {fileID: 0}
-    - target: {fileID: 7675277323531777989, guid: 69b1c20c11765d6488add6fb94ccb6ab, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 9.42
-      objectReference: {fileID: 0}
-    - target: {fileID: 7675277323531777989, guid: 69b1c20c11765d6488add6fb94ccb6ab, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.28
-      objectReference: {fileID: 0}
     - target: {fileID: 8059119767111808545, guid: 69b1c20c11765d6488add6fb94ccb6ab, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -29770,18 +29754,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1121459560}
     m_Modifications:
-    - target: {fileID: 141634868, guid: 67c3a17a620c9a64d9619da5afb4a055, type: 3}
-      propertyPath: damage
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 141634869, guid: 67c3a17a620c9a64d9619da5afb4a055, type: 3}
-      propertyPath: Defense
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 141634869, guid: 67c3a17a620c9a64d9619da5afb4a055, type: 3}
-      propertyPath: startingHealth
-      value: 30
-      objectReference: {fileID: 0}
     - target: {fileID: 4677545481968304326, guid: 67c3a17a620c9a64d9619da5afb4a055, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -29830,18 +29802,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: NightBorne
       objectReference: {fileID: 0}
-    - target: {fileID: 7234636641531540568, guid: 67c3a17a620c9a64d9619da5afb4a055, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8493307989576101184, guid: 67c3a17a620c9a64d9619da5afb4a055, type: 3}
+    - target: {fileID: 8413793719422780576, guid: 67c3a17a620c9a64d9619da5afb4a055, type: 3}
       propertyPath: pos1
       value: 
-      objectReference: {fileID: 2092411415}
-    - target: {fileID: 8493307989576101184, guid: 67c3a17a620c9a64d9619da5afb4a055, type: 3}
+      objectReference: {fileID: 1963594279}
+    - target: {fileID: 8413793719422780576, guid: 67c3a17a620c9a64d9619da5afb4a055, type: 3}
       propertyPath: pos2
       value: 
-      objectReference: {fileID: 1963594279}
+      objectReference: {fileID: 2092411415}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67c3a17a620c9a64d9619da5afb4a055, type: 3}
 --- !u!1 &8413793719422780575 stripped
