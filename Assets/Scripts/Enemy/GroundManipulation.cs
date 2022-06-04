@@ -2,22 +2,32 @@ using UnityEngine;
 
 public class GroundManipulation : MonoBehaviour
 {
-    [SerializeField] private float castCooldown;
-    [SerializeField] private float attackRange;
-
+    // References
     [SerializeField] private float colliderDistance;
     [SerializeField] private BoxCollider2D boxCollider;
     [SerializeField] private LayerMask playerLayer;
     [SerializeField] private GameObject dissappearingGround;
+    private Animator anima;
 
+    // Cast Spell
+    [SerializeField] private float castCooldown;
+    [SerializeField] private float attackRange;
     [SerializeField] private float spellDuration;
     private float spellActiveDuration = 0;
 
     private static bool casting = false;
+    private float castCooldownTimer = float.MaxValue;
 
-    private Animator anima;
+    // Ranged Attacks
+    [SerializeField] private Transform projectileLaunchPoint;
+    [SerializeField] GameObject prefab = null;
 
-    private float spellCooldownTimer = float.MaxValue;
+    [SerializeField]
+    private GameObject Prefab
+    {
+        get { return this.prefab; }
+        set { this.prefab = value; }
+    }
 
     private void Awake()
     {
@@ -27,29 +37,28 @@ public class GroundManipulation : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-
-        if (casting && spellActiveDuration < spellDuration)
+        
+        if (casting)
         {
+            castCooldownTimer = 0;
             spellActiveDuration += Time.deltaTime;
-            spellCooldownTimer = 0;
-        }
-        else if (casting && spellActiveDuration >= spellDuration)
-        {
-            spellActiveDuration = 0;
-            FinishSpell();
-            spellCooldownTimer += Time.deltaTime;
+            if (spellActiveDuration > spellDuration)
+            {
+                FinishSpell();
+            }
         }
         else
         {
+            castCooldownTimer += Time.deltaTime;
+
             if (PlayerInSight())
             {
-                if (spellCooldownTimer >= castCooldown)
+                if (castCooldownTimer > castCooldown)
                 {
-                    spellCooldownTimer = 0;
                     anima.SetTrigger("cast");
                 }
             }
-        }
+        } 
     }
 
     private void CastSpell()
@@ -61,7 +70,16 @@ public class GroundManipulation : MonoBehaviour
     private void FinishSpell()
     {
         casting = false;
+        spellActiveDuration = 0;
         dissappearingGround.SetActive(true);
+    }
+
+    private void LaunchProjectile()
+    {
+        // Launch the projectile
+        GameObject projectile = Instantiate(this.prefab, projectileLaunchPoint.position, Quaternion.identity);
+        projectile.transform.localScale = new Vector3(projectileLaunchPoint.transform.localScale.x, 1, 1);
+        projectile.GetComponent<EnemyProjectile>().ActivateProjectile();
     }
 
     private bool PlayerInSight()
