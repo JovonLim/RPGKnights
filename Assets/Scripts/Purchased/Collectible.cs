@@ -10,6 +10,7 @@ public class Collectible : MonoBehaviour
     [SerializeField] private GameObject purchaseDialog;
     [SerializeField] private GameObject insufficientFunds;
     [SerializeField] private int cost;
+    [SerializeField] private float amt;
 
     public enum Stat
     {
@@ -63,19 +64,19 @@ public class Collectible : MonoBehaviour
             {
                 case Stat.Attack:
                 {
-                        player.GetComponent<PlayerAttack>().AddAttack();
+                        player.GetComponent<PlayerAttack>().AddAttack(amt);
                         break;
                 }
 
                 case Stat.Defense:
                     {
-                        player.GetComponent<Health>().AddDefense();
+                        player.GetComponent<Health>().AddDefense(amt);
                         break;
                     }
 
                 case Stat.Health:
                     {
-                        player.GetComponent<Health>().AddHealth();
+                        player.GetComponent<Health>().AddHealth(amt);
                         break;
                     }
             }

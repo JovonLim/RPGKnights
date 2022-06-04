@@ -81,6 +81,7 @@ public class Health : MonoBehaviour
                 // For player
                 if (GetComponent<PlayerMovement>() != null)
                 {
+                    GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
                     GetComponent<PlayerMovement>().enabled = false;
                     GetComponent<PlayerInteraction>().Respawn();
                 }
@@ -103,14 +104,14 @@ public class Health : MonoBehaviour
         return isDead;
     }
 
-    public void AddHealth()
+    public void AddHealth(float amt)
     {
-        startingHealth += 1;
-        currentHealth = Mathf.Clamp(currentHealth + 1, 0, startingHealth);
+        startingHealth += amt;
+        currentHealth = Mathf.Clamp(currentHealth + amt, 0, startingHealth);
     }
 
-    public void AddDefense()
+    public void AddDefense(float amt)
     {
-        Defense += 0.5f;
+        Defense += amt;
     }
 }

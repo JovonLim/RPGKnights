@@ -123,9 +123,9 @@ public class PlayerAttack : MonoBehaviour
         projectile.GetComponent<Projectile>().SetDirection(Mathf.Sign(transform.localScale.x));
     }
 
-    public void AddAttack()
+    public void AddAttack(float amt)
     {
-        attackDamage += 1;
+        attackDamage += amt;
     }
 
     private void CastSpell()
