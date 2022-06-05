@@ -13,21 +13,21 @@ public class MeleeAndRanged : MonoBehaviour
     [SerializeField] private float rangedColliderDistance;
     [SerializeField] private BoxCollider2D boxCollider;
     [SerializeField] private LayerMask playerLayer;
-    [SerializeField] private GameObject prefab;
+    [SerializeField] protected GameObject prefab;
 
-    private float attackCooldownTimer = float.MaxValue;
-    private Animator anima;
+    protected float attackCooldownTimer = float.MaxValue;
+    protected Animator anima;
     private Health playerHealth;
     private GameObject player;
 
 
-    private void Awake()
+    public virtual void Awake()
     {
         anima = GetComponent<Animator>();
         
     }
 
-    private void Update()
+    public virtual void Update()
     {
         attackCooldownTimer += Time.deltaTime;
 
@@ -97,7 +97,7 @@ public class MeleeAndRanged : MonoBehaviour
         return hit.collider != null;
     }
 
-    private void LaunchProjectile()
+    public virtual void LaunchProjectile()
     {
         attackCooldownTimer = 0;
 

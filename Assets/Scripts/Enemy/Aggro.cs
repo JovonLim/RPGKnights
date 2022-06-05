@@ -16,10 +16,12 @@ public class Aggro : MonoBehaviour
     ArcaneArcher attack;
     MeleeAndRanged attack1;
     MeleeEnemy attack2;
+    Golem attack3;
+    RangeEnemy attack4;
 
     public enum EnemyType
     {
-        archer, meleeAndRanged, melee,
+        archer, meleeAndRanged, melee, ranged,
     }
 
     public EnemyType et;
@@ -33,10 +35,21 @@ public class Aggro : MonoBehaviour
                 attack = GetComponent<ArcaneArcher>();
                 break;
             case EnemyType.meleeAndRanged:
-                attack1 = GetComponent<MeleeAndRanged>();
+                {
+                    if (GetComponent<MeleeAndRanged>() != null)
+                    {
+                        attack1 = GetComponent<MeleeAndRanged>();
+                    } else
+                    {
+                        attack3 = GetComponent<Golem>();
+                    }
+                }
                 break;
             case EnemyType.melee:
                 attack2 = GetComponent<MeleeEnemy>();
+                break;
+            case EnemyType.ranged:
+                attack4 = GetComponent<RangeEnemy>();
                 break;
         }
         
@@ -65,8 +78,32 @@ public class Aggro : MonoBehaviour
     
                 case EnemyType.meleeAndRanged:
                     {
-
-                        if (attack1.PlayerInRangedSight())
+                        if (GetComponent<MeleeAndRanged>() != null)
+                        {
+                            if (attack1.PlayerInRangedSight())
+                            {
+                                OnDisable();
+                            }
+                            else
+                            {
+                                Move();
+                            }
+                        } else
+                        {
+                            if (attack3.PlayerInRangedSight())
+                            {
+                                OnDisable();
+                            }
+                            else
+                            {
+                                Move();
+                            }
+                        }        
+                        break;
+                    }
+                case EnemyType.melee:
+                    {
+                        if (attack2.PlayerInSight())
                         {
                             OnDisable();
                         }
@@ -76,9 +113,9 @@ public class Aggro : MonoBehaviour
                         }
                         break;
                     }
-                case EnemyType.melee:
+                case EnemyType.ranged:
                     {
-                        if (attack2.PlayerInSight())
+                        if (attack4.PlayerInSight())
                         {
                             OnDisable();
                         }

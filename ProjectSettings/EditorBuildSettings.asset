@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Second Section/Checkpoint room 2.unity
     guid: 5fa95ab90b7de32438e34f15e0bb94ce
+  - enabled: 1
+    path: Assets/Scenes/Third Section/Seventh Room.unity
+    guid: 145c63b1b9796e245b01e121463c4d58
   m_configObjects: {}
