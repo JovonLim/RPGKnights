@@ -15,9 +15,9 @@ public class OhLordZeus : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PlayerInteraction.questActive && PlayerInteraction.WizardQuest != null)
+        if (PlayerQuestInteraction.questActive && PlayerQuestInteraction.WizardQuest != null)
         {
-            if (PlayerInteraction.WizardQuest.questNum == 2)
+            if (PlayerQuestInteraction.WizardQuest.questNum == 2)
             {
                 bossPatrol.SetActive(true);
                 GetComponent<QuestProgress>().enabled = true;

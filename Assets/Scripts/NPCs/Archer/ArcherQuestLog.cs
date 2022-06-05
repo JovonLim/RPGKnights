@@ -71,19 +71,19 @@ public class ArcherQuestLog : MonoBehaviour
 
     public void AcceptQuest()
     {
-        if (!PlayerInteraction.questActive && !selected.isCompleted)
+        if (!PlayerQuestInteraction.questActive && !selected.isCompleted)
         {
             selected.myQuestScript.AddActive();
-            PlayerInteraction.ArcherQuest = selected;
-            PlayerInteraction.questActive = true;
+            PlayerQuestInteraction.ArcherQuest = selected;
+            PlayerQuestInteraction.questActive = true;
         }
     }
 
     public void Untrack()
     {
         selected.myQuestScript.RemoveActive();
-        PlayerInteraction.ArcherQuest = null;
-        PlayerInteraction.questActive = false;
+        PlayerQuestInteraction.ArcherQuest = null;
+        PlayerQuestInteraction.questActive = false;
     }
 }
 
