@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6693622475295914370}
   - component: {fileID: 5237767792496804644}
   - component: {fileID: 1723811166520743689}
+  - component: {fileID: 8696637574657702747}
   m_Layer: 0
   m_Name: Water Ball
   m_TagString: PlayerProjectile
@@ -184,3 +185,20 @@ MonoBehaviour:
   spell: {fileID: 11400000, guid: 42661442cafe4c04abe06013b2b1720b, type: 2}
   dir: 1
   offset: 0
+--- !u!114 &8696637574657702747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5885374814778964117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0264fec4da8381b46a537b40540c8736, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 3
+  startTime: 0
+  repeatTime: 0
+  enemy: {fileID: 0}
+  speedToReduce: 0.5

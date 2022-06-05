@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -2441639399057735895}
   - component: {fileID: 1120428453790646362}
   - component: {fileID: 7173180858836972245}
+  - component: {fileID: 5622550382262447257}
   m_Layer: 0
   m_Name: Ice
   m_TagString: PlayerProjectile
@@ -161,7 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spell: {fileID: 11400000, guid: 58ffb52094b18e84f8e6ccbc4ad0f15b, type: 2}
-  dir: 0
+  dir: 1
   offset: 0
 --- !u!50 &7173180858836972245
 Rigidbody2D:
@@ -184,3 +185,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5622550382262447257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3581030338183362412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8de7312760ba43540a0a5a7bb450becc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 3
+  startTime: 0
+  repeatTime: 0
+  enemy: {fileID: 0}
+  atkSpeedToSlow: 0.2

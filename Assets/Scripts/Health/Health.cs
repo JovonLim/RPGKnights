@@ -65,14 +65,6 @@ public class Health : MonoBehaviour
                     GetComponent<CoinSpawn>().Spawn();
                     isDead = true;
                 }
-
-                if (GetComponent<ArcaneArcher>() != null)
-                {
-                    GetComponent<ArcaneArcher>().enabled = false;
-                    GetComponent<BoxCollider2D>().enabled = false;
-                    GetComponent<CoinSpawn>().Spawn();
-                    isDead = true;
-                }
                 if (GetComponent<Aggro>() != null)
                 {
                     GetComponentInParent<Aggro>().enabled = false;

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -4560485071450069571}
   - component: {fileID: -3942976794467528528}
   - component: {fileID: -2377031720845288826}
+  - component: {fileID: 5552556212355987248}
   m_Layer: 0
   m_Name: Thunder Projectile1
   m_TagString: PlayerProjectile
@@ -161,7 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spell: {fileID: 11400000, guid: f7fd512c023a2994b80cfc962104f724, type: 2}
-  dir: 0
+  dir: 1
   offset: 0
 --- !u!50 &-2377031720845288826
 Rigidbody2D:
@@ -184,3 +185,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5552556212355987248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5004900249799553810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 058764674cc723f449027306f6c54ff7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 1.5
+  startTime: 0
+  repeatTime: 0
+  enemy: {fileID: 0}

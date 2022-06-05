@@ -39,7 +39,7 @@ public class Golem : MeleeAndRanged
 
     public override void LaunchProjectile()
     {
-        GameObject projectile = Instantiate(laser, projectileLaunchPoint.position, Quaternion.identity);
+        GameObject projectile = Instantiate(prefab, projectileLaunchPoint.position, Quaternion.identity);
         projectile.transform.localScale = new Vector3(transform.localScale.x, 1, 1);
         projectile.GetComponent<EnemyProjectile>().ActivateProjectile();
     }

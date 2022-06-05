@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4509507476311784674}
   - component: {fileID: 4509507476311784675}
   - component: {fileID: 4509507476311784676}
+  - component: {fileID: 3690563969067005201}
   m_Layer: 0
   m_Name: Water Tornado
   m_TagString: PlayerProjectile
@@ -184,3 +185,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spell: {fileID: 11400000, guid: 47203f8297f06b949a4c37a458d74677, type: 2}
+--- !u!114 &3690563969067005201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509507476311784677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0264fec4da8381b46a537b40540c8736, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 3
+  startTime: 0
+  repeatTime: 0
+  enemy: {fileID: 0}
+  speedToReduce: 1.5

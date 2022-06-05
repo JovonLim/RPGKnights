@@ -260,7 +260,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 2.045105, y: 0}
+  m_AnchoredPosition: {x: 2.045166, y: 0}
   m_SizeDelta: {x: -254.9442, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &44619733
@@ -22651,7 +22651,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1400219014, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 3.8884888
+      value: 3.8884277
       objectReference: {fileID: 0}
     - target: {fileID: 4901881530744513867, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
       propertyPath: m_Pivot.x
@@ -22740,6 +22740,10 @@ PrefabInstance:
     - target: {fileID: 5405677235792910029, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
       propertyPath: m_Name
       value: RoomObjective
+      objectReference: {fileID: 0}
+    - target: {fileID: 7980735511706005410, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 3.8884277
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
@@ -23739,7 +23743,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.0233517, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -23885,6 +23889,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2070246661}
     m_Modifications:
+    - target: {fileID: 1697457261, guid: 8257714fe39a9aa499d89fd62e621600, type: 3}
+      propertyPath: et
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1697457261, guid: 8257714fe39a9aa499d89fd62e621600, type: 3}
       propertyPath: dir
       value: -1

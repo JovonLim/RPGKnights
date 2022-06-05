@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4109107411370081661}
   - component: {fileID: 3730862597052422319}
   - component: {fileID: -4720478845776608716}
+  - component: {fileID: 9147722609183497938}
   m_Layer: 0
   m_Name: Water Splash
   m_TagString: PlayerProjectile
@@ -183,3 +184,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &9147722609183497938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2609171472447024909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0264fec4da8381b46a537b40540c8736, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 3
+  startTime: 0
+  repeatTime: 0
+  enemy: {fileID: 0}
+  speedToReduce: 0.5

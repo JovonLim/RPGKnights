@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 157699722}
   - component: {fileID: 157699721}
   - component: {fileID: 4385931702680187972}
+  - component: {fileID: 9190054385912241488}
   m_Layer: 0
   m_Name: Water Spike
   m_TagString: PlayerProjectile
@@ -183,3 +184,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &9190054385912241488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5491167951348417780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0264fec4da8381b46a537b40540c8736, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 3
+  startTime: 0
+  repeatTime: 0
+  enemy: {fileID: 0}
+  speedToReduce: 1.5

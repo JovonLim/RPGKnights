@@ -45,6 +45,7 @@ public class ProjectileBased : Spell
             if (GameObject.Find("Arcane Archer") == null || collison.gameObject != GameObject.Find("Arcane Archer"))
             {
                 hit = true;
+                GetComponent<StatusEffects>().enemy = collison.gameObject;
                 boxCollider.enabled = false;
                 collison.GetComponent<Health>().TakeDamage(spell.damage);
                 anima.SetTrigger("explode");
