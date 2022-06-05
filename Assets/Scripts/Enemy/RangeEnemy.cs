@@ -67,7 +67,7 @@ public class RangeEnemy : MonoBehaviour
 
         // Launch the projectile
         GameObject fireball = Instantiate(this.prefab, projectileLaunchPoint.position, Quaternion.identity);
-        fireball.transform.localScale = new Vector3(projectileLaunchPoint.transform.localScale.x, 1, 1);
+        fireball.transform.localScale = new Vector3(transform.localScale.x, 1, 1);
         fireball.GetComponent<EnemyProjectile>().ActivateProjectile();
     }
 }

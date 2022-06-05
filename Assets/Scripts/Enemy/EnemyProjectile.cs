@@ -49,6 +49,7 @@ public class EnemyProjectile : EnemyDamage
 
             if (anima != null)
             {
+                if (anima)
                 anima.SetTrigger("explode");
                 StartCoroutine(Impact());
             }

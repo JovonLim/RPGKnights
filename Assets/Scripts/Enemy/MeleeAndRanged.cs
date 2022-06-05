@@ -13,21 +13,21 @@ public class MeleeAndRanged : MonoBehaviour
     [SerializeField] private float rangedColliderDistance;
     [SerializeField] private BoxCollider2D boxCollider;
     [SerializeField] private LayerMask playerLayer;
-    [SerializeField] private GameObject prefab;
+    [SerializeField] protected GameObject prefab;
 
-    private float attackCooldownTimer = float.MaxValue;
-    private Animator anima;
+    protected float attackCooldownTimer = float.MaxValue;
+    protected Animator anima;
     private Health playerHealth;
     private GameObject player;
 
 
-    private void Awake()
+    public virtual void Awake()
     {
         anima = GetComponent<Animator>();
         
     }
 
-    private void Update()
+    public virtual void Update()
     {
         attackCooldownTimer += Time.deltaTime;
 
@@ -48,12 +48,9 @@ public class MeleeAndRanged : MonoBehaviour
                 
             }
         }
-
-       
-
     }
 
-    private bool PlayerInMeleeSight()
+    public bool PlayerInMeleeSight()
     {
         RaycastHit2D hit = Physics2D.BoxCast(boxCollider.bounds.center + transform.right * meleeAttackRange * transform.localScale.x * meleeColliderDistance,
             new Vector3(boxCollider.bounds.size.x * meleeAttackRange, boxCollider.bounds.size.y, boxCollider.bounds.size.z),
@@ -97,7 +94,7 @@ public class MeleeAndRanged : MonoBehaviour
         return hit.collider != null;
     }
 
-    private void LaunchProjectile()
+    public virtual void LaunchProjectile()
     {
         attackCooldownTimer = 0;
 
@@ -105,6 +102,4 @@ public class MeleeAndRanged : MonoBehaviour
         GameObject spell = Instantiate(this.prefab, new Vector2(player.transform.position.x, player.transform.position.y + 1.2f), Quaternion.identity);
         spell.GetComponent<BringerOfDeathSpell>().ActivateProjectile();
     }
-
-
 }
