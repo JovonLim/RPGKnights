@@ -10,10 +10,10 @@ public class PlayerMovement : MonoBehaviour
     private BoxCollider2D boxCollider;
     private float horizontalInput;
     private bool canDouble = false;
-    private bool firstTime = true;
     private bool isFalling = false;
-    private Vector3 previousPosition;
-    private float highestPosition;
+    private float jumpDelay = 0.5f;
+    private float jumpCondition = 0;
+    private float fallTimer = 0;
     
     
     // Awake is called when the script instance is being loaded
@@ -23,7 +23,6 @@ public class PlayerMovement : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         anima = GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
-        previousPosition = transform.position;
     }
 
     // Update is called once per frame
@@ -40,10 +39,18 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = new Vector3(-1, 1, 1);
 
         // Player jumping
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded())
+        if (isGrounded())
         {
-            Jump();
-            canDouble = true;
+            jumpCondition = jumpDelay;
+        }
+        if (jumpCondition > 0)
+        {
+            jumpCondition -= Time.deltaTime;
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Jump();
+                canDouble = true;
+            }
         } else if (Input.GetKeyDown(KeyCode.Space) && canDouble)
         {
             Jump();
@@ -54,23 +61,23 @@ public class PlayerMovement : MonoBehaviour
 
         if (!isGrounded())
         {
-            if (transform.position.y < previousPosition.y && firstTime)
+            isFalling = true;
+            if (body.velocity.y < 0)
             {
-                firstTime = false;
-                isFalling = true;
-                highestPosition = transform.position.y;
+                fallTimer += Time.deltaTime;
             }
-            previousPosition = transform.position;
-        }
-
-        if (isGrounded() && isFalling)
+            else
+            {
+                fallTimer = 0;
+            }
+        } else if (isGrounded() && isFalling)
         {
-            if (highestPosition - transform.position.y > fallThreshold)
+            if (fallTimer > 0.6f)
             {
                 fallDamage();
+                isFalling = false;
+                fallTimer = 0;
             }
-            isFalling = false;
-            firstTime = true;
         }
 
             

@@ -3,20 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerInteraction : MonoBehaviour
+public class PlayerDeath : MonoBehaviour
 {
-    public static bool questActive;
-
-    public static Quest ArcherQuest;
-    public static Quest WizardQuest;
     // Start is called before the first frame update
     void Start()
     {
-        questActive = false;
         
-
     }
 
+    // Update is called once per frame
     void Update()
     {
         
@@ -44,6 +39,4 @@ public class PlayerInteraction : MonoBehaviour
 
         SceneManager.LoadScene(0);
     }
-
 }
-

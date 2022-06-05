@@ -83,7 +83,7 @@ public class Health : MonoBehaviour
                 {
                     GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
                     GetComponent<PlayerMovement>().enabled = false;
-                    GetComponent<PlayerInteraction>().Respawn();
+                    GetComponent<PlayerDeath>().Respawn();
                 }
                     
 
