@@ -2,9 +2,8 @@ using UnityEngine;
 
 public class RangeEnemy : MonoBehaviour
 {
-    [SerializeField] private float attackSpeed;
+    
     [SerializeField] private float attackRange;
-
     [SerializeField] private float colliderDistance;
     [SerializeField] private BoxCollider2D boxCollider;
     [SerializeField] private LayerMask playerLayer;
@@ -20,11 +19,12 @@ public class RangeEnemy : MonoBehaviour
     }
 
     private float attackCooldownTimer = float.MaxValue;
+    public float attackSpeed;
 
     // Reference variables
-    private Animator anima;
+    protected Animator anima;
 
-    private void Awake()
+    public virtual void Awake()
     {
         anima = GetComponent<Animator>();
     }

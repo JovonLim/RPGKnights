@@ -5,23 +5,20 @@ using UnityEngine;
 public class Aggro : MonoBehaviour
 {
     [SerializeField] Transform pos1;
-    [SerializeField] Transform pos2;
-    [SerializeField] private float speed;
+    [SerializeField] Transform pos2;   
     [SerializeField] GameObject player;
     [SerializeField] private LayerMask playerLayer;
     [SerializeField] private float offset;
-    
+    public float speed;
 
     Animator anima;
-    ArcaneArcher attack;
     MeleeAndRanged attack1;
     MeleeEnemy attack2;
-    Golem attack3;
-    RangeEnemy attack4;
+    RangeEnemy attack3;
 
     public enum EnemyType
     {
-        archer, meleeAndRanged, melee, ranged,
+        meleeAndRanged, melee, ranged,
     }
 
     public EnemyType et;
@@ -31,25 +28,16 @@ public class Aggro : MonoBehaviour
         anima = GetComponent<Animator>();
         switch (et)
         {
-            case EnemyType.archer:
-                attack = GetComponent<ArcaneArcher>();
-                break;
             case EnemyType.meleeAndRanged:
                 {
-                    if (GetComponent<MeleeAndRanged>() != null)
-                    {
-                        attack1 = GetComponent<MeleeAndRanged>();
-                    } else
-                    {
-                        attack3 = GetComponent<Golem>();
-                    }
+                attack1 = GetComponent<MeleeAndRanged>();       
                 }
                 break;
             case EnemyType.melee:
                 attack2 = GetComponent<MeleeEnemy>();
                 break;
             case EnemyType.ranged:
-                attack4 = GetComponent<RangeEnemy>();
+                attack3 = GetComponent<RangeEnemy>();
                 break;
         }
         
@@ -63,23 +51,9 @@ public class Aggro : MonoBehaviour
         {
             switch (et)
             {
-                case EnemyType.archer:
-                    {
-                        if (attack.PlayerInSight())
-                        {
-                            OnDisable();
-                        }
-                        else
-                        {
-                            Move();
-                        }
-                        break;
-                    }
-    
+             
                 case EnemyType.meleeAndRanged:
-                    {
-                        if (GetComponent<MeleeAndRanged>() != null)
-                        {
+                    {  
                             if (attack1.PlayerInRangedSight())
                             {
                                 OnDisable();
@@ -87,18 +61,7 @@ public class Aggro : MonoBehaviour
                             else
                             {
                                 Move();
-                            }
-                        } else
-                        {
-                            if (attack3.PlayerInRangedSight())
-                            {
-                                OnDisable();
-                            }
-                            else
-                            {
-                                Move();
-                            }
-                        }        
+                            }                            
                         break;
                     }
                 case EnemyType.melee:
@@ -115,7 +78,7 @@ public class Aggro : MonoBehaviour
                     }
                 case EnemyType.ranged:
                     {
-                        if (attack4.PlayerInSight())
+                        if (attack3.PlayerInSight())
                         {
                             OnDisable();
                         }

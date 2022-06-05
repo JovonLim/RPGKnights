@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MeleeAndRanged : MonoBehaviour
 {
-    [SerializeField] private float attackSpeed;
+    
     [SerializeField] private float meleeAttackRange;
     [SerializeField] private float rangedAttackRange;
     [SerializeField] private float damage;
@@ -20,6 +20,7 @@ public class MeleeAndRanged : MonoBehaviour
     private Health playerHealth;
     private GameObject player;
 
+    public float attackSpeed;
 
     public virtual void Awake()
     {

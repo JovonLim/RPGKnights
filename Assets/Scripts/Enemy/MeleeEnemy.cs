@@ -3,7 +3,6 @@ using System.Collections;
 
 public class MeleeEnemy : MonoBehaviour
 {
-    [SerializeField] private float attackSpeed;
     [SerializeField] private float attackRange;
     [SerializeField] private float damage;
 
@@ -16,6 +15,7 @@ public class MeleeEnemy : MonoBehaviour
     // Reference variables
     private Animator anima;
     private Health playerHealth;
+    public float attackSpeed;
 
 
     private void Awake()
