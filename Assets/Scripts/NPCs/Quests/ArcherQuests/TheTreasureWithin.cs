@@ -15,9 +15,9 @@ public class TheTreasureWithin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PlayerInteraction.questActive && PlayerInteraction.ArcherQuest != null)
+        if (PlayerQuestInteraction.questActive && PlayerQuestInteraction.ArcherQuest != null)
         {
-            if (PlayerInteraction.ArcherQuest.questNum == 1)
+            if (PlayerQuestInteraction.ArcherQuest.questNum == 1)
             {
                 door.SetActive(true);
             }

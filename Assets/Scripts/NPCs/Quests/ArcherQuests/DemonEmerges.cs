@@ -17,9 +17,9 @@ public class DemonEmerges : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PlayerInteraction.questActive && PlayerInteraction.ArcherQuest != null)
+        if (PlayerQuestInteraction.questActive && PlayerQuestInteraction.ArcherQuest != null)
         {
-            if (PlayerInteraction.ArcherQuest.questNum == 0)
+            if (PlayerQuestInteraction.ArcherQuest.questNum == 0)
             {
                 door.SetActive(false);
                 bossPatrol.SetActive(true);

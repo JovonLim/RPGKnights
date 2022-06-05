@@ -9,9 +9,9 @@ public class TheRival : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PlayerInteraction.questActive && PlayerInteraction.ArcherQuest != null)
+        if (PlayerQuestInteraction.questActive && PlayerQuestInteraction.ArcherQuest != null)
         {
-            if (PlayerInteraction.ArcherQuest.questNum == 2)
+            if (PlayerQuestInteraction.ArcherQuest.questNum == 2)
             {
                 bossPatrol.SetActive(true);
                 GetComponent<QuestProgress>().enabled = true;

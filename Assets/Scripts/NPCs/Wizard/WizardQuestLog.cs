@@ -71,21 +71,21 @@ public class WizardQuestLog : MonoBehaviour
 
     public void AcceptQuest()
     {
-        if (!PlayerInteraction.questActive && !selected.isCompleted)
+        if (!PlayerQuestInteraction.questActive && !selected.isCompleted)
         {
             if (selected.questNum == 2 || selected.questNum == 3)
             {
                 if (Wizard.unlockedSkills)
                 {
                     selected.myQuestScript.AddActive();
-                    PlayerInteraction.WizardQuest = selected;
-                    PlayerInteraction.questActive = true;
+                    PlayerQuestInteraction.WizardQuest = selected;
+                    PlayerQuestInteraction.questActive = true;
                 }
             } else
             {
                 selected.myQuestScript.AddActive();
-                PlayerInteraction.WizardQuest = selected;
-                PlayerInteraction.questActive = true;
+                PlayerQuestInteraction.WizardQuest = selected;
+                PlayerQuestInteraction.questActive = true;
             }
             
         }
@@ -95,7 +95,7 @@ public class WizardQuestLog : MonoBehaviour
     public void Untrack()
     {
         selected.myQuestScript.RemoveActive();
-        PlayerInteraction.WizardQuest = null;
-        PlayerInteraction.questActive = false;
+        PlayerQuestInteraction.WizardQuest = null;
+        PlayerQuestInteraction.questActive = false;
     }
 }
