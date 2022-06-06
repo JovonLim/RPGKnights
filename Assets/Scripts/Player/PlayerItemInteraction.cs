@@ -16,7 +16,7 @@ public class PlayerItemInteraction : MonoBehaviour
     {
         if (DetectObject())
         {
-            detectedItem.GetComponent<Item>().beingInteracted();
+            detectedItem.GetComponent<Item>().BeingPickedUp();
         }
     }
 

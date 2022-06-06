@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
+[RequireComponent(typeof(BoxCollider2D))]
 public class Item: MonoBehaviour
 {
     public enum ItemType
@@ -11,13 +13,21 @@ public class Item: MonoBehaviour
     }
 
     public ItemType itemType;
-    public int amount;
     public string itemDescription;
-    
-    public void beingInteracted()
+    public UnityEvent consumeEvent;
+    public UnityEvent equipEvent;
+
+    private void Reset()
+    {
+        GetComponent<Collider2D>().isTrigger = true;
+        gameObject.layer = 11;
+    }
+    public void BeingPickedUp()
     {
         FindObjectOfType<Inventory>().AddItem(gameObject);
         gameObject.SetActive(false);
 
     }
+
+
 }

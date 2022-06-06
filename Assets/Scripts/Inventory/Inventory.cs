@@ -42,7 +42,7 @@ public class Inventory : MonoBehaviour
 
     private void UpdateUI()
     {
-        HideAll();
+        HideAllItems();
         for (int i = 0; i < itemList.Count; i++)
         {
             inventoryItemsImages[i].sprite = itemList[i].GetComponent<SpriteRenderer>().sprite;
@@ -50,11 +50,32 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    private void HideAll()
+    private void HideAllItems()
     {
-        foreach (var i in itemList)
+        foreach (var item in itemList)
         {
-            i.gameObject.SetActive(false);
+            item.gameObject.SetActive(false);
         }
+        HideItemInformationWindow();
+    }
+
+    public void ShowItemInformationWindow(int inventoryNum)
+    {
+        // Retrieve item name and item description
+        itemName.text = itemList[inventoryNum].name;
+        itemDescription.text = itemList[inventoryNum].GetComponent<Item>().itemDescription;
+
+        // Show the item information window and text
+        itemInformationWindow.SetActive(true);
+        itemName.gameObject.SetActive(true);
+        itemDescription.gameObject.SetActive(true);
+    }
+
+    public void HideItemInformationWindow()
+    {
+        // Hide the item information window and text
+        itemName.gameObject.SetActive(false);
+        itemDescription.gameObject.SetActive(false);
+        itemInformationWindow.SetActive(false);
     }
 }
