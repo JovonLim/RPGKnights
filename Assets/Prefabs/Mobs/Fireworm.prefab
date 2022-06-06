@@ -150,6 +150,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 5
   Defense: 0
+  MagicDefense: 0
+  minDmg: 0.5
   prefab: {fileID: 4997623711577133293, guid: 555ca5c4a4a0517489f53b54e10f9cee, type: 3}
 --- !u!114 &7294359234555779722
 MonoBehaviour:
@@ -163,7 +165,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b869d1458462277489cb1c541b097d49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackSpeed: 1
   attackRange: 20
   colliderDistance: 0.45
   boxCollider: {fileID: 7294359234555779729}
@@ -172,6 +173,7 @@ MonoBehaviour:
     m_Bits: 128
   projectileLaunchPoint: {fileID: 7294359234914807886}
   prefab: {fileID: 2285797850257833682, guid: 1446584ecd987204498d5d1f4cb5e715, type: 3}
+  attackSpeed: 1
 --- !u!114 &7294359234555779723
 MonoBehaviour:
   m_ObjectHideFlags: 0

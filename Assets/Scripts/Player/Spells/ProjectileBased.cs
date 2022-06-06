@@ -47,7 +47,7 @@ public class ProjectileBased : Spell
                 hit = true;
                 GetComponent<StatusEffects>().enemy = collison.gameObject;
                 boxCollider.enabled = false;
-                collison.GetComponent<Health>().TakeDamage(spell.damage);
+                collison.GetComponent<Health>().TakeMagicDamage(spell.damage);
                 anima.SetTrigger("explode");
                 StartCoroutine(Impact());
             }

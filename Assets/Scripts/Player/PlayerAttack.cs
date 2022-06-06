@@ -102,7 +102,7 @@ public class PlayerAttack : MonoBehaviour
         // Damage them
         foreach(Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<Health>().TakeDamage(attackDamage);
+            enemy.GetComponent<Health>().TakePhysicalDamage(attackDamage);
         }
       
 

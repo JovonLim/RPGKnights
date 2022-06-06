@@ -89,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (fallTimer > 0.6f)
                 {
-                    fallDamage();
+                    FallDamage();
                     isFalling = false;
                     fallTimer = 0;
                 }
@@ -129,9 +129,9 @@ public class PlayerMovement : MonoBehaviour
         return isGrounded();
     }
 
-    void fallDamage()
+    void FallDamage()
     {
-        GetComponent<Health>().TakeDamage(1);
+        GetComponent<Health>().TakeTrueDamage(1);
     }
 
 }

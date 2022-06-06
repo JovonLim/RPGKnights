@@ -2,16 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BringerOfDeathSpell :EnemyDamage
+public class BringerOfDeathSpell : Damage
 { 
     [SerializeField] private float projectileResetTime;
+    [SerializeField] private float enemyDamage;
     private float projectileLifetime;
-    private Collider2D boxCollider;
+    private GameObject player;
     private bool hit = false;
 
     private void Awake()
     {
-        boxCollider = GetComponent<BoxCollider2D>();
+        
     }
 
     public void ActivateProjectile()
@@ -28,12 +29,12 @@ public class BringerOfDeathSpell :EnemyDamage
             Deactivate();
     }
 
-    private new void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
             hit = true;
-            boxCollider = collision;
+            player = collision.gameObject;
         }
     }
 
@@ -53,7 +54,17 @@ public class BringerOfDeathSpell :EnemyDamage
     {
         if (hit)
         {
-            base.OnTriggerEnter2D(boxCollider);
+            if (damageType == Dmg.magic)
+            {
+                player.GetComponent<Health>().TakeMagicDamage(enemyDamage);
+            }
+            else if (damageType == Dmg.physical)
+            {
+                player.gameObject.GetComponent<Health>().TakePhysicalDamage(enemyDamage);
+            } else
+            {
+                player.gameObject.GetComponent<Health>().TakeTrueDamage(enemyDamage);
+            }
         }
         yield return new WaitForSeconds(2f);
         Deactivate();

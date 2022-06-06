@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleeAndRanged : MonoBehaviour
+public class MeleeAndRanged : Damage
 {
     
     [SerializeField] private float meleeAttackRange;
@@ -80,7 +80,16 @@ public class MeleeAndRanged : MonoBehaviour
     {
         if (PlayerInMeleeSight())
         {
-            playerHealth.TakeDamage(damage);
+            if (damageType == Dmg.physical)
+            {
+                playerHealth.TakePhysicalDamage(damage);
+            } else if (damageType == Dmg.magic)
+            {
+                playerHealth.TakeMagicDamage(damage);
+            } else
+            {
+                playerHealth.TakeTrueDamage(damage);
+            }         
         }
     }
 

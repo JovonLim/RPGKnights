@@ -206,14 +206,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1107989112}
     m_Modifications:
-    - target: {fileID: 4302673380021401458, guid: 0a3047bc7da38a543b2fbf1742ab17fc, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -11.66
-      objectReference: {fileID: 0}
-    - target: {fileID: 4302673380021401458, guid: 0a3047bc7da38a543b2fbf1742ab17fc, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.93
-      objectReference: {fileID: 0}
     - target: {fileID: 4302673381425180294, guid: 0a3047bc7da38a543b2fbf1742ab17fc, type: 3}
       propertyPath: m_Name
       value: PatrollingBringerOfDeath
@@ -221,10 +213,6 @@ PrefabInstance:
     - target: {fileID: 4302673381425180297, guid: 0a3047bc7da38a543b2fbf1742ab17fc, type: 3}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4302673381425180297, guid: 0a3047bc7da38a543b2fbf1742ab17fc, type: 3}
-      propertyPath: m_LocalScale.x
-      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 4302673381425180297, guid: 0a3047bc7da38a543b2fbf1742ab17fc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11607,6 +11595,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4296736515542544597, guid: 92f411271b723c949a411c7403a36f98, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5587785694126439929, guid: 92f411271b723c949a411c7403a36f98, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5761944521595046690, guid: 92f411271b723c949a411c7403a36f98, type: 3}
       propertyPath: spellToCast
       value: 
@@ -11617,11 +11613,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5761944522982870100, guid: 92f411271b723c949a411c7403a36f98, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 32.130493
+      value: 73.57
       objectReference: {fileID: 0}
     - target: {fileID: 5761944522982870100, guid: 92f411271b723c949a411c7403a36f98, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 42.92437
+      value: 16.93
       objectReference: {fileID: 0}
     - target: {fileID: 5761944522982870100, guid: 92f411271b723c949a411c7403a36f98, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11659,7 +11655,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4296736515542544597, guid: 92f411271b723c949a411c7403a36f98, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 92f411271b723c949a411c7403a36f98, type: 3}
 --- !u!1001 &1268913880
 PrefabInstance:

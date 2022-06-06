@@ -100,9 +100,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 670467be1e4e1144b8b856f22c036eec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyDamage: 0
+  damageType: 1
   projectileSpeed: 6
   projectileResetTime: 2
+  enemyDamage: 0
 --- !u!61 &4378411597898510547
 BoxCollider2D:
   m_ObjectHideFlags: 0

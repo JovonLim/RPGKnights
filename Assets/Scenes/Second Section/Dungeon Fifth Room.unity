@@ -6361,7 +6361,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 2.045105, y: 0}
+  m_AnchoredPosition: {x: 2.045166, y: 0}
   m_SizeDelta: {x: -254.9442, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &929699328 stripped
@@ -37944,6 +37944,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 30
   Defense: 1
+  MagicDefense: 2
+  minDmg: 0.5
   prefab: {fileID: 4997623711577133293, guid: 555ca5c4a4a0517489f53b54e10f9cee, type: 3}
 --- !u!114 &1564080592
 MonoBehaviour:
@@ -38290,7 +38292,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.8543516, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -39194,6 +39196,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 3
   Defense: 0
+  MagicDefense: 0
+  minDmg: 0
   prefab: {fileID: 4997623711577133293, guid: 555ca5c4a4a0517489f53b54e10f9cee, type: 3}
 --- !u!4 &5879279569797028960
 Transform:
@@ -39320,6 +39324,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1400219014, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 3.8884277
+      objectReference: {fileID: 0}
     - target: {fileID: 4901881530744513867, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -39407,6 +39415,10 @@ PrefabInstance:
     - target: {fileID: 5405677235792910029, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
       propertyPath: m_Name
       value: RoomObjective
+      objectReference: {fileID: 0}
+    - target: {fileID: 7980735511706005410, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 3.8884277
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}

@@ -1,11 +1,12 @@
 using UnityEngine;
 using System.Collections;
 
-public class EnemyProjectile : EnemyDamage
+public class EnemyProjectile : Damage
 {
 
     [SerializeField] private float projectileSpeed;
     [SerializeField] private float projectileResetTime;
+    [SerializeField] private float enemyDamage;
     private float projectileLifetime;
 
     private bool hit;
@@ -37,13 +38,23 @@ public class EnemyProjectile : EnemyDamage
             Deactivate();
     }
 
-    private new void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
 
             hit = true;
-            base.OnTriggerEnter2D(collision);
+            if (damageType == Dmg.magic)
+            {
+                collision.gameObject.GetComponent<Health>().TakeMagicDamage(enemyDamage);
+            } else if (damageType == Dmg.physical)
+            {
+                collision.gameObject.GetComponent<Health>().TakePhysicalDamage(enemyDamage);
+            } else
+            {
+                collision.gameObject.GetComponent<Health>().TakeTrueDamage(enemyDamage);
+            }
+            
             boxCollider.enabled = false;
 
 

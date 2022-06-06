@@ -177,10 +177,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pos1: {fileID: 6791184057617639767}
   pos2: {fileID: 6791184057328195699}
-  speed: 3
   player: {fileID: 0}
   playerLayer:
     serializedVersion: 2
     m_Bits: 128
   offset: 0
-  et: 3
+  speed: 3
+  et: 2

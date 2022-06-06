@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4302673380021401459}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -56.76, y: -1.07, z: 0}
+  m_LocalPosition: {x: -11.66, y: -0.93, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -56,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 4302673381425180294}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -17.171146, y: 1.8030082, z: 0.08931747}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1054568481242484183}
@@ -268,6 +268,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 40
   Defense: 3
+  MagicDefense: 4
+  minDmg: 0.5
   prefab: {fileID: 4997623711577133293, guid: 555ca5c4a4a0517489f53b54e10f9cee, type: 3}
 --- !u!114 &4302673381509020316
 MonoBehaviour:
@@ -281,7 +283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dfe0fb42cb95834e9d295d7e656bada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackSpeed: 1
+  damageType: 0
   meleeAttackRange: 2
   rangedAttackRange: 5
   damage: 3.5
@@ -292,6 +294,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   prefab: {fileID: 2896137453247173435, guid: 0997681c70fab0a42bbae29a701b9ece, type: 3}
+  attackSpeed: 1
 --- !u!114 &4302673380595227118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -321,10 +324,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pos1: {fileID: 4302673380021401458}
   pos2: {fileID: 4302673381709117161}
-  speed: 4
   player: {fileID: 0}
   playerLayer:
     serializedVersion: 2
     m_Bits: 128
   offset: 0.6
-  et: 1
+  speed: 4
+  et: 0

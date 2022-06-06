@@ -185,12 +185,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pos1: {fileID: 1340620391098439220}
   pos2: {fileID: 5491039648904927283}
-  speed: 3
   player: {fileID: 0}
   playerLayer:
     serializedVersion: 2
     m_Bits: 128
   offset: 0
+  speed: 3
   et: 1
 --- !u!114 &2258608998219809148
 MonoBehaviour:
@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd641ffece7d1574ba075137e7611cf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackSpeed: 1
+  damageType: 0
   meleeAttackRange: 1.3
   rangedAttackRange: 0
   damage: 0
@@ -215,6 +215,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   prefab: {fileID: 672089809645945372, guid: 2477cc56af1ab4349b5c95b7d9cebb44, type: 3}
+  attackSpeed: 1
   projectileLaunchPoint: {fileID: 2258608997025649410}
   specialLaunchPoint: {fileID: 2258608998219867782}
   laser: {fileID: 2959848216984340572, guid: 4cef54bed91fdce4fb899d1ba9413b13, type: 3}
@@ -250,8 +251,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2264e89b1ce83144b803079ab3a87fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 16
-  Defense: 0
+  startingHealth: 40
+  Defense: 3
+  MagicDefense: 6
+  minDmg: 0.5
   prefab: {fileID: 4997623711577133293, guid: 555ca5c4a4a0517489f53b54e10f9cee, type: 3}
 --- !u!114 &2258608998219809147
 MonoBehaviour:

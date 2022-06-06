@@ -11,7 +11,7 @@ public class Lava : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             collision.gameObject.transform.position = respawn.position;
-            collision.gameObject.GetComponent<Health>().TakeDamage(1);
+            collision.gameObject.GetComponent<Health>().TakeTrueDamage(1);
         }
     }
 }

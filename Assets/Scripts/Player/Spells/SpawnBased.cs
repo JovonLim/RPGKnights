@@ -32,7 +32,7 @@ public class SpawnBased : Spell
             if (GameObject.Find("Arcane Archer") == null || collison.gameObject != GameObject.Find("Arcane Archer"))
             {
                 boxCollider.enabled = false;
-                collison.GetComponent<Health>().TakeDamage(spell.damage);
+                collison.GetComponent<Health>().TakeMagicDamage(spell.damage);
                 anima.SetTrigger("explode");
                 StartCoroutine(Impact());
             }

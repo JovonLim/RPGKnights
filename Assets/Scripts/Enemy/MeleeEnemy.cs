@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class MeleeEnemy : MonoBehaviour
+public class MeleeEnemy : Damage
 {
     [SerializeField] private float attackRange;
     [SerializeField] private float damage;
@@ -63,7 +63,18 @@ public class MeleeEnemy : MonoBehaviour
     {
         if (PlayerInSight())
         {
-            playerHealth.TakeDamage(damage);
+            if (damageType == Dmg.physical)
+            {
+                playerHealth.TakePhysicalDamage(damage);
+            }
+            else if (damageType == Dmg.magic)
+            {
+                playerHealth.TakeMagicDamage(damage);
+            }
+            else
+            {
+                playerHealth.TakeTrueDamage(damage);
+            }
         }
     }
 }

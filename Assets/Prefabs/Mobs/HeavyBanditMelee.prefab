@@ -172,6 +172,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 10
   Defense: 0
+  MagicDefense: 0
+  minDmg: 0.5
   prefab: {fileID: 4997623711577133293, guid: 555ca5c4a4a0517489f53b54e10f9cee, type: 3}
 --- !u!114 &4427126337973238576
 MonoBehaviour:
@@ -185,7 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 147d19229acabb9409865fbec9004503, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackSpeed: 1
+  damageType: 1
   attackRange: 1
   damage: 2
   colliderDistance: -0.5
@@ -193,6 +195,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 128
+  attackSpeed: 1
 --- !u!114 &4427126337973238575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,9 +225,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pos1: {fileID: 0}
   pos2: {fileID: 0}
-  speed: 3
   player: {fileID: 0}
   playerLayer:
     serializedVersion: 2
     m_Bits: 128
-  et: 2
+  offset: 0
+  speed: 3
+  et: 1

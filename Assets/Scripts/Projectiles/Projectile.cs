@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class Projectile : MonoBehaviour
+public class Projectile : Damage
 {
     [SerializeField] private float projectileSpeed;
     private bool hit;
@@ -53,7 +53,18 @@ public class Projectile : MonoBehaviour
             {
                 hit = true;
                 boxCollider.enabled = false;
-                collison.GetComponent<Health>().TakeDamage(projectileDamage);
+                if (damageType == Dmg.physical)
+                {
+                    collison.GetComponent<Health>().TakePhysicalDamage(projectileDamage);
+                }
+                else if (damageType == Dmg.magic)
+                {
+                    collison.GetComponent<Health>().TakeMagicDamage(projectileDamage);
+                }
+                else
+                {
+                    collison.GetComponent<Health>().TakeTrueDamage(projectileDamage);
+                }          
                 anima.SetTrigger("explode");
                 StartCoroutine(Impact());
             }
