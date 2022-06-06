@@ -24,7 +24,7 @@ public class PlayerAttack : MonoBehaviour
 
     [SerializeField] private Transform projectileLaunchPoint;
     [SerializeField] private GameObject prefab;
-    [SerializeField] private Spell spellToCast;
+    public Spell spellToCast;
     
     
 

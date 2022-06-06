@@ -2,29 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OhLordZeus : MonoBehaviour
+public class FearsomeVortexUnlock : MonoBehaviour
 {
-    [SerializeField] GameObject bossPatrol;
-    bool unlocked;
+    private bool unlocked;
     // Start is called before the first frame update
     void Start()
     {
-        bossPatrol.SetActive(false);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (PlayerQuestInteraction.questActive && PlayerQuestInteraction.WizardQuest != null)
-        {
-            if (PlayerQuestInteraction.WizardQuest.questNum == 2)
-            {
-                bossPatrol.SetActive(true);
-                GetComponent<QuestProgress>().enabled = true;
-                GetComponent<QuestEnd>().enabled = true;
-            }
-        }
-
         if (!unlocked)
         {
             if (GetComponent<QuestEnd>().cleared)
@@ -34,6 +23,5 @@ public class OhLordZeus : MonoBehaviour
                 unlocked = true;
             }
         }
-
     }
 }

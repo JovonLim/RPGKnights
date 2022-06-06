@@ -133,7 +133,7 @@ TextureImporter:
         width: 114
         height: 114
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -141,6 +141,48 @@ TextureImporter:
       bones: []
       spriteID: 5e283b145df9acf4fb218a49b0aee962
       internalID: 350317460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_big_pieces_2
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 158
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dac943cd97f1b584da4afb76a2829334
+      internalID: 1549642643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_big_pieces_3
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 240
+        width: 40
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 018b2f224dc21834d8e8065cf326663d
+      internalID: -1720956710
       vertices: []
       indices: 
       edges: []
@@ -156,7 +198,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      ui_big_pieces_2: 1549642643
       ui_big_pieces_0: 284570442
+      ui_big_pieces_3: -1720956710
       ui_big_pieces_1: 350317460
   spritePackingTag: 
   pSDRemoveMatte: 0

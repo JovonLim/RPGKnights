@@ -8,7 +8,7 @@ public class QuestEnd : MonoBehaviour
     [SerializeField] GameObject questDialog;
     [SerializeField] GameObject endingText;
     [SerializeField] int coins;
-    bool cleared;
+    public bool cleared;
 
     public enum NPC
     {

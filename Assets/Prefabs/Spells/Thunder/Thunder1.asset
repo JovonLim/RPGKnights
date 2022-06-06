@@ -16,3 +16,7 @@ MonoBehaviour:
   speed: 7
   damage: 2
   activeTime: 2
+  spellName: Lightning Bolt
+  description: Shoots a lightning bolt that stuns enemies.
+  prerequisite: Purchase from shop.
+  id: 1

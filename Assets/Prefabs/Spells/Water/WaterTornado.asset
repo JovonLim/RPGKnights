@@ -16,3 +16,7 @@ MonoBehaviour:
   speed: 4
   damage: 4.5
   activeTime: 5
+  spellName: Water Torrent
+  description: Creates a devastating tornado that slows enemies speed down.
+  prerequisite: Clear the quest "The Fearsome Vortex".
+  id: 6

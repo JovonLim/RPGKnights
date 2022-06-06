@@ -16,3 +16,7 @@ MonoBehaviour:
   speed: 0
   damage: 5
   activeTime: 3
+  spellName: Water Spike
+  description: Launches a spike on top of enemies and slows their speed.
+  prerequisite: Purchase from shop.
+  id: 7

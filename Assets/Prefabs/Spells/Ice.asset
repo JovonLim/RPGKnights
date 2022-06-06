@@ -16,3 +16,7 @@ MonoBehaviour:
   speed: 6
   damage: 3
   activeTime: 5
+  spellName: Icicle
+  description: Shoots an icicle projectile that reduces enemies' attack speed temporarily.
+  prerequisite: Purchase From Shop.
+  id: 0

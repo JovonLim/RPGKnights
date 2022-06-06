@@ -16,3 +16,7 @@ MonoBehaviour:
   speed: 0
   damage: 5
   activeTime: 3
+  spellName: ThunderStrike
+  description: Call a thunderstrike on your enemies positions, stunning them.
+  prerequisite: Purchase from shop.
+  id: 4

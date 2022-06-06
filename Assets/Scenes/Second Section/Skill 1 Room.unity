@@ -587,7 +587,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.0233517, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -868,6 +868,7 @@ GameObject:
   - component: {fileID: 421759921}
   - component: {fileID: 421759920}
   - component: {fileID: 421759919}
+  - component: {fileID: 421759923}
   m_Layer: 0
   m_Name: QuestObjective
   m_TagString: Untagged
@@ -893,6 +894,7 @@ MonoBehaviour:
   questDialog: {fileID: 1500760814}
   endingText: {fileID: 135473240}
   coins: 100
+  cleared: 0
   npc: 0
 --- !u!114 &421759920
 MonoBehaviour:
@@ -938,6 +940,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &421759923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421759918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de68228c29de2e54497e6ca9b1091e38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &538040134
 GameObject:
   m_ObjectHideFlags: 0

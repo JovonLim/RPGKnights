@@ -16,3 +16,7 @@ MonoBehaviour:
   speed: 4
   damage: 4
   activeTime: 6
+  spellName: Lightning Bird
+  description: Shoots a lightning bird that stuns enemies.
+  prerequisite: Clear the quest "Oh Lord Zeus".
+  id: 5

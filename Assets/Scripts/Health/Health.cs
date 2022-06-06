@@ -27,25 +27,7 @@ public class Health : MonoBehaviour
         }
         GameObject damageInd = Instantiate(prefab, transform.position, Quaternion.identity);
         damageInd.transform.GetChild(0).GetComponent<TextMesh>().text = netDamage.ToString();
-
-        // Ensure the current health of player stays within 0 and the starting health
-        currentHealth = Mathf.Clamp(currentHealth - netDamage, 0, startingHealth);
-
-        if (currentHealth > 0)
-        {
-            // Player is hurt
-            anima.SetTrigger("hurt");
-        }
-        else
-        {
-            // Player will die once it has no health
-            if (!isDead)
-            {
-                OnDeath();
-                isDead = true;             
-            }
-            
-        }   
+        ApplyDmg(netDamage);
     }
 
     public void TakeMagicDamage(float damage)
@@ -58,10 +40,20 @@ public class Health : MonoBehaviour
         GameObject damageInd = Instantiate(prefab, transform.position, Quaternion.identity);
         damageInd.transform.GetChild(0).GetComponent<TextMesh>().color = Color.blue;
         damageInd.transform.GetChild(0).GetComponent<TextMesh>().text = netDamage.ToString();
+        ApplyDmg(netDamage);
+    }
 
-        // Ensure the current health of player stays within 0 and the starting health
-        currentHealth = Mathf.Clamp(currentHealth - netDamage, 0, startingHealth);
+    public void TakeTrueDamage(float damage)
+    {
+        GameObject damageInd = Instantiate(prefab, transform.position, Quaternion.identity);
+        damageInd.transform.GetChild(0).GetComponent<TextMesh>().color = Color.white;
+        damageInd.transform.GetChild(0).GetComponent<TextMesh>().text = damage.ToString();
+        ApplyDmg(damage); 
+    }
 
+    private void ApplyDmg(float damage)
+    {
+        currentHealth = Mathf.Clamp(currentHealth - damage, 0, startingHealth);
         if (currentHealth > 0)
         {
             // Player is hurt
@@ -78,28 +70,45 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void TakeTrueDamage(float damage)
+    private void OnDeath()
     {
-        GameObject damageInd = Instantiate(prefab, transform.position, Quaternion.identity);
-        damageInd.transform.GetChild(0).GetComponent<TextMesh>().color = Color.white;
-        damageInd.transform.GetChild(0).GetComponent<TextMesh>().text = damage.ToString();
+        anima.SetTrigger("die");
 
-        // Ensure the current health of player stays within 0 and the starting health
-        currentHealth = Mathf.Clamp(currentHealth - damage, 0, startingHealth);
-
-        if (currentHealth > 0)
+        // For enemy
+        if (GetComponent<MeleeEnemy>() != null)
         {
-            // Player is hurt
-            anima.SetTrigger("hurt");
+            GetComponent<MeleeEnemy>().enabled = false;
+            GetComponent<BoxCollider2D>().enabled = false;
+            GetComponent<CoinSpawn>().Spawn();
+
         }
-        else
+
+        if (GetComponent<RangeEnemy>() != null)
         {
-            // Player will die once it has no health
-            if (!isDead)
-            {
-                OnDeath();
-                isDead = true;
-            }
+            GetComponent<RangeEnemy>().enabled = false;
+            GetComponent<BoxCollider2D>().enabled = false;
+            GetComponent<CoinSpawn>().Spawn();
+
+        }
+
+        if (GetComponent<MeleeAndRanged>() != null)
+        {
+            GetComponent<MeleeAndRanged>().enabled = false;
+            GetComponent<BoxCollider2D>().enabled = false;
+            GetComponent<CoinSpawn>().Spawn();
+
+        }
+        if (GetComponent<Aggro>() != null)
+        {
+            GetComponentInParent<Aggro>().enabled = false;
+        }
+
+        // For player
+        if (GetComponent<PlayerMovement>() != null)
+        {
+            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+            GetComponent<PlayerMovement>().enabled = false;
+            GetComponent<PlayerDeath>().Respawn();
         }
     }
 
@@ -133,47 +142,5 @@ public class Health : MonoBehaviour
     {
         PhysicalDefense += amt;
         MagicDefense += amt;
-    }
-
-    private void OnDeath()
-    {
-        anima.SetTrigger("die");
-
-        // For enemy
-        if (GetComponent<MeleeEnemy>() != null)
-        {
-            GetComponent<MeleeEnemy>().enabled = false;
-            GetComponent<BoxCollider2D>().enabled = false;
-            GetComponent<CoinSpawn>().Spawn();
-            
-        }
-
-        if (GetComponent<RangeEnemy>() != null)
-        {
-            GetComponent<RangeEnemy>().enabled = false;
-            GetComponent<BoxCollider2D>().enabled = false;
-            GetComponent<CoinSpawn>().Spawn();
-           
-        }
-
-        if (GetComponent<MeleeAndRanged>() != null)
-        {
-            GetComponent<MeleeAndRanged>().enabled = false;
-            GetComponent<BoxCollider2D>().enabled = false;
-            GetComponent<CoinSpawn>().Spawn();
-            
-        }
-        if (GetComponent<Aggro>() != null)
-        {
-            GetComponentInParent<Aggro>().enabled = false;
-        }
-
-        // For player
-        if (GetComponent<PlayerMovement>() != null)
-        {
-            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-            GetComponent<PlayerMovement>().enabled = false;
-            GetComponent<PlayerDeath>().Respawn();
-        }
     }
 }
