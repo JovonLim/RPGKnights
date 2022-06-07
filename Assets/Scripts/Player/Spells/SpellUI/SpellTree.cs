@@ -8,6 +8,7 @@ public class SpellTree : SpellHolder
 {
     [SerializeField] private Image[] icons;
     [SerializeField] private Image[] activeSkills;
+    [SerializeField] private GameObject skillPanel;
     [SerializeField] private GameObject descriptionBox;
     [SerializeField] private GameObject skillBox;
     [SerializeField] private TMP_InputField slot;
@@ -15,13 +16,13 @@ public class SpellTree : SpellHolder
     [SerializeField] private TextMeshProUGUI description;  
     private static int selectedSkill;
     private bool changed = true;
-    
+    private bool display = false;
     
 
     // Start is called before the first frame update
     protected void Start()
     {
-       
+        skillPanel.SetActive(display);
         
         for (int i = 0; i < spells.Length; i++)
         {
@@ -35,9 +36,18 @@ public class SpellTree : SpellHolder
     protected override void Update()
     {
         base.Update();
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            TogglePanel();
+        }
         UpdateSkills();
     }
 
+    void TogglePanel()
+    {
+        display = !display;
+        skillPanel.SetActive(display);
+    }
     void UpdateSkills()
     {
         if (changed)

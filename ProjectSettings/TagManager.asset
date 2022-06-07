@@ -15,6 +15,7 @@ TagManager:
   - Chest
   - PlayerProjectile
   - Inventory
+  - item
   layers:
   - Default
   - TransparentFX

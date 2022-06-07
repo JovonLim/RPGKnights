@@ -8,7 +8,7 @@ public class UI : MonoBehaviour
     static UI instance;
     [SerializeField]
     private TextMeshProUGUI coinAmt;
-    public static int coins = 0;
+    public static int coins = 0; 
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +20,8 @@ public class UI : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
-     
+
+
         coinAmt.text = coins.ToString();
     }
 

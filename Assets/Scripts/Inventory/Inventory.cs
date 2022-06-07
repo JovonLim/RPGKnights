@@ -7,7 +7,7 @@ public class Inventory : MonoBehaviour
 {
     public static int currentInvCapacity;
     public const int totalInvCapacity = 9;
-    public static GameObject[] itemList;
+    public static GameObject[] itemList = new GameObject[9];
     public GameObject itemPanelWindow;
     public Image[] inventoryItemsImages;
 
@@ -49,7 +49,7 @@ public class Inventory : MonoBehaviour
             ToggleInventory();
         }
 
-        Debug.Log(itemList[0]);
+       
     }
 
     private void ToggleInventory()
@@ -76,11 +76,28 @@ public class Inventory : MonoBehaviour
             if (itemList[i] == null)
             {
                 itemList[i] = item;
+                if (!InventoryDatabase.CurrentItems.Contains(item))
+                {
+                    InventoryDatabase.CurrentItems.Add(item);
+                    item.transform.SetParent(InventoryDatabase.instance.transform);
+                }      
                 break;
             }
         } 
         UpdateUI();
 
+    }
+
+    public bool ContainsItem(GameObject item)
+    {
+        for (int i = 0; i < itemList.Length; i++)
+        {
+            if (itemList[i] != null && itemList[i] == item)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     public void RemoveItem(int invNum)

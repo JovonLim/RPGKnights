@@ -25,7 +25,6 @@ public class Item: MonoBehaviour
     public void BeingPickedUp()
     {
         FindObjectOfType<Inventory>().AddItem(gameObject);
-        gameObject.transform.SetParent(GameObject.FindGameObjectWithTag("Inventory").transform.GetChild(0).transform);
         gameObject.SetActive(false);
 
     }
