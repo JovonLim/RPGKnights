@@ -191,7 +191,7 @@ MonoBehaviour:
     m_Bits: 128
   offset: 0
   speed: 3
-  et: 1
+  et: 0
 --- !u!114 &2258608998219809148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,7 +252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 40
-  Defense: 3
+  PhysicalDefense: 0
   MagicDefense: 6
   minDmg: 0.5
   prefab: {fileID: 4997623711577133293, guid: 555ca5c4a4a0517489f53b54e10f9cee, type: 3}

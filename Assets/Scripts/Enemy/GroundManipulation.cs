@@ -78,11 +78,11 @@ public class GroundManipulation : MonoBehaviour
     {
         // Launch the projectile
         GameObject projectile = Instantiate(this.prefab, projectileLaunchPoint.position, Quaternion.identity);
-        projectile.transform.localScale = new Vector3(projectileLaunchPoint.transform.localScale.x, 1, 1);
+        projectile.transform.localScale = new Vector3(transform.localScale.x, 1, 1);
         projectile.GetComponent<EnemyProjectile>().ActivateProjectile();
     }
 
-    private bool PlayerInSight()
+    public bool PlayerInSight()
     {
         RaycastHit2D hit = Physics2D.BoxCast(boxCollider.bounds.center + transform.right * attackRange * transform.localScale.x * colliderDistance,
             new Vector3(boxCollider.bounds.size.x * attackRange, boxCollider.bounds.size.y, boxCollider.bounds.size.z),
