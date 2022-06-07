@@ -14,7 +14,7 @@ public class PlayerItemInteraction : MonoBehaviour
 
     void Update()
     {
-        if (DetectObject())
+        if (DetectObject() && !FindObjectOfType<Inventory>().IsInventoryFull())
         {
             detectedItem.GetComponent<Item>().BeingPickedUp();
         }
