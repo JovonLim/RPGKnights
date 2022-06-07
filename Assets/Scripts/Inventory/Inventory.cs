@@ -50,15 +50,15 @@ public class Inventory : MonoBehaviour
     }
 
     public void AddItem(GameObject item)
-    {
+    {       
         for (int i = 0; i < itemList.Length; i++)
         {
-            if (itemList[i] != null)
+            if (itemList[i] == null)
             {
                 itemList[i] = item;
                 break;
             }
-        }
+        } 
         UpdateUI();
 
     }
@@ -92,6 +92,7 @@ public class Inventory : MonoBehaviour
     {
         foreach (var item in itemList)
         {
+            if (item != null)
             item.gameObject.SetActive(false);
         }
         HideItemInformationWindow();
@@ -120,8 +121,8 @@ public class Inventory : MonoBehaviour
     public void ShowEquipInformationWindow(int equipNum)
     {
         // Retrieve item name and item description
-        itemName.text = equipHolder[equipNum].name;
-        itemDescription.text = itemList[equipNum].GetComponent<Item>().itemDescription;
+       // itemName.text = equipHolder[equipNum].name;
+     //   itemDescription.text = itemList[equipNum].GetComponent<Item>().itemDescription;
 
         // Show the item information window and text
         itemInformationWindow.SetActive(true);
