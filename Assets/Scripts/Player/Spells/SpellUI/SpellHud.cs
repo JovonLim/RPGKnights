@@ -2,53 +2,69 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SpellHud : MonoBehaviour
+public class SpellHud : SpellHolder
 {
-    [SerializeField] private GameObject player;
     [SerializeField] Image ability;
     [SerializeField] Image abilityDark;
     private float cooldown;
-    private bool OnCooldown = true;
+    private bool OnCooldown = false;
     // Start is called before the first frame update
 
 
-    private void Start()
-    {       
-        InitializeSpell(); 
+    protected void Start()
+    {
+        InitializeSpell();
     }
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
+        base.Update();
         UseAbility();
+        if (updated)
+        {
+            InitializeSpell();
+            updated = false;
+        }
+        
     }
 
+    private void SetCooldown()
+    {
+        OnCooldown = true;
+    }
     private void UseAbility()
     {
-        if (Input.GetKeyDown(KeyCode.Q) && OnCooldown == false)
-        {
-            OnCooldown = true;
-            abilityDark.fillAmount = 1;
-        }
         if (OnCooldown)
         {
-            abilityDark.fillAmount -= 1 / cooldown * Time.deltaTime;
-
-            if (abilityDark.fillAmount <= 0)
-            {
-                abilityDark.fillAmount = 0;
-                OnCooldown = false;
-            }
+            abilityDark.fillAmount = 1;
+            OnCooldown = false;
+        }
+        abilityDark.fillAmount -= 1 / cooldown * Time.deltaTime;
+        if (abilityDark.fillAmount <= 0)
+        {
+            abilityDark.fillAmount = 0;
         }
     }
 
-    void InitializeSpell()
+    public void InitializeSpell()
     {
-        Spell spell = player.GetComponent<PlayerAttack>().spellToCast;
-        cooldown = spell.spell.cooldownTime;
-        ability.sprite = spell.GetComponent<SpriteRenderer>().sprite;
-        abilityDark.sprite = spell.GetComponent<SpriteRenderer>().sprite;
-        abilityDark.type = Image.Type.Filled;
-        abilityDark.fillClockwise = false;
-        abilityDark.fillOrigin = (int) Image.Origin360.Top;
+        Spell spell = GetComponent<PlayerAttack>().spellToCast;
+        ability.GetComponent<Image>().enabled = true;
+        abilityDark.GetComponent<Image>().enabled = true;
+        if (spell != null)
+        {
+            cooldown = spell.spell.cooldownTime;
+            ability.sprite = spell.GetComponent<SpriteRenderer>().sprite;
+            abilityDark.sprite = spell.GetComponent<SpriteRenderer>().sprite;
+            abilityDark.type = Image.Type.Filled;
+            abilityDark.fillClockwise = false;
+            abilityDark.fillOrigin = (int)Image.Origin360.Top;
+            abilityDark.fillAmount = 0;
+        } else
+        {
+            ability.GetComponent<Image>().enabled = false;
+            abilityDark.GetComponent<Image>().enabled = false;
+        }
+        
     }
 }

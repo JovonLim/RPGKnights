@@ -15,10 +15,11 @@ public class Aggro : MonoBehaviour
     MeleeAndRanged attack1;
     MeleeEnemy attack2;
     RangeEnemy attack3;
+    GroundManipulation attack4;
 
     public enum EnemyType
     {
-        meleeAndRanged, melee, ranged,
+        meleeAndRanged, melee, ranged, necromancer,
     }
 
     public EnemyType et;
@@ -38,6 +39,9 @@ public class Aggro : MonoBehaviour
                 break;
             case EnemyType.ranged:
                 attack3 = GetComponent<RangeEnemy>();
+                break;
+            case EnemyType.necromancer:
+                attack4 = GetComponent<GroundManipulation>();
                 break;
         }
         
@@ -83,6 +87,17 @@ public class Aggro : MonoBehaviour
                             OnDisable();
                         }
                         else
+                        {
+                            Move();
+                        }
+                        break;
+                    }
+                case EnemyType.necromancer:
+                    {
+                        if (attack4.PlayerInSight())
+                        {
+                            OnDisable();
+                        } else
                         {
                             Move();
                         }

@@ -4,32 +4,58 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class SpellTree : MonoBehaviour
+public class SpellTree : SpellHolder
 {
     [SerializeField] private Image[] icons;
-    [SerializeField] private GameObject player;
+    [SerializeField] private Image[] activeSkills;
     [SerializeField] private GameObject descriptionBox;
+    [SerializeField] private GameObject skillBox;
+    [SerializeField] private TMP_InputField slot;
     [SerializeField] private TextMeshProUGUI spellName;
-    [SerializeField] private TextMeshProUGUI description;
-    private Spell[] spells;
+    [SerializeField] private TextMeshProUGUI description;  
+    private static int selectedSkill;
+    private bool changed = true;
+    
     
 
     // Start is called before the first frame update
-    void Start()
+    protected void Start()
     {
-        spells = player.GetComponent<SpellHolder>().spells;
+       
         
         for (int i = 0; i < spells.Length; i++)
         {
             icons[i].sprite = spells[i].GetComponent<SpriteRenderer>().sprite;
         }
 
+        UpdateSkills();
     }
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
-        
+        base.Update();
+        UpdateSkills();
+    }
+
+    void UpdateSkills()
+    {
+        if (changed)
+        {
+            for (int i = 0; i < activeSpells.Length; i++)
+            {
+                activeSkills[i].GetComponent<Image>().enabled = true;
+                if (activeSpells[i] != null)
+                {
+                    activeSkills[i].sprite = activeSpells[i].GetComponent<SpriteRenderer>().sprite;
+                }
+                else
+                {
+                    activeSkills[i].GetComponent<Image>().enabled = false;
+                }
+            }
+            changed = false;
+        }
     }
 
     private string SkillDescription(int num) 
@@ -43,9 +69,13 @@ public class SpellTree : MonoBehaviour
     }
     public void ShowDescription(int num)
     {
-        descriptionBox.SetActive(true);      
+        if (!skillBox.activeInHierarchy)
+        {
+            descriptionBox.SetActive(true);
+        }
+             
         
-        if (!player.GetComponent<SpellHolder>().IsUnlocked(num))
+        if (!IsUnlocked(num))
         {
             spellName.color = Color.red;
             spellName.text = spells[num].spell.spellName + " (locked)";
@@ -59,5 +89,38 @@ public class SpellTree : MonoBehaviour
     public void CloseDescription()
     {
         descriptionBox.SetActive(false);
+    }
+
+    public void ShowSkillSelection(int num)
+    {
+        
+        selectedSkill = num;
+        if (IsUnlocked(selectedSkill))
+        {
+            descriptionBox.SetActive(false);
+            skillBox.SetActive(true);           
+        }
+    }
+
+    public void CloseSkillSelection()
+    {
+        skillBox.SetActive(false);
+        selectedSkill = -1;
+    }
+
+    public void SelectSkill()
+    {
+        if (SetActiveSpell(int.Parse(slot.text), selectedSkill))
+        {
+            changed = true;
+        }
+    }
+
+    public void RemoveSkill()
+    {
+        if (RemoveActiveSpell(selectedSkill))
+        {
+            changed = true;
+        }
     }
 }
