@@ -16,7 +16,6 @@ public class Item: MonoBehaviour
     public ItemType itemType;
     public string itemDescription;
     public UnityEvent consumeEvent;
-    public UnityEvent equipEvent;
 
     private void Reset()
     {
@@ -26,9 +25,8 @@ public class Item: MonoBehaviour
     public void BeingPickedUp()
     {
         FindObjectOfType<Inventory>().AddItem(gameObject);
+        gameObject.transform.SetParent(GameObject.FindGameObjectWithTag("Inventory").transform.GetChild(0).transform);
         gameObject.SetActive(false);
 
     }
-
-
 }

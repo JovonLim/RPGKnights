@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
+    public static int currentInvCapacity;
     public const int totalInvCapacity = 9;
-    public GameObject[] itemList;
+    public static GameObject[] itemList;
     public GameObject itemPanelWindow;
     public Image[] inventoryItemsImages;
 
@@ -14,7 +15,7 @@ public class Inventory : MonoBehaviour
     public Text itemName;
     public Text itemDescription;
 
-    public static List<GameObject> equipHolder = new List<GameObject>();
+    public static GameObject[] equipHolder;
     public GameObject equipWindow;
     public Image[] equipImages;
 
@@ -23,11 +24,22 @@ public class Inventory : MonoBehaviour
     private void Start()
     {
         itemPanelWindow.SetActive(inventoryOn);
+
+        // Initialising Array for inventory
         itemList = new GameObject[9];
         for (int i = 0; i < itemList.Length; i++)
         {
             itemList[i] = null;
         }
+        currentInvCapacity = 0;
+
+        //Initialising Array for equipments
+        equipHolder = new GameObject[7];
+        for (int i = 0; i < equipHolder.Length; i++)
+        {
+            equipHolder[i] = null;
+        }
+
     }
 
     private void Update()
@@ -36,17 +48,25 @@ public class Inventory : MonoBehaviour
         {
             ToggleInventory();
         }
+
+        Debug.Log(itemList[0]);
     }
 
     private void ToggleInventory()
     {
         inventoryOn = !inventoryOn;
         itemPanelWindow.SetActive(inventoryOn);
+        UpdateUI();
     }
 
     public bool IsInventoryOn()
     {
         return inventoryOn;
+    }
+
+    public bool IsInventoryFull()
+    {
+        return currentInvCapacity == totalInvCapacity;
     }
 
     public void AddItem(GameObject item)
@@ -63,10 +83,93 @@ public class Inventory : MonoBehaviour
 
     }
 
-    public void RemoveItem(int itemNum)
+    public void RemoveItem(int invNum)
     {
-        return;
-          
+        if (itemList[invNum] != null)
+        {
+            itemList[invNum] = null;
+            UpdateUI();
+        } 
+        else
+        {
+            return;
+        } 
+    }
+
+    public void Equip(int invNum)
+    {
+        if (itemList[invNum].GetComponent<Item>().itemType == Item.ItemType.WarriorWeapon)
+        {
+            if (equipHolder[0] != null)
+            {
+                Unequip(0);
+            }
+            equipHolder[0] = itemList[invNum];
+        }
+        else if (itemList[invNum].GetComponent<Item>().itemType == Item.ItemType.Helmet)
+        {
+            if (equipHolder[1] != null)
+            {
+                Unequip(1);
+            }
+            equipHolder[1] = itemList[invNum];
+        }
+        else if (itemList[invNum].GetComponent<Item>().itemType == Item.ItemType.ChestPiece)
+        {
+            if (equipHolder[2] != null)
+            {
+                Unequip(2);
+            }
+            equipHolder[2] = itemList[invNum];
+        }
+        else if (itemList[invNum].GetComponent<Item>().itemType == Item.ItemType.Leggings)
+        {
+            if (equipHolder[3] != null)
+            {
+                Unequip(3);
+            }
+            equipHolder[3] = itemList[invNum];
+        }
+        else if (itemList[invNum].GetComponent<Item>().itemType == Item.ItemType.Boots)
+        {
+            if (equipHolder[4] != null)
+            {
+                Unequip(4);
+            }
+            equipHolder[4] = itemList[invNum];
+        }
+        else if (itemList[invNum].GetComponent<Item>().itemType == Item.ItemType.ArcherWeapon)
+        {
+            if (equipHolder[5] != null)
+            {
+                Unequip(5);
+            }
+            equipHolder[5] = itemList[invNum];
+        }
+        else if (itemList[invNum].GetComponent<Item>().itemType == Item.ItemType.MageWeapon)
+        {
+            if (equipHolder[6] != null)
+            {
+                Unequip(6);
+            }
+            equipHolder[6] = itemList[invNum];
+        } 
+        else
+        {
+            return;
+        }
+        RemoveItem(invNum);
+        UpdateUI();
+    }
+
+    public void Unequip(int equipNum)
+    {
+        if (equipHolder[equipNum] != null)
+        {
+            AddItem(equipHolder[equipNum]);
+            equipHolder[equipNum] = null;
+            UpdateUI();
+        }
     }
 
     private void UpdateUI()
@@ -86,6 +189,19 @@ public class Inventory : MonoBehaviour
             }
         }
 
+        for (int k = 0; k < equipHolder.Length; k++)
+        {
+            if (equipHolder[k] != null)
+            {
+                equipImages[k].sprite = equipHolder[k].GetComponent<SpriteRenderer>().sprite;
+                equipImages[k].gameObject.SetActive(true);
+            }
+            else
+            {
+                equipImages[k].gameObject.SetActive(false);
+            }
+        }
+
     }
 
     private void HideAllItems()
@@ -93,7 +209,13 @@ public class Inventory : MonoBehaviour
         foreach (var item in itemList)
         {
             if (item != null)
-            item.gameObject.SetActive(false);
+                item.gameObject.SetActive(false);
+        }
+
+        foreach (var equip in equipHolder)
+        {
+            if (equip != null)
+                equip.gameObject.SetActive(false);
         }
         HideItemInformationWindow();
     }
