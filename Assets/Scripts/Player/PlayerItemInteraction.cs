@@ -42,4 +42,6 @@ public class PlayerItemInteraction : MonoBehaviour
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(detectionPoint.position, detectionCircleRadius);
     }
+
+
 }

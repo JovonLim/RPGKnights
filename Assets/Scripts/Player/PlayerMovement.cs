@@ -106,7 +106,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool isInventoryOn()
     {
-        return FindObjectOfType<Inventory>().inventoryOn;
+        return FindObjectOfType<Inventory>().IsInventoryOn();
     }
 
 
