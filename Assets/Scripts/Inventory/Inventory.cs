@@ -2,24 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Inventory : MonoBehaviour
 {
-    public static int currentInvCapacity;
-    public const int totalInvCapacity = 9;
-    public static GameObject[] itemList = new GameObject[9];
-    public GameObject itemPanelWindow;
-    public Image[] inventoryItemsImages;
+    private static int currentInvCapacity;
+    private const int totalInvCapacity = 9;
+    public static GameObject[] itemList;
+    [SerializeField] private GameObject itemPanelWindow;
+    [SerializeField] private Image[] inventoryItemsImages;
 
-    public GameObject itemInformationWindow;
-    public Text itemName;
-    public Text itemDescription;
+    [SerializeField] private GameObject itemInformationWindow;
+    [SerializeField] private TextMeshProUGUI itemName;
+    [SerializeField] private TextMeshProUGUI itemDescription;
 
     public static GameObject[] equipHolder;
-    public GameObject equipWindow;
-    public Image[] equipImages;
+    [SerializeField] private GameObject equipWindow;
+    [SerializeField] private Image[] equipImages;
 
-    public static bool inventoryOn = false;
+    private static bool inventoryOn = false;
 
     private void Start()
     {
@@ -49,7 +50,6 @@ public class Inventory : MonoBehaviour
             ToggleInventory();
         }
 
-       
     }
 
     private void ToggleInventory()
@@ -100,7 +100,8 @@ public class Inventory : MonoBehaviour
         return false;
     }
 
-    public void RemoveItem(int invNum)
+    // For internal inventory usage
+    private void RemoveItem(int invNum)
     {
         if (itemList[invNum] != null)
         {
@@ -113,7 +114,22 @@ public class Inventory : MonoBehaviour
         } 
     }
 
-    public void Equip(int invNum)
+    // When player want to drop item
+    public void DropItem(int invNum)
+    {
+        if (itemList[invNum] != null)
+        {
+            itemList[invNum].GetComponent<Item>().BeingDropped();
+            itemList[invNum] = null;
+            UpdateUI();
+        }
+        else
+        {
+            return;
+        }
+    }
+
+    private void Equip(int invNum)
     {
         if (itemList[invNum].GetComponent<Item>().itemType == Item.ItemType.WarriorWeapon)
         {
@@ -179,7 +195,7 @@ public class Inventory : MonoBehaviour
         UpdateUI();
     }
 
-    public void Unequip(int equipNum)
+    private void Unequip(int equipNum)
     {
         if (equipHolder[equipNum] != null)
         {
@@ -237,7 +253,7 @@ public class Inventory : MonoBehaviour
         HideItemInformationWindow();
     }
 
-    public void ShowItemInformationWindow(int inventoryNum)
+    private void ShowItemInformationWindow(int inventoryNum)
     {
         // Retrieve item name and item description
         itemName.text = itemList[inventoryNum].name;
@@ -249,7 +265,7 @@ public class Inventory : MonoBehaviour
         itemDescription.gameObject.SetActive(true);
     }
 
-    public void HideItemInformationWindow()
+    private void HideItemInformationWindow()
     {
         // Hide the item information window and text
         itemName.gameObject.SetActive(false);
@@ -257,11 +273,11 @@ public class Inventory : MonoBehaviour
         itemInformationWindow.SetActive(false);
     }
 
-    public void ShowEquipInformationWindow(int equipNum)
+    private void ShowEquipInformationWindow(int equipNum)
     {
         // Retrieve item name and item description
-       // itemName.text = equipHolder[equipNum].name;
-     //   itemDescription.text = itemList[equipNum].GetComponent<Item>().itemDescription;
+        itemName.text = equipHolder[equipNum].name;
+        itemDescription.text = equipHolder[equipNum].GetComponent<Item>().itemDescription;
 
         // Show the item information window and text
         itemInformationWindow.SetActive(true);
