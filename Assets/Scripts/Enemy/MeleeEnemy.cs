@@ -4,16 +4,16 @@ using System.Collections;
 public class MeleeEnemy : Damage
 {
     [SerializeField] private float attackRange;
-    [SerializeField] private float damage;
+    [SerializeField] protected float damage;
 
     [SerializeField] private float colliderDistance;
     [SerializeField] private BoxCollider2D boxCollider;
     [SerializeField] private LayerMask playerLayer;
 
-    private float attackCooldownTimer = float.MaxValue;
+    protected float attackCooldownTimer = float.MaxValue;
 
     // Reference variables
-    private Animator anima;
+    protected Animator anima;
     private Health playerHealth;
     public float attackSpeed;
 
@@ -59,7 +59,7 @@ public class MeleeEnemy : Damage
             new Vector3(boxCollider.bounds.size.x * attackRange, boxCollider.bounds.size.y, boxCollider.bounds.size.z));
     }
 
-    private void DamagePlayer()
+    protected void DamagePlayer()
     {
         if (PlayerInSight())
         {

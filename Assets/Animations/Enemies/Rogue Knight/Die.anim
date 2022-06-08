@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Atk1
+  m_Name: Die
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,24 +20,20 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 1b9e60c3486bc014cbf1c1772ecd9957, type: 3}
-    - time: 0.1
-      value: {fileID: 21300000, guid: 91a76bdaad9ffa541aa16a8d5cad8a9f, type: 3}
-    - time: 0.2
-      value: {fileID: 21300000, guid: 3577c0f783966294eb518281772b05df, type: 3}
-    - time: 0.3
-      value: {fileID: 21300000, guid: 08117015c23ca9f4290b3d66b3567969, type: 3}
-    - time: 0.4
-      value: {fileID: 21300000, guid: 2ed40a20aa5dc724c9775dc4ba769b23, type: 3}
+      value: {fileID: -1763731598, guid: 29d271db79d56e74ca2f70662498f1d8, type: 3}
+    - time: 0.125
+      value: {fileID: 300814211, guid: 29d271db79d56e74ca2f70662498f1d8, type: 3}
+    - time: 0.25
+      value: {fileID: 306859586, guid: 29d271db79d56e74ca2f70662498f1d8, type: 3}
+    - time: 0.375
+      value: {fileID: -36850241, guid: 29d271db79d56e74ca2f70662498f1d8, type: 3}
     - time: 0.5
-      value: {fileID: 21300000, guid: 1fa2d0d1513aa524dbb096cfb8c93acf, type: 3}
-    - time: 0.6
-      value: {fileID: 21300000, guid: 1b83026154696e04f81a126662a4f4b6, type: 3}
+      value: {fileID: -1822074047, guid: 29d271db79d56e74ca2f70662498f1d8, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 10
+  m_SampleRate: 8
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -52,24 +48,22 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 1b9e60c3486bc014cbf1c1772ecd9957, type: 3}
-    - {fileID: 21300000, guid: 91a76bdaad9ffa541aa16a8d5cad8a9f, type: 3}
-    - {fileID: 21300000, guid: 3577c0f783966294eb518281772b05df, type: 3}
-    - {fileID: 21300000, guid: 08117015c23ca9f4290b3d66b3567969, type: 3}
-    - {fileID: 21300000, guid: 2ed40a20aa5dc724c9775dc4ba769b23, type: 3}
-    - {fileID: 21300000, guid: 1fa2d0d1513aa524dbb096cfb8c93acf, type: 3}
-    - {fileID: 21300000, guid: 1b83026154696e04f81a126662a4f4b6, type: 3}
+    - {fileID: -1763731598, guid: 29d271db79d56e74ca2f70662498f1d8, type: 3}
+    - {fileID: 300814211, guid: 29d271db79d56e74ca2f70662498f1d8, type: 3}
+    - {fileID: 306859586, guid: 29d271db79d56e74ca2f70662498f1d8, type: 3}
+    - {fileID: -36850241, guid: 29d271db79d56e74ca2f70662498f1d8, type: 3}
+    - {fileID: -1822074047, guid: 29d271db79d56e74ca2f70662498f1d8, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.70000005
+    m_StopTime: 0.625
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
     m_HasAdditiveReferencePose: 0
-    m_LoopTime: 1
+    m_LoopTime: 0
     m_LoopBlend: 0
     m_LoopBlendOrientation: 0
     m_LoopBlendPositionY: 0
@@ -83,11 +77,4 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events:
-  - time: 0.2
-    functionName: DamagePlayer
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
+  m_Events: []

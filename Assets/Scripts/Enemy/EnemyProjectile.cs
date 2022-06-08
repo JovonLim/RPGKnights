@@ -6,7 +6,7 @@ public class EnemyProjectile : Damage
 
     [SerializeField] private float projectileSpeed;
     [SerializeField] private float projectileResetTime;
-    [SerializeField] private float enemyDamage;
+    public float enemyDamage;
     private float projectileLifetime;
 
     private bool hit;

@@ -8,7 +8,10 @@ public class CoinSpawn : MonoBehaviour
     private int minCoin = 3;
     [SerializeField]
     private int maxCoin = 6;
+    [SerializeField]
+    private float offset;
     private int count;
+    
 
     void Start()
     {
@@ -29,7 +32,7 @@ public class CoinSpawn : MonoBehaviour
     {
         for (int i = 0; i < count; i++)
         {
-            Instantiate(this.prefab, transform.position, Quaternion.identity);
+            Instantiate(this.prefab, new Vector2(transform.position.x, transform.position.y + offset), Quaternion.identity);
         }
     }
 }

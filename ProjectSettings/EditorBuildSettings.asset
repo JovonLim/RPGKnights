@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Third Section/Seventh Room.unity
     guid: 145c63b1b9796e245b01e121463c4d58
+  - enabled: 1
+    path: Assets/Scenes/Third Section/Eighth Room.unity
+    guid: 0fa1187c869e6ec4bbaf7ac0acb67ef4
   m_configObjects: {}

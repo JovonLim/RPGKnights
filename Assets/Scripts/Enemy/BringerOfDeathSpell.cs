@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class BringerOfDeathSpell : Damage
 { 
-    [SerializeField] private float projectileResetTime;
+    [SerializeField] protected float projectileResetTime;
     [SerializeField] private float enemyDamage;
-    private float projectileLifetime;
+    protected float projectileLifetime;
     private GameObject player;
     private bool hit = false;
 
@@ -22,7 +22,7 @@ public class BringerOfDeathSpell : Damage
         gameObject.SetActive(true);
 
     }
-    private void Update()
+    protected void Update()
     {
         projectileLifetime += Time.deltaTime;
         if (projectileLifetime > projectileResetTime)
@@ -45,7 +45,7 @@ public class BringerOfDeathSpell : Damage
             hit = false;
         }
     }
-    private void Deactivate()
+    protected void Deactivate()
     {
         gameObject.SetActive(false);
     }
