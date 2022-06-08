@@ -12,7 +12,10 @@ public class PlayerItemInteraction : MonoBehaviour
     // Cache the detected item
     public GameObject detectedItem;
 
-    void Update()
+    // Item to be dropped by player
+    public GameObject dropItem;
+
+    private void Update()
     {
         if (DetectObject() && !FindObjectOfType<Inventory>().IsInventoryFull())
         {
@@ -20,7 +23,7 @@ public class PlayerItemInteraction : MonoBehaviour
         }
     }
 
-    bool DetectObject()
+    private bool DetectObject()
     {
         Collider2D currentObj = Physics2D.OverlapCircle(detectionPoint.position, 
             detectionCircleRadius, detectionLayer);
@@ -41,6 +44,18 @@ public class PlayerItemInteraction : MonoBehaviour
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(detectionPoint.position, detectionCircleRadius);
+    }
+
+    public void DropItem(GameObject item)
+    {
+        dropItem = item;
+        dropItem.gameObject.SetActive(true);
+        var obj = Instantiate(dropItem, 
+            new Vector3(detectionPoint.localScale.x * 2.0f, detectionPoint.localScale.y, detectionPoint.localScale.z), 
+            transform.rotation);
+
+        obj.name = dropItem.name;
+        
     }
 
 

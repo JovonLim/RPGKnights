@@ -143,4 +143,28 @@ public class Health : MonoBehaviour
         PhysicalDefense += amt;
         MagicDefense += amt;
     }
+
+    public void SubtractHealth(float amt)
+    {
+        startingHealth -= amt;
+        currentHealth = Mathf.Clamp(currentHealth - amt, 0, startingHealth);
+    }
+
+    public void SubtractPhysicalDefense(float amt)
+    {
+        PhysicalDefense -= amt;
+    }
+
+    public void SubtractMagicalDefense(float amt)
+    {
+        MagicDefense -= amt;
+    }
+
+    public void SubtractDefense(float amt)
+    {
+        PhysicalDefense -= amt;
+        MagicDefense -= amt;
+    }
+
+
 }

@@ -28,4 +28,10 @@ public class Item: MonoBehaviour
         gameObject.SetActive(false);
 
     }
+
+    public void BeingDropped()
+    {
+        FindObjectOfType<PlayerItemInteraction>().DropItem(gameObject);
+        Destroy(gameObject);
+    }
 }
