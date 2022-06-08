@@ -101,10 +101,11 @@ public class Inventory : MonoBehaviour
     }
 
     // For internal inventory usage
-    private void RemoveItem(int invNum)
+    public void RemoveItem(int invNum)
     {
         if (itemList[invNum] != null)
         {
+            InventoryDatabase.CurrentItems.Remove(itemList[invNum]);
             itemList[invNum] = null;
             UpdateUI();
         } 
@@ -129,15 +130,20 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    private void Equip(int invNum)
+    public void Equip(int invNum)
     {
+
+        GameObject itemToBeEquipped = itemList[invNum];
+
         if (itemList[invNum].GetComponent<Item>().itemType == Item.ItemType.WarriorWeapon)
         {
             if (equipHolder[0] != null)
             {
                 Unequip(0);
             }
-            equipHolder[0] = itemList[invNum];
+            
+            equipHolder[0] = itemToBeEquipped;
+
         }
         else if (itemList[invNum].GetComponent<Item>().itemType == Item.ItemType.Helmet)
         {
@@ -145,7 +151,9 @@ public class Inventory : MonoBehaviour
             {
                 Unequip(1);
             }
-            equipHolder[1] = itemList[invNum];
+            
+            equipHolder[1] = itemToBeEquipped;
+            
         }
         else if (itemList[invNum].GetComponent<Item>().itemType == Item.ItemType.ChestPiece)
         {
@@ -153,7 +161,9 @@ public class Inventory : MonoBehaviour
             {
                 Unequip(2);
             }
-            equipHolder[2] = itemList[invNum];
+            
+            equipHolder[2] = itemToBeEquipped;
+            
         }
         else if (itemList[invNum].GetComponent<Item>().itemType == Item.ItemType.Leggings)
         {
@@ -161,7 +171,8 @@ public class Inventory : MonoBehaviour
             {
                 Unequip(3);
             }
-            equipHolder[3] = itemList[invNum];
+            
+            equipHolder[3] = itemToBeEquipped;
         }
         else if (itemList[invNum].GetComponent<Item>().itemType == Item.ItemType.Boots)
         {
@@ -169,7 +180,8 @@ public class Inventory : MonoBehaviour
             {
                 Unequip(4);
             }
-            equipHolder[4] = itemList[invNum];
+            equipHolder[4] = itemToBeEquipped;
+            
         }
         else if (itemList[invNum].GetComponent<Item>().itemType == Item.ItemType.ArcherWeapon)
         {
@@ -177,7 +189,9 @@ public class Inventory : MonoBehaviour
             {
                 Unequip(5);
             }
-            equipHolder[5] = itemList[invNum];
+            
+            equipHolder[5] = itemToBeEquipped;
+            
         }
         else if (itemList[invNum].GetComponent<Item>().itemType == Item.ItemType.MageWeapon)
         {
@@ -185,24 +199,67 @@ public class Inventory : MonoBehaviour
             {
                 Unequip(6);
             }
-            equipHolder[6] = itemList[invNum];
+
+            equipHolder[6] = itemToBeEquipped;
+            
         } 
         else
         {
             return;
         }
+        EquipStats(invNum);
         RemoveItem(invNum);
         UpdateUI();
     }
 
-    private void Unequip(int equipNum)
+    // For direct equiping of items to the specific slot (For death)
+    public void DirectEquip(GameObject equip, int slot)
+    {
+        if (equipHolder[slot] != null)
+        {
+            Unequip(slot);
+        }
+        equipHolder[slot] = equip;
+        FindObjectOfType<PlayerAttack>().AddAttack(equip.GetComponent<Item>().attackDamageBoost);
+        FindObjectOfType<PlayerAttack>().AddAttackSpeed(equip.GetComponent<Item>().attackSpeedBoost);
+        FindObjectOfType<Health>().AddHealth(equip.GetComponent<Item>().healthBoost);
+        FindObjectOfType<Health>().AddDefense(equip.GetComponent<Item>().defenseBoost);
+        FindObjectOfType<Health>().AddMagicDefense(equip.GetComponent<Item>().magicDefenseBoost);
+        FindObjectOfType<Health>().AddPhysicalDefense(equip.GetComponent<Item>().physicalDefenseBoost);
+        FindObjectOfType<PlayerMovement>().AddSpeed(equip.GetComponent<Item>().speedBoost);
+    }
+
+    public void EquipStats(int invNum)
+    {
+        FindObjectOfType<PlayerAttack>().AddAttack(itemList[invNum].GetComponent<Item>().attackDamageBoost);
+        FindObjectOfType<PlayerAttack>().AddAttackSpeed(itemList[invNum].GetComponent<Item>().attackSpeedBoost);
+        FindObjectOfType<Health>().AddHealth(itemList[invNum].GetComponent<Item>().healthBoost);
+        FindObjectOfType<Health>().AddDefense(itemList[invNum].GetComponent<Item>().defenseBoost);
+        FindObjectOfType<Health>().AddMagicDefense(itemList[invNum].GetComponent<Item>().magicDefenseBoost);
+        FindObjectOfType<Health>().AddPhysicalDefense(itemList[invNum].GetComponent<Item>().physicalDefenseBoost);
+        FindObjectOfType<PlayerMovement>().AddSpeed(itemList[invNum].GetComponent<Item>().speedBoost);
+    }
+
+    public void Unequip(int equipNum)
     {
         if (equipHolder[equipNum] != null)
         {
+            UnequipStats(equipNum);
             AddItem(equipHolder[equipNum]);
             equipHolder[equipNum] = null;
             UpdateUI();
         }
+    }
+
+    public void UnequipStats(int equipNum)
+    {
+        FindObjectOfType<PlayerAttack>().SubtractAttack(equipHolder[equipNum].GetComponent<Item>().attackDamageBoost);
+        FindObjectOfType<PlayerAttack>().SubtractAttackSpeed(equipHolder[equipNum].GetComponent<Item>().attackSpeedBoost);
+        FindObjectOfType<Health>().SubtractHealth(equipHolder[equipNum].GetComponent<Item>().healthBoost);
+        FindObjectOfType<Health>().SubtractDefense(equipHolder[equipNum].GetComponent<Item>().defenseBoost);
+        FindObjectOfType<Health>().SubtractMagicDefense(equipHolder[equipNum].GetComponent<Item>().magicDefenseBoost);
+        FindObjectOfType<Health>().SubtractPhysicalDefense(equipHolder[equipNum].GetComponent<Item>().physicalDefenseBoost);
+        FindObjectOfType<PlayerMovement>().SubtractSpeed(equipHolder[equipNum].GetComponent<Item>().speedBoost);
     }
 
     private void UpdateUI()

@@ -7,6 +7,8 @@ public class InventoryDatabase : MonoBehaviour
     public static InventoryDatabase instance;
     public static List<GameObject> CurrentItems = new List<GameObject>();
     public static bool update;
+
+    public static GameObject[] currentEquip = new GameObject[7];
     private void Start()
     {
         if (instance != null)
@@ -30,6 +32,8 @@ public class InventoryDatabase : MonoBehaviour
                 if (!FindObjectOfType<Inventory>().ContainsItem(item))
                     FindObjectOfType<Inventory>().AddItem(item);
             }
+            
+
             update = false;
         }
        

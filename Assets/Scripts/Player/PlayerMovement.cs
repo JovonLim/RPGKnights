@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour 
 {
     [SerializeField] private float speed;
+    [SerializeField] private float jumpSpeed;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float fallThreshold;
     private Rigidbody2D body;
@@ -112,7 +113,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
-        body.velocity = new Vector2(body.velocity.x, speed);   
+        body.velocity = new Vector2(body.velocity.x, jumpSpeed);   
     }
 
     // Use a box shape ray from the player to detect whether the ray hit the ground layer. If the player
@@ -132,6 +133,16 @@ public class PlayerMovement : MonoBehaviour
     void FallDamage()
     {
         GetComponent<Health>().TakeTrueDamage(1);
+    }
+
+    public void AddSpeed(float amt)
+    {
+        speed += amt;
+    }
+
+    public void SubtractSpeed(float amt)
+    {
+        speed -= amt;
     }
 
 }

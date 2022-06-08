@@ -114,7 +114,7 @@ public class Health : MonoBehaviour
 
     public void GainHealth(float damage)
     {
-        currentHealth = Mathf.Clamp(currentHealth + damage, 0, startingHealth);
+        currentHealth = Mathf.Clamp(currentHealth + damage, 1, startingHealth);
     }
 
     public bool IsDefeated()
@@ -147,7 +147,7 @@ public class Health : MonoBehaviour
     public void SubtractHealth(float amt)
     {
         startingHealth -= amt;
-        currentHealth = Mathf.Clamp(currentHealth - amt, 0, startingHealth);
+        currentHealth = Mathf.Clamp(currentHealth - amt, 1, startingHealth);
     }
 
     public void SubtractPhysicalDefense(float amt)
@@ -155,7 +155,7 @@ public class Health : MonoBehaviour
         PhysicalDefense -= amt;
     }
 
-    public void SubtractMagicalDefense(float amt)
+    public void SubtractMagicDefense(float amt)
     {
         MagicDefense -= amt;
     }
