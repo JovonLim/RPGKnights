@@ -10,13 +10,13 @@ public class Golem : MeleeAndRanged
     private bool usedSpecial;
     private bool gotArmor;
     // Start is called before the first frame update
-    public override void Awake()
+    protected override void Awake()
     {
         base.Awake();
     }
 
     // Update is called once per frame
-    public override void Update()
+    protected override void Update()
     {
         base.Update();
         if (GetComponent<Health>().currentHealth <= 15)

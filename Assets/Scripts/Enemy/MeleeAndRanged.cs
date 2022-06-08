@@ -22,13 +22,13 @@ public class MeleeAndRanged : Damage
 
     public float attackSpeed;
 
-    public virtual void Awake()
+    protected virtual void Awake()
     {
         anima = GetComponent<Animator>();
         
     }
 
-    public virtual void Update()
+    protected virtual void Update()
     {
         attackCooldownTimer += Time.deltaTime;
 
@@ -54,7 +54,7 @@ public class MeleeAndRanged : Damage
 
     }
 
-    private bool PlayerInMeleeSight()
+    protected bool PlayerInMeleeSight()
     {
         RaycastHit2D hit = Physics2D.BoxCast(boxCollider.bounds.center + transform.right * meleeAttackRange * transform.localScale.x * meleeColliderDistance,
             new Vector3(boxCollider.bounds.size.x * meleeAttackRange, boxCollider.bounds.size.y, boxCollider.bounds.size.z),
