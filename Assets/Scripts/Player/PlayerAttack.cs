@@ -188,6 +188,21 @@ public class PlayerAttack : MonoBehaviour
         attackDamage += amt;
     }
 
+    public void SubtractAttack(float amt)
+    {
+        attackDamage -= amt;
+    }
+
+    public void AddAttackSpeed(float amt)
+    {
+        attackSpeed -= amt;
+    }
+
+    public void SubtractAttackSpeed(float amt)
+    {
+        attackSpeed += amt;
+    }
+
     private void CastSpell()
     {
         anima.SetTrigger("cast1");
