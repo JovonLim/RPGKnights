@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class Bladekeeper : MeleeAndRanged
 {
+ 
+    [SerializeField] Transform projectileLaunchPoint;
     private int combo = 0;
     private float resetTimer;
-    
+    private float SpecialDamage;
+  
 
     // Start is called before the first frame update
     void Start()
@@ -37,8 +40,27 @@ public class Bladekeeper : MeleeAndRanged
             }
         }
 
+        if (PlayerInRangedSight())
+        {
+            if (attackCooldownTimer >= attackSpeed)
+            {
+                attackCooldownTimer = 0;
+                anima.SetTrigger("rangedAttack");
+
+            }
+        }
     }
 
+    private void SpecialDamagePlayer()
+    {
+        if (PlayerInMeleeSight())
+        {
+            if (damageType == Dmg.physical)
+            {
+                playerHealth.TakePhysicalDamage(SpecialDamage);
+            }
+        }
+    }
     void MeleeAttack()
     {
         combo++;
@@ -57,14 +79,32 @@ public class Bladekeeper : MeleeAndRanged
         else if (combo == 3)
         {
             anima.SetTrigger("atk3");
-
+            StartCoroutine(AddAtkSpeed());
         }
         else if (combo == 4)
         {
             anima.SetTrigger("specialAtk");
-            
+            StartCoroutine(AddAtkSpeed());
             combo = 0;
         }
         attackCooldownTimer = 0;
     }
+
+    IEnumerator AddAtkSpeed()
+    {
+        attackSpeed += 1f;
+        yield return new WaitForSeconds(2);
+        attackSpeed -= 1f;
+    }
+
+    public override void LaunchProjectile()
+    {
+        attackCooldownTimer = 0;
+
+        // Launch the projectile
+        GameObject knife = Instantiate(this.prefab, projectileLaunchPoint.position, Quaternion.identity);
+        knife.GetComponent<EnemyProjectile>().enemyDamage = damage + 2;
+        knife.GetComponent<EnemyProjectile>().ActivateProjectile();
+    }
+
 }

@@ -17,7 +17,7 @@ public class MeleeAndRanged : Damage
 
     protected float attackCooldownTimer = float.MaxValue;
     protected Animator anima;
-    private Health playerHealth;
+    protected Health playerHealth;
     private GameObject player;
 
     public float attackSpeed;
@@ -66,7 +66,7 @@ public class MeleeAndRanged : Damage
         return hit.collider != null;
     }
 
-    private void OnDrawGizmos()
+    protected void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(boxCollider.bounds.center + transform.right * meleeAttackRange * transform.localScale.x * meleeColliderDistance,
