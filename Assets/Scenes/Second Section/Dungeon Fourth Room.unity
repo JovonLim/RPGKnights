@@ -189,6 +189,7 @@ MonoBehaviour:
   questDialog: {fileID: 915616368}
   endingText: {fileID: 1146975799}
   coins: 150
+  cleared: 0
   npc: 0
 --- !u!114 &97701131
 MonoBehaviour:
@@ -513,8 +514,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1231424308}
-  - {fileID: 1439983140}
   - {fileID: 1750741026}
+  - {fileID: 1439983140}
   - {fileID: 766258612}
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -29519,7 +29520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d163b0dbec249fb448de5f61b02d9657, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneNum: 8
+  sceneNum: 10
 --- !u!212 &8211369918378052420
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -29649,7 +29650,7 @@ MonoBehaviour:
   mobsText: {fileID: 1268357498}
   bossText: {fileID: 1266384916}
   objectiveCleared: {fileID: 2012198544}
-  sceneNum: 7
+  sceneNum: 9
   objective: 1
 --- !u!4 &8211369918576667465
 Transform:

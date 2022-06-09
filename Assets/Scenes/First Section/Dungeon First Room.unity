@@ -718,7 +718,7 @@ Transform:
   m_Children:
   - {fileID: 802105098}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &351989455
 MonoBehaviour:
@@ -831,7 +831,7 @@ Transform:
   - {fileID: 1975724119}
   - {fileID: 306977900}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &569714988
 GameObject:
@@ -31117,7 +31117,7 @@ MonoBehaviour:
   mobsText: {fileID: 1284196440}
   bossText: {fileID: 9219801673285114658}
   objectiveCleared: {fileID: 1750333289}
-  sceneNum: 2
+  sceneNum: 4
   objective: 0
 --- !u!1001 &3710282570278006962
 PrefabInstance:

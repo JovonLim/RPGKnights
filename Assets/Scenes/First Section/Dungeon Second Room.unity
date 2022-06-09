@@ -19059,7 +19059,7 @@ MonoBehaviour:
   mobsText: {fileID: 1910306054}
   bossText: {fileID: 1910306055}
   objectiveCleared: {fileID: 1910306052}
-  sceneNum: 4
+  sceneNum: 6
   objective: 1
 --- !u!1 &1898772689
 GameObject:
@@ -19307,7 +19307,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.0233517, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -21417,6 +21417,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minCoin: 3
   maxCoin: 6
+  offset: 0
   prefab: {fileID: 0}
 --- !u!1001 &8031221511476321635
 PrefabInstance:
@@ -21492,4 +21493,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d163b0dbec249fb448de5f61b02d9657, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneNum: 3
+  sceneNum: 5

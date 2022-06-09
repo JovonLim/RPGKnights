@@ -570,7 +570,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.0233517, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2568,6 +2568,7 @@ MonoBehaviour:
   questDialog: {fileID: 433142369}
   endingText: {fileID: 1445740033}
   coins: 150
+  cleared: 0
   npc: 1
 --- !u!1 &513828652
 GameObject:
@@ -15303,7 +15304,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 2.045105, y: 0}
+  m_AnchoredPosition: {x: 2.045166, y: 0}
   m_SizeDelta: {x: -254.9442, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1445740035
@@ -15837,7 +15838,7 @@ MonoBehaviour:
   mobsText: {fileID: 2123748523}
   bossText: {fileID: 2123748525}
   objectiveCleared: {fileID: 2123748522}
-  sceneNum: 5
+  sceneNum: 7
   objective: 0
 --- !u!1001 &2075977056
 PrefabInstance:

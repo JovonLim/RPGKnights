@@ -22228,7 +22228,7 @@ MonoBehaviour:
   mobsText: {fileID: 1094355486}
   bossText: {fileID: 1405058544}
   objectiveCleared: {fileID: 90605100}
-  sceneNum: 11
+  sceneNum: 13
   objective: 0
 --- !u!61 &952325061
 BoxCollider2D:
@@ -23192,6 +23192,7 @@ MonoBehaviour:
   questDialog: {fileID: 720990303}
   endingText: {fileID: 38537780}
   coins: 150
+  cleared: 0
   npc: 1
 --- !u!114 &1592937830
 MonoBehaviour:

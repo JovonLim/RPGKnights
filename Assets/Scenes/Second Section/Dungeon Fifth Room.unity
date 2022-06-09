@@ -6559,7 +6559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d163b0dbec249fb448de5f61b02d9657, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneNum: 9
+  sceneNum: 11
 --- !u!1 &1119083355
 GameObject:
   m_ObjectHideFlags: 0
@@ -37996,6 +37996,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minCoin: 15
   maxCoin: 30
+  offset: 0
   prefab: {fileID: 5015637550736375931, guid: 7fd6ab4c788ddee49839223a767d1cde, type: 3}
 --- !u!50 &1564080595
 Rigidbody2D:
@@ -38592,6 +38593,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minCoin: 18
   maxCoin: 25
+  offset: 0
   prefab: {fileID: 5015637550736375931, guid: 7fd6ab4c788ddee49839223a767d1cde, type: 3}
 --- !u!61 &1021050610293513715
 BoxCollider2D:
@@ -38748,7 +38750,7 @@ MonoBehaviour:
   mobsText: {fileID: 2044924448}
   bossText: {fileID: 929699328}
   objectiveCleared: {fileID: 67446593}
-  sceneNum: 10
+  sceneNum: 12
   objective: 2
 --- !u!95 &2665687813445141612
 Animator:
@@ -39232,6 +39234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minCoin: 18
   maxCoin: 25
+  offset: 0
   prefab: {fileID: 5015637550736375931, guid: 7fd6ab4c788ddee49839223a767d1cde, type: 3}
 --- !u!61 &8962838743759701215
 BoxCollider2D:

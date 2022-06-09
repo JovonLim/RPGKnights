@@ -844,7 +844,7 @@ MonoBehaviour:
   mobsText: {fileID: 2067985101}
   bossText: {fileID: 1134370493}
   objectiveCleared: {fileID: 688743775}
-  sceneNum: 13
+  sceneNum: 15
   objective: 2
 --- !u!4 &671392071 stripped
 Transform:
