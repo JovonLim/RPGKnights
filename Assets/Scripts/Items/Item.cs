@@ -21,7 +21,6 @@ public class Item: MonoBehaviour
 
     public ItemType itemType;
     public string itemDescription;
-    public UnityEvent consumeEvent;
     [SerializeField] public float attackDamageBoost;
     [SerializeField] public float attackSpeedBoost;
     [SerializeField] public float physicalDefenseBoost;
@@ -29,6 +28,7 @@ public class Item: MonoBehaviour
     [SerializeField] public float healthBoost;
     [SerializeField] public float speedBoost;
     [SerializeField] public float defenseBoost;
+    [SerializeField] public float regenerateHealth;
 
     private void Reset()
     {
@@ -45,6 +45,11 @@ public class Item: MonoBehaviour
     public void BeingDropped()
     {
         FindObjectOfType<PlayerItemInteraction>().DropItem(gameObject);
+        Destroy(gameObject);
+    }
+
+    public void BeingConsumed()
+    {
         Destroy(gameObject);
     }
 }
