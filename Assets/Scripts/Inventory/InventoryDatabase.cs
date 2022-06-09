@@ -32,6 +32,11 @@ public class InventoryDatabase : MonoBehaviour
                 if (!FindObjectOfType<Inventory>().ContainsItem(item))
                     FindObjectOfType<Inventory>().AddItem(item);
             }
+
+            for (int i = 0; i < currentEquip.Length; i++)
+            {
+                FindObjectOfType<Inventory>().DirectEquip(currentEquip[i], i);
+            }
             
 
             update = false;

@@ -37,7 +37,7 @@ public class PlayerDeath : MonoBehaviour
             Destroy(UI);
         }
 
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(2);
         InventoryDatabase.update = true;
     }
 }
