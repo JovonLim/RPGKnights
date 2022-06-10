@@ -51,7 +51,7 @@ public class PlayerItemInteraction : MonoBehaviour
         dropItem = item;
         dropItem.gameObject.SetActive(true);
         var obj = Instantiate(dropItem, 
-            new Vector3(detectionPoint.localScale.x * 2.0f, detectionPoint.localScale.y, detectionPoint.localScale.z), 
+            new Vector3(detectionPoint.localScale.x, detectionPoint.localScale.y, detectionPoint.localScale.z), 
             transform.rotation);
 
         obj.name = dropItem.name;
