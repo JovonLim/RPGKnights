@@ -2463,6 +2463,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1183176920 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 735729721, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
+  m_PrefabInstance: {fileID: 1910306050}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1190119242
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19054,6 +19065,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9020478d8c15fd469b08009768af1b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buffText: {fileID: 1183176920}
   objectiveBox: {fileID: 1910306051}
   miniBossText: {fileID: 1910306053}
   mobsText: {fileID: 1910306054}

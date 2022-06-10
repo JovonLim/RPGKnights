@@ -5,12 +5,7 @@ using UnityEngine;
 public class FearsomeVortexUnlock : MonoBehaviour
 {
     private bool unlocked;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+   
     // Update is called once per frame
     void Update()
     {
@@ -18,8 +13,7 @@ public class FearsomeVortexUnlock : MonoBehaviour
         {
             if (GetComponent<QuestEnd>().cleared)
             {
-                GameObject player = GameObject.FindGameObjectWithTag("Player");
-                player.GetComponent<SpellHolder>().UnlockSpell(5);
+                SpellHolder.UnlockSpell(6);
                 unlocked = true;
             }
         }

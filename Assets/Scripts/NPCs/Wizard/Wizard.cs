@@ -8,8 +8,9 @@ public class Wizard : MonoBehaviour
     [SerializeField] GameObject questDialog;
     [SerializeField] GameObject shop;
     [SerializeField] GameObject introText;
+    [SerializeField] GameObject backstory;
     public Quest[] quests;
-    private static bool introduced = true;
+    private static bool introduced;
     private bool playerInRange;
     
     private bool playerClicked;
@@ -37,6 +38,7 @@ public class Wizard : MonoBehaviour
         }
         else if (playerClicked && playerInRange)
         {
+           
             options.SetActive(true);
         } else
         { 
@@ -65,6 +67,10 @@ public class Wizard : MonoBehaviour
     public void ExitQuest()
     {
         questDialog.SetActive(false);
+        if (PlayerQuestInteraction.questActive && PlayerQuestInteraction.WizardQuest.questNum == 1)
+        {
+            StartCoroutine(Backstory());
+        }
     }
 
     public void ExitShop()
@@ -72,6 +78,22 @@ public class Wizard : MonoBehaviour
         shop.SetActive(false);
     }
 
+ 
+
+    public void DisplayShop()
+    {
+        if (PlayerAttack.spellUnlock)
+        {
+            shop.SetActive(true);
+            playerClicked = false;
+        } 
+    }
+
+    public void DisplayQuests()
+    {
+        questDialog.SetActive(true);
+        playerClicked = false;
+    }
     IEnumerator Intro()
     {
         introText.SetActive(true);
@@ -80,15 +102,10 @@ public class Wizard : MonoBehaviour
         introduced = true;
     }
 
-    public void DisplayShop()
+    IEnumerator Backstory()
     {
-        shop.SetActive(true);
-        playerClicked = false;
-    }
-
-    public void DisplayQuests()
-    {
-        questDialog.SetActive(true);
-        playerClicked = false;
+        backstory.SetActive(true);
+        yield return new WaitForSecondsRealtime(9);
+        backstory.SetActive(false);
     }
 }

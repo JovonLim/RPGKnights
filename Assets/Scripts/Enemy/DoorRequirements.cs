@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class DoorRequirements : MonoBehaviour
+public class DoorRequirements : Buffs
 {
-    [SerializeField] private GameObject objectiveBox;
+    
     [SerializeField] private GameObject miniBossText;
     [SerializeField] private GameObject mobsText;
     [SerializeField] private GameObject bossText;
@@ -53,7 +53,7 @@ public class DoorRequirements : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
         if (!cleared)
         {
@@ -61,14 +61,16 @@ public class DoorRequirements : MonoBehaviour
             {
                 cleared = true;
                 StartCoroutine(End());
+                getBuff = true;
+                base.Update();
             }
         }
         else
         {
             if (playerInRange && Input.GetKeyDown(KeyCode.F))
             {
+                
                 DontDestroyOnLoad(player);
-                player.GetComponent<Health>().GainHealth(1);
                 SceneManager.LoadScene(sceneNum);
             }
 

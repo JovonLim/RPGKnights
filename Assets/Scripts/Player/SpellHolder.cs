@@ -6,7 +6,7 @@ public class SpellHolder : MonoBehaviour
 {
     public Spell[] spells;
     public static Spell[] activeSpells = new Spell[4];
-    public static bool[] unlocked = new bool[8];
+    protected static bool[] unlocked = new bool[8];
     public bool updated;
 
 
@@ -21,7 +21,7 @@ public class SpellHolder : MonoBehaviour
         return unlocked[num];
     }
 
-    public void UnlockSpell(int num)
+    public static void UnlockSpell(int num)
     {
         unlocked[num] = true;
     }

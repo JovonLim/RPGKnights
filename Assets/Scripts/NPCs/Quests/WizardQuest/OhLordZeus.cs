@@ -29,8 +29,7 @@ public class OhLordZeus : MonoBehaviour
         {
             if (GetComponent<QuestEnd>().cleared)
             {
-                GameObject player = GameObject.FindGameObjectWithTag("Player");
-                player.GetComponent<SpellHolder>().UnlockSpell(5);
+                SpellHolder.UnlockSpell(5);
                 unlocked = true;
             }
         }

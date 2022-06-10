@@ -18394,6 +18394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9020478d8c15fd469b08009768af1b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buffText: {fileID: 952415508}
   objectiveBox: {fileID: 2127911513}
   miniBossText: {fileID: 2127911512}
   mobsText: {fileID: 2127911511}
@@ -19352,6 +19353,17 @@ Transform:
   m_Father: {fileID: 888648445}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &952415508 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 735729721, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
+  m_PrefabInstance: {fileID: 2127911508}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &973386568
 GameObject:
   m_ObjectHideFlags: 0

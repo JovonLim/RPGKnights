@@ -839,6 +839,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9020478d8c15fd469b08009768af1b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buffText: {fileID: 749545933}
   objectiveBox: {fileID: 1166241922}
   miniBossText: {fileID: 1858134801}
   mobsText: {fileID: 2067985101}
@@ -1035,6 +1036,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
+--- !u!114 &749545933 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 735729721, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
+  m_PrefabInstance: {fileID: 749545932}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &783178988
 GameObject:
   m_ObjectHideFlags: 0

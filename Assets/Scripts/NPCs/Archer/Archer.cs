@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class Archer : MonoBehaviour
 {
+    [SerializeField] GameObject options;
     [SerializeField] GameObject questDialog;
+    [SerializeField] GameObject shop;
+    [SerializeField] GameObject introText;
+    [SerializeField] GameObject backstory;
     public Quest[] quests;
+    private static bool introduced;
     private bool playerInRange;
 
     private bool playerClicked;
@@ -26,13 +31,18 @@ public class Archer : MonoBehaviour
         {
             playerClicked = true;
         }
-        if (playerClicked && playerInRange)
+        if (playerClicked && playerInRange && !introduced)
         {
-            questDialog.SetActive(true);
+            StartCoroutine(Intro());
+        }
+        else if (playerClicked && playerInRange)
+        {
+
+            options.SetActive(true);
         }
         else
         {
-            questDialog.SetActive(false);
+            options.SetActive(false);
             playerClicked = false;
         }
     }
@@ -54,8 +64,49 @@ public class Archer : MonoBehaviour
         }
     }
 
-    public void Exit()
+    public void ExitQuest()
     {
+        questDialog.SetActive(false);
+        if (PlayerQuestInteraction.questActive && PlayerQuestInteraction.ArcherQuest.questNum == 0)
+        {
+            StartCoroutine(Backstory(0));
+        }
+    }
+
+    public void ExitShop()
+    {
+        shop.SetActive(false);
+    }
+
+
+
+    public void DisplayShop()
+    {
+        if (PlayerAttack.rangedUnlock)
+        {
+            shop.SetActive(true);
+            playerClicked = false;
+        }
+    }
+
+    public void DisplayQuests()
+    {
+        questDialog.SetActive(true);
         playerClicked = false;
     }
+    IEnumerator Intro()
+    {
+        introText.SetActive(true);
+        yield return new WaitForSecondsRealtime(10);
+        introText.SetActive(false);
+        introduced = true;
+    }
+
+    IEnumerator Backstory(int num)
+    {
+        backstory.SetActive(true);
+        yield return new WaitForSecondsRealtime(6);
+        backstory.SetActive(false);
+    }
 }
+

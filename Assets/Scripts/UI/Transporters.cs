@@ -13,9 +13,10 @@ public class Transporters : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F) && playerInRange)
         {
+            
             SceneManager.LoadScene(sceneNum);
             DontDestroyOnLoad(player);
-            player.GetComponent<Health>().GainHealth(1);
+            
         }
     }
     void OnTriggerEnter2D(Collider2D other)

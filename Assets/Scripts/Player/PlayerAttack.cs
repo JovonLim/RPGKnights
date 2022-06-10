@@ -21,7 +21,7 @@ public class PlayerAttack : MonoBehaviour
 
     
     public static bool rangedUnlock = false;
-    public static bool spellUnlock = true;
+    public static bool spellUnlock = false;
 
     [SerializeField] private Transform projectileLaunchPoint;
     [SerializeField] private GameObject arrow;

@@ -60,7 +60,7 @@ public class WizardShop : MonoBehaviour
             UI.coins -= costs[selected];
             purchased[selected] = true;
             update = true;
-            SpellHolder.unlocked[spells[selected].spell.id] = true;
+            SpellHolder.UnlockSpell(spells[selected].spell.id);
             Deselect();
         } else if (UI.coins < costs[selected])
         {
