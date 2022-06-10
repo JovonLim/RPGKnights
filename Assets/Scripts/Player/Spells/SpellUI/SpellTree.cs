@@ -91,6 +91,7 @@ public class SpellTree : SpellHolder
             spellName.text = spells[num].spell.spellName + " (locked)";
         } else
         {
+            spellName.color = Color.white;
             spellName.text = spells[num].spell.spellName;
         }
         description.text = SkillDescription(num);

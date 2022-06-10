@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class Wizard : MonoBehaviour
 {
+    [SerializeField] GameObject options;
     [SerializeField] GameObject questDialog;
+    [SerializeField] GameObject shop;
+    [SerializeField] GameObject introText;
     public Quest[] quests;
+    private static bool introduced = true;
     private bool playerInRange;
     
     private bool playerClicked;
@@ -27,13 +31,16 @@ public class Wizard : MonoBehaviour
         {
             playerClicked = true;
         }
-        if (playerClicked && playerInRange)
+        if (playerClicked && playerInRange && !introduced)
         {
-            questDialog.SetActive(true);
+            StartCoroutine(Intro());
         }
-        else
+        else if (playerClicked && playerInRange)
         {
-            questDialog.SetActive(false);
+            options.SetActive(true);
+        } else
+        { 
+            options.SetActive(false);
             playerClicked = false;
         }
     }
@@ -55,8 +62,33 @@ public class Wizard : MonoBehaviour
         }
     }
 
-    public void Exit()
+    public void ExitQuest()
     {
+        questDialog.SetActive(false);
+    }
+
+    public void ExitShop()
+    {
+        shop.SetActive(false);
+    }
+
+    IEnumerator Intro()
+    {
+        introText.SetActive(true);
+        yield return new WaitForSecondsRealtime(10);
+        introText.SetActive(false);
+        introduced = true;
+    }
+
+    public void DisplayShop()
+    {
+        shop.SetActive(true);
+        playerClicked = false;
+    }
+
+    public void DisplayQuests()
+    {
+        questDialog.SetActive(true);
         playerClicked = false;
     }
 }
