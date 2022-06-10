@@ -105,7 +105,8 @@ public class Inventory : MonoBehaviour
     {
         if (itemList[invNum] != null)
         {
-            InventoryDatabase.CurrentItems.Remove(itemList[invNum]);
+            int posToRemove = InventoryDatabase.CurrentItems.IndexOf(itemList[invNum]);
+            InventoryDatabase.CurrentItems.RemoveAt(posToRemove);
             itemList[invNum] = null;
             UpdateUI();
         } 
@@ -120,6 +121,9 @@ public class Inventory : MonoBehaviour
     {
         if (itemList[invNum] != null)
         {
+            int posToRemove = InventoryDatabase.CurrentItems.IndexOf(itemList[invNum]);
+            Destroy(InventoryDatabase.CurrentItems[posToRemove]);
+            InventoryDatabase.CurrentItems.RemoveAt(posToRemove);
             itemList[invNum].GetComponent<Item>().BeingDropped();
             itemList[invNum] = null;
             UpdateUI();
@@ -130,6 +134,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    // Equip from inventory
     public void Equip(int invNum)
     {
 
@@ -142,7 +147,6 @@ public class Inventory : MonoBehaviour
                 Unequip(0);
             }
             equipHolder[0] = itemToBeEquipped;
-            InventoryDatabase.currentEquip[0] = itemToBeEquipped;
 
         }
         else if (itemList[invNum].GetComponent<Item>().itemType == Item.ItemType.Helmet)
@@ -153,7 +157,7 @@ public class Inventory : MonoBehaviour
             }
             
             equipHolder[1] = itemToBeEquipped;
-            
+
         }
         else if (itemList[invNum].GetComponent<Item>().itemType == Item.ItemType.ChestPiece)
         {
@@ -207,25 +211,94 @@ public class Inventory : MonoBehaviour
         {
             return;
         }
+        InventoryDatabase.currentEquip.Add(itemToBeEquipped);
         EquipStats(invNum);
         RemoveItem(invNum);
         UpdateUI();
     }
 
-    // For direct equiping of items to the specific slot (For death)
-    public void DirectEquip(GameObject equip, int slot)
+    // For direct equiping of items to the specific slot 
+    public void DirectEquip(GameObject equip)
     {
-        if (equipHolder[slot] != null)
+
+        if (equip.GetComponent<Item>().itemType == Item.ItemType.WarriorWeapon)
         {
-            Unequip(slot);
+            if (equipHolder[0] != null)
+            {
+                Unequip(0);
+            }
+            equipHolder[0] = equip;
+
         }
-        equipHolder[slot] = equip;
+        else if (equip.GetComponent<Item>().itemType == Item.ItemType.Helmet)
+        {
+            if (equipHolder[1] != null)
+            {
+                Unequip(1);
+            }
+
+            equipHolder[1] = equip;
+
+        }
+        else if (equip.GetComponent<Item>().itemType == Item.ItemType.ChestPiece)
+        {
+            if (equipHolder[2] != null)
+            {
+                Unequip(2);
+            }
+
+            equipHolder[2] = equip;
+
+        }
+        else if (equip.GetComponent<Item>().itemType == Item.ItemType.Leggings)
+        {
+            if (equipHolder[3] != null)
+            {
+                Unequip(3);
+            }
+
+            equipHolder[3] = equip;
+        }
+        else if (equip.GetComponent<Item>().itemType == Item.ItemType.Boots)
+        {
+            if (equipHolder[4] != null)
+            {
+                Unequip(4);
+            }
+            equipHolder[4] = equip;
+
+        }
+        else if (equip.GetComponent<Item>().itemType == Item.ItemType.ArcherWeapon)
+        {
+            if (equipHolder[5] != null)
+            {
+                Unequip(5);
+            }
+
+            equipHolder[5] = equip;
+
+        }
+        else if (equip.GetComponent<Item>().itemType == Item.ItemType.MageWeapon)
+        {
+            if (equipHolder[6] != null)
+            {
+                Unequip(6);
+            }
+
+            equipHolder[6] = equip;
+
+        }
+        else
+        {
+            return;
+        }
         FindObjectOfType<PlayerAttack>().AddAttack(equip.GetComponent<Item>().attackDamageBoost);
         FindObjectOfType<PlayerAttack>().AddAttackSpeed(equip.GetComponent<Item>().attackSpeedBoost);
         FindObjectOfType<Health>().AddHealth(equip.GetComponent<Item>().healthBoost);
         FindObjectOfType<Health>().AddDefense(equip.GetComponent<Item>().defenseBoost);
         FindObjectOfType<Health>().AddMagicDefense(equip.GetComponent<Item>().magicDefenseBoost);
         FindObjectOfType<Health>().AddPhysicalDefense(equip.GetComponent<Item>().physicalDefenseBoost);
+        FindObjectOfType<Health>().GainHealth(equip.GetComponent<Item>().regenerateHealth);
         FindObjectOfType<PlayerMovement>().AddSpeed(equip.GetComponent<Item>().speedBoost);
         UpdateUI();
     }
@@ -247,7 +320,7 @@ public class Inventory : MonoBehaviour
     {
         if (equipHolder[equipNum] != null)
         {
-            InventoryDatabase.currentEquip[equipNum] = null;
+            InventoryDatabase.currentEquip.Remove(equipHolder[equipNum]);
             UnequipStats(equipNum);
             AddItem(equipHolder[equipNum]);
             equipHolder[equipNum] = null;

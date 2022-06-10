@@ -8,7 +8,7 @@ public class InventoryDatabase : MonoBehaviour
     public static List<GameObject> CurrentItems = new List<GameObject>();
     public static bool update;
 
-    public static GameObject[] currentEquip = new GameObject[7];
+    public static List<GameObject> currentEquip = new List<GameObject>();
     private void Start()
     {
         if (instance != null)
@@ -22,6 +22,7 @@ public class InventoryDatabase : MonoBehaviour
         }
 
     }
+
     // Update is called once per frame
     void Update()
     {
@@ -30,12 +31,13 @@ public class InventoryDatabase : MonoBehaviour
             foreach (GameObject item in CurrentItems)
             {
                 if (!FindObjectOfType<Inventory>().ContainsItem(item))
+                    Debug.Log(item.name);
                     FindObjectOfType<Inventory>().AddItem(item);
             }
 
-            for (int i = 0; i < currentEquip.Length; i++)
+            foreach (GameObject equip in currentEquip)
             {
-                FindObjectOfType<Inventory>().DirectEquip(currentEquip[i], i);
+                FindObjectOfType<Inventory>().DirectEquip(equip);
             }
             
 

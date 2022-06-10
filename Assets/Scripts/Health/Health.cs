@@ -122,10 +122,10 @@ public class Health : MonoBehaviour
         return isDead;
     }
 
+    // Gain permanent health
     public void AddHealth(float amt)
     {
         startingHealth += amt;
-        currentHealth = Mathf.Clamp(currentHealth + amt, 0, startingHealth);
     }
 
     public void AddPhysicalDefense(float amt)
