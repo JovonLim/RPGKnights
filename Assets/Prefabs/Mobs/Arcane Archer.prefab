@@ -41,13 +41,13 @@ GameObject:
   m_Component:
   - component: {fileID: 7680846345885415916}
   - component: {fileID: 5161433739991339362}
-  - component: {fileID: 1147780986304897201}
   - component: {fileID: 2237688711360410052}
   - component: {fileID: 1469180463420873421}
   - component: {fileID: 2310887760342920950}
   - component: {fileID: 363847669863556010}
   - component: {fileID: 1697457261}
   - component: {fileID: 451497457611071573}
+  - component: {fileID: 1864583046189662007}
   m_Layer: 10
   m_Name: Arcane Archer
   m_TagString: Boss
@@ -123,23 +123,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1147780986304897201
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3350019087073473087}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2264e89b1ce83144b803079ab3a87fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingHealth: 40
-  Defense: 3
-  MagicDefense: 3
-  minDmg: 0.5
-  prefab: {fileID: 4997623711577133293, guid: 555ca5c4a4a0517489f53b54e10f9cee, type: 3}
 --- !u!61 &2237688711360410052
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -201,6 +184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minCoin: 10
   maxCoin: 20
+  offset: 0
   prefab: {fileID: 5015637550736375931, guid: 7fd6ab4c788ddee49839223a767d1cde, type: 3}
 --- !u!95 &363847669863556010
 Animator:
@@ -264,3 +248,20 @@ MonoBehaviour:
   projectileLaunchPoint: {fileID: 0}
   prefab: {fileID: 0}
   attackSpeed: 0
+--- !u!114 &1864583046189662007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3350019087073473087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b4fb79ebc0448c41b4cda7a371c2c91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 10
+  PhysicalDefense: 0
+  MagicDefense: 0
+  minDmg: 0
+  prefab: {fileID: 4997623711577133293, guid: 555ca5c4a4a0517489f53b54e10f9cee, type: 3}

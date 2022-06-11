@@ -107,7 +107,6 @@ GameObject:
   - component: {fileID: 5761944522982870090}
   - component: {fileID: 5761944522982870101}
   - component: {fileID: 5761944522982870088}
-  - component: {fileID: 1388873556}
   - component: {fileID: 5761944521595046690}
   - component: {fileID: 1949877067971610857}
   - component: {fileID: 4296736515542544597}
@@ -115,6 +114,7 @@ GameObject:
   - component: {fileID: 5761944521595046701}
   - component: {fileID: 5761944521595046710}
   - component: {fileID: 5761944521595046711}
+  - component: {fileID: 6371153622120426286}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -205,6 +205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  jumpSpeed: 0
   groundLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -276,23 +277,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1388873556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5761944522982870102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2264e89b1ce83144b803079ab3a87fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingHealth: 3
-  PhysicalDefense: 0
-  MagicDefense: 0
-  minDmg: 0
-  prefab: {fileID: 4997623711577133293, guid: 555ca5c4a4a0517489f53b54e10f9cee, type: 3}
 --- !u!114 &5761944521595046690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,6 +331,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2048
   detectedItem: {fileID: 0}
+  dropItem: {fileID: 0}
 --- !u!114 &5587785694126439929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -454,8 +439,26 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  skillPanel: {fileID: 0}
   descriptionBox: {fileID: 0}
   skillBox: {fileID: 0}
   slot: {fileID: 0}
   spellName: {fileID: 0}
   description: {fileID: 0}
+--- !u!114 &6371153622120426286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5761944522982870102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58bee6173bb9a9d4db699fa0673b38c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 3
+  PhysicalDefense: 0
+  MagicDefense: 0
+  minDmg: 0
+  prefab: {fileID: 4997623711577133293, guid: 555ca5c4a4a0517489f53b54e10f9cee, type: 3}

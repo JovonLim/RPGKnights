@@ -99,7 +99,7 @@ public class DoorRequirements : Buffs
         int defeated = 0;
         foreach (GameObject mob in mobs)
         {
-            if (mob.GetComponent<Health>().IsDefeated())
+            if (mob.GetComponent<EnemyHealth>().IsDefeated())
             {
                 defeated++;
             }

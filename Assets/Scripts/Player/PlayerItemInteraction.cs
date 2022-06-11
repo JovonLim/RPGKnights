@@ -53,7 +53,6 @@ public class PlayerItemInteraction : MonoBehaviour
         var obj = Instantiate(dropItem, 
             new Vector3(detectionPoint.localScale.x, detectionPoint.localScale.y, detectionPoint.localScale.z), 
             transform.rotation);
-
         obj.name = dropItem.name;
         
     }

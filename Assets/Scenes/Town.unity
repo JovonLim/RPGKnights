@@ -3847,7 +3847,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -14.75577, y: 2.99139}
+  m_AnchoredPosition: {x: -14.75724, y: 2.99139}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &795010551 stripped
@@ -4124,7 +4124,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.7774141, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -7426,17 +7426,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1373752998}
   m_CullTransparentMesh: 1
---- !u!114 &1388873556 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1388873556, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-  m_PrefabInstance: {fileID: 5761944521595046682}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2264e89b1ce83144b803079ab3a87fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1388873564 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5761944522982870100, guid: 92f411271b723c949a411c7403a36f98, type: 3}
@@ -18166,7 +18155,7 @@ PrefabInstance:
     - target: {fileID: 2002780164783713007, guid: 5245e38b2784a5646b8b084fb6f29329, type: 3}
       propertyPath: playerHealth
       value: 
-      objectReference: {fileID: 1388873556}
+      objectReference: {fileID: 5761944521595046712}
     - target: {fileID: 2270314142227455740, guid: 5245e38b2784a5646b8b084fb6f29329, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -20533,7 +20522,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1388873556, guid: 92f411271b723c949a411c7403a36f98, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 92f411271b723c949a411c7403a36f98, type: 3}
 --- !u!114 &5761944521595046692 stripped
 MonoBehaviour:
@@ -20555,6 +20545,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a99b60ef846cfa3479351ef9393ef1d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5761944521595046712 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6371153622120426286, guid: 92f411271b723c949a411c7403a36f98, type: 3}
+  m_PrefabInstance: {fileID: 5761944521595046682}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58bee6173bb9a9d4db699fa0673b38c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &6243528216971060347
@@ -20757,10 +20758,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8484573841886773730, guid: 78f83dfcef2a43f45a2226b7aa01625d, type: 3}
       propertyPath: healthBoost
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8484573841886773730, guid: 78f83dfcef2a43f45a2226b7aa01625d, type: 3}
+      propertyPath: defenseBoost
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8484573841886773730, guid: 78f83dfcef2a43f45a2226b7aa01625d, type: 3}
       propertyPath: regenerateHealth
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8484573841886773730, guid: 78f83dfcef2a43f45a2226b7aa01625d, type: 3}
+      propertyPath: attackDamageBoost
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8484573841886773730, guid: 78f83dfcef2a43f45a2226b7aa01625d, type: 3}

@@ -47,7 +47,7 @@ public class MeleeEnemy : Damage
             0, Vector2.left, 0, playerLayer);
 
         if (hit.collider != null)
-            playerHealth = hit.transform.GetComponent<Health>();
+            playerHealth = hit.transform.GetComponent<PlayerHealth>();
 
         return hit.collider != null;
     }

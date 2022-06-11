@@ -1,170 +1,44 @@
 using UnityEngine;
 
-public class Health : MonoBehaviour
+public abstract class Health : MonoBehaviour
 {
-    [SerializeField] private float startingHealth;
+    [SerializeField] protected float startingHealth;
     // Ensures that health can only be get from this script from anywhere but not allowed to be modified
-    public float currentHealth { get; private set; }
-    private Animator anima;
-    private bool isDead;
+    public float currentHealth { get; protected set; }
+    protected Animator anima;
+    protected bool isDead;
 
-    [SerializeField] private float PhysicalDefense = 0;
-    [SerializeField] private float MagicDefense = 0;
-    [SerializeField] private float minDmg;
-    [SerializeField] private GameObject prefab;
-    private void Awake()
-    {
-        currentHealth = startingHealth;
-        anima = GetComponent<Animator>();
-    }
+    [SerializeField] protected float PhysicalDefense = 0;
+    [SerializeField] protected float MagicDefense = 0;
+    [SerializeField] protected float minDmg;
+    [SerializeField] protected GameObject prefab;
 
-    public void TakePhysicalDamage(float damage) 
-    {
-        float netDamage = damage - PhysicalDefense;
-        if (netDamage < 0)
-        {
-            netDamage = minDmg;
-        }
-        GameObject damageInd = Instantiate(prefab, transform.position, Quaternion.identity);
-        damageInd.transform.GetChild(0).GetComponent<TextMesh>().text = netDamage.ToString();
-        ApplyDmg(netDamage);
-    }
+    public abstract void TakePhysicalDamage(float damage);
+    public abstract void TakeMagicDamage(float damage);
+    public abstract void TakeTrueDamage(float damage);
 
-    public void TakeMagicDamage(float damage)
-    {
-        float netDamage = damage - MagicDefense;
-        if (netDamage < 0)
-        {
-            netDamage = minDmg;
-        }
-        GameObject damageInd = Instantiate(prefab, transform.position, Quaternion.identity);
-        damageInd.transform.GetChild(0).GetComponent<TextMesh>().color = Color.blue;
-        damageInd.transform.GetChild(0).GetComponent<TextMesh>().text = netDamage.ToString();
-        ApplyDmg(netDamage);
-    }
+    public abstract void ApplyDmg(float damage);
 
-    public void TakeTrueDamage(float damage)
-    {
-        GameObject damageInd = Instantiate(prefab, transform.position, Quaternion.identity);
-        damageInd.transform.GetChild(0).GetComponent<TextMesh>().color = Color.white;
-        damageInd.transform.GetChild(0).GetComponent<TextMesh>().text = damage.ToString();
-        ApplyDmg(damage); 
-    }
+    public abstract void OnDeath();
 
-    private void ApplyDmg(float damage)
-    {
-        currentHealth = Mathf.Clamp(currentHealth - damage, 0, startingHealth);
-        if (currentHealth > 0)
-        {
-            // Player is hurt
-            anima.SetTrigger("hurt");
-        }
-        else
-        {
-            // Player will die once it has no health
-            if (!isDead)
-            {
-                OnDeath();
-                isDead = true;
-            }
-        }
-    }
+    public abstract void GainHealth(float damage);
 
-    private void OnDeath()
-    {
-        anima.SetTrigger("die");
-
-        // For enemy
-        if (GetComponent<MeleeEnemy>() != null)
-        {
-            GetComponent<MeleeEnemy>().enabled = false;
-            GetComponent<BoxCollider2D>().enabled = false;
-            GetComponent<CoinSpawn>().Spawn();
-
-        }
-
-        if (GetComponent<RangeEnemy>() != null)
-        {
-            GetComponent<RangeEnemy>().enabled = false;
-            GetComponent<BoxCollider2D>().enabled = false;
-            GetComponent<CoinSpawn>().Spawn();
-
-        }
-
-        if (GetComponent<MeleeAndRanged>() != null)
-        {
-            GetComponent<MeleeAndRanged>().enabled = false;
-            GetComponent<BoxCollider2D>().enabled = false;
-            GetComponent<CoinSpawn>().Spawn();
-
-        }
-        if (GetComponent<Aggro>() != null)
-        {
-            GetComponentInParent<Aggro>().enabled = false;
-        }
-
-        // For player
-        if (GetComponent<PlayerMovement>() != null)
-        {
-            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-            GetComponent<PlayerMovement>().enabled = false;
-            GetComponent<PlayerDeath>().Respawn();
-        }
-    }
-
-    public void GainHealth(float damage)
-    {
-        currentHealth = Mathf.Clamp(currentHealth + damage, 1, startingHealth);
-    }
-
-    public bool IsDefeated()
-    {
-        return isDead;
-    }
+    public abstract bool IsDefeated();
 
     // Gain permanent health
-    public void AddHealth(float amt)
-    {
-        startingHealth += amt;
-    }
+    public abstract void AddHealth(float amt);
+    public abstract void AddPhysicalDefense(float amt);
+    public abstract void AddMagicDefense(float amt);
 
-    public void AddPhysicalDefense(float amt)
-    {
-        PhysicalDefense += amt;
-    }
+    public abstract void AddDefense(float amt);
 
-    public void AddMagicDefense(float amt)
-    {
-        MagicDefense += amt;
-    }
+    public abstract void SubtractHealth(float amt);
 
-    public void AddDefense(float amt)
-    {
-        PhysicalDefense += amt;
-        MagicDefense += amt;
-    }
+    public abstract void SubtractPhysicalDefense(float amt);
 
-    public void SubtractHealth(float amt)
-    {
-        startingHealth -= amt;
-        currentHealth = Mathf.Clamp(currentHealth - amt, 1, startingHealth);
-    }
+    public abstract void SubtractMagicDefense(float amt);
 
-    public void SubtractPhysicalDefense(float amt)
-    {
-        PhysicalDefense -= amt;
-    }
-
-    public void SubtractMagicDefense(float amt)
-    {
-        MagicDefense -= amt;
-    }
-
-    public void SubtractDefense(float amt)
-    {
-        PhysicalDefense -= amt;
-        MagicDefense -= amt;
-    }
+    public abstract void SubtractDefense(float amt);
 
 
 }

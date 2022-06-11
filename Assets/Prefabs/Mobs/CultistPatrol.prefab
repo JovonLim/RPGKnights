@@ -108,11 +108,11 @@ GameObject:
   - component: {fileID: 337044400621837550}
   - component: {fileID: 5989468196078449090}
   - component: {fileID: 6008672639439818560}
-  - component: {fileID: 17130527379481275}
   - component: {fileID: 8994620680720682575}
   - component: {fileID: 1372944636731528839}
   - component: {fileID: 2469327674679102084}
   - component: {fileID: 3533828615794455718}
+  - component: {fileID: 2886250469837231068}
   m_Layer: 10
   m_Name: Cultist Priest
   m_TagString: MiniBoss
@@ -234,23 +234,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &17130527379481275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5063366915178251487}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2264e89b1ce83144b803079ab3a87fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingHealth: 40
-  Defense: 2
-  MagicDefense: 3
-  minDmg: 0.5
-  prefab: {fileID: 4997623711577133293, guid: 555ca5c4a4a0517489f53b54e10f9cee, type: 3}
 --- !u!114 &8994620680720682575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,6 +269,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minCoin: 20
   maxCoin: 25
+  offset: 0
   prefab: {fileID: 5015637550736375931, guid: 7fd6ab4c788ddee49839223a767d1cde, type: 3}
 --- !u!95 &2469327674679102084
 Animator:
@@ -328,3 +312,20 @@ MonoBehaviour:
   offset: 0
   speed: 3
   et: 1
+--- !u!114 &2886250469837231068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5063366915178251487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b4fb79ebc0448c41b4cda7a371c2c91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 30
+  PhysicalDefense: 0
+  MagicDefense: 0
+  minDmg: 0
+  prefab: {fileID: 4997623711577133293, guid: 555ca5c4a4a0517489f53b54e10f9cee, type: 3}

@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 4427126337973238580}
   - component: {fileID: 4427126337973238581}
   - component: {fileID: 4427126337973238578}
-  - component: {fileID: 4427126337973238577}
   - component: {fileID: 4427126337973238576}
   - component: {fileID: 4427126337973238575}
   - component: {fileID: 2787693974562754717}
+  - component: {fileID: 6294096531340466753}
   m_Layer: 10
   m_Name: HeavyBanditMelee
   m_TagString: Enemy
@@ -158,23 +158,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4427126337973238577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4427126337973238584}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2264e89b1ce83144b803079ab3a87fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingHealth: 10
-  Defense: 0
-  MagicDefense: 0
-  minDmg: 0.5
-  prefab: {fileID: 4997623711577133293, guid: 555ca5c4a4a0517489f53b54e10f9cee, type: 3}
 --- !u!114 &4427126337973238576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,6 +193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minCoin: 3
   maxCoin: 6
+  offset: 0
   prefab: {fileID: 5015637550736375931, guid: 7fd6ab4c788ddee49839223a767d1cde, type: 3}
 --- !u!114 &2787693974562754717
 MonoBehaviour:
@@ -232,3 +216,20 @@ MonoBehaviour:
   offset: 0
   speed: 3
   et: 1
+--- !u!114 &6294096531340466753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4427126337973238584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b4fb79ebc0448c41b4cda7a371c2c91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 7
+  PhysicalDefense: 0
+  MagicDefense: 0
+  minDmg: 0
+  prefab: {fileID: 4997623711577133293, guid: 555ca5c4a4a0517489f53b54e10f9cee, type: 3}
