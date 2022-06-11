@@ -122,7 +122,6 @@ public class Inventory : MonoBehaviour
         if (itemList[invNum] != null)
         {
             int posToRemove = InventoryDatabase.CurrentItems.IndexOf(itemList[invNum]);
-            Destroy(InventoryDatabase.CurrentItems[posToRemove]);
             InventoryDatabase.CurrentItems.RemoveAt(posToRemove);
             itemList[invNum].GetComponent<Item>().BeingDropped();
             itemList[invNum] = null;
@@ -294,11 +293,11 @@ public class Inventory : MonoBehaviour
         }
         FindObjectOfType<PlayerAttack>().AddAttack(equip.GetComponent<Item>().attackDamageBoost);
         FindObjectOfType<PlayerAttack>().AddAttackSpeed(equip.GetComponent<Item>().attackSpeedBoost);
-        FindObjectOfType<Health>().AddHealth(equip.GetComponent<Item>().healthBoost);
-        FindObjectOfType<Health>().AddDefense(equip.GetComponent<Item>().defenseBoost);
-        FindObjectOfType<Health>().AddMagicDefense(equip.GetComponent<Item>().magicDefenseBoost);
-        FindObjectOfType<Health>().AddPhysicalDefense(equip.GetComponent<Item>().physicalDefenseBoost);
-        FindObjectOfType<Health>().GainHealth(equip.GetComponent<Item>().regenerateHealth);
+        FindObjectOfType<PlayerHealth>().AddHealth(equip.GetComponent<Item>().healthBoost);
+        FindObjectOfType<PlayerHealth>().AddDefense(equip.GetComponent<Item>().defenseBoost);
+        FindObjectOfType<PlayerHealth>().AddMagicDefense(equip.GetComponent<Item>().magicDefenseBoost);
+        FindObjectOfType<PlayerHealth>().AddPhysicalDefense(equip.GetComponent<Item>().physicalDefenseBoost);
+        FindObjectOfType<PlayerHealth>().GainHealth(equip.GetComponent<Item>().regenerateHealth);
         FindObjectOfType<PlayerMovement>().AddSpeed(equip.GetComponent<Item>().speedBoost);
         UpdateUI();
     }
@@ -307,11 +306,11 @@ public class Inventory : MonoBehaviour
     {
         FindObjectOfType<PlayerAttack>().AddAttack(itemList[invNum].GetComponent<Item>().attackDamageBoost);
         FindObjectOfType<PlayerAttack>().AddAttackSpeed(itemList[invNum].GetComponent<Item>().attackSpeedBoost);
-        FindObjectOfType<Health>().AddHealth(itemList[invNum].GetComponent<Item>().healthBoost);
-        FindObjectOfType<Health>().AddDefense(itemList[invNum].GetComponent<Item>().defenseBoost);
-        FindObjectOfType<Health>().AddMagicDefense(itemList[invNum].GetComponent<Item>().magicDefenseBoost);
-        FindObjectOfType<Health>().AddPhysicalDefense(itemList[invNum].GetComponent<Item>().physicalDefenseBoost);
-        FindObjectOfType<Health>().GainHealth(itemList[invNum].GetComponent<Item>().regenerateHealth);
+        FindObjectOfType<PlayerHealth>().AddHealth(itemList[invNum].GetComponent<Item>().healthBoost);
+        FindObjectOfType<PlayerHealth>().AddDefense(itemList[invNum].GetComponent<Item>().defenseBoost);
+        FindObjectOfType<PlayerHealth>().AddMagicDefense(itemList[invNum].GetComponent<Item>().magicDefenseBoost);
+        FindObjectOfType<PlayerHealth>().AddPhysicalDefense(itemList[invNum].GetComponent<Item>().physicalDefenseBoost);
+        FindObjectOfType<PlayerHealth>().GainHealth(itemList[invNum].GetComponent<Item>().regenerateHealth);
         FindObjectOfType<PlayerMovement>().AddSpeed(itemList[invNum].GetComponent<Item>().speedBoost);
         
     }
@@ -332,21 +331,25 @@ public class Inventory : MonoBehaviour
     {
         FindObjectOfType<PlayerAttack>().SubtractAttack(equipHolder[equipNum].GetComponent<Item>().attackDamageBoost);
         FindObjectOfType<PlayerAttack>().SubtractAttackSpeed(equipHolder[equipNum].GetComponent<Item>().attackSpeedBoost);
-        FindObjectOfType<Health>().SubtractHealth(equipHolder[equipNum].GetComponent<Item>().healthBoost);
-        FindObjectOfType<Health>().SubtractDefense(equipHolder[equipNum].GetComponent<Item>().defenseBoost);
-        FindObjectOfType<Health>().SubtractMagicDefense(equipHolder[equipNum].GetComponent<Item>().magicDefenseBoost);
-        FindObjectOfType<Health>().SubtractPhysicalDefense(equipHolder[equipNum].GetComponent<Item>().physicalDefenseBoost);
+        FindObjectOfType<PlayerHealth>().SubtractHealth(equipHolder[equipNum].GetComponent<Item>().healthBoost);
+        FindObjectOfType<PlayerHealth>().SubtractDefense(equipHolder[equipNum].GetComponent<Item>().defenseBoost);
+        FindObjectOfType<PlayerHealth>().SubtractMagicDefense(equipHolder[equipNum].GetComponent<Item>().magicDefenseBoost);
+        FindObjectOfType<PlayerHealth>().SubtractPhysicalDefense(equipHolder[equipNum].GetComponent<Item>().physicalDefenseBoost);
         FindObjectOfType<PlayerMovement>().SubtractSpeed(equipHolder[equipNum].GetComponent<Item>().speedBoost);
     }
 
     public void Consume(int invNum)
     {
-        if (itemList[invNum].GetComponent<Item>().itemType == Item.ItemType.Consumables)
+        if (itemList[invNum] != null && itemList[invNum].GetComponent<Item>().itemType == Item.ItemType.Consumables)
         {
             EquipStats(invNum);
             itemList[invNum].GetComponent<Item>().BeingConsumed();
-            itemList[invNum] = null;
+            RemoveItem(invNum);
             UpdateUI();
+        } 
+        else
+        {
+            return;
         }
     }
 

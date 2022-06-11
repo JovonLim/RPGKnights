@@ -55,15 +55,15 @@ public class Projectile : Damage
                 boxCollider.enabled = false;
                 if (damageType == Dmg.physical)
                 {
-                    collison.GetComponent<Health>().TakePhysicalDamage(projectileDamage);
+                    collison.GetComponent<EnemyHealth>().TakePhysicalDamage(projectileDamage);
                 }
                 else if (damageType == Dmg.magic)
                 {
-                    collison.GetComponent<Health>().TakeMagicDamage(projectileDamage);
+                    collison.GetComponent<EnemyHealth>().TakeMagicDamage(projectileDamage);
                 }
                 else
                 {
-                    collison.GetComponent<Health>().TakeTrueDamage(projectileDamage);
+                    collison.GetComponent<EnemyHealth>().TakeTrueDamage(projectileDamage);
                 }          
                 anima.SetTrigger("explode");
                 StartCoroutine(Impact());

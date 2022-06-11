@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 7636891098629428845}
   - component: {fileID: 7636891098629428820}
   - component: {fileID: 7636891098629428823}
-  - component: {fileID: 7636891098629428822}
   - component: {fileID: 7636891098629428816}
   - component: {fileID: 7636891098629428819}
   - component: {fileID: 7636891098629428821}
   - component: {fileID: 7636891098629428826}
+  - component: {fileID: 3619662620225377991}
   m_Layer: 10
   m_Name: Water Priestess
   m_TagString: Boss
@@ -138,23 +138,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &7636891098629428822
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7636891098629428844}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2264e89b1ce83144b803079ab3a87fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingHealth: 40
-  PhysicalDefense: 3
-  MagicDefense: 1.5
-  minDmg: 0.5
-  prefab: {fileID: 4997623711577133293, guid: 555ca5c4a4a0517489f53b54e10f9cee, type: 3}
 --- !u!114 &7636891098629428816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,3 +216,20 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   attackSpeed: 1
+--- !u!114 &3619662620225377991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7636891098629428844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b4fb79ebc0448c41b4cda7a371c2c91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 70
+  PhysicalDefense: 0
+  MagicDefense: 0
+  minDmg: 0
+  prefab: {fileID: 4997623711577133293, guid: 555ca5c4a4a0517489f53b54e10f9cee, type: 3}

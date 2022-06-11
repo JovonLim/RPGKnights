@@ -77,11 +77,11 @@ GameObject:
   - component: {fileID: 8605975078203210867}
   - component: {fileID: 8605975078203210864}
   - component: {fileID: 8605975078203210865}
-  - component: {fileID: 8605975078203210878}
   - component: {fileID: 8605975078203210876}
   - component: {fileID: 8605975078203210877}
   - component: {fileID: 8605975078203210874}
   - component: {fileID: 8605975078203210866}
+  - component: {fileID: 2484455348701596513}
   m_Layer: 10
   m_Name: Rogue Knight
   m_TagString: Enemy
@@ -204,23 +204,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &8605975078203210878
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8605975078203210872}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2264e89b1ce83144b803079ab3a87fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingHealth: 20
-  PhysicalDefense: 3
-  MagicDefense: 2
-  minDmg: 0.5
-  prefab: {fileID: 4997623711577133293, guid: 555ca5c4a4a0517489f53b54e10f9cee, type: 3}
 --- !u!114 &8605975078203210876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -303,6 +286,23 @@ MonoBehaviour:
   prefab: {fileID: 2285797850257833682, guid: 1446584ecd987204498d5d1f4cb5e715, type: 3}
   attackSpeed: 1
   projectileLaunchPoint: {fileID: 8605975077663299728}
+--- !u!114 &2484455348701596513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8605975078203210872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b4fb79ebc0448c41b4cda7a371c2c91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 50
+  PhysicalDefense: 0
+  MagicDefense: 0
+  minDmg: 0
+  prefab: {fileID: 4997623711577133293, guid: 555ca5c4a4a0517489f53b54e10f9cee, type: 3}
 --- !u!1 &8605975078898848147
 GameObject:
   m_ObjectHideFlags: 0

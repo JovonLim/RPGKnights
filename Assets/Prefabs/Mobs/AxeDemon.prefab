@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: -3681734664521402089}
   - component: {fileID: 259894603}
   - component: {fileID: 259894604}
-  - component: {fileID: 2275436717798606324}
   - component: {fileID: 259894608}
   - component: {fileID: 8132907877290221978}
   - component: {fileID: 1324590620365905125}
+  - component: {fileID: 7928420975968836918}
   m_Layer: 10
   m_Name: AxeDemon
   m_TagString: Boss
@@ -158,23 +158,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.2621441, y: 2.32868}
   m_EdgeRadius: 0
---- !u!114 &2275436717798606324
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4379145109735915172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2264e89b1ce83144b803079ab3a87fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingHealth: 30
-  Defense: 1
-  MagicDefense: 2
-  minDmg: 0.5
-  prefab: {fileID: 4997623711577133293, guid: 555ca5c4a4a0517489f53b54e10f9cee, type: 3}
 --- !u!114 &259894608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,6 +193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minCoin: 8
   maxCoin: 16
+  offset: 0
   prefab: {fileID: 5015637550736375931, guid: 7fd6ab4c788ddee49839223a767d1cde, type: 3}
 --- !u!114 &1324590620365905125
 MonoBehaviour:
@@ -232,3 +216,20 @@ MonoBehaviour:
   offset: 1.2
   speed: 3
   et: 1
+--- !u!114 &7928420975968836918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4379145109735915172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b4fb79ebc0448c41b4cda7a371c2c91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 8
+  PhysicalDefense: 0
+  MagicDefense: 0
+  minDmg: 0
+  prefab: {fileID: 4997623711577133293, guid: 555ca5c4a4a0517489f53b54e10f9cee, type: 3}
