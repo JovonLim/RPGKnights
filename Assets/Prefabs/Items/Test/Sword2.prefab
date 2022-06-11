@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1421282079838659571
 Transform:
   m_ObjectHideFlags: 0
@@ -74,9 +74,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 1
   itemDescription: Another sword
-  consumeEvent:
-    m_PersistentCalls:
-      m_Calls: []
+  attackDamageBoost: 0
+  attackSpeedBoost: 0
+  physicalDefenseBoost: 0
+  magicDefenseBoost: 0
+  healthBoost: 0
+  speedBoost: 0
+  defenseBoost: 0
+  regenerateHealth: 0
 --- !u!212 &1421282079838659564
 SpriteRenderer:
   m_ObjectHideFlags: 0
