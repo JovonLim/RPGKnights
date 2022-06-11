@@ -276,7 +276,8 @@ MonoBehaviour:
   damageType: 1
   meleeAttackRange: 1.4
   rangedAttackRange: 6
-  damage: 3
+  damage: 5
+  rangedDamage: 4.5
   meleeColliderDistance: 0.3
   rangedColliderDistance: 0.4
   boxCollider: {fileID: 8605975078203210864}
@@ -327,7 +328,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8605975078898848147}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.6527929, y: -0.68656254, z: 0.037352562}
+  m_LocalPosition: {x: -3.84, y: -0.94, z: 0.037352562}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -358,7 +359,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8605975079363595907}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.517206, y: -0.6565628, z: 0.037352562}
+  m_LocalPosition: {x: 15.52, y: -0.77, z: 0.037352562}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

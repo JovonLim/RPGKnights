@@ -131,6 +131,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1107989112}
     m_Modifications:
     - target: {fileID: 4253057179367056642, guid: e1e65f806a4e43342bf2ae82bc1d43bf, type: 3}
+      propertyPath: damage
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4253057179367056642, guid: e1e65f806a4e43342bf2ae82bc1d43bf, type: 3}
       propertyPath: attackRange
       value: 35
       objectReference: {fileID: 0}
@@ -322,6 +326,14 @@ PrefabInstance:
     - target: {fileID: 4302673381425180297, guid: 0a3047bc7da38a543b2fbf1742ab17fc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4302673381509020316, guid: 0a3047bc7da38a543b2fbf1742ab17fc, type: 3}
+      propertyPath: damage
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4302673381509020316, guid: 0a3047bc7da38a543b2fbf1742ab17fc, type: 3}
+      propertyPath: rangedDamage
+      value: 5.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a3047bc7da38a543b2fbf1742ab17fc, type: 3}
@@ -610,6 +622,14 @@ PrefabInstance:
     - target: {fileID: 4302673381425180297, guid: 0a3047bc7da38a543b2fbf1742ab17fc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4302673381509020316, guid: 0a3047bc7da38a543b2fbf1742ab17fc, type: 3}
+      propertyPath: damage
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4302673381509020316, guid: 0a3047bc7da38a543b2fbf1742ab17fc, type: 3}
+      propertyPath: rangedDamage
+      value: 5.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a3047bc7da38a543b2fbf1742ab17fc, type: 3}
@@ -12605,6 +12625,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1107989112}
     m_Modifications:
     - target: {fileID: 4253057179367056642, guid: e1e65f806a4e43342bf2ae82bc1d43bf, type: 3}
+      propertyPath: damage
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4253057179367056642, guid: e1e65f806a4e43342bf2ae82bc1d43bf, type: 3}
       propertyPath: attackRange
       value: 30
       objectReference: {fileID: 0}
@@ -13447,7 +13471,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2258608998219809148, guid: 82fef74e3fda86340a5e52f72eb57c93, type: 3}
       propertyPath: damage
-      value: 4
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2258608998219809148, guid: 82fef74e3fda86340a5e52f72eb57c93, type: 3}
+      propertyPath: rangedDamage
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2258608998219809148, guid: 82fef74e3fda86340a5e52f72eb57c93, type: 3}
       propertyPath: rangedAttackRange
@@ -13575,6 +13603,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1107989112}
     m_Modifications:
+    - target: {fileID: 4253057179367056642, guid: e1e65f806a4e43342bf2ae82bc1d43bf, type: 3}
+      propertyPath: damage
+      value: 4.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4253057179367056642, guid: e1e65f806a4e43342bf2ae82bc1d43bf, type: 3}
       propertyPath: attackRange
       value: 30

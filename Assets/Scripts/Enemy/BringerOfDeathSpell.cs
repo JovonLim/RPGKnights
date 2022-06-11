@@ -5,7 +5,7 @@ using UnityEngine;
 public class BringerOfDeathSpell : Damage
 { 
     [SerializeField] protected float projectileResetTime;
-    [SerializeField] private float enemyDamage;
+    public float enemyDamage;
     protected float projectileLifetime;
     private GameObject player;
     private bool hit = false;

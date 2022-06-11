@@ -4,6 +4,7 @@ public class RangeEnemy : MonoBehaviour
 {
     
     [SerializeField] private float attackRange;
+    [SerializeField] private float damage;
     [SerializeField] private float colliderDistance;
     [SerializeField] private BoxCollider2D boxCollider;
     [SerializeField] private LayerMask playerLayer;
@@ -68,6 +69,7 @@ public class RangeEnemy : MonoBehaviour
         // Launch the projectile
         GameObject fireball = Instantiate(this.prefab, projectileLaunchPoint.position, Quaternion.identity);
         fireball.transform.localScale = new Vector3(transform.localScale.x, 1, 1);
+        fireball.GetComponent<EnemyProjectile>().enemyDamage = damage;
         fireball.GetComponent<EnemyProjectile>().ActivateProjectile();
     }
 }

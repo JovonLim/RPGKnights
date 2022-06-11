@@ -8,6 +8,7 @@ public class MeleeAndRanged : Damage
     [SerializeField] private float meleeAttackRange;
     [SerializeField] private float rangedAttackRange;
     [SerializeField] protected float damage;
+    [SerializeField] protected float rangedDamage;
 
     [SerializeField] private float meleeColliderDistance;
     [SerializeField] private float rangedColliderDistance;
@@ -113,6 +114,7 @@ public class MeleeAndRanged : Damage
 
         // Launch the projectile
         GameObject spell = Instantiate(this.prefab, new Vector2(player.transform.position.x, player.transform.position.y + 1.2f), Quaternion.identity);
+        spell.GetComponent<BringerOfDeathSpell>().enemyDamage = rangedDamage;
         spell.GetComponent<BringerOfDeathSpell>().ActivateProjectile();
     }
 

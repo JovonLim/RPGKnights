@@ -30546,14 +30546,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireWormParent
       objectReference: {fileID: 0}
-    - target: {fileID: 6791184057328195699, guid: e1e65f806a4e43342bf2ae82bc1d43bf, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 16.26
-      objectReference: {fileID: 0}
-    - target: {fileID: 6791184057328195699, guid: e1e65f806a4e43342bf2ae82bc1d43bf, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.65
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1e65f806a4e43342bf2ae82bc1d43bf, type: 3}
 --- !u!1001 &1739378005

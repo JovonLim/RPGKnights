@@ -385,8 +385,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 0.05
-  fullText: 'The coins obtained through conquering dungeons are acceptable currency
-    around the world, and allows adventurers to train their skills. '
+  fullText: 'The loot obtained through conquering dungeons are acceptable currency
+    around the world, making adventurers'' lifes easier.   '
 --- !u!114 &552412514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1472,5 +1472,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 0.05
-  fullText: 'In the mystical world of Caelem, where monsters and magic exist, dungeons
-    are key areas for adventurers'' livelihoods. '
+  fullText: 'In the mystical world of Caelem, where dungeons exist, adventurers are
+    needed to clear them to stop monsters from ravaging the outside world. '
