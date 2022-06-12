@@ -48,7 +48,7 @@ public class SpellHud : SpellHolder
 
     public void InitializeSpell()
     {
-        Spell spell = GetComponent<PlayerAttack>().spellToCast;
+        Spell spell = PlayerAttack.spellToCast;
         ability.GetComponent<Image>().enabled = true;
         abilityDark.GetComponent<Image>().enabled = true;
         if (spell != null)

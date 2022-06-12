@@ -67,6 +67,7 @@ public class Wizard : MonoBehaviour
     public void ExitQuest()
     {
         questDialog.SetActive(false);
+        Time.timeScale = 1;
         if (PlayerQuestInteraction.questActive && PlayerQuestInteraction.WizardQuest.questNum == 1)
         {
             StartCoroutine(Backstory());
@@ -75,6 +76,7 @@ public class Wizard : MonoBehaviour
 
     public void ExitShop()
     {
+        Time.timeScale = 1;
         shop.SetActive(false);
     }
 
@@ -85,6 +87,7 @@ public class Wizard : MonoBehaviour
         if (PlayerAttack.spellUnlock)
         {
             shop.SetActive(true);
+            Time.timeScale = 0;
             playerClicked = false;
         } 
     }
@@ -92,6 +95,7 @@ public class Wizard : MonoBehaviour
     public void DisplayQuests()
     {
         questDialog.SetActive(true);
+        Time.timeScale = 0;
         playerClicked = false;
     }
     IEnumerator Intro()

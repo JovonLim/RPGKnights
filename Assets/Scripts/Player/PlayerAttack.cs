@@ -1,33 +1,39 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 
 public class PlayerAttack : MonoBehaviour
 {
 
-    [SerializeField] private float attackSpeed;
+    [SerializeField] private float meleeAttackSpeed;
+    [SerializeField] private float rangedAttackSpeed;
     private PlayerMovement playerMove;
     private float attackCooldownTimer = float.MaxValue;
+ 
 
     public Animator anima;
     public Transform attackPoint;
     public float attackRange = 0.5f;
-    [SerializeField] public float attackDamage;
+    [SerializeField] private float meleeAttackDamage;
+    [SerializeField] private float rangedAttackDamage;
     public LayerMask enemyLayer;
 
     private int combo = 0;
+    private int arrowCount = 0;
     private float resetTimer;
     private float spellTimer;
 
     
-    public static bool rangedUnlock = false;
+    public static bool rangedUnlock = true;
     public static bool spellUnlock = false;
 
     [SerializeField] private Transform projectileLaunchPoint;
     [SerializeField] private GameObject arrow;
     [SerializeField] private Spell defaultSpell;
     [SerializeField] private GameObject classHud;
-    public Spell spellToCast = SpellHolder.activeSpells[0];
+    public static Spell spellToCast = SpellHolder.activeSpells[0];
+    public static Passives[] rangedPassives = new Passives[2];
     
     [SerializeField] private enum Class
     {
@@ -92,7 +98,7 @@ public class PlayerAttack : MonoBehaviour
             case Class.melee:
                 {
                     // Melee Attack
-                    if (Input.GetMouseButtonDown(0) && attackCooldownTimer > attackSpeed && playerMove.canAttack())
+                    if (Input.GetMouseButtonDown(0) && attackCooldownTimer > meleeAttackSpeed && playerMove.canAttack())
                     {
                         MeleeAttack();
                     }
@@ -102,7 +108,7 @@ public class PlayerAttack : MonoBehaviour
             case Class.ranged:
                 {
                     // Ranged Attack
-                    if (Input.GetMouseButtonDown(0) && attackCooldownTimer > attackSpeed && playerMove.canAttack())
+                    if (Input.GetMouseButtonDown(0) && attackCooldownTimer > rangedAttackSpeed && playerMove.canAttack())
                     {
                         RangedAttack();
                     }
@@ -162,7 +168,7 @@ public class PlayerAttack : MonoBehaviour
         // Damage them
         foreach(Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<EnemyHealth>().TakePhysicalDamage(attackDamage);
+            enemy.GetComponent<EnemyHealth>().TakePhysicalDamage(meleeAttackDamage);
         }
       
 
@@ -176,31 +182,54 @@ public class PlayerAttack : MonoBehaviour
     private void LaunchProjectile()
     {
         attackCooldownTimer = 0;
+        arrowCount += 1;
 
-        // Launch the projectile
+        if (arrowCount == 2 && rangedPassives[0] != null)
+        {
+            rangedAttackDamage += 0.5f;
+            Launch();
+            rangedAttackDamage -= 0.5f;
+        } else
+        {
+            Launch();
+        }       
+    }
+
+    private void Launch()
+    {
+        
         GameObject projectile = Instantiate(arrow, projectileLaunchPoint.position, Quaternion.identity);
+        if (arrowCount == 2)
+        {
+            if (rangedPassives[1] != null)
+            {
+                projectile.GetComponent<Projectile>().damageType = Damage.Dmg.magic;
+            }
+            arrowCount = 0;
+        }
         projectile.transform.localScale = new Vector3(projectileLaunchPoint.transform.localScale.x, 1, 1);
+        projectile.GetComponent<Projectile>().projectileDamage = rangedAttackDamage;
         projectile.GetComponent<Projectile>().SetDirection(Mathf.Sign(transform.localScale.x));
     }
 
     public void AddAttack(float amt)
     {
-        attackDamage += amt;
+        meleeAttackDamage += amt;
     }
 
     public void SubtractAttack(float amt)
     {
-        attackDamage -= amt;
+        meleeAttackDamage -= amt;
     }
 
     public void AddAttackSpeed(float amt)
     {
-        attackSpeed -= amt;
+        meleeAttackSpeed -= amt;
     }
 
     public void SubtractAttackSpeed(float amt)
     {
-        attackSpeed += amt;
+        meleeAttackSpeed += amt;
     }
 
     private void CastSpell()

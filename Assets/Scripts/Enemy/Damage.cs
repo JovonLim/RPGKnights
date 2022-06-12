@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class Damage : MonoBehaviour
 {
-    protected enum Dmg
+    public enum Dmg
     {
         magic, physical, trueDmg,
     }
 
-    [SerializeField] protected Dmg damageType;
+    public Dmg damageType;
 }

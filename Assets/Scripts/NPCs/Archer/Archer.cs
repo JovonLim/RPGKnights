@@ -8,9 +8,9 @@ public class Archer : MonoBehaviour
     [SerializeField] GameObject questDialog;
     [SerializeField] GameObject shop;
     [SerializeField] GameObject introText;
-    [SerializeField] GameObject backstory;
+    [SerializeField] GameObject[] backstory;
     public Quest[] quests;
-    private static bool introduced;
+    private static bool introduced = true;
     private bool playerInRange;
 
     private bool playerClicked;
@@ -67,9 +67,9 @@ public class Archer : MonoBehaviour
     public void ExitQuest()
     {
         questDialog.SetActive(false);
-        if (PlayerQuestInteraction.questActive && PlayerQuestInteraction.ArcherQuest.questNum == 0)
+        if (PlayerQuestInteraction.questActive && PlayerQuestInteraction.ArcherQuest != null)
         {
-            StartCoroutine(Backstory(0));
+            StartCoroutine(Backstory());
         }
     }
 
@@ -102,11 +102,22 @@ public class Archer : MonoBehaviour
         introduced = true;
     }
 
-    IEnumerator Backstory(int num)
+    IEnumerator Backstory()
     {
-        backstory.SetActive(true);
-        yield return new WaitForSecondsRealtime(6);
-        backstory.SetActive(false);
+
+        if (PlayerQuestInteraction.ArcherQuest.questNum == 0)
+        {
+            backstory[0].SetActive(true);
+            yield return new WaitForSecondsRealtime(6);
+            backstory[0].SetActive(false);
+        }
+        else if (PlayerQuestInteraction.ArcherQuest.questNum == 2)
+        {
+            backstory[1].SetActive(true);
+            yield return new WaitForSecondsRealtime(10);
+            backstory[1].SetActive(false);
+        }
     }
+
 }
 

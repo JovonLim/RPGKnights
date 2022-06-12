@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class WizardShop : MonoBehaviour
+public class ArcherShop : MonoBehaviour
 {
-    [SerializeField] Spell[] spells;
+    [SerializeField] Passives[] passives;
     [SerializeField] TextMeshProUGUI[] texts;
-    [SerializeField] int[] costs;
     [SerializeField] GameObject insufficientFunds;
     [SerializeField] TextMeshProUGUI coinAmt;
-    private static bool[] purchased = new bool[6];
+    [SerializeField] TextMeshProUGUI description;
+    private static bool[] purchased = new bool[2];
     private bool update;
     private int selected = -1;
     // Start is called before the first frame update
@@ -23,7 +23,7 @@ public class WizardShop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
         if (update)
         {
             coinAmt.text = UI.coins.ToString();
@@ -31,10 +31,11 @@ public class WizardShop : MonoBehaviour
             {
                 if (purchased[i])
                 {
-                    texts[i].text = spells[i].spell.spellName + " (purchased)";
-                } else
+                    texts[i].text = passives[i].passiveName + " (purchased)";
+                }
+                else
                 {
-                    texts[i].text = spells[i].spell.spellName + " Cost: " + costs[i];
+                    texts[i].text = passives[i].passiveName;
                 }
             }
             update = false;
@@ -46,6 +47,7 @@ public class WizardShop : MonoBehaviour
         Deselect();
         texts[num].color = Color.red;
         selected = num;
+        ShowDescription(num);
     }
 
     public void Deselect()
@@ -53,26 +55,38 @@ public class WizardShop : MonoBehaviour
         if (selected != -1)
         {
             texts[selected].color = Color.black;
+            RemoveDescription();
             selected = -1;
         }
     }
 
     public void Purchase()
     {
-        if (!purchased[selected] && UI.coins >= costs[selected])
+        if (!purchased[selected] && UI.coins >= passives[selected].cost)
         {
-            UI.coins -= costs[selected];
+            UI.coins -= passives[selected].cost;
             purchased[selected] = true;
             update = true;
-            SpellHolder.UnlockSpell(spells[selected].spell.id);
+            PlayerAttack.rangedPassives[selected] = passives[selected];
             Deselect();
-        } else if (UI.coins < costs[selected])
+        }
+        else if (UI.coins < passives[selected].cost)
         {
             Deselect();
             insufficientFunds.SetActive(true);
             gameObject.SetActive(false);
-            
+
         }
+    }
+
+    private void ShowDescription(int num)
+    {
+        description.text = passives[num].description + "\nCost: " + passives[num].cost;
+    }
+
+    private void RemoveDescription()
+    {
+        description.text = "";
     }
 
     public void Exit()
@@ -80,3 +94,4 @@ public class WizardShop : MonoBehaviour
         insufficientFunds.SetActive(false);
     }
 }
+

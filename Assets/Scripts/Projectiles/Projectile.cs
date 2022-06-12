@@ -7,7 +7,7 @@ public class Projectile : Damage
     private bool hit;
     [SerializeField] private float projectileResetTime;
     private float projectileLifetime;
-    [SerializeField] private float projectileDamage;
+    public float projectileDamage;
     private float direction;
 
     // References
