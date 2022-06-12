@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 using System.Collections.Generic;
 
 
@@ -21,6 +22,7 @@ public class PlayerAttack : MonoBehaviour
 
     private int combo = 0;
     private int arrowCount = 0;
+    private int swordCount = 0;
     private float resetTimer;
     private float spellTimer;
 
@@ -34,6 +36,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private GameObject classHud;
     public static Spell spellToCast = SpellHolder.activeSpells[0];
     public static Passives[] rangedPassives = new Passives[2];
+    public static Passives[] meleePassives = new Passives[2];
     
     [SerializeField] private enum Class
     {
@@ -150,14 +153,21 @@ public class PlayerAttack : MonoBehaviour
 
         else if (combo == 2)
         {
+            if (meleePassives[0] != null)
+            {
+                StartCoroutine(Increase(1));
+            }
             anima.SetTrigger("melee2");
         }
 
         else if (combo == 3)
         {
+            if (meleePassives[0] != null)
+            {
+                StartCoroutine(Increase(2));
+            }
             anima.SetTrigger("melee3");
-            combo = 0;
-            
+            combo = 0;          
         }
         resetTimer = 0;
         attackCooldownTimer = 0;
@@ -169,9 +179,23 @@ public class PlayerAttack : MonoBehaviour
         foreach(Collider2D enemy in hitEnemies)
         {
             enemy.GetComponent<EnemyHealth>().TakePhysicalDamage(meleeAttackDamage);
+            swordCount += 1;
+        }
+
+        if (swordCount >= 5 && meleePassives[1] != null)
+        {
+            GetComponent<PlayerHealth>().GainHealth(0.2f);
+            swordCount -= 5;
         }
       
 
+    }
+
+    IEnumerator Increase(int num)
+    {
+        meleeAttackDamage += 0.5f * num;
+        yield return new WaitForSeconds(meleeAttackSpeed - 0.2f);
+        meleeAttackDamage -= 0.5f * num;
     }
 
     void RangedAttack()

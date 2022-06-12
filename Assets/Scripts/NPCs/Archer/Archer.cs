@@ -10,7 +10,7 @@ public class Archer : MonoBehaviour
     [SerializeField] GameObject introText;
     [SerializeField] GameObject[] backstory;
     public Quest[] quests;
-    private static bool introduced = true;
+    private static bool introduced = false;
     private bool playerInRange;
 
     private bool playerClicked;
