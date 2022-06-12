@@ -46,11 +46,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13dad931fbd254a4fb88326b30c810b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 0
+  itemType: 7
   itemDescription: Just a rock
-  consumeEvent:
-    m_PersistentCalls:
-      m_Calls: []
+  attackDamageBoost: 0
+  attackSpeedBoost: 0
+  physicalDefenseBoost: 0
+  magicDefenseBoost: 0
+  healthBoost: 0
+  speedBoost: 0
+  defenseBoost: 0
+  regenerateHealth: 0
 --- !u!61 &8484573841886773729
 BoxCollider2D:
   m_ObjectHideFlags: 0

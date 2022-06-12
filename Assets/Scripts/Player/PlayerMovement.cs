@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (isInventoryOn())
+        if (isPlayerInteracting())
         {
             body.velocity = new Vector2(0, 0);
             body.isKinematic = true;
@@ -105,9 +105,9 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
-    private bool isInventoryOn()
+    private bool isPlayerInteracting()
     {
-        return FindObjectOfType<Inventory>().IsInventoryOn();
+        return FindObjectOfType<Inventory>().IsInventoryOn() || FindObjectOfType<Shop>().IsShopOn();
     }
 
 

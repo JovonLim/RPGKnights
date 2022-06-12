@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerItemInteraction : MonoBehaviour
 {
-
+    [SerializeField] private Transform dropPoint;
     public Transform detectionPoint;
     private const float detectionCircleRadius = 0.4f;
     public LayerMask detectionLayer;
@@ -51,7 +51,7 @@ public class PlayerItemInteraction : MonoBehaviour
         dropItem = item;
         dropItem.gameObject.SetActive(true);
         var obj = Instantiate(dropItem, 
-            new Vector3(detectionPoint.localScale.x, detectionPoint.localScale.y, detectionPoint.localScale.z), 
+            new Vector2(dropPoint.position.x, dropPoint.position.y),
             transform.rotation);
         obj.name = dropItem.name;
         

@@ -13,7 +13,7 @@ public class Shop : MonoBehaviour
     [SerializeField] private GameObject shopPanelWindow; 
     [SerializeField] public GameObject[] shopItems;
     [SerializeField] public int[] itemCosts;
-    [SerializeField] public Image[] shopItemsImages = new Image[6];
+    [SerializeField] public Image[] shopItemsImages;
 
 
     [SerializeField] private GameObject itemInformationWindow;
@@ -35,7 +35,16 @@ public class Shop : MonoBehaviour
         insufficentFundsText.gameObject.SetActive(shopOn);
         for (int i = 0; i < shopItems.Length; i++)
         {
-            shopItemsImages[i].sprite = shopItems[i].GetComponent<SpriteRenderer>().sprite;
+            if (shopItems[i] != null)
+            {
+                shopItemsImages[i].sprite = shopItems[i].GetComponent<SpriteRenderer>().sprite;
+                shopItemsImages[i].gameObject.SetActive(true);
+            }
+            else
+            {
+                shopItemsImages[i].gameObject.SetActive(false);
+            }
+            
         }
     }
 
@@ -82,7 +91,10 @@ public class Shop : MonoBehaviour
         {
             UI.coins -= itemCosts[slotNum];
             shopCoinCounter.text = UI.coins.ToString();
-            FindObjectOfType<Inventory>().AddItem(shopItems[slotNum]);
+            GameObject purchased = Instantiate(shopItems[slotNum]);
+            purchased.name = shopItems[slotNum].name;
+            purchased.gameObject.SetActive(true);
+            FindObjectOfType<Inventory>().AddItem(purchased);
         }
         else
         {
