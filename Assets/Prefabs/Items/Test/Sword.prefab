@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13dad931fbd254a4fb88326b30c810b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 1
+  itemType: 0
   itemDescription: A sword
   attackDamageBoost: 0
   attackSpeedBoost: 0
