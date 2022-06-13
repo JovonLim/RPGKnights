@@ -15,6 +15,10 @@ public class Shop : MonoBehaviour
     [SerializeField] public int[] itemCosts;
     [SerializeField] public Image[] shopItemsImages;
 
+    [SerializeField] public GameObject[] listOfItemPanels;
+    [SerializeField] private static int currentPage;
+    [SerializeField] private GameObject prevPanelButton;
+    [SerializeField] private GameObject nextPanelButton;
 
     [SerializeField] private GameObject itemInformationWindow;
     [SerializeField] public TextMeshProUGUI itemName;
@@ -55,6 +59,8 @@ public class Shop : MonoBehaviour
         {
             ToggleShop();
         }
+
+        
     }
 
     private void ToggleShop()
@@ -62,6 +68,7 @@ public class Shop : MonoBehaviour
         shopOn = !shopOn;
         shopPanelWindow.SetActive(shopOn);
         shopCoinCounter.text = UI.coins.ToString();
+        ResetPanels();
     }
 
     public bool IsShopOn()
@@ -130,6 +137,55 @@ public class Shop : MonoBehaviour
         insufficentFundsText.gameObject.SetActive(true);
         yield return new WaitForSeconds(time);
         insufficentFundsText.gameObject.SetActive(false);
+    }
+
+    public void ResetPanels()
+    {
+        currentPage = 0;
+        listOfItemPanels[0].gameObject.SetActive(true);
+        for (int i = 1; i < listOfItemPanels.Length; i++)
+        {
+            listOfItemPanels[i].gameObject.SetActive(false);
+        }
+        UpdateButton();
+    }
+
+    public void NextPanel()
+    {
+        currentPage += 1;
+        listOfItemPanels[currentPage - 1].gameObject.SetActive(false);
+        listOfItemPanels[currentPage].gameObject.SetActive(true);
+        UpdateButton();
+    }
+
+    public void PrevPanel()
+    {
+        currentPage -= 1;
+        listOfItemPanels[currentPage + 1].gameObject.SetActive(false);
+        listOfItemPanels[currentPage].gameObject.SetActive(true);
+        UpdateButton();
+    }
+
+    public void UpdateButton()
+    {
+        if (currentPage == 0)
+        {
+            // Currently at first panel
+            prevPanelButton.gameObject.SetActive(false);
+            nextPanelButton.gameObject.SetActive(true);
+        } 
+        else if (currentPage == (listOfItemPanels.Length - 1))
+        {
+            //Currently at last panel
+            nextPanelButton.gameObject.SetActive(false);
+            prevPanelButton.gameObject.SetActive(true);
+
+        }
+        else
+        {
+            prevPanelButton.gameObject.SetActive(true);
+            nextPanelButton.gameObject.SetActive(true);
+        }
     }
 
 }
