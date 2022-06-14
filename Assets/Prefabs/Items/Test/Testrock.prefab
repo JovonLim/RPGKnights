@@ -52,7 +52,7 @@ MonoBehaviour:
   attackSpeedBoost: 0
   physicalDefenseBoost: 0
   magicDefenseBoost: 0
-  healthBoost: 0
+  healthBoost: 1
   speedBoost: 0
   defenseBoost: 0
   regenerateHealth: 0

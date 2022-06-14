@@ -14,8 +14,8 @@ public class Item: MonoBehaviour
         ChestPiece, 
         Leggings, 
         Boots, 
-        ArcherWeapon,
-        MageWeapon, 
+        Necklace,
+        Ring, 
         Consumables
     }
 

@@ -125,9 +125,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 0
-  itemDescription: Provides +2 attacks
+  itemDescription: Provides +2 attacks but attacks slower
   attackDamageBoost: 2
-  attackSpeedBoost: 0
+  attackSpeedBoost: -0.2
   physicalDefenseBoost: 0
   magicDefenseBoost: 0
   healthBoost: 0

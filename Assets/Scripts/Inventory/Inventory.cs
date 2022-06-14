@@ -186,7 +186,7 @@ public class Inventory : MonoBehaviour
             equipHolder[4] = itemToBeEquipped;
             
         }
-        else if (itemList[invNum].GetComponent<Item>().itemType == Item.ItemType.ArcherWeapon)
+        else if (itemList[invNum].GetComponent<Item>().itemType == Item.ItemType.Necklace)
         {
             if (equipHolder[5] != null)
             {
@@ -196,7 +196,7 @@ public class Inventory : MonoBehaviour
             equipHolder[5] = itemToBeEquipped;
             
         }
-        else if (itemList[invNum].GetComponent<Item>().itemType == Item.ItemType.MageWeapon)
+        else if (itemList[invNum].GetComponent<Item>().itemType == Item.ItemType.Ring)
         {
             if (equipHolder[6] != null)
             {
@@ -267,7 +267,7 @@ public class Inventory : MonoBehaviour
             equipHolder[4] = equip;
 
         }
-        else if (equip.GetComponent<Item>().itemType == Item.ItemType.ArcherWeapon)
+        else if (equip.GetComponent<Item>().itemType == Item.ItemType.Necklace)
         {
             if (equipHolder[5] != null)
             {
@@ -277,7 +277,7 @@ public class Inventory : MonoBehaviour
             equipHolder[5] = equip;
 
         }
-        else if (equip.GetComponent<Item>().itemType == Item.ItemType.MageWeapon)
+        else if (equip.GetComponent<Item>().itemType == Item.ItemType.Ring)
         {
             if (equipHolder[6] != null)
             {

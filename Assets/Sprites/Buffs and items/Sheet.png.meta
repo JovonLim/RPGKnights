@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 89957f383b2fe1e4e9b9cc5ade630181
+guid: 45a126036dbf87840bd7ec4688bb4ea5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -104,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: icons32x32_0
+      name: Sheet_0
       rect:
         serializedVersion: 2
-        x: 69
-        y: 2
-        width: 22
-        height: 29
+        x: 16
+        y: 33
+        width: 16
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,8 +118,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b3397b3231936d4387d155f77c05293
-      internalID: -825196274
+      spriteID: 3943f4e799d5e0a43a1adff6bf18f1a1
+      internalID: -1519531318
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      icons32x32_0: -825196274
+      Sheet_0: -1519531318
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

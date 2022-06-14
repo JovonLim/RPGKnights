@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -380,12 +380,12 @@ TextureImporter:
       name: spritesheet_32x32_13
       rect:
         serializedVersion: 2
-        x: 34
+        x: 32
         y: 674
-        width: 28
+        width: 32
         height: 28
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -406,7 +406,7 @@ TextureImporter:
         width: 30
         height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -414,6 +414,111 @@ TextureImporter:
       bones: []
       spriteID: 44c35c28c3dbe2e4c89c4ad185783d1f
       internalID: -1380418932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_32x32_15
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 320
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17c4835dd31a7ca49a1949986d753068
+      internalID: 1456720579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_32x32_16
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 674
+        width: 32
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54dc4d5b11c19d241a7243d7f5e7f612
+      internalID: -298347422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_32x32_17
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 256
+        width: 29
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a49540aa0fc6cc4e8ac1224d7056b0a
+      internalID: -501898047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_32x32_18
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 256
+        width: 29
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26b88d33a0f80d04f8efd913adebdd75
+      internalID: 1649806825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_32x32_19
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 256
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 838b22baa9af1ee498066a08c4bd62ad
+      internalID: 969822843
       vertices: []
       indices: 
       edges: []
@@ -431,8 +536,12 @@ TextureImporter:
     nameFileIdTable:
       spritesheet_32x32_0: 1803814763
       spritesheet_32x32_11: 872705054
+      spritesheet_32x32_15: 1456720579
       spritesheet_32x32_3: 2031136467
+      spritesheet_32x32_19: 969822843
+      spritesheet_32x32_16: -298347422
       spritesheet_32x32_1: 1934859273
+      spritesheet_32x32_17: -501898047
       spritesheet_32x32_14: -1380418932
       spritesheet_32x32_9: -1443984348
       spritesheet_32x32_8: -251635402
@@ -443,6 +552,7 @@ TextureImporter:
       spritesheet_32x32_10: -1173531459
       spritesheet_32x32_12: 359608502
       spritesheet_32x32_6: -438426379
+      spritesheet_32x32_18: 1649806825
       spritesheet_32x32_2: -1863251591
   spritePackingTag: 
   pSDRemoveMatte: 0
