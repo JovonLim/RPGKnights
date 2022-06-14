@@ -688,8 +688,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 0.05
-  fullText: 'You play the role of an up and coming hero with the powerful ability
-    to revive, making you the perfect candidate to venture into the dungeon and discovers
+  fullText: 'You play the role of an up and coming hero with the unique ability to
+    revive, making you the perfect candidate to venture into the dungeon and discovers
     its secrets. Let the journey begin! '
 --- !u!114 &1332468204
 MonoBehaviour:
