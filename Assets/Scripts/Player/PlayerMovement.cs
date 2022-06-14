@@ -107,7 +107,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool isPlayerInteracting()
     {
-        return FindObjectOfType<Inventory>().IsInventoryOn() || FindObjectOfType<Shop>().IsShopOn();
+        return FindObjectOfType<Inventory>().IsInventoryOn();
     }
 
 
