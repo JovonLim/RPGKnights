@@ -188,27 +188,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pixel GUI_4
-      rect:
-        serializedVersion: 2
-        x: 646
-        y: 1413
-        width: 247
-        height: 254
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bbfc25a113308ee41b10ca1391e17c9e
-      internalID: -275042942
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Pixel GUI_5
       rect:
         serializedVersion: 2
@@ -217,7 +196,7 @@ TextureImporter:
         width: 112
         height: 113
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -241,8 +220,11 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Pixel GUI_2: 1021946298
+      Pixel GUI_8: 1585006076
       Pixel GUI_3: -1415843206
       Pixel GUI_5: 563345843
+      Pixel GUI_6: 502179883
+      Pixel GUI_7: -130475764
       Pixel GUI_1: -2015820396
       Pixel GUI_0: -109913257
       Pixel GUI_4: -275042942
