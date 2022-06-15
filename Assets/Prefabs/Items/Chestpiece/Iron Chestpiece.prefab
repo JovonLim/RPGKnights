@@ -125,12 +125,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 2
-  itemDescription: Provides +2 Physical Defense
+  itemDescription: Provides +3 Physical Defense but slows speed by -1
   attackDamageBoost: 0
   attackSpeedBoost: 0
-  physicalDefenseBoost: 2
+  physicalDefenseBoost: 3
   magicDefenseBoost: 0
   healthBoost: 0
-  speedBoost: 0
+  speedBoost: -1
   defenseBoost: 0
   regenerateHealth: 0
