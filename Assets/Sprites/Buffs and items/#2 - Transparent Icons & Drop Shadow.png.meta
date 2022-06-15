@@ -574,7 +574,7 @@ TextureImporter:
         width: 27
         height: 25
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -582,6 +582,153 @@ TextureImporter:
       bones: []
       spriteID: 2469dcbd5cc4fe24fa37bfe811261d4d
       internalID: 275285021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '#2 - Transparent Icons & Drop Shadow_23'
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 226
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9021e0273bf4dac4f96da25cf2939ca2
+      internalID: 1808416114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '#2 - Transparent Icons & Drop Shadow_24'
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 165
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de53134117f92f748afcd6317590be00
+      internalID: 643571495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '#2 - Transparent Icons & Drop Shadow_25'
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 580
+        width: 28
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2bccc96ad4e094448e1463896d8d94e
+      internalID: 2091688638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '#2 - Transparent Icons & Drop Shadow_26'
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 580
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bf857f6f6eee6d40a063a9cb2ed53b4
+      internalID: -762658061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '#2 - Transparent Icons & Drop Shadow_27'
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 612
+        width: 21
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c442546d4e478f4dadcc8e31cf886d6
+      internalID: 117064176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '#2 - Transparent Icons & Drop Shadow_28'
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 675
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6657157484d694441a3fcd20678eea64
+      internalID: 499786933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '#2 - Transparent Icons & Drop Shadow_29'
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 675
+        width: 30
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e9bef1d1b7a43d40ba6ff4c254bdef1
+      internalID: 606524611
       vertices: []
       indices: 
       edges: []
@@ -605,20 +752,27 @@ TextureImporter:
       '#2 - Transparent Icons & Drop Shadow_5': -1944988034
       '#2 - Transparent Icons & Drop Shadow_10': 1019654111
       '#2 - Transparent Icons & Drop Shadow_13': 617118904
+      '#2 - Transparent Icons & Drop Shadow_23': 1808416114
       '#2 - Transparent Icons & Drop Shadow_17': 70569966
+      '#2 - Transparent Icons & Drop Shadow_25': 2091688638
       '#2 - Transparent Icons & Drop Shadow_14': -881475526
+      '#2 - Transparent Icons & Drop Shadow_26': -762658061
       '#2 - Transparent Icons & Drop Shadow_3': -634176505
       '#2 - Transparent Icons & Drop Shadow_6': -1891505775
+      '#2 - Transparent Icons & Drop Shadow_24': 643571495
       '#2 - Transparent Icons & Drop Shadow_2': 1063905677
       '#2 - Transparent Icons & Drop Shadow_20': 712326570
       '#2 - Transparent Icons & Drop Shadow_16': -1756947890
+      '#2 - Transparent Icons & Drop Shadow_27': 117064176
       '#2 - Transparent Icons & Drop Shadow_1': -535228201
       '#2 - Transparent Icons & Drop Shadow_4': -1831321656
       '#2 - Transparent Icons & Drop Shadow_22': 275285021
       '#2 - Transparent Icons & Drop Shadow_7': 1394252976
       '#2 - Transparent Icons & Drop Shadow_8': 1707623537
       '#2 - Transparent Icons & Drop Shadow_9': 989987644
+      '#2 - Transparent Icons & Drop Shadow_28': 499786933
       '#2 - Transparent Icons & Drop Shadow_0': -86284090
+      '#2 - Transparent Icons & Drop Shadow_29': 606524611
       '#2 - Transparent Icons & Drop Shadow_19': -1741319099
   spritePackingTag: 
   pSDRemoveMatte: 0
