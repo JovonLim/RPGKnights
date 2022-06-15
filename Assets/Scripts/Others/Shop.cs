@@ -32,7 +32,7 @@ public class Shop : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        UI.coins = 2000;
+        
         animator = GetComponent<Animator>();
         shopCoinCounter.text = UI.coins.ToString();
         shopPanelWindow.SetActive(shopOn);

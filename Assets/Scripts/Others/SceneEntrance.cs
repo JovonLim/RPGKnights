@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class SceneEntrance : MonoBehaviour
 {
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        player.transform.position = this.transform.position;
-    }
+    bool Used;
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (!Used)
+        {
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            player.transform.position = this.transform.position;
+            Used = true;
+        }
     }
 }

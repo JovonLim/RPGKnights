@@ -7,6 +7,8 @@ public class Escape : MonoBehaviour
 {
     [SerializeField] private GameObject menu;
     [SerializeField] private GameObject controls;
+    [SerializeField] private GameObject saveNotice;
+    [SerializeField] private GameObject confirmation;
     private bool inMenu;
     // Start is called before the first frame update
     void Start()
@@ -43,10 +45,60 @@ public class Escape : MonoBehaviour
         inMenu = false;
     }
 
+    public void DisplayConfirmation()
+    {
+        menu.SetActive(false);
+        confirmation.SetActive(true);
+
+    }
+
+    public void CloseConfirmation()
+    {
+        confirmation.SetActive(false);
+        Time.timeScale = 1;
+        inMenu = false;
+    }
+
     public void ReturnToMenu()
     {
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        GameObject[] UIs = GameObject.FindGameObjectsWithTag("UI");
+
+        foreach (GameObject player in players)
+        {
+            Destroy(player);
+        }
+        foreach (GameObject UI in UIs)
+        {
+            Destroy(UI);
+        }
         SceneManager.LoadScene(0);
         menu.SetActive(false);
+        Time.timeScale = 1;
+        inMenu = false;
+    }
+
+    public void Save()
+    {
+        if (SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            DataPersistenceManager.instance.SaveGame();
+        } else
+        {
+            DisplayNotice();
+        }
+       
+    }
+
+    void DisplayNotice()
+    {
+        menu.SetActive(false);
+        saveNotice.SetActive(true);
+    }
+
+    public void CloseNotice()
+    {
+        saveNotice.SetActive(false);
         Time.timeScale = 1;
         inMenu = false;
     }

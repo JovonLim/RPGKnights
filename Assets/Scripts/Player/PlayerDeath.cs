@@ -24,6 +24,8 @@ public class PlayerDeath : MonoBehaviour
 
     IEnumerator Reload()
     {
+        DataPersistenceManager.instance.SaveGame();
+
         yield return new WaitForSeconds(2);
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
         GameObject[] UIs = GameObject.FindGameObjectsWithTag("UI");
@@ -36,9 +38,8 @@ public class PlayerDeath : MonoBehaviour
         {
             Destroy(UI);
         }
-
+       
         SceneManager.LoadScene(2);
-        PlayerPrefs.SetInt("CurrentScene", 2);
         InventoryDatabase.update = true;
     }
 }

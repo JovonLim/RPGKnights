@@ -72,7 +72,7 @@ public class DoorRequirements : Buffs
                 
                 DontDestroyOnLoad(player);
                 SceneManager.LoadScene(sceneNum);
-                PlayerPrefs.SetInt("CurrentScene", sceneNum);
+                
             }
 
         }

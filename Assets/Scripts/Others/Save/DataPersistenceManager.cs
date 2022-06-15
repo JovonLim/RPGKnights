@@ -13,7 +13,7 @@ public class DataPersistenceManager : MonoBehaviour
     [SerializeField] private string fileName;
     [SerializeField] private bool useEncryption;
 
-    private GameData gameData;
+    public GameData gameData;
     private List<IDataPersistence> dataPersistenceObjects;
     private FileDataHandler dataHandler;
 
@@ -44,14 +44,22 @@ public class DataPersistenceManager : MonoBehaviour
     }
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        this.dataPersistenceObjects = FindAllDataPersistenceObjects();
-        LoadGame();
+    {   
+        if (scene.buildIndex <= 2)
+        {
+            this.dataPersistenceObjects = FindAllDataPersistenceObjects();
+            LoadGame();
+        }
+      
     }
 
     public void OnSceneUnloaded(Scene scene)
     {
-        SaveGame();
+        if (scene.buildIndex <= 2)
+        {
+            SaveGame();
+        }
+        
     }
 
     public void NewGame()
@@ -63,6 +71,7 @@ public class DataPersistenceManager : MonoBehaviour
     {
         // load any saved data from a file using the data handler
         this.gameData = dataHandler.Load();
+        
 
         // start a new game if the data is null and we're configured to initialize data for debugging purposes
         if (this.gameData == null && initializeDataIfNull)
@@ -86,6 +95,8 @@ public class DataPersistenceManager : MonoBehaviour
 
     public void SaveGame()
     {
+        Debug.Log("saved");
+        
         // if we don't have any data to save, log a warning here
         if (this.gameData == null)
         {

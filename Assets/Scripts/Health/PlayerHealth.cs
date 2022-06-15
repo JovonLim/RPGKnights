@@ -6,9 +6,11 @@ public class PlayerHealth : Health
 {
     private void Awake()
     {
+       
         currentHealth = startingHealth;
         anima = GetComponent<Animator>();
     }
+
 
     public override void TakePhysicalDamage(float damage)
     {
@@ -164,4 +166,5 @@ public class PlayerHealth : Health
         PhysicalDefense -= amt;
         MagicDefense -= amt;
     }
+
 }

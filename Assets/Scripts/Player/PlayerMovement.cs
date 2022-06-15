@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour 
+public class PlayerMovement : MonoBehaviour, IDataPersistence
 {
     [SerializeField] private float speed;
     [SerializeField] private float jumpSpeed;
@@ -145,4 +145,17 @@ public class PlayerMovement : MonoBehaviour
         speed -= amt;
     }
 
+    public void LoadData(GameData data)
+    {
+        
+        speed = data.speed;
+        jumpSpeed = data.jumpSpeed;
+    }
+
+    public void SaveData(GameData data)
+    {
+        
+        data.speed = speed;
+        data.jumpSpeed = jumpSpeed;
+    }
 }

@@ -15,7 +15,6 @@ public class Transporters : MonoBehaviour
         {
             
             SceneManager.LoadScene(sceneNum);
-            PlayerPrefs.SetInt("CurrentScene", sceneNum);
             DontDestroyOnLoad(player);
             
         }

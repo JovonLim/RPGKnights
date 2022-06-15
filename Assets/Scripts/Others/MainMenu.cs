@@ -16,12 +16,12 @@ public class MainMenu : MonoBehaviour
     {
         DataPersistenceManager.instance.NewGame();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        PlayerPrefs.SetInt("CurrentScene", SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void LoadGame()
-    {
-        SceneManager.LoadScene(PlayerPrefs.GetInt("CurrentScene"));
+    { 
+        SceneManager.LoadScene(2);
+        
     }
     public void OpenSettings()
     {
