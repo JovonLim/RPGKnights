@@ -8,5 +8,6 @@ public class ReturnToMenu : MonoBehaviour
     public void Return()
     {
         SceneManager.LoadScene(0);
+        PlayerPrefs.SetInt("CurrentScene", 0);
     }
 }

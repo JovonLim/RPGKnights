@@ -8,14 +8,20 @@ public class MainMenu : MonoBehaviour
     [SerializeField] GameObject NewGame;
     [SerializeField] GameObject ContinueGame;
     [SerializeField] GameObject[] menus;
-    bool isSaved;
     private void Start()
     {
         CheckSave();
     }
     public void StartNewGame()
     {
+        DataPersistenceManager.instance.NewGame();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        PlayerPrefs.SetInt("CurrentScene", SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void LoadGame()
+    {
+        SceneManager.LoadScene(PlayerPrefs.GetInt("CurrentScene"));
     }
     public void OpenSettings()
     {
@@ -53,7 +59,7 @@ public class MainMenu : MonoBehaviour
 
     private void CheckSave()
     {
-        if (isSaved)
+        if (DataPersistenceManager.instance.HasGameData())
         {
             ContinueGame.SetActive(true);
             NewGame.SetActive(false);

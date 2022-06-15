@@ -38,6 +38,7 @@ public class PlayerDeath : MonoBehaviour
         }
 
         SceneManager.LoadScene(2);
+        PlayerPrefs.SetInt("CurrentScene", 2);
         InventoryDatabase.update = true;
     }
 }

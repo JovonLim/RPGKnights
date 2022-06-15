@@ -9,6 +9,7 @@ public class StartGame : MonoBehaviour
     void Start()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        PlayerPrefs.SetInt("CurrentScene", SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     // Update is called once per frame
