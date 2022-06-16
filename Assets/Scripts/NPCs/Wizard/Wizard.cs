@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Wizard : MonoBehaviour
+public class Wizard : MonoBehaviour, IDataPersistence
 {
     [SerializeField] GameObject options;
     [SerializeField] GameObject questDialog;
@@ -14,7 +14,6 @@ public class Wizard : MonoBehaviour
     private bool playerInRange;
     
     private bool playerClicked;
-    public static bool unlockedSkills = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -111,5 +110,15 @@ public class Wizard : MonoBehaviour
         backstory.SetActive(true);
         yield return new WaitForSecondsRealtime(9);
         backstory.SetActive(false);
+    }
+
+    public void LoadData(GameData data)
+    {
+        introduced = data.intros[0];
+    }
+
+    public void SaveData(GameData data)
+    {
+        data.intros[0] = introduced;
     }
 }

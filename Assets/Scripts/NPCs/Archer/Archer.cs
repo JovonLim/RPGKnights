@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Archer : MonoBehaviour
+public class Archer : MonoBehaviour, IDataPersistence
 {
     [SerializeField] GameObject options;
     [SerializeField] GameObject questDialog;
@@ -119,5 +119,14 @@ public class Archer : MonoBehaviour
         }
     }
 
+    public void LoadData(GameData data)
+    {
+        introduced = data.intros[1];
+    }
+
+    public void SaveData(GameData data)
+    {
+        data.intros[1] = introduced;
+    }
 }
 

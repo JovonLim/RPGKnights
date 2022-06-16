@@ -326,7 +326,7 @@ MonoBehaviour:
   anima: {fileID: 5761944522982870088}
   attackPoint: {fileID: 415745996}
   attackRange: 0.5
-  meleeAttackDamage: 1
+  meleeAttackDamage: 20
   rangedAttackDamage: 1.5
   enemyLayer:
     serializedVersion: 2

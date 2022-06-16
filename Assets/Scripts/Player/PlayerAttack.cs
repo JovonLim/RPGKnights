@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 
-public class PlayerAttack : MonoBehaviour
+public class PlayerAttack : MonoBehaviour, IDataPersistence
 {
 
     [SerializeField] private float meleeAttackSpeed;
@@ -28,7 +28,7 @@ public class PlayerAttack : MonoBehaviour
 
     
     public static bool rangedUnlock = true;
-    public static bool spellUnlock = false;
+    public static bool spellUnlock = true;
 
     [SerializeField] private Transform projectileLaunchPoint;
     [SerializeField] private GameObject arrow;
@@ -330,5 +330,16 @@ public class PlayerAttack : MonoBehaviour
         classHud.transform.GetChild(1).GetComponent<Image>().enabled = false;
         classHud.transform.GetChild(2).GetComponent<Image>().enabled = false;
     }
-   
+
+    public void LoadData(GameData data)
+    {
+        rangedUnlock = data.rangedUnlocked;
+        spellUnlock = data.spellUnlocked;
+    }
+
+    public void SaveData(GameData data)
+    {
+        data.rangedUnlocked = rangedUnlock;
+        data.spellUnlocked = spellUnlock;
+    }
 }

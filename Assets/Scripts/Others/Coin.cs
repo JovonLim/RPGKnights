@@ -8,9 +8,7 @@ public class Coin : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            UI.coins += 5;
-            UI.instance.SaveData(DataPersistenceManager.instance.gameData);
-            
+            UI.coins += 5;         
             Destroy(gameObject);
             
         }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class WizardShop : MonoBehaviour
+public class WizardShop : MonoBehaviour, IDataPersistence
 {
     [SerializeField] Spell[] spells;
     [SerializeField] TextMeshProUGUI[] texts;
@@ -13,9 +13,9 @@ public class WizardShop : MonoBehaviour
     private static bool[] purchased = new bool[6];
     private bool update;
     private int selected = -1;
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        LoadData(DataPersistenceManager.instance.gameData);
         update = true;
         coinAmt.text = UI.coins.ToString();
     }
@@ -63,6 +63,7 @@ public class WizardShop : MonoBehaviour
         {
             UI.coins -= costs[selected];
             purchased[selected] = true;
+            SaveData(DataPersistenceManager.instance.gameData);
             update = true;
             SpellHolder.UnlockSpell(spells[selected].spell.id);
             Deselect();
@@ -77,6 +78,17 @@ public class WizardShop : MonoBehaviour
 
     public void Exit()
     {
+        Time.timeScale = 1;
         insufficientFunds.SetActive(false);
+    }
+
+    public void LoadData(GameData data)
+    {
+        purchased = data.wizardPurchased;
+    }
+
+    public void SaveData(GameData data)
+    {
+        data.wizardPurchased = purchased;
     }
 }

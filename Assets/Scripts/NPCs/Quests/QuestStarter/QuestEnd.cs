@@ -63,13 +63,13 @@ public class QuestEnd : MonoBehaviour
     {
         if (npc == NPC.wizard)
         {
-            WizardQuestLog.questStatus[PlayerQuestInteraction.WizardQuest.questNum] = true;
+            DataPersistenceManager.instance.gameData.wizardQuests[PlayerQuestInteraction.WizardQuest.questNum] = true;
             WizardQuestLog.added = false;
             PlayerQuestInteraction.WizardQuest = null;
         }
         else
         {
-            ArcherQuestLog.questStatus[PlayerQuestInteraction.ArcherQuest.questNum] = true;
+            DataPersistenceManager.instance.gameData.archerQuests[PlayerQuestInteraction.ArcherQuest.questNum] = true;
             ArcherQuestLog.added = false;
             PlayerQuestInteraction.ArcherQuest = null;
         }

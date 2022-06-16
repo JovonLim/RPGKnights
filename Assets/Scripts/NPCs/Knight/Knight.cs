@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Knight : MonoBehaviour
+public class Knight : MonoBehaviour, IDataPersistence
 {
     [SerializeField] GameObject shop;
     [SerializeField] GameObject introText;
@@ -69,5 +69,14 @@ public class Knight : MonoBehaviour
         introduced = true;
     }
 
+    public void LoadData(GameData data)
+    {
+        introduced = data.intros[2];
+    }
+
+    public void SaveData(GameData data)
+    {
+        data.intros[2] = introduced;
+    }
 }
 

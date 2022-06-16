@@ -9,7 +9,7 @@ public class WizardQuestLog : MonoBehaviour
     [SerializeField] private Transform questParent;
     [SerializeField] private TextMeshProUGUI description;
 
-    private static WizardQuestLog instance;
+    public static WizardQuestLog instance;
     private Quest selected;
     private List<GameObject> listOfQuests = new List<GameObject>();
     public static bool[] questStatus = new bool[4];
@@ -29,7 +29,15 @@ public class WizardQuestLog : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-
+        questStatus = DataPersistenceManager.instance.gameData.wizardQuests;
+        for (int i = 0; i < questStatus.Length; i++)
+        {
+            if (questStatus[i])
+            {
+                listOfQuests[i].GetComponent<QuestScript>().MarkCompleted();
+                listOfQuests[i].GetComponent<QuestScript>().MyQuest.isCompleted = true;
+            }
+        }
     }
 
     // Update is called once per frame
@@ -75,7 +83,7 @@ public class WizardQuestLog : MonoBehaviour
         {
             if (selected.questNum == 2 || selected.questNum == 3)
             {
-                if (Wizard.unlockedSkills)
+                if (PlayerAttack.spellUnlock)
                 {
                     selected.myQuestScript.AddActive();
                     PlayerQuestInteraction.WizardQuest = selected;
@@ -94,8 +102,12 @@ public class WizardQuestLog : MonoBehaviour
 
     public void Untrack()
     {
-        selected.myQuestScript.RemoveActive();
-        PlayerQuestInteraction.WizardQuest = null;
-        PlayerQuestInteraction.questActive = false;
+        if (!questStatus[selected.questNum])
+        {
+            selected.myQuestScript.RemoveActive();
+            PlayerQuestInteraction.WizardQuest = null;
+            PlayerQuestInteraction.questActive = false;
+        }
+        
     }
 }

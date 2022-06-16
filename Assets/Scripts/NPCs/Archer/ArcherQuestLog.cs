@@ -12,7 +12,7 @@ public class ArcherQuestLog : MonoBehaviour
     private static ArcherQuestLog instance;
     private Quest selected;
     private List<GameObject> listOfQuests = new List<GameObject>();
-    public static bool[] questStatus = new bool[4];
+    public static bool[] questStatus = new bool[3];
     public static bool added;
 
     public static ArcherQuestLog myInstance
@@ -29,7 +29,15 @@ public class ArcherQuestLog : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-
+        questStatus = DataPersistenceManager.instance.gameData.archerQuests;
+        for (int i = 0; i < questStatus.Length; i++)
+        {
+            if (questStatus[i])
+            {
+                listOfQuests[i].GetComponent<QuestScript>().MarkCompleted();
+                listOfQuests[i].GetComponent<QuestScript>().MyQuest.isCompleted = true;
+            }
+        }
     }
 
     // Update is called once per frame
@@ -81,9 +89,13 @@ public class ArcherQuestLog : MonoBehaviour
 
     public void Untrack()
     {
-        selected.myQuestScript.RemoveActive();
-        PlayerQuestInteraction.ArcherQuest = null;
-        PlayerQuestInteraction.questActive = false;
+        if (!questStatus[selected.questNum])
+        {
+            selected.myQuestScript.RemoveActive();
+            PlayerQuestInteraction.ArcherQuest = null;
+            PlayerQuestInteraction.questActive = false;
+        }
+        
     }
 }
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class ArcherShop : MonoBehaviour
+public class ArcherShop : MonoBehaviour, IDataPersistence
 {
     [SerializeField] Passives[] passives;
     [SerializeField] TextMeshProUGUI[] texts;
@@ -16,6 +16,7 @@ public class ArcherShop : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        LoadData(DataPersistenceManager.instance.gameData);
         update = true;
         coinAmt.text = UI.coins.ToString();
     }
@@ -66,6 +67,7 @@ public class ArcherShop : MonoBehaviour
         {
             UI.coins -= passives[selected].cost;
             purchased[selected] = true;
+            SaveData(DataPersistenceManager.instance.gameData);
             update = true;
             PlayerAttack.rangedPassives[selected] = passives[selected];
             Deselect();
@@ -91,7 +93,18 @@ public class ArcherShop : MonoBehaviour
 
     public void Exit()
     {
+        Time.timeScale = 1;
         insufficientFunds.SetActive(false);
+    }
+
+    public void LoadData(GameData data)
+    {
+        purchased = data.archerPurchased;
+    }
+
+    public void SaveData(GameData data)
+    {
+        data.archerPurchased = purchased;
     }
 }
 

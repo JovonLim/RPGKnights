@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour, IDataPersistence
+public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private float jumpSpeed;
@@ -15,8 +15,8 @@ public class PlayerMovement : MonoBehaviour, IDataPersistence
     private float jumpDelay = 0.5f;
     private float jumpCondition = 0;
     private float fallTimer = 0;
-    
-    
+
+
     // Awake is called when the script instance is being loaded
     private void Awake()
     {
@@ -36,8 +36,8 @@ public class PlayerMovement : MonoBehaviour, IDataPersistence
 
             anima.SetBool("run", false);
             anima.SetBool("grounded", false);
-        } 
-        
+        }
+
         else
         {
             body.isKinematic = false;
@@ -101,8 +101,8 @@ public class PlayerMovement : MonoBehaviour, IDataPersistence
             anima.SetBool("run", horizontalInput != 0);
             anima.SetBool("grounded", isGrounded());
         }
-        
-        
+
+
     }
 
     private bool isPlayerInteracting()
@@ -113,14 +113,14 @@ public class PlayerMovement : MonoBehaviour, IDataPersistence
 
     private void Jump()
     {
-        body.velocity = new Vector2(body.velocity.x, jumpSpeed);   
+        body.velocity = new Vector2(body.velocity.x, jumpSpeed);
     }
 
     // Use a box shape ray from the player to detect whether the ray hit the ground layer. If the player
     // is on the ground, the collider will return a non-null. Vice versa
     private bool isGrounded()
     {
-        RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, 
+        RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0,
             Vector2.down, 0.1f, groundLayer);
         return raycastHit.collider != null;
     }
@@ -143,19 +143,5 @@ public class PlayerMovement : MonoBehaviour, IDataPersistence
     public void SubtractSpeed(float amt)
     {
         speed -= amt;
-    }
-
-    public void LoadData(GameData data)
-    {
-        
-        speed = data.speed;
-        jumpSpeed = data.jumpSpeed;
-    }
-
-    public void SaveData(GameData data)
-    {
-        
-        data.speed = speed;
-        data.jumpSpeed = jumpSpeed;
     }
 }

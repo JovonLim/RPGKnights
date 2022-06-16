@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpellHolder : MonoBehaviour
+public class SpellHolder : MonoBehaviour, IDataPersistence
 {
     public Spell[] spells;
     public static Spell[] activeSpells = new Spell[4];
@@ -76,5 +76,16 @@ public class SpellHolder : MonoBehaviour
         }
         return false;
     }
-    
+
+    public void LoadData(GameData data)
+    {
+        unlocked = data.spellsUnlocked;
+        activeSpells = data.activeSpells;
+    }
+
+    public void SaveData(GameData data)
+    {
+        data.spellsUnlocked = unlocked;
+        data.activeSpells = activeSpells;
+    }
 }

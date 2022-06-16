@@ -95,7 +95,7 @@ public class DataPersistenceManager : MonoBehaviour
 
     public void SaveGame()
     {
-        Debug.Log("saved");
+        
         
         // if we don't have any data to save, log a warning here
         if (this.gameData == null)
