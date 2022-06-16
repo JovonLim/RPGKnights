@@ -16,7 +16,8 @@ public class Item: MonoBehaviour
         Boots, 
         Necklace,
         Ring, 
-        Consumables
+        Consumables,
+        ArcherWeapon
     }
 
     public ItemType itemType;
@@ -29,6 +30,8 @@ public class Item: MonoBehaviour
     [SerializeField] public float speedBoost;
     [SerializeField] public float defenseBoost;
     [SerializeField] public float regenerateHealth;
+    [SerializeField] public bool isOverTimeEffect;
+    [SerializeField] public float duration;
 
     private void Reset()
     {

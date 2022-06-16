@@ -56,6 +56,8 @@ MonoBehaviour:
   speedBoost: 0
   defenseBoost: 0
   regenerateHealth: 0
+  isOverTimeEffect: 1
+  duration: 3
 --- !u!61 &8484573841886773729
 BoxCollider2D:
   m_ObjectHideFlags: 0

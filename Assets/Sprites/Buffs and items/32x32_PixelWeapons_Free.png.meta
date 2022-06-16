@@ -133,7 +133,7 @@ TextureImporter:
         width: 27
         height: 26
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -141,6 +141,48 @@ TextureImporter:
       bones: []
       spriteID: faa023bbc26564c40b3c43317da073bf
       internalID: 2099914688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 32x32_PixelWeapons_Free_2
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 355
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9766400f5595266488e59c5af5799ea3
+      internalID: -859596793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 32x32_PixelWeapons_Free_3
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 66
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06ea15af98c1f4e4799623df9287ee55
+      internalID: -1204591757
       vertices: []
       indices: 
       edges: []
@@ -157,6 +199,8 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       32x32_PixelWeapons_Free_1: 2099914688
+      32x32_PixelWeapons_Free_3: -1204591757
+      32x32_PixelWeapons_Free_2: -859596793
       32x32_PixelWeapons_Free_0: -1295395600
   spritePackingTag: 
   pSDRemoveMatte: 0
