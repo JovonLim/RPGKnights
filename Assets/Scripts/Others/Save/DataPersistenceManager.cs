@@ -109,7 +109,7 @@ public class DataPersistenceManager : MonoBehaviour
         {
             dataPersistenceObj.SaveData(gameData);
         }
-
+       
         // save that data to a file using the data handler
         dataHandler.Save(gameData);
     }

@@ -13,6 +13,8 @@ public class GameData
     public bool[] wizardPurchased; public bool[] archerPurchased; public bool[] knightPurchased;
     public bool rangedUnlocked;
     public bool spellUnlocked;
+    public List<string> currentItems;
+    public List<string> currentEquip;
 
     // the values defined in this constructor will be the default values
     // the game starts with when there's no data to load
@@ -26,5 +28,7 @@ public class GameData
         archerQuests = new bool[3];
         wizardQuests = new bool[4];
         wizardPurchased = new bool[6]; archerPurchased = new bool[2]; knightPurchased = new bool[2];
+        currentItems = new List<string>();
+        currentEquip = new List<string>();
     }
 }

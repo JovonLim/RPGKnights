@@ -2,13 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InventoryDatabase : MonoBehaviour
+public class InventoryDatabase : MonoBehaviour, IDataPersistence
 {
     public static InventoryDatabase instance;
     public static List<GameObject> CurrentItems = new List<GameObject>();
     public static bool update;
 
     public static List<GameObject> currentEquip = new List<GameObject>();
+
+    public void LoadData(GameData data)
+    {
+       
+        update = true;
+    }
+
+    public void SaveData(GameData data)
+    {
+        
+    }
+
     private void Start()
     {
         if (instance != null)
@@ -31,7 +43,6 @@ public class InventoryDatabase : MonoBehaviour
             foreach (GameObject item in CurrentItems)
             {
                 if (!FindObjectOfType<Inventory>().ContainsItem(item))
-                    Debug.Log(item.name);
                     FindObjectOfType<Inventory>().AddItem(item);
             }
 
