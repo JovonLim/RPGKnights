@@ -112,7 +112,7 @@ TextureImporter:
         width: 16
         height: 14
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -120,6 +120,27 @@ TextureImporter:
       bones: []
       spriteID: 3943f4e799d5e0a43a1adff6bf18f1a1
       internalID: -1519531318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab753374cc7c71e4cafb00d61973fdff
+      internalID: 1163960083
       vertices: []
       indices: 
       edges: []
@@ -136,6 +157,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Sheet_0: -1519531318
+      Sheet_1: 1163960083
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

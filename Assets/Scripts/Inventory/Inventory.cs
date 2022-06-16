@@ -35,7 +35,7 @@ public class Inventory : MonoBehaviour
         currentInvCapacity = 0;
 
         //Initialising Array for equipments
-        equipHolder = new GameObject[7];
+        equipHolder = new GameObject[8];
         for (int i = 0; i < equipHolder.Length; i++)
         {
             equipHolder[i] = null;
@@ -205,7 +205,17 @@ public class Inventory : MonoBehaviour
 
             equipHolder[6] = itemToBeEquipped;
             
-        } 
+        }
+        else if (itemList[invNum].GetComponent<Item>().itemType == Item.ItemType.ArcherWeapon)
+        {
+            if (equipHolder[7] != null)
+            {
+                Unequip(7);
+            }
+
+            equipHolder[7] = itemToBeEquipped;
+
+        }
         else
         {
             return;
@@ -287,6 +297,16 @@ public class Inventory : MonoBehaviour
             equipHolder[6] = equip;
 
         }
+        else if (equip.GetComponent<Item>().itemType == Item.ItemType.ArcherWeapon)
+        {
+            if (equipHolder[7] != null)
+            {
+                Unequip(7);
+            }
+
+            equipHolder[7] = equip;
+
+        }
         else
         {
             return;
@@ -304,8 +324,17 @@ public class Inventory : MonoBehaviour
 
     public void EquipStats(int invNum)
     {
-        FindObjectOfType<PlayerAttack>().AddAttack(itemList[invNum].GetComponent<Item>().attackDamageBoost);
-        FindObjectOfType<PlayerAttack>().AddAttackSpeed(itemList[invNum].GetComponent<Item>().attackSpeedBoost);
+        if (itemList[invNum].GetComponent<Item>().itemType == Item.ItemType.ArcherWeapon)
+        {
+            FindObjectOfType<PlayerAttack>().AddRangedAttack(itemList[invNum].GetComponent<Item>().attackDamageBoost);
+            FindObjectOfType<PlayerAttack>().AddRangedAttackSpeed(itemList[invNum].GetComponent<Item>().attackSpeedBoost);
+        }
+        else
+        {
+            FindObjectOfType<PlayerAttack>().AddAttack(itemList[invNum].GetComponent<Item>().attackDamageBoost);
+            FindObjectOfType<PlayerAttack>().AddAttackSpeed(itemList[invNum].GetComponent<Item>().attackSpeedBoost);
+        }
+        
         FindObjectOfType<PlayerHealth>().AddHealth(itemList[invNum].GetComponent<Item>().healthBoost);
         FindObjectOfType<PlayerHealth>().AddDefense(itemList[invNum].GetComponent<Item>().defenseBoost);
         FindObjectOfType<PlayerHealth>().AddMagicDefense(itemList[invNum].GetComponent<Item>().magicDefenseBoost);
@@ -315,9 +344,29 @@ public class Inventory : MonoBehaviour
         
     }
 
+    public void EquipStats(GameObject item)
+    {
+        if (item.GetComponent<Item>().itemType == Item.ItemType.ArcherWeapon)
+        {
+            FindObjectOfType<PlayerAttack>().AddRangedAttack(item.GetComponent<Item>().attackDamageBoost);
+            FindObjectOfType<PlayerAttack>().AddRangedAttackSpeed(item.GetComponent<Item>().attackSpeedBoost);
+        } 
+        else
+        {
+            FindObjectOfType<PlayerAttack>().AddAttack(item.GetComponent<Item>().attackDamageBoost);
+            FindObjectOfType<PlayerAttack>().AddAttackSpeed(item.GetComponent<Item>().attackSpeedBoost);
+        }
+        FindObjectOfType<PlayerHealth>().AddHealth(item.GetComponent<Item>().healthBoost);
+        FindObjectOfType<PlayerHealth>().AddDefense(item.GetComponent<Item>().defenseBoost);
+        FindObjectOfType<PlayerHealth>().AddMagicDefense(item.GetComponent<Item>().magicDefenseBoost);
+        FindObjectOfType<PlayerHealth>().AddPhysicalDefense(item.GetComponent<Item>().physicalDefenseBoost);
+        FindObjectOfType<PlayerHealth>().GainHealth(item.GetComponent<Item>().regenerateHealth);
+        FindObjectOfType<PlayerMovement>().AddSpeed(item.GetComponent<Item>().speedBoost);
+    }
+
     public void Unequip(int equipNum)
     {
-        if (equipHolder[equipNum] != null)
+        if (equipHolder[equipNum] != null && !IsInventoryFull())
         {
             InventoryDatabase.currentEquip.Remove(equipHolder[equipNum]);
             UnequipStats(equipNum);
@@ -329,8 +378,16 @@ public class Inventory : MonoBehaviour
 
     public void UnequipStats(int equipNum)
     {
-        FindObjectOfType<PlayerAttack>().SubtractAttack(equipHolder[equipNum].GetComponent<Item>().attackDamageBoost);
-        FindObjectOfType<PlayerAttack>().SubtractAttackSpeed(equipHolder[equipNum].GetComponent<Item>().attackSpeedBoost);
+        if (equipNum == 7)
+        {
+            FindObjectOfType<PlayerAttack>().SubtractRangedAttack(equipHolder[equipNum].GetComponent<Item>().attackDamageBoost);
+            FindObjectOfType<PlayerAttack>().SubtractRangedAttackSpeed(equipHolder[equipNum].GetComponent<Item>().attackSpeedBoost);
+        } 
+        else
+        {
+            FindObjectOfType<PlayerAttack>().SubtractAttack(equipHolder[equipNum].GetComponent<Item>().attackDamageBoost);
+            FindObjectOfType<PlayerAttack>().SubtractAttackSpeed(equipHolder[equipNum].GetComponent<Item>().attackSpeedBoost);
+        }
         FindObjectOfType<PlayerHealth>().SubtractHealth(equipHolder[equipNum].GetComponent<Item>().healthBoost);
         FindObjectOfType<PlayerHealth>().SubtractDefense(equipHolder[equipNum].GetComponent<Item>().defenseBoost);
         FindObjectOfType<PlayerHealth>().SubtractMagicDefense(equipHolder[equipNum].GetComponent<Item>().magicDefenseBoost);
@@ -338,20 +395,59 @@ public class Inventory : MonoBehaviour
         FindObjectOfType<PlayerMovement>().SubtractSpeed(equipHolder[equipNum].GetComponent<Item>().speedBoost);
     }
 
+    public void UnequipStats(GameObject item)
+    {
+        if (item.GetComponent<Item>().itemType == Item.ItemType.ArcherWeapon)
+        {
+            FindObjectOfType<PlayerAttack>().SubtractRangedAttack(item.GetComponent<Item>().attackDamageBoost);
+            FindObjectOfType<PlayerAttack>().SubtractRangedAttackSpeed(item.GetComponent<Item>().attackSpeedBoost);
+        }
+        else
+        {
+            FindObjectOfType<PlayerAttack>().SubtractAttack(item.GetComponent<Item>().attackDamageBoost);
+            FindObjectOfType<PlayerAttack>().SubtractAttackSpeed(item.GetComponent<Item>().attackSpeedBoost);
+        }
+        
+        FindObjectOfType<PlayerHealth>().SubtractHealth(item.GetComponent<Item>().healthBoost);
+        FindObjectOfType<PlayerHealth>().SubtractDefense(item.GetComponent<Item>().defenseBoost);
+        FindObjectOfType<PlayerHealth>().SubtractMagicDefense(item.GetComponent<Item>().magicDefenseBoost);
+        FindObjectOfType<PlayerHealth>().SubtractPhysicalDefense(item.GetComponent<Item>().physicalDefenseBoost);
+        FindObjectOfType<PlayerMovement>().SubtractSpeed(item.GetComponent<Item>().speedBoost);
+    }
+
     public void Consume(int invNum)
     {
         if (itemList[invNum] != null && itemList[invNum].GetComponent<Item>().itemType == Item.ItemType.Consumables)
         {
-            EquipStats(invNum);
-            itemList[invNum].GetComponent<Item>().BeingConsumed();
-            RemoveItem(invNum);
-            UpdateUI();
+            if (itemList[invNum].GetComponent<Item>().isOverTimeEffect)
+            {
+                StartCoroutine(ConsumeOverTime(itemList[invNum]));
+                RemoveItem(invNum);
+                UpdateUI();
+            } 
+            else
+            {
+                EquipStats(invNum);
+                itemList[invNum].GetComponent<Item>().BeingConsumed();
+                RemoveItem(invNum);
+                UpdateUI();
+            }
+            
         } 
         else
         {
             return;
         }
     }
+
+    IEnumerator ConsumeOverTime(GameObject item)
+    {
+        EquipStats(item);
+        yield return new WaitForSeconds(item.GetComponent<Item>().duration);
+        UnequipStats(item);
+        item.GetComponent<Item>().BeingConsumed();
+    }
+
 
     private void UpdateUI()
     {
