@@ -3822,6 +3822,24 @@ MonoBehaviour:
   initializeDataIfNull: 0
   fileName: Test
   useEncryption: 0
+  gameData:
+    coins: 2000
+    activeSpells:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    spellsUnlocked: 0000000000000000
+    intros: 000000
+    archerQuests: 000000
+    wizardQuests: 00000000
+    wizardPurchased: 000000000000
+    archerPurchased: 0000
+    knightPurchased: 0000
+    rangedUnlocked: 0
+    spellUnlocked: 0
+    currentItems: 
+    currentEquip: 
 --- !u!4 &1813409969
 Transform:
   m_ObjectHideFlags: 0

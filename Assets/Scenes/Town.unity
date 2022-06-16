@@ -5197,7 +5197,7 @@ Transform:
   m_Children:
   - {fileID: 926868862}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &882342014
 GameObject:
@@ -9452,7 +9452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d163b0dbec249fb448de5f61b02d9657, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneNum: 6
+  sceneNum: 3
 --- !u!1 &1359679907
 GameObject:
   m_ObjectHideFlags: 0
@@ -18901,7 +18901,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1896664723 stripped
 GameObject:
@@ -24697,7 +24697,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8916496633986047896, guid: fda3795f115835146b8ff88324a165db, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8916496633986047896, guid: fda3795f115835146b8ff88324a165db, type: 3}
       propertyPath: m_AnchorMax.x
