@@ -73,6 +73,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 1
+  itemId: 4
   itemDescription: Improve Speed by 1
   attackDamageBoost: 0
   attackSpeedBoost: 0
@@ -82,6 +83,8 @@ MonoBehaviour:
   speedBoost: 1
   defenseBoost: 0
   regenerateHealth: 0
+  isOverTimeEffect: 0
+  duration: 0
 --- !u!212 &6400357197723664623
 SpriteRenderer:
   m_ObjectHideFlags: 0
