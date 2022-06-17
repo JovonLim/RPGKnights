@@ -135,6 +135,11 @@ public class PlayerMovement : MonoBehaviour
         GetComponent<Health>().TakeTrueDamage(1);
     }
 
+    public float GetSpeed()
+    {
+        return speed;
+    }
+
     public void AddSpeed(float amt)
     {
         speed += amt;
