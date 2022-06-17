@@ -236,6 +236,11 @@ public class PlayerAttack : MonoBehaviour, IDataPersistence
         projectile.GetComponent<Projectile>().SetDirection(Mathf.Sign(transform.localScale.x));
     }
 
+    public float GetRangedAttack()
+    {
+        return rangedAttackDamage;
+    }
+
     public void AddRangedAttack(float amt)
     {
         rangedAttackDamage += amt;
@@ -243,6 +248,11 @@ public class PlayerAttack : MonoBehaviour, IDataPersistence
     public void SubtractRangedAttack(float amt)
     {
         rangedAttackDamage -= amt;
+    }
+
+    public float GetRangedAttackSpeed()
+    {
+        return rangedAttackSpeed;
     }
     public void AddRangedAttackSpeed(float amt)
     {
@@ -253,7 +263,10 @@ public class PlayerAttack : MonoBehaviour, IDataPersistence
         rangedAttackSpeed += amt;
     }
 
-
+    public float GetAttack()
+    {
+        return meleeAttackDamage;
+    }
     // Add Melee Attack Damage
     public void AddAttack(float amt)
     {
@@ -266,6 +279,10 @@ public class PlayerAttack : MonoBehaviour, IDataPersistence
         meleeAttackDamage -= amt;
     }
 
+    public float GetAttackSpeed()
+    {
+        return meleeAttackSpeed;
+    }
     // Add Melee Attack Speed
     public void AddAttackSpeed(float amt)
     {

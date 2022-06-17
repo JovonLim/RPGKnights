@@ -39,4 +39,15 @@ public abstract class Health : MonoBehaviour
     public abstract void SubtractMagicDefense(float amt);
 
     public abstract void SubtractDefense(float amt);
+
+    public float GetPhysicalDefense()
+    {
+        return PhysicalDefense;
+    }
+
+    public float GetMagicDefense()
+    {
+        return MagicDefense;
+    }
+
 }

@@ -22,6 +22,14 @@ public class Inventory : MonoBehaviour
 
     private static bool inventoryOn = false;
 
+    [SerializeField] private TextMeshProUGUI meleeAD;
+    [SerializeField] private TextMeshProUGUI meleeAS;
+    [SerializeField] private TextMeshProUGUI rangedAD;
+    [SerializeField] private TextMeshProUGUI rangedAS;
+    [SerializeField] private TextMeshProUGUI physicalDef;
+    [SerializeField] private TextMeshProUGUI magicDef;
+    [SerializeField] private TextMeshProUGUI speed;
+
     private void Start()
     {
         itemPanelWindow.SetActive(inventoryOn);
@@ -40,6 +48,8 @@ public class Inventory : MonoBehaviour
         {
             equipHolder[i] = null;
         }
+
+        UpdateStats();
 
     }
 
@@ -478,8 +488,22 @@ public class Inventory : MonoBehaviour
                 equipImages[k].gameObject.SetActive(false);
             }
         }
+        UpdateStats();
 
     }
+
+    private void UpdateStats()
+    {
+        meleeAD.text = FindObjectOfType<PlayerAttack>().GetAttack().ToString();
+        meleeAS.text = FindObjectOfType<PlayerAttack>().GetAttackSpeed().ToString();
+        rangedAD.text = FindObjectOfType<PlayerAttack>().GetRangedAttack().ToString();
+        rangedAS.text = FindObjectOfType<PlayerAttack>().GetRangedAttackSpeed().ToString();
+        physicalDef.text = FindObjectOfType<PlayerHealth>().GetPhysicalDefense().ToString();
+        magicDef.text = FindObjectOfType<PlayerHealth>().GetMagicDefense().ToString();
+        speed.text = FindObjectOfType<PlayerMovement>().GetSpeed().ToString();
+
+    }
+
 
     private void HideAllItems()
     {
