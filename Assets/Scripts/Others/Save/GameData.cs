@@ -23,11 +23,11 @@ public class GameData
         
         coins = 2000;
         activeSpells = new Spell[4];
-        spellsUnlocked = new bool[8];
+        spellsUnlocked = new bool[13];
         intros = new bool[3];
         archerQuests = new bool[3];
         wizardQuests = new bool[4];
-        wizardPurchased = new bool[6]; archerPurchased = new bool[2]; knightPurchased = new bool[2];
+        wizardPurchased = new bool[11]; archerPurchased = new bool[2]; knightPurchased = new bool[2];
         currentItems = new List<int>();
         currentEquip = new List<int>();
     }

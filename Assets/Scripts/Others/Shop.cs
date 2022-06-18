@@ -6,7 +6,7 @@ using TMPro;
 
 public class Shop : MonoBehaviour
 {
-    Animator animator;
+    
     private bool playerInRange;
     private static bool shopOn = false;
 
@@ -33,7 +33,7 @@ public class Shop : MonoBehaviour
     void Start()
     {
         
-        animator = GetComponent<Animator>();
+        
         shopCoinCounter.text = UI.coins.ToString();
         shopPanelWindow.SetActive(shopOn);
         insufficentFundsText.gameObject.SetActive(shopOn);

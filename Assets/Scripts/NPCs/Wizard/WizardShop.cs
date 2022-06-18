@@ -5,18 +5,21 @@ using TMPro;
 
 public class WizardShop : MonoBehaviour, IDataPersistence
 {
+    [SerializeField] GameObject[] panels;
     [SerializeField] Spell[] spells;
     [SerializeField] TextMeshProUGUI[] texts;
     [SerializeField] int[] costs;
     [SerializeField] GameObject insufficientFunds;
     [SerializeField] TextMeshProUGUI coinAmt;
-    private static bool[] purchased = new bool[6];
+    private static bool[] purchased = new bool[11];
     private bool update;
     private int selected = -1;
+    private int currentPage = 0;
     void Awake()
     {
         LoadData(DataPersistenceManager.instance.gameData);
         update = true;
+        panels[currentPage].SetActive(true);
         coinAmt.text = UI.coins.ToString();
     }
 
@@ -90,5 +93,21 @@ public class WizardShop : MonoBehaviour, IDataPersistence
     public void SaveData(GameData data)
     {
         data.wizardPurchased = purchased;
+    }
+
+    public void NextPage()
+    {
+        panels[currentPage].SetActive(false);
+        currentPage = 1;
+        panels[currentPage].SetActive(true);
+        update = true;
+    }
+
+    public void PrevPage()
+    {
+        panels[currentPage].SetActive(false);
+        currentPage = 0;
+        panels[currentPage].SetActive(true);
+        update = true;
     }
 }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -8,12 +6,14 @@ public class SpellTree : SpellHolder
 {
     [SerializeField] private Image[] icons;
     [SerializeField] private Image[] activeSkills;
-    [SerializeField] private GameObject skillPanel;
+    [SerializeField] private GameObject activeSkillHolders;
+    [SerializeField] private GameObject[] skillPanel;
     [SerializeField] private GameObject descriptionBox;
     [SerializeField] private GameObject skillBox;
     [SerializeField] private TMP_InputField slot;
     [SerializeField] private TextMeshProUGUI spellName;
-    [SerializeField] private TextMeshProUGUI description;  
+    [SerializeField] private TextMeshProUGUI description;
+    private static int currentPage = 0;
     private static int selectedSkill;
     private bool changed = true;
     private bool display = false;
@@ -22,8 +22,8 @@ public class SpellTree : SpellHolder
     // Start is called before the first frame update
     protected void Start()
     {
-        skillPanel.SetActive(display);
-        
+        skillPanel[currentPage].SetActive(display);
+        activeSkillHolders.SetActive(display);
         for (int i = 0; i < spells.Length; i++)
         {
             icons[i].sprite = spells[i].GetComponent<SpriteRenderer>().sprite;
@@ -46,7 +46,8 @@ public class SpellTree : SpellHolder
     void TogglePanel()
     {
         display = !display;
-        skillPanel.SetActive(display);
+        activeSkillHolders.SetActive(display);
+        skillPanel[currentPage].SetActive(display);
     }
     void UpdateSkills()
     {
@@ -133,5 +134,18 @@ public class SpellTree : SpellHolder
         {
             changed = true;
         }
+    }
+
+    public void NextPage()
+    {
+        skillPanel[currentPage].SetActive(false);
+        currentPage = 1;
+        skillPanel[currentPage].SetActive(true);     
+    }
+    public void PrevPage()
+    {
+        skillPanel[currentPage].SetActive(false);
+        currentPage = 0;
+        skillPanel[currentPage].SetActive(true);     
     }
 }
