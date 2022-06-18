@@ -7,7 +7,7 @@ public class MeleeAndRanged : Damage
     
     [SerializeField] private float meleeAttackRange;
     [SerializeField] private float rangedAttackRange;
-    [SerializeField] protected float damage;
+    [SerializeField] public float damage;
     [SerializeField] protected float rangedDamage;
 
     [SerializeField] private float meleeColliderDistance;

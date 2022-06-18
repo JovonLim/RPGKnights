@@ -81,9 +81,18 @@ public class WizardQuestLog : MonoBehaviour
     {
         if (!PlayerQuestInteraction.questActive && !selected.isCompleted)
         {
-            if (selected.questNum == 2 || selected.questNum == 3)
+            if (selected.questNum == 2)
             {
-                if (PlayerAttack.spellUnlock)
+                if (PlayerAttack.spellUnlock && SpellHolder.IsUnlocked(1))
+                {
+                    selected.myQuestScript.AddActive();
+                    PlayerQuestInteraction.WizardQuest = selected;
+                    PlayerQuestInteraction.questActive = true;
+                }
+            }
+            else if (selected.questNum == 3)
+            {
+                if (PlayerAttack.spellUnlock && SpellHolder.IsUnlocked(2))
                 {
                     selected.myQuestScript.AddActive();
                     PlayerQuestInteraction.WizardQuest = selected;
@@ -96,8 +105,7 @@ public class WizardQuestLog : MonoBehaviour
                 PlayerQuestInteraction.questActive = true;
             }
             
-        }
-        
+        } 
     }
 
     public void Untrack()

@@ -14,7 +14,8 @@ public class AttackSpeedSlow : StatusEffects
         else if (enemy.GetComponent<MeleeEnemy>() != null)
         {
             enemy.GetComponent<MeleeEnemy>().attackSpeed += atkSpeedToSlow;
-        } else if (enemy.GetComponent<RangeEnemy>() != null)
+        }
+        else if (enemy.GetComponent<RangeEnemy>() != null)
         {
             enemy.GetComponent<RangeEnemy>().attackSpeed += atkSpeedToSlow;
         }

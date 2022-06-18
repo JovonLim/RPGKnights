@@ -4,7 +4,7 @@ using System.Collections;
 public class MeleeEnemy : Damage
 {
     [SerializeField] private float attackRange;
-    [SerializeField] protected float damage;
+    [SerializeField] public float damage;
 
     [SerializeField] private float colliderDistance;
     [SerializeField] private BoxCollider2D boxCollider;

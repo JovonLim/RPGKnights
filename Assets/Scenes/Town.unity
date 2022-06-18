@@ -23898,6 +23898,30 @@ PrefabInstance:
       propertyPath: abilityDark
       value: 
       objectReference: {fileID: 2728203841370232838}
+    - target: {fileID: 5761944521595046710, guid: 92f411271b723c949a411c7403a36f98, type: 3}
+      propertyPath: spells.Array.size
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5761944521595046710, guid: 92f411271b723c949a411c7403a36f98, type: 3}
+      propertyPath: spells.Array.data[8]
+      value: 
+      objectReference: {fileID: 8030819260734194354, guid: e0795b7c7674ef54cb617d389d187269, type: 3}
+    - target: {fileID: 5761944521595046710, guid: 92f411271b723c949a411c7403a36f98, type: 3}
+      propertyPath: spells.Array.data[9]
+      value: 
+      objectReference: {fileID: 4798428436537471637, guid: f5b4a4183c7cd554b867a84faaccc004, type: 3}
+    - target: {fileID: 5761944521595046710, guid: 92f411271b723c949a411c7403a36f98, type: 3}
+      propertyPath: spells.Array.data[10]
+      value: 
+      objectReference: {fileID: 1386552860057948415, guid: 09e68d533adba0543afd4489a2d395de, type: 3}
+    - target: {fileID: 5761944521595046710, guid: 92f411271b723c949a411c7403a36f98, type: 3}
+      propertyPath: spells.Array.data[11]
+      value: 
+      objectReference: {fileID: 4029973698094421556, guid: 52bce493435f02d46812d23a5730c651, type: 3}
+    - target: {fileID: 5761944521595046710, guid: 92f411271b723c949a411c7403a36f98, type: 3}
+      propertyPath: spells.Array.data[12]
+      value: 
+      objectReference: {fileID: 8864320492457125211, guid: f885b9dc980e84244addac08c3cf83be, type: 3}
     - target: {fileID: 5761944521595046711, guid: 92f411271b723c949a411c7403a36f98, type: 3}
       propertyPath: slot
       value: 
@@ -23922,6 +23946,10 @@ PrefabInstance:
       propertyPath: descriptionBox
       value: 
       objectReference: {fileID: 5513868105455181124}
+    - target: {fileID: 5761944521595046711, guid: 92f411271b723c949a411c7403a36f98, type: 3}
+      propertyPath: spells.Array.size
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 5761944521595046711, guid: 92f411271b723c949a411c7403a36f98, type: 3}
       propertyPath: icons.Array.data[0]
       value: 
@@ -23954,6 +23982,26 @@ PrefabInstance:
       propertyPath: icons.Array.data[7]
       value: 
       objectReference: {fileID: 5513868105688802127}
+    - target: {fileID: 5761944521595046711, guid: 92f411271b723c949a411c7403a36f98, type: 3}
+      propertyPath: spells.Array.data[8]
+      value: 
+      objectReference: {fileID: 8030819260734194354, guid: e0795b7c7674ef54cb617d389d187269, type: 3}
+    - target: {fileID: 5761944521595046711, guid: 92f411271b723c949a411c7403a36f98, type: 3}
+      propertyPath: spells.Array.data[9]
+      value: 
+      objectReference: {fileID: 4798428436537471637, guid: f5b4a4183c7cd554b867a84faaccc004, type: 3}
+    - target: {fileID: 5761944521595046711, guid: 92f411271b723c949a411c7403a36f98, type: 3}
+      propertyPath: spells.Array.data[10]
+      value: 
+      objectReference: {fileID: 1386552860057948415, guid: 09e68d533adba0543afd4489a2d395de, type: 3}
+    - target: {fileID: 5761944521595046711, guid: 92f411271b723c949a411c7403a36f98, type: 3}
+      propertyPath: spells.Array.data[11]
+      value: 
+      objectReference: {fileID: 4029973698094421556, guid: 52bce493435f02d46812d23a5730c651, type: 3}
+    - target: {fileID: 5761944521595046711, guid: 92f411271b723c949a411c7403a36f98, type: 3}
+      propertyPath: spells.Array.data[12]
+      value: 
+      objectReference: {fileID: 8864320492457125211, guid: f885b9dc980e84244addac08c3cf83be, type: 3}
     - target: {fileID: 5761944521595046711, guid: 92f411271b723c949a411c7403a36f98, type: 3}
       propertyPath: activeSkills.Array.data[0]
       value: 
