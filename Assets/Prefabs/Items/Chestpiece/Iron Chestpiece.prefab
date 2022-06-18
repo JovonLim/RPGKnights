@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 2
+  itemId: 17
   itemDescription: Provides +3 Physical Defense but slows speed by -1
   attackDamageBoost: 0
   attackSpeedBoost: 0
@@ -134,3 +135,5 @@ MonoBehaviour:
   speedBoost: -1
   defenseBoost: 0
   regenerateHealth: 0
+  isOverTimeEffect: 0
+  duration: 0

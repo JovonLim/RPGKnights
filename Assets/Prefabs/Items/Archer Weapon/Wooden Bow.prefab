@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 8
+  itemId: 11
   itemDescription: Provides +1 Archer Damage
   attackDamageBoost: 1
   attackSpeedBoost: 0

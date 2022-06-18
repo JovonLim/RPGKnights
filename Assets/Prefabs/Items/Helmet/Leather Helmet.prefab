@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 1
+  itemId: 40
   itemDescription: Provides +1 Physical defense
   attackDamageBoost: 0
   attackSpeedBoost: 0
@@ -134,3 +135,5 @@ MonoBehaviour:
   speedBoost: 0
   defenseBoost: 0
   regenerateHealth: 0
+  isOverTimeEffect: 0
+  duration: 0

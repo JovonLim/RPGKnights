@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 0
+  itemId: 62
   itemDescription: A sword
   attackDamageBoost: 0
   attackSpeedBoost: 0

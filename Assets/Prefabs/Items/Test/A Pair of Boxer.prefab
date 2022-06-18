@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 3
+  itemId: 61
   itemDescription: Immunity
   attackDamageBoost: 50
   attackSpeedBoost: 0

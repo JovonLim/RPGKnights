@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 7
+  itemId: 21
   itemDescription: Provides +5 Defense and 2 Health Boost at the cost of -3 Speed
     for 30 seconds
   attackDamageBoost: 0
