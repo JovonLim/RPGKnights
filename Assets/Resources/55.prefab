@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8446745358007740574
+--- !u!1 &8012998086421960212
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8446745358007740560}
-  - component: {fileID: 8446745358007740575}
-  - component: {fileID: 8446745358007740562}
-  - component: {fileID: 8446745358007740561}
+  - component: {fileID: 8012998086421960214}
+  - component: {fileID: 8012998086421960215}
+  - component: {fileID: 8012998086421960208}
+  - component: {fileID: 8012998086421960209}
   m_Layer: 11
-  m_Name: Ultimate Gold Ring
+  m_Name: 55
   m_TagString: item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8446745358007740560
+--- !u!4 &8012998086421960214
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8446745358007740574}
+  m_GameObject: {fileID: 8012998086421960212}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.0398924, y: 1.0097513, z: 0}
+  m_LocalPosition: {x: -0.046684265, y: 0.84209824, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &8446745358007740575
+--- !u!212 &8012998086421960215
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8446745358007740574}
+  m_GameObject: {fileID: 8012998086421960212}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -597349846, guid: 598e8e0ec0017a9409a2fde60790ebf1, type: 3}
+  m_Sprite: {fileID: 1644922737, guid: 598e8e0ec0017a9409a2fde60790ebf1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -86,13 +86,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &8446745358007740562
+--- !u!61 &8012998086421960208
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8446745358007740574}
+  m_GameObject: {fileID: 8012998086421960212}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -112,28 +112,28 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.625, y: 0.8125}
   m_EdgeRadius: 0
---- !u!114 &8446745358007740561
+--- !u!114 &8012998086421960209
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8446745358007740574}
+  m_GameObject: {fileID: 8012998086421960212}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13dad931fbd254a4fb88326b30c810b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 6
-  itemId: 56
-  itemDescription: Provides +3 Magic Defense and 1 Health
+  itemId: 55
+  itemDescription: Provides +3 Defense Boost and 1 Health
   attackDamageBoost: 0
   attackSpeedBoost: 0
   physicalDefenseBoost: 0
-  magicDefenseBoost: 3
+  magicDefenseBoost: 0
   healthBoost: 1
   speedBoost: 0
-  defenseBoost: 0
+  defenseBoost: 3
   regenerateHealth: 0
   isOverTimeEffect: 0
   duration: 0
