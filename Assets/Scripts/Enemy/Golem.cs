@@ -19,7 +19,7 @@ public class Golem : MeleeAndRanged
     protected override void Update()
     {
         base.Update();
-        if (GetComponent<Health>().currentHealth <= 15)
+        if (GetComponent<EnemyHealth>().currentHealth <= 15)
         {
             if (!usedSpecial)
             {
@@ -27,7 +27,7 @@ public class Golem : MeleeAndRanged
                 usedSpecial = true;
             }
             
-        } else if (GetComponent<Health>().currentHealth <= 25)
+        } else if (GetComponent<EnemyHealth>().currentHealth <= 25)
         {
             if (!gotArmor)
             {
@@ -48,7 +48,7 @@ public class Golem : MeleeAndRanged
     private void GainArmor()
     {
         anima.SetTrigger("armor");
-        GetComponent<Health>().AddPhysicalDefense(1f);
+        GetComponent<EnemyHealth>().AddPhysicalDefense(1f);
     }
     IEnumerator Special()
     {

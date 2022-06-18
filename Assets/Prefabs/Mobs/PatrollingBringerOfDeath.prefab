@@ -263,12 +263,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5210619565112353213}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2264e89b1ce83144b803079ab3a87fe, type: 3}
+  m_Script: {fileID: 11500000, guid: 1b4fb79ebc0448c41b4cda7a371c2c91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 40
-  Defense: 3
-  MagicDefense: 4
+  startingHealth: 30
+  PhysicalDefense: 0
+  MagicDefense: 0
   minDmg: 0.5
   prefab: {fileID: 4997623711577133293, guid: 555ca5c4a4a0517489f53b54e10f9cee, type: 3}
 --- !u!114 &4302673381509020316
@@ -287,6 +287,7 @@ MonoBehaviour:
   meleeAttackRange: 2
   rangedAttackRange: 5
   damage: 3.5
+  rangedDamage: 0
   meleeColliderDistance: -0.5
   rangedColliderDistance: -0.55
   boxCollider: {fileID: 4302673381509020312}
@@ -309,6 +310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minCoin: 20
   maxCoin: 23
+  offset: 0
   prefab: {fileID: 5015637550736375931, guid: 7fd6ab4c788ddee49839223a767d1cde, type: 3}
 --- !u!114 &2026861992
 MonoBehaviour:

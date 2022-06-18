@@ -7,6 +7,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] Slider slider;
     [SerializeField] AudioClip townClip;
     [SerializeField] AudioClip battleClip;
+    [SerializeField] AudioClip victoryClip;
     public static SoundManager instance;
     private new AudioSource audio;
     bool changedTrack;
@@ -56,7 +57,7 @@ public class SoundManager : MonoBehaviour
                 changedTrack = true;
             }
         }
-        else if (SceneManager.GetActiveScene().buildIndex <= 17)
+        else if (SceneManager.GetActiveScene().buildIndex <= 16)
         {
             if (audio.clip != battleClip)
             {
@@ -64,9 +65,22 @@ public class SoundManager : MonoBehaviour
                 changedTrack = true;
             }
             
+        } else if (SceneManager.GetActiveScene().buildIndex == 17)
+        {
+            if (audio.clip != victoryClip)
+            {
+                audio.clip = victoryClip;
+                changedTrack = true;
+                audio.loop = false;
+            }      
         } else
         {
-            audio.clip = null;
+            if (audio.clip != townClip)
+            {
+                audio.clip = townClip;
+                changedTrack = true;
+                audio.loop = true;
+            }
         }
         if (changedTrack)
         {

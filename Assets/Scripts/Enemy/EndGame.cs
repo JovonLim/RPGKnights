@@ -23,7 +23,7 @@ public class EndGame : MonoBehaviour
     {
         if (!cleared)
         {
-            if (core.GetComponent<Health>().IsDefeated())
+            if (core.GetComponent<EnemyHealth>().IsDefeated())
             {
                 StartCoroutine(End());
                 cleared = true;

@@ -9,8 +9,9 @@ public class Escape : MonoBehaviour
     [SerializeField] private GameObject controls;
     [SerializeField] private GameObject saveNotice;
     [SerializeField] private GameObject confirmation;
+    [SerializeField] private GameObject volume;
     private bool inMenu;
-    private float sound;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -22,18 +23,27 @@ public class Escape : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape) && !inMenu)
         {
-            menu.SetActive(true);
-            sound = SoundManager.instance.GetComponent<AudioSource>().volume;
-            SoundManager.instance.GetComponent<AudioSource>().volume = 0;
+            menu.SetActive(true);     
             Time.timeScale = 0;
             inMenu = true;
         } else if (Input.GetKeyDown(KeyCode.Escape) && inMenu && menu.activeInHierarchy)
         {
-            menu.SetActive(false);
-            SoundManager.instance.GetComponent<AudioSource>().volume = sound;
+            menu.SetActive(false);      
             Time.timeScale = 1;
             inMenu = false;
         }
+    }
+    public void DisplayVolume()
+    {
+        menu.SetActive(false);
+        volume.SetActive(true);
+    }
+
+    public void CloseVolume()
+    {   
+        volume.SetActive(false);
+        Time.timeScale = 1;
+        inMenu = false;
     }
 
     public void DisplayControls()
@@ -44,7 +54,6 @@ public class Escape : MonoBehaviour
 
     public void CloseControls()
     {
-        SoundManager.instance.GetComponent<AudioSource>().volume = sound;
         controls.SetActive(false);
         Time.timeScale = 1;
         inMenu = false;
@@ -60,7 +69,6 @@ public class Escape : MonoBehaviour
     public void CloseConfirmation()
     {
         confirmation.SetActive(false);
-        SoundManager.instance.GetComponent<AudioSource>().volume = sound;
         Time.timeScale = 1;
         inMenu = false;
     }
@@ -78,7 +86,7 @@ public class Escape : MonoBehaviour
         {
             Destroy(UI);
         }
-        SoundManager.instance.GetComponent<AudioSource>().volume = sound;
+        
         SceneManager.LoadScene(0);
         menu.SetActive(false);
         Time.timeScale = 1;
@@ -106,7 +114,6 @@ public class Escape : MonoBehaviour
     public void CloseNotice()
     {
         saveNotice.SetActive(false);
-        SoundManager.instance.GetComponent<AudioSource>().volume = sound;
         Time.timeScale = 1;
         inMenu = false;
     }

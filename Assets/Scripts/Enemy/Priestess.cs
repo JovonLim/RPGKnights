@@ -22,7 +22,7 @@ public class Priestess : MeleeEnemy
             if (!usedHeal)
             {
                 anima.SetTrigger("heal");
-                GetComponent<Health>().GainHealth(15);
+                GetComponent<EnemyHealth>().GainHealth(15);
                 usedHeal = true;
             }
             
