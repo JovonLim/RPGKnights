@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 7
+  itemId: 31
   itemDescription: Provides +1 Magic Defense Boost for 1 min
   attackDamageBoost: 0
   attackSpeedBoost: 0

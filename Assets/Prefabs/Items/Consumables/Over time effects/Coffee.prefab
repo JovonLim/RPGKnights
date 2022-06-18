@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 7
+  itemId: 23
   itemDescription: Provides +1 Speed Boost for 30 seconds
   attackDamageBoost: 0
   attackSpeedBoost: 0

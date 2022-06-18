@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 7
+  itemId: 25
   itemDescription: Provides +2 Defense Boost for 1.5 min
   attackDamageBoost: 0
   attackSpeedBoost: 0
