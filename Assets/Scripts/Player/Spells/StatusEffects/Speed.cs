@@ -15,6 +15,6 @@ public class Speed : StatusEffects
     protected override void EndEffect()
     {
         player.GetComponent<PlayerMovement>().SubtractSpeed(speedAmt);
-        base.EndEffect();
+        
     }
 }

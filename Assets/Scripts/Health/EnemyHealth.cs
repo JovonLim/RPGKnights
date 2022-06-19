@@ -12,7 +12,8 @@ public class EnemyHealth : Health
 
     public override void TakePhysicalDamage(float damage)
     {
-        float netDamage = damage - PhysicalDefense;
+        float reduction = PhysicalDefense / 5;
+        float netDamage = damage - reduction * 0.5f;
         if (netDamage < 0)
         {
             netDamage = minDmg;
@@ -24,7 +25,8 @@ public class EnemyHealth : Health
 
     public override void TakeMagicDamage(float damage)
     {
-        float netDamage = damage - MagicDefense;
+        float reduction = MagicDefense / 5;
+        float netDamage = damage - reduction * 0.5f;
         if (netDamage < 0)
         {
             netDamage = minDmg;

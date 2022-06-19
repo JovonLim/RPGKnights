@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 116415727008630029}
   m_Layer: 0
   m_Name: Holy Light
-  m_TagString: Untagged
+  m_TagString: PlayerProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

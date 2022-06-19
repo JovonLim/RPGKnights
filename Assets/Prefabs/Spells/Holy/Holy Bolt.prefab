@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 6446850639599434246}
   m_Layer: 0
   m_Name: Holy Bolt
-  m_TagString: Untagged
+  m_TagString: PlayerProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spell: {fileID: 11400000, guid: 40cdf15b8eb751c41802e1a2d7992f91, type: 2}
-  dir: 0
+  dir: 1
   offset: 0
 --- !u!114 &1814786348986997888
 MonoBehaviour:

@@ -16,18 +16,18 @@ public class StatusEffects : MonoBehaviour
         if (enemy != null)
         {
             if (!applied)
-            {
-                 applied = true;
+            {  
                 if (repeatTime > 0)
                     InvokeRepeating("ApplyEffect", startTime, repeatTime);
                 else
                     Invoke("ApplyEffect", startTime);
                 // End the effect accordingly to the duration
+                applied = true;
                 Invoke("EndEffect", duration);
                
             }
         }
-        // Apply the effect repeated over time or direct?
+       
        
     }
 

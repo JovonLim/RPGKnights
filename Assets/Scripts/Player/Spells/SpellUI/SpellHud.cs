@@ -28,7 +28,7 @@ public class SpellHud : SpellHolder
         
     }
 
-    private void SetCooldown()
+    public void SetCooldown()
     {
         OnCooldown = true;
     }

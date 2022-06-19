@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 702312909093803046}
   m_Layer: 0
   m_Name: Acid
-  m_TagString: Untagged
+  m_TagString: PlayerProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spell: {fileID: 11400000, guid: a1b7b8e43cb8ad64da69feb1a97ec470, type: 2}
-  dir: 0
+  dir: 1
   offset: 0
 --- !u!114 &7344346432313160479
 MonoBehaviour:

@@ -75,25 +75,25 @@ public class PlayerAttack : MonoBehaviour, IDataPersistence
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             spellToCast = SpellHolder.activeSpells[0];
-            GetComponent<SpellHud>().InitializeSpell();
+            UpdateSpellHUD();
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             spellToCast = SpellHolder.activeSpells[1];
-            GetComponent<SpellHud>().InitializeSpell();
+            UpdateSpellHUD();
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             spellToCast = SpellHolder.activeSpells[2];
-            GetComponent<SpellHud>().InitializeSpell();
+            UpdateSpellHUD();
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             spellToCast = SpellHolder.activeSpells[3];
-            GetComponent<SpellHud>().InitializeSpell();
+            UpdateSpellHUD();
         }
 
         switch (classType)
@@ -137,6 +137,12 @@ public class PlayerAttack : MonoBehaviour, IDataPersistence
         spellTimer += Time.deltaTime;
         resetTimer += Time.deltaTime;
         attackCooldownTimer += Time.deltaTime;
+    }
+
+    void UpdateSpellHUD()
+    {
+        GetComponent<SpellHud>().InitializeSpell();
+        GetComponent<SpellHud>().SetCooldown();
     }
     
     void MeleeAttack()
@@ -334,11 +340,6 @@ public class PlayerAttack : MonoBehaviour, IDataPersistence
         Instantiate(defaultSpell, new Vector2(projectileLaunchPoint.position.x, distance), Quaternion.identity);
     }
 
-
-    private void RotateSpell(int num)
-    {
-        spellToCast = SpellHolder.activeSpells[num];
-    }
 
     private void SwitchMage()
     {

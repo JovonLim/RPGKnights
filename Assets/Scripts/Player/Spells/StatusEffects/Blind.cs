@@ -7,9 +7,9 @@ public class Blind : StatusEffects
     [SerializeField] float damage;
     protected override void ApplyEffect()
     {
+        Debug.Log(enemy);
         if (enemy.GetComponent<MeleeAndRanged>() != null)
         {
-
             damage = enemy.GetComponent<MeleeAndRanged>().damage;
             enemy.GetComponent<MeleeAndRanged>().damage = 0;
         }
@@ -30,6 +30,6 @@ public class Blind : StatusEffects
         {
             enemy.GetComponent<MeleeEnemy>().damage = damage;
         }
-        base.EndEffect();
+        
     }
 }
