@@ -7,6 +7,7 @@ public class GroundManipulation : MonoBehaviour
     [SerializeField] private BoxCollider2D boxCollider;
     [SerializeField] private LayerMask playerLayer;
     [SerializeField] private GameObject dissappearingGround;
+    [SerializeField] private float damage;
     private Animator anima;
 
     // Cast Spell
@@ -79,6 +80,7 @@ public class GroundManipulation : MonoBehaviour
         // Launch the projectile
         GameObject projectile = Instantiate(this.prefab, projectileLaunchPoint.position, Quaternion.identity);
         projectile.transform.localScale = new Vector3(transform.localScale.x, 1, 1);
+        projectile.GetComponent<EnemyProjectile>().enemyDamage = damage;
         projectile.GetComponent<EnemyProjectile>().ActivateProjectile();
     }
 

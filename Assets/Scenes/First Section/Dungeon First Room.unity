@@ -365,6 +365,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LightBanditMelee3
       objectReference: {fileID: 0}
+    - target: {fileID: 8155985585383199322, guid: dd0511c5f33bfde48bcb40d96719ba17, type: 3}
+      propertyPath: startingHealth
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd0511c5f33bfde48bcb40d96719ba17, type: 3}
 --- !u!4 &176516145 stripped
@@ -1095,6 +1099,10 @@ PrefabInstance:
     - target: {fileID: 4950031981800853039, guid: dd0511c5f33bfde48bcb40d96719ba17, type: 3}
       propertyPath: m_Name
       value: LightBanditMelee4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8155985585383199322, guid: dd0511c5f33bfde48bcb40d96719ba17, type: 3}
+      propertyPath: startingHealth
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd0511c5f33bfde48bcb40d96719ba17, type: 3}
@@ -28979,6 +28987,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LightBanditMelee2
       objectReference: {fileID: 0}
+    - target: {fileID: 8155985585383199322, guid: dd0511c5f33bfde48bcb40d96719ba17, type: 3}
+      propertyPath: startingHealth
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd0511c5f33bfde48bcb40d96719ba17, type: 3}
 --- !u!4 &1280727365 stripped
@@ -29256,6 +29268,10 @@ PrefabInstance:
     - target: {fileID: 4950031981800853039, guid: dd0511c5f33bfde48bcb40d96719ba17, type: 3}
       propertyPath: m_Name
       value: LightBanditMelee
+      objectReference: {fileID: 0}
+    - target: {fileID: 8155985585383199322, guid: dd0511c5f33bfde48bcb40d96719ba17, type: 3}
+      propertyPath: startingHealth
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd0511c5f33bfde48bcb40d96719ba17, type: 3}
@@ -30619,6 +30635,10 @@ PrefabInstance:
     - target: {fileID: 4950031981800853039, guid: dd0511c5f33bfde48bcb40d96719ba17, type: 3}
       propertyPath: m_Name
       value: LightBanditMelee
+      objectReference: {fileID: 0}
+    - target: {fileID: 8155985585383199322, guid: dd0511c5f33bfde48bcb40d96719ba17, type: 3}
+      propertyPath: startingHealth
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd0511c5f33bfde48bcb40d96719ba17, type: 3}

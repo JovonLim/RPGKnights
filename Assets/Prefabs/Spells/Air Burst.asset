@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldownTime: 8
   speed: 0
-  damage: 4
+  damage: 5
   activeTime: 3
   spellName: Air Burst
   description: Launches a burst of air that temporarily speeds you up.

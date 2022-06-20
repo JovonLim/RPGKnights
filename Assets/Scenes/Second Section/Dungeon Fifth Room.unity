@@ -6253,7 +6253,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4302673381509020316, guid: 0a3047bc7da38a543b2fbf1742ab17fc, type: 3}
       propertyPath: rangedDamage
-      value: 4.5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4302673381709117161, guid: 0a3047bc7da38a543b2fbf1742ab17fc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6266,6 +6266,14 @@ PrefabInstance:
     - target: {fileID: 5210619565112353213, guid: 0a3047bc7da38a543b2fbf1742ab17fc, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701580875259986543, guid: 0a3047bc7da38a543b2fbf1742ab17fc, type: 3}
+      propertyPath: MagicDefense
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701580875259986543, guid: 0a3047bc7da38a543b2fbf1742ab17fc, type: 3}
+      propertyPath: PhysicalDefense
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a3047bc7da38a543b2fbf1742ab17fc, type: 3}
@@ -38383,9 +38391,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1965294509}
     - target: {fileID: 1680955126415942245, guid: 8426d018568aad84ca537689487f167c, type: 3}
+      propertyPath: damage
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1680955126415942245, guid: 8426d018568aad84ca537689487f167c, type: 3}
       propertyPath: dissappearingGround
       value: 
       objectReference: {fileID: 346810263}
+    - target: {fileID: 1680955126415942251, guid: 8426d018568aad84ca537689487f167c, type: 3}
+      propertyPath: minDmg
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1680955126415942251, guid: 8426d018568aad84ca537689487f167c, type: 3}
+      propertyPath: MagicDefense
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1680955126415942251, guid: 8426d018568aad84ca537689487f167c, type: 3}
+      propertyPath: PhysicalDefense
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1680955126415942269, guid: 8426d018568aad84ca537689487f167c, type: 3}
       propertyPath: m_RootOrder
       value: 0

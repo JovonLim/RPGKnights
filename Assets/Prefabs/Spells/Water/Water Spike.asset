@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldownTime: 10
   speed: 0
-  damage: 5
+  damage: 7
   activeTime: 3
   spellName: Water Spike
   description: Launches a spike on top of enemies and slows their speed.

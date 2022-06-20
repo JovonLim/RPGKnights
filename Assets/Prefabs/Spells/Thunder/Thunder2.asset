@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 818a38bb625a33b4db5b4983764ae5ea, type: 3}
   m_Name: Thunder2
   m_EditorClassIdentifier: 
-  cooldownTime: 6
+  cooldownTime: 7
   speed: 4
-  damage: 4
+  damage: 8
   activeTime: 6
   spellName: Lightning Bird
   description: Shoots a lightning bird that stuns enemies.

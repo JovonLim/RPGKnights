@@ -197,7 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0264fec4da8381b46a537b40540c8736, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 3
+  duration: 5
   startTime: 0
   repeatTime: 0
   enemy: {fileID: 0}

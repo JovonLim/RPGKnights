@@ -2041,6 +2041,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1700811027}
     m_Modifications:
+    - target: {fileID: 2886250469837231068, guid: d6ead0a11e9ebf24fa55149b3a5ed9d3, type: 3}
+      propertyPath: minDmg
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2886250469837231068, guid: d6ead0a11e9ebf24fa55149b3a5ed9d3, type: 3}
+      propertyPath: MagicDefense
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2886250469837231068, guid: d6ead0a11e9ebf24fa55149b3a5ed9d3, type: 3}
+      propertyPath: startingHealth
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 2886250469837231068, guid: d6ead0a11e9ebf24fa55149b3a5ed9d3, type: 3}
+      propertyPath: PhysicalDefense
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 3662724643602364361, guid: d6ead0a11e9ebf24fa55149b3a5ed9d3, type: 3}
       propertyPath: m_Name
       value: CultistPatrol (1)
@@ -2088,6 +2104,10 @@ PrefabInstance:
     - target: {fileID: 8315494755889010201, guid: d6ead0a11e9ebf24fa55149b3a5ed9d3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8994620680720682575, guid: d6ead0a11e9ebf24fa55149b3a5ed9d3, type: 3}
+      propertyPath: damageType
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6ead0a11e9ebf24fa55149b3a5ed9d3, type: 3}
@@ -22480,6 +22500,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: PatrollingImp
       objectReference: {fileID: 0}
+    - target: {fileID: 6564169949888985700, guid: 69b1c20c11765d6488add6fb94ccb6ab, type: 3}
+      propertyPath: minDmg
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6564169949888985700, guid: 69b1c20c11765d6488add6fb94ccb6ab, type: 3}
+      propertyPath: MagicDefense
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6564169949888985700, guid: 69b1c20c11765d6488add6fb94ccb6ab, type: 3}
+      propertyPath: startingHealth
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6564169949888985700, guid: 69b1c20c11765d6488add6fb94ccb6ab, type: 3}
+      propertyPath: PhysicalDefense
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7675277322311680728, guid: 69b1c20c11765d6488add6fb94ccb6ab, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8
@@ -23091,6 +23127,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 427218192}
     m_Modifications:
+    - target: {fileID: 141634868, guid: 67c3a17a620c9a64d9619da5afb4a055, type: 3}
+      propertyPath: damage
+      value: 3.5
+      objectReference: {fileID: 0}
     - target: {fileID: 141634869, guid: 67c3a17a620c9a64d9619da5afb4a055, type: 3}
       propertyPath: Defense
       value: 3
@@ -23098,6 +23138,18 @@ PrefabInstance:
     - target: {fileID: 141634869, guid: 67c3a17a620c9a64d9619da5afb4a055, type: 3}
       propertyPath: startingHealth
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 2245184789189085134, guid: 67c3a17a620c9a64d9619da5afb4a055, type: 3}
+      propertyPath: MagicDefense
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2245184789189085134, guid: 67c3a17a620c9a64d9619da5afb4a055, type: 3}
+      propertyPath: startingHealth
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 2245184789189085134, guid: 67c3a17a620c9a64d9619da5afb4a055, type: 3}
+      propertyPath: PhysicalDefense
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4677545481968304326, guid: 67c3a17a620c9a64d9619da5afb4a055, type: 3}
       propertyPath: m_RootOrder
@@ -23377,6 +23429,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: PatrollingImp (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6564169949888985700, guid: 69b1c20c11765d6488add6fb94ccb6ab, type: 3}
+      propertyPath: minDmg
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6564169949888985700, guid: 69b1c20c11765d6488add6fb94ccb6ab, type: 3}
+      propertyPath: MagicDefense
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6564169949888985700, guid: 69b1c20c11765d6488add6fb94ccb6ab, type: 3}
+      propertyPath: startingHealth
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6564169949888985700, guid: 69b1c20c11765d6488add6fb94ccb6ab, type: 3}
+      propertyPath: PhysicalDefense
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7675277322311680728, guid: 69b1c20c11765d6488add6fb94ccb6ab, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8
@@ -23612,6 +23680,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: PatrollingImp (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6564169949888985700, guid: 69b1c20c11765d6488add6fb94ccb6ab, type: 3}
+      propertyPath: minDmg
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6564169949888985700, guid: 69b1c20c11765d6488add6fb94ccb6ab, type: 3}
+      propertyPath: MagicDefense
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6564169949888985700, guid: 69b1c20c11765d6488add6fb94ccb6ab, type: 3}
+      propertyPath: startingHealth
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6564169949888985700, guid: 69b1c20c11765d6488add6fb94ccb6ab, type: 3}
+      propertyPath: PhysicalDefense
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7675277322311680728, guid: 69b1c20c11765d6488add6fb94ccb6ab, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6
@@ -23845,6 +23929,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1700811027}
     m_Modifications:
+    - target: {fileID: 2886250469837231068, guid: d6ead0a11e9ebf24fa55149b3a5ed9d3, type: 3}
+      propertyPath: minDmg
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2886250469837231068, guid: d6ead0a11e9ebf24fa55149b3a5ed9d3, type: 3}
+      propertyPath: MagicDefense
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2886250469837231068, guid: d6ead0a11e9ebf24fa55149b3a5ed9d3, type: 3}
+      propertyPath: startingHealth
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 2886250469837231068, guid: d6ead0a11e9ebf24fa55149b3a5ed9d3, type: 3}
+      propertyPath: PhysicalDefense
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 3662724643602364361, guid: d6ead0a11e9ebf24fa55149b3a5ed9d3, type: 3}
       propertyPath: m_Name
       value: CultistPatrol
@@ -23893,6 +23993,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8994620680720682575, guid: d6ead0a11e9ebf24fa55149b3a5ed9d3, type: 3}
+      propertyPath: damageType
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6ead0a11e9ebf24fa55149b3a5ed9d3, type: 3}
 --- !u!1001 &3846471730818457894
@@ -23920,7 +24024,7 @@ PrefabInstance:
       objectReference: {fileID: 1959481042}
     - target: {fileID: 451497457611071573, guid: 8257714fe39a9aa499d89fd62e621600, type: 3}
       propertyPath: damage
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 451497457611071573, guid: 8257714fe39a9aa499d89fd62e621600, type: 3}
       propertyPath: prefab
@@ -23953,6 +24057,18 @@ PrefabInstance:
     - target: {fileID: 1147780986304897201, guid: 8257714fe39a9aa499d89fd62e621600, type: 3}
       propertyPath: Defense
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864583046189662007, guid: 8257714fe39a9aa499d89fd62e621600, type: 3}
+      propertyPath: minDmg
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864583046189662007, guid: 8257714fe39a9aa499d89fd62e621600, type: 3}
+      propertyPath: startingHealth
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864583046189662007, guid: 8257714fe39a9aa499d89fd62e621600, type: 3}
+      propertyPath: PhysicalDefense
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2237688711360410052, guid: 8257714fe39a9aa499d89fd62e621600, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.y

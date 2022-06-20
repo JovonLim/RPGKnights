@@ -197,8 +197,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdfe615f553b4dc43a55ff09be9cb89e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 3
+  duration: 6
   startTime: 0
   repeatTime: 0
   enemy: {fileID: 0}
-  reduction: 5
+  reduction: 10

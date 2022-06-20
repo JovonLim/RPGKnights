@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldownTime: 4
   speed: 7
-  damage: 2
+  damage: 4
   activeTime: 2
   spellName: Lightning Bolt
   description: Shoots a lightning bolt that stuns enemies.

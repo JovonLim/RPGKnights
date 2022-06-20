@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldownTime: 7
   speed: 4
-  damage: 4.5
+  damage: 5
   activeTime: 5
   spellName: Water Torrent
   description: Creates a devastating tornado that slows enemies speed down.

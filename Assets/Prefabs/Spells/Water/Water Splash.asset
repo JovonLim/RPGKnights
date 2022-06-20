@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldownTime: 6
   speed: 0
-  damage: 2.5
+  damage: 4
   activeTime: 3
   spellName: Water Splash
   description: Launches a sprout on top of enemies and slows their speed.

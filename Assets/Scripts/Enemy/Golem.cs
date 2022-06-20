@@ -48,7 +48,7 @@ public class Golem : MeleeAndRanged
     private void GainArmor()
     {
         anima.SetTrigger("armor");
-        GetComponent<EnemyHealth>().AddPhysicalDefense(1f);
+        GetComponent<EnemyHealth>().AddPhysicalDefense(20f);
     }
     IEnumerator Special()
     {

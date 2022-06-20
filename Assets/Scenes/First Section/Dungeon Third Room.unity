@@ -265,6 +265,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: HeavyBanditMelee
       objectReference: {fileID: 0}
+    - target: {fileID: 6294096531340466753, guid: cb932742793ce9647817d1a3311239e3, type: 3}
+      propertyPath: startingHealth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6294096531340466753, guid: cb932742793ce9647817d1a3311239e3, type: 3}
+      propertyPath: PhysicalDefense
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb932742793ce9647817d1a3311239e3, type: 3}
 --- !u!4 &81723904 stripped
@@ -486,7 +494,7 @@ Transform:
   - {fileID: 1533187872}
   - {fileID: 434990878}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &259894606 stripped
 Transform:
@@ -2485,7 +2493,7 @@ Transform:
   - {fileID: 1001298623}
   - {fileID: 656796896}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &480632127
 GameObject:
@@ -14555,7 +14563,7 @@ PrefabInstance:
       objectReference: {fileID: 1642306353}
     - target: {fileID: 4427126337973238576, guid: cb932742793ce9647817d1a3311239e3, type: 3}
       propertyPath: damage
-      value: 2.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4427126337973238577, guid: cb932742793ce9647817d1a3311239e3, type: 3}
       propertyPath: startingHealth
@@ -14624,6 +14632,18 @@ PrefabInstance:
     - target: {fileID: 4427126337973238584, guid: cb932742793ce9647817d1a3311239e3, type: 3}
       propertyPath: m_TagString
       value: MiniBoss
+      objectReference: {fileID: 0}
+    - target: {fileID: 6294096531340466753, guid: cb932742793ce9647817d1a3311239e3, type: 3}
+      propertyPath: MagicDefense
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6294096531340466753, guid: cb932742793ce9647817d1a3311239e3, type: 3}
+      propertyPath: startingHealth
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6294096531340466753, guid: cb932742793ce9647817d1a3311239e3, type: 3}
+      propertyPath: PhysicalDefense
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb932742793ce9647817d1a3311239e3, type: 3}
@@ -14726,7 +14746,7 @@ Transform:
   - {fileID: 2120241373}
   - {fileID: 136445306}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1117408949
 PrefabInstance:
@@ -14745,7 +14765,7 @@ PrefabInstance:
       objectReference: {fileID: 1117408950}
     - target: {fileID: 1391391281302861677, guid: 204781475e1806f4fa97c33b2f947caa, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1391391281302861677, guid: 204781475e1806f4fa97c33b2f947caa, type: 3}
       propertyPath: m_LocalScale.x
@@ -14798,6 +14818,10 @@ PrefabInstance:
     - target: {fileID: 8237034179850885450, guid: 204781475e1806f4fa97c33b2f947caa, type: 3}
       propertyPath: m_LocalPosition.x
       value: -16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8861436612853845389, guid: 204781475e1806f4fa97c33b2f947caa, type: 3}
+      propertyPath: startingHealth
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 204781475e1806f4fa97c33b2f947caa, type: 3}
@@ -15262,7 +15286,7 @@ Transform:
   - {fileID: 920175972}
   - {fileID: 1253420115}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1342467038 stripped
 MonoBehaviour:
@@ -16154,11 +16178,11 @@ PrefabInstance:
     - target: {fileID: 1324590620365905125, guid: fa5358d2fd6eba6448b798675f0cf055, type: 3}
       propertyPath: pos1
       value: 
-      objectReference: {fileID: 1601664234}
+      objectReference: {fileID: 987268635}
     - target: {fileID: 1324590620365905125, guid: fa5358d2fd6eba6448b798675f0cf055, type: 3}
       propertyPath: pos2
       value: 
-      objectReference: {fileID: 987268635}
+      objectReference: {fileID: 1601664234}
     - target: {fileID: 4379145109735915172, guid: fa5358d2fd6eba6448b798675f0cf055, type: 3}
       propertyPath: m_Name
       value: AxeDemon
@@ -16207,6 +16231,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7928420975968836918, guid: fa5358d2fd6eba6448b798675f0cf055, type: 3}
+      propertyPath: MagicDefense
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7928420975968836918, guid: fa5358d2fd6eba6448b798675f0cf055, type: 3}
+      propertyPath: startingHealth
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7928420975968836918, guid: fa5358d2fd6eba6448b798675f0cf055, type: 3}
+      propertyPath: PhysicalDefense
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa5358d2fd6eba6448b798675f0cf055, type: 3}
 --- !u!1001 &3288536839186832658
@@ -16224,6 +16260,10 @@ PrefabInstance:
       propertyPath: pos2
       value: 
       objectReference: {fileID: 1503033613882675485}
+    - target: {fileID: 4427126337973238576, guid: cb932742793ce9647817d1a3311239e3, type: 3}
+      propertyPath: damage
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4427126337973238577, guid: cb932742793ce9647817d1a3311239e3, type: 3}
       propertyPath: startingHealth
       value: 20
@@ -16292,6 +16332,18 @@ PrefabInstance:
       propertyPath: m_TagString
       value: MiniBoss
       objectReference: {fileID: 0}
+    - target: {fileID: 6294096531340466753, guid: cb932742793ce9647817d1a3311239e3, type: 3}
+      propertyPath: MagicDefense
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6294096531340466753, guid: cb932742793ce9647817d1a3311239e3, type: 3}
+      propertyPath: startingHealth
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6294096531340466753, guid: cb932742793ce9647817d1a3311239e3, type: 3}
+      propertyPath: PhysicalDefense
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb932742793ce9647817d1a3311239e3, type: 3}
 --- !u!1 &5289573951134235925
@@ -16358,7 +16410,7 @@ PrefabInstance:
       objectReference: {fileID: 8495506984075972187}
     - target: {fileID: 1391391281302861677, guid: 204781475e1806f4fa97c33b2f947caa, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1391391281302861677, guid: 204781475e1806f4fa97c33b2f947caa, type: 3}
       propertyPath: m_LocalScale.x
@@ -16411,6 +16463,10 @@ PrefabInstance:
     - target: {fileID: 2002248092598852928, guid: 204781475e1806f4fa97c33b2f947caa, type: 3}
       propertyPath: m_Name
       value: EnemyPatrol2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8861436612853845389, guid: 204781475e1806f4fa97c33b2f947caa, type: 3}
+      propertyPath: startingHealth
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 204781475e1806f4fa97c33b2f947caa, type: 3}

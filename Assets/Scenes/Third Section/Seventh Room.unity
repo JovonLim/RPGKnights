@@ -142,6 +142,18 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 6711452842729371084, guid: e1e65f806a4e43342bf2ae82bc1d43bf, type: 3}
+      propertyPath: MagicDefense
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6711452842729371084, guid: e1e65f806a4e43342bf2ae82bc1d43bf, type: 3}
+      propertyPath: startingHealth
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6711452842729371084, guid: e1e65f806a4e43342bf2ae82bc1d43bf, type: 3}
+      propertyPath: PhysicalDefense
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6791184056669824720, guid: e1e65f806a4e43342bf2ae82bc1d43bf, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -337,7 +349,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4302673381509020316, guid: 0a3047bc7da38a543b2fbf1742ab17fc, type: 3}
       propertyPath: rangedDamage
-      value: 5.5
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701580875259986543, guid: 0a3047bc7da38a543b2fbf1742ab17fc, type: 3}
+      propertyPath: MagicDefense
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701580875259986543, guid: 0a3047bc7da38a543b2fbf1742ab17fc, type: 3}
+      propertyPath: startingHealth
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701580875259986543, guid: 0a3047bc7da38a543b2fbf1742ab17fc, type: 3}
+      propertyPath: PhysicalDefense
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a3047bc7da38a543b2fbf1742ab17fc, type: 3}
@@ -633,7 +657,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4302673381509020316, guid: 0a3047bc7da38a543b2fbf1742ab17fc, type: 3}
       propertyPath: rangedDamage
-      value: 5.5
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701580875259986543, guid: 0a3047bc7da38a543b2fbf1742ab17fc, type: 3}
+      propertyPath: MagicDefense
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701580875259986543, guid: 0a3047bc7da38a543b2fbf1742ab17fc, type: 3}
+      propertyPath: startingHealth
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701580875259986543, guid: 0a3047bc7da38a543b2fbf1742ab17fc, type: 3}
+      propertyPath: PhysicalDefense
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a3047bc7da38a543b2fbf1742ab17fc, type: 3}
@@ -12640,6 +12676,18 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 6711452842729371084, guid: e1e65f806a4e43342bf2ae82bc1d43bf, type: 3}
+      propertyPath: MagicDefense
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6711452842729371084, guid: e1e65f806a4e43342bf2ae82bc1d43bf, type: 3}
+      propertyPath: startingHealth
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6711452842729371084, guid: e1e65f806a4e43342bf2ae82bc1d43bf, type: 3}
+      propertyPath: PhysicalDefense
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6791184056669824720, guid: e1e65f806a4e43342bf2ae82bc1d43bf, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -13469,6 +13517,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 470195881935950011, guid: 82fef74e3fda86340a5e52f72eb57c93, type: 3}
+      propertyPath: minDmg
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 470195881935950011, guid: 82fef74e3fda86340a5e52f72eb57c93, type: 3}
+      propertyPath: MagicDefense
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 470195881935950011, guid: 82fef74e3fda86340a5e52f72eb57c93, type: 3}
+      propertyPath: startingHealth
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 470195881935950011, guid: 82fef74e3fda86340a5e52f72eb57c93, type: 3}
+      propertyPath: PhysicalDefense
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 2258608998219809144, guid: 82fef74e3fda86340a5e52f72eb57c93, type: 3}
       propertyPath: Defense
       value: 3
@@ -13479,7 +13543,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2258608998219809148, guid: 82fef74e3fda86340a5e52f72eb57c93, type: 3}
       propertyPath: damage
-      value: 6
+      value: 5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2258608998219809148, guid: 82fef74e3fda86340a5e52f72eb57c93, type: 3}
+      propertyPath: damageType
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2258608998219809148, guid: 82fef74e3fda86340a5e52f72eb57c93, type: 3}
       propertyPath: rangedDamage
@@ -13630,6 +13698,18 @@ PrefabInstance:
     - target: {fileID: 4253057179367056667, guid: e1e65f806a4e43342bf2ae82bc1d43bf, type: 3}
       propertyPath: m_TagString
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6711452842729371084, guid: e1e65f806a4e43342bf2ae82bc1d43bf, type: 3}
+      propertyPath: MagicDefense
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6711452842729371084, guid: e1e65f806a4e43342bf2ae82bc1d43bf, type: 3}
+      propertyPath: startingHealth
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6711452842729371084, guid: e1e65f806a4e43342bf2ae82bc1d43bf, type: 3}
+      propertyPath: PhysicalDefense
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6791184056669824720, guid: e1e65f806a4e43342bf2ae82bc1d43bf, type: 3}
       propertyPath: m_RootOrder

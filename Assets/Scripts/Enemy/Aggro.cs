@@ -10,6 +10,7 @@ public class Aggro : MonoBehaviour
     [SerializeField] private LayerMask playerLayer;
     [SerializeField] private float offset;
     public float speed;
+   
 
     Animator anima;
     MeleeAndRanged attack1;
@@ -121,7 +122,7 @@ public class Aggro : MonoBehaviour
     }
 
     private void OnDisable()
-    {  
+    {
         anima.SetBool("moving", false);
     }
 

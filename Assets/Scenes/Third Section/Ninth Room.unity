@@ -8618,6 +8618,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 279642866}
     m_Modifications:
+    - target: {fileID: 2484455348701596513, guid: 241495acce204014fa9fce9dd65339a4, type: 3}
+      propertyPath: minDmg
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2484455348701596513, guid: 241495acce204014fa9fce9dd65339a4, type: 3}
+      propertyPath: MagicDefense
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2484455348701596513, guid: 241495acce204014fa9fce9dd65339a4, type: 3}
+      propertyPath: PhysicalDefense
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 8605975077293572240, guid: 241495acce204014fa9fce9dd65339a4, type: 3}
       propertyPath: m_Name
       value: PatrollingKnight (1)
@@ -8664,6 +8676,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8605975077293572243, guid: 241495acce204014fa9fce9dd65339a4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8605975078203210866, guid: 241495acce204014fa9fce9dd65339a4, type: 3}
+      propertyPath: damageType
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8605975078203210878, guid: 241495acce204014fa9fce9dd65339a4, type: 3}
@@ -11391,6 +11407,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 279642866}
     m_Modifications:
+    - target: {fileID: 2484455348701596513, guid: 241495acce204014fa9fce9dd65339a4, type: 3}
+      propertyPath: minDmg
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2484455348701596513, guid: 241495acce204014fa9fce9dd65339a4, type: 3}
+      propertyPath: MagicDefense
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2484455348701596513, guid: 241495acce204014fa9fce9dd65339a4, type: 3}
+      propertyPath: PhysicalDefense
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 8605975077293572240, guid: 241495acce204014fa9fce9dd65339a4, type: 3}
       propertyPath: m_Name
       value: PatrollingKnight (2)
@@ -11439,6 +11467,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8605975078203210866, guid: 241495acce204014fa9fce9dd65339a4, type: 3}
+      propertyPath: damageType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8605975078203210878, guid: 241495acce204014fa9fce9dd65339a4, type: 3}
       propertyPath: startingHealth
       value: 1
@@ -11477,6 +11509,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1563143251}
     m_Modifications:
+    - target: {fileID: 1451908451238737430, guid: b00e6aa163f42cd42ad3a3e7cf6ec47a, type: 3}
+      propertyPath: minDmg
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1451908451238737430, guid: b00e6aa163f42cd42ad3a3e7cf6ec47a, type: 3}
+      propertyPath: MagicDefense
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1451908451238737430, guid: b00e6aa163f42cd42ad3a3e7cf6ec47a, type: 3}
+      propertyPath: startingHealth
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 1451908451238737430, guid: b00e6aa163f42cd42ad3a3e7cf6ec47a, type: 3}
+      propertyPath: PhysicalDefense
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 4961528480597592008, guid: b00e6aa163f42cd42ad3a3e7cf6ec47a, type: 3}
       propertyPath: m_Name
       value: Bladekeeper
@@ -11603,6 +11651,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 279642866}
     m_Modifications:
+    - target: {fileID: 2484455348701596513, guid: 241495acce204014fa9fce9dd65339a4, type: 3}
+      propertyPath: minDmg
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2484455348701596513, guid: 241495acce204014fa9fce9dd65339a4, type: 3}
+      propertyPath: MagicDefense
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2484455348701596513, guid: 241495acce204014fa9fce9dd65339a4, type: 3}
+      propertyPath: PhysicalDefense
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 8605975077293572240, guid: 241495acce204014fa9fce9dd65339a4, type: 3}
       propertyPath: m_Name
       value: PatrollingKnight
@@ -11649,6 +11709,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8605975077293572243, guid: 241495acce204014fa9fce9dd65339a4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8605975078203210866, guid: 241495acce204014fa9fce9dd65339a4, type: 3}
+      propertyPath: damageType
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
