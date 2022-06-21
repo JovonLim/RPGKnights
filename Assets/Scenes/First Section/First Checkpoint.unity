@@ -6543,7 +6543,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 307150265953419709, guid: 9664faf12869a3747844e1bd58bcc733, type: 3}
       propertyPath: itemCosts.Array.data[9]
-      value: 20
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 307150265953419709, guid: 9664faf12869a3747844e1bd58bcc733, type: 3}
       propertyPath: shopItems.Array.data[2]
@@ -6568,18 +6568,18 @@ PrefabInstance:
     - target: {fileID: 307150265953419709, guid: 9664faf12869a3747844e1bd58bcc733, type: 3}
       propertyPath: shopItems.Array.data[7]
       value: 
-      objectReference: {fileID: 2738607198308434200, guid: 87c63198707bdd748a4177a4847aa3a4, type: 3}
+      objectReference: {fileID: 2300475759398063091, guid: 6ffbd4e9cec36c44c889461047d27de0, type: 3}
     - target: {fileID: 307150265953419709, guid: 9664faf12869a3747844e1bd58bcc733, type: 3}
       propertyPath: shopItems.Array.data[8]
       value: 
-      objectReference: {fileID: 2300475759398063091, guid: 6ffbd4e9cec36c44c889461047d27de0, type: 3}
+      objectReference: {fileID: 6343330103796473926, guid: f45f31848fb6de34d8f64eab05129393, type: 3}
     - target: {fileID: 307150265953419709, guid: 9664faf12869a3747844e1bd58bcc733, type: 3}
       propertyPath: shopItems.Array.data[9]
       value: 
-      objectReference: {fileID: 6343330103796473926, guid: f45f31848fb6de34d8f64eab05129393, type: 3}
+      objectReference: {fileID: 845006568793211209, guid: 2a7fee58613611543a7a7a7fc7da7d91, type: 3}
     - target: {fileID: 307150265953419709, guid: 9664faf12869a3747844e1bd58bcc733, type: 3}
       propertyPath: itemCosts.Array.data[10]
-      value: 10
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 307150265953419709, guid: 9664faf12869a3747844e1bd58bcc733, type: 3}
       propertyPath: itemCosts.Array.data[11]
@@ -6648,7 +6648,7 @@ PrefabInstance:
     - target: {fileID: 307150265953419709, guid: 9664faf12869a3747844e1bd58bcc733, type: 3}
       propertyPath: shopItems.Array.data[10]
       value: 
-      objectReference: {fileID: 845006568793211209, guid: 2a7fee58613611543a7a7a7fc7da7d91, type: 3}
+      objectReference: {fileID: 2738607198308434200, guid: 87c63198707bdd748a4177a4847aa3a4, type: 3}
     - target: {fileID: 307150265953419709, guid: 9664faf12869a3747844e1bd58bcc733, type: 3}
       propertyPath: shopItems.Array.data[11]
       value: 
