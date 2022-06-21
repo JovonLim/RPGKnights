@@ -60,6 +60,14 @@ public class Shop : MonoBehaviour
             ToggleShop();
         }
 
+        if (shopOn)
+        {
+            PauseGame();
+        } 
+        else
+        {
+            ResumeGame();
+        }
         
     }
 
@@ -75,6 +83,17 @@ public class Shop : MonoBehaviour
     {
         return shopOn;
     }
+
+    private void ResumeGame()
+    {
+        Time.timeScale = 1;
+    }
+
+    private void PauseGame()
+    {
+        Time.timeScale = 0;
+    }
+
 
     void OnTriggerEnter2D(Collider2D other)
     {
