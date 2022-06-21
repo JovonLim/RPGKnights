@@ -59,6 +59,14 @@ public class Inventory : MonoBehaviour
         {
             ToggleInventory();
         }
+        
+        if (inventoryOn)
+        {
+            PauseGame();
+        } else
+        {
+            ResumeGame();
+        }
 
     }
 
@@ -77,6 +85,16 @@ public class Inventory : MonoBehaviour
     public bool IsInventoryFull()
     {
         return currentInvCapacity == totalInvCapacity;
+    }
+
+    private void ResumeGame()
+    {
+        Time.timeScale = 1;
+    }
+
+    private void PauseGame()
+    {
+        Time.timeScale = 0;
     }
 
     public void AddItem(GameObject item)

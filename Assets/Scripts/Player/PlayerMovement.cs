@@ -29,85 +29,67 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (isPlayerInteracting())
-        {
-            body.velocity = new Vector2(0, 0);
-            body.isKinematic = true;
+        horizontalInput = Input.GetAxis("Horizontal");
 
-            anima.SetBool("run", false);
-            anima.SetBool("grounded", false);
+        body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
+
+        // Flip player when moving
+        if (horizontalInput > 0.01f)
+            transform.localScale = Vector3.one;
+        else if (horizontalInput < -0.01f)
+            transform.localScale = new Vector3(-1, 1, 1);
+
+
+        // Player jumping
+        if (isGrounded())
+        {
+            jumpCondition = jumpDelay;
         }
-
-        else
+        if (jumpCondition > 0)
         {
-            body.isKinematic = false;
-            horizontalInput = Input.GetAxis("Horizontal");
-
-            body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
-
-            // Flip player when moving
-            if (horizontalInput > 0.01f)
-                transform.localScale = Vector3.one;
-            else if (horizontalInput < -0.01f)
-                transform.localScale = new Vector3(-1, 1, 1);
-
-
-            // Player jumping
-            if (isGrounded())
-            {
-                jumpCondition = jumpDelay;
-            }
-            if (jumpCondition > 0)
-            {
-                jumpCondition -= Time.deltaTime;
-                if (Input.GetKeyDown(KeyCode.Space))
-                {
-                    Jump();
-                    canDouble = true;
-                }
-            }
-            else if (Input.GetKeyDown(KeyCode.Space) && canDouble)
+            jumpCondition -= Time.deltaTime;
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 Jump();
-                canDouble = false;
+                canDouble = true;
             }
+        }
+        else if (Input.GetKeyDown(KeyCode.Space) && canDouble)
+        {
+            Jump();
+            canDouble = false;
+        }
 
-            anima.SetFloat("yPos", body.velocity.y);
+        anima.SetFloat("yPos", body.velocity.y);
 
-            if (!isGrounded())
+        if (!isGrounded())
+        {
+            isFalling = true;
+            if (body.velocity.y < 0)
             {
-                isFalling = true;
-                if (body.velocity.y < 0)
-                {
-                    fallTimer += Time.deltaTime;
-                }
-                else
-                {
-                    fallTimer = 0;
-                }
+                fallTimer += Time.deltaTime;
             }
-            else if (isGrounded() && isFalling)
+            else
             {
-                if (fallTimer > 0.6f)
-                {
-                    FallDamage();
-                    isFalling = false;
-                    fallTimer = 0;
-                }
+                fallTimer = 0;
             }
-
-
-            // Set animation parameters
-            anima.SetBool("run", horizontalInput != 0);
-            anima.SetBool("grounded", isGrounded());
+        }
+        else if (isGrounded() && isFalling)
+        {
+            if (fallTimer > 0.6f)
+            {
+                FallDamage();
+                isFalling = false;
+                fallTimer = 0;
+            }
         }
 
 
-    }
+        // Set animation parameters
+        anima.SetBool("run", horizontalInput != 0);
+        anima.SetBool("grounded", isGrounded());
 
-    private bool isPlayerInteracting()
-    {
-        return FindObjectOfType<Inventory>().IsInventoryOn();
+
     }
 
 
