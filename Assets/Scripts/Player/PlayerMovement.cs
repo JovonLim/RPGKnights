@@ -88,7 +88,6 @@ public class PlayerMovement : MonoBehaviour
         anima.SetBool("run", horizontalInput != 0);
         anima.SetBool("grounded", isGrounded());
 
-
     }
 
 
