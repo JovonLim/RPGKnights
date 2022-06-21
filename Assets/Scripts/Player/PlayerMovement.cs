@@ -107,7 +107,12 @@ public class PlayerMovement : MonoBehaviour
 
     public bool canAttack()
     {
-        return isGrounded();
+        return isGrounded() && WithinRangeOfAttack();
+    }
+
+    private bool WithinRangeOfAttack()
+    {
+        return horizontalInput < 0.05 || horizontalInput > -0.05;
     }
 
     void FallDamage()
