@@ -386,7 +386,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 0.05
   fullText: 'The loot obtained through conquering dungeons are acceptable currency
-    around the world, making adventurers'' lifes easier.   '
+    around the world in return for its risks.    '
 --- !u!114 &552412514
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -126,6 +126,7 @@ public class Aggro : MonoBehaviour
         anima.SetBool("moving", false);
     }
 
+
     private void Move()
     {
         direction();

@@ -113,7 +113,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7294359234555779722, guid: 39009279321f48448814ba3d4c30efea, type: 3}
       propertyPath: colliderDistance
-      value: 0.45
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 7294359234555779727, guid: 39009279321f48448814ba3d4c30efea, type: 3}
       propertyPath: m_RootOrder
