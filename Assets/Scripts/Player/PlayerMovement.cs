@@ -5,7 +5,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float jumpSpeed;
     [SerializeField] private LayerMask groundLayer;
-    [SerializeField] private float fallThreshold;
     private Rigidbody2D body;
     private Animator anima;
     private BoxCollider2D boxCollider;
@@ -79,9 +78,9 @@ public class PlayerMovement : MonoBehaviour
             if (fallTimer > 0.6f)
             {
                 FallDamage();
-                isFalling = false;
-                fallTimer = 0;
             }
+            isFalling = false;
+            fallTimer = 0;
         }
 
 

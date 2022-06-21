@@ -40,29 +40,29 @@ public class Buffs : MonoBehaviour
             {
                 case Buff.health:
                     {
-                        player.GetComponent<PlayerHealth>().AddHealth(0.5f);
-                        FinalText = StartingText + " 0.5 Health " + BackText;
+                        player.GetComponent<PlayerHealth>().AddHealth(0.25f);
+                        FinalText = StartingText + " 0.25 Health " + BackText;
                         buffText.text = FinalText;
                     }
                     break;
                 case Buff.meleeDef:
                     {
                         player.GetComponent<PlayerHealth>().AddPhysicalDefense(1f);
-                        FinalText = StartingText + " 0.2 PhysicalDefense " + BackText;
+                        FinalText = StartingText + " 1 PhysicalDefense " + BackText;
                         buffText.text = FinalText;
                     }
                     break;
                 case Buff.magicDef:
                     {
                         player.GetComponent<PlayerHealth>().AddMagicDefense(1f);
-                        FinalText = StartingText + " 0.2 MagicDefense " + BackText;
+                        FinalText = StartingText + " 1 MagicDefense " + BackText;
                         buffText.text = FinalText;
                     }
                     break;
                 case Buff.def:
                     {
                         player.GetComponent<PlayerHealth>().AddDefense(1f);
-                        FinalText = StartingText + " 0.2 Defense " + BackText;
+                        FinalText = StartingText + " 1 Defense " + BackText;
                         buffText.text = FinalText;
                     }
                     break;

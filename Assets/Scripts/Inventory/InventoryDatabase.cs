@@ -17,12 +17,14 @@ public class InventoryDatabase : MonoBehaviour, IDataPersistence
         for (int i = 0; i < data.currentItems.Count; i++)
         {
             GameObject item = Resources.Load("" + data.currentItems[i]) as GameObject;
-            items.Add(item);
+            GameObject itemToAdd = Instantiate(item);
+            items.Add(itemToAdd);
         }
         for (int i = 0; i < data.currentEquip.Count; i++)
         {
             GameObject equip = Resources.Load("" + data.currentEquip[i]) as GameObject;
-            equips.Add(equip);
+            GameObject equipToAdd = Instantiate(equip);           
+            equips.Add(equipToAdd);
         }
         CurrentItems = items;
         currentEquip = equips; 
@@ -36,10 +38,12 @@ public class InventoryDatabase : MonoBehaviour, IDataPersistence
         foreach (GameObject item in CurrentItems)
         {
             items.Add(item.GetComponent<Item>().itemId);
+            
         }
         foreach (GameObject item in currentEquip)
         {
             equips.Add(item.GetComponent<Item>().itemId);
+           
         }
         data.currentItems = items;
         data.currentEquip = equips;
@@ -64,18 +68,23 @@ public class InventoryDatabase : MonoBehaviour, IDataPersistence
     {
         if (update)
         {
+            int childs = transform.childCount;
+            for (int i = childs - 1; i >= 0; i--)
+            {
+                GameObject.Destroy(transform.GetChild(i).gameObject);
+            }
             foreach (GameObject item in CurrentItems)
             {
-                if (!FindObjectOfType<Inventory>().ContainsItem(item))
-                    FindObjectOfType<Inventory>().AddItem(item);
+                FindObjectOfType<Inventory>().AddItem(item);
+                item.transform.SetParent(instance.transform);
             }
 
             foreach (GameObject equip in currentEquip)
             {
                 FindObjectOfType<Inventory>().DirectEquip(equip);
+                equip.transform.SetParent(instance.transform);
             }
-            
-
+   
             update = false;
         }
        

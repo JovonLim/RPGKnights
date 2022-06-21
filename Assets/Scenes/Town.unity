@@ -5572,7 +5572,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -14.79684, y: 2.9912899}
+  m_AnchoredPosition: {x: -14.75577, y: 2.99139}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &788711928
@@ -6482,7 +6482,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7675159, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -27597,6 +27597,10 @@ PrefabInstance:
       propertyPath: classHud
       value: 
       objectReference: {fileID: 2728203840256646172}
+    - target: {fileID: 5761944521595046690, guid: 92f411271b723c949a411c7403a36f98, type: 3}
+      propertyPath: meleeAttackDamage
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5761944521595046710, guid: 92f411271b723c949a411c7403a36f98, type: 3}
       propertyPath: ability
       value: 

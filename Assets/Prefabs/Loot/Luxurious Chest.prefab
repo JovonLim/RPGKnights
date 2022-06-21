@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 999890302}
   - component: {fileID: 6384990092485893581}
   - component: {fileID: 2868909623969429670}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Luxurious Chest
   m_TagString: Chest
   m_Icon: {fileID: 0}
@@ -116,6 +116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minCoin: 18
   maxCoin: 25
+  offset: 0
   prefab: {fileID: 5015637550736375931, guid: 7fd6ab4c788ddee49839223a767d1cde, type: 3}
 --- !u!95 &999890302
 Animator:
