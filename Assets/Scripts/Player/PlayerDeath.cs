@@ -26,7 +26,7 @@ public class PlayerDeath : MonoBehaviour
     {
         DataPersistenceManager.instance.SaveGame();
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
         GameObject[] UIs = GameObject.FindGameObjectsWithTag("UI");
 

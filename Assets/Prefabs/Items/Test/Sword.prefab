@@ -49,7 +49,7 @@ MonoBehaviour:
   itemType: 0
   itemId: 62
   itemDescription: A sword
-  attackDamageBoost: 0
+  attackDamageBoost: 999
   attackSpeedBoost: 0
   physicalDefenseBoost: 0
   magicDefenseBoost: 0
