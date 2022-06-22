@@ -29,6 +29,5 @@ public class GameData
         wizardPurchased = new bool[11]; archerPurchased = new bool[2]; knightPurchased = new bool[2];
         currentItems = new List<int>();
         currentEquip = new List<int>();
-        
     }
 }
