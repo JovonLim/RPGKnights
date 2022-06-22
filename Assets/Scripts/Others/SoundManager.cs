@@ -55,6 +55,7 @@ public class SoundManager : MonoBehaviour
             {
                 audio.clip = townClip;
                 changedTrack = true;
+                audio.loop = true;
             }
         }
         else if (SceneManager.GetActiveScene().buildIndex <= 16)
@@ -63,6 +64,7 @@ public class SoundManager : MonoBehaviour
             {
                 audio.clip = battleClip;
                 changedTrack = true;
+                audio.loop = true;
             }
             
         } else if (SceneManager.GetActiveScene().buildIndex == 17)
