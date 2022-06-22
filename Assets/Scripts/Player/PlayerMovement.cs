@@ -68,10 +68,6 @@ public class PlayerMovement : MonoBehaviour
             {
                 fallTimer += Time.deltaTime;
             }
-            else
-            {
-                fallTimer = 0;
-            }
         }
         else if (isGrounded() && isFalling)
         {
@@ -117,7 +113,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FallDamage()
     {
-        GetComponent<Health>().TakeTrueDamage(1);
+        GetComponent<Health>().TakeTrueDamage(0.5f);
     }
 
     public float GetSpeed()
