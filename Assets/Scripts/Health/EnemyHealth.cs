@@ -159,4 +159,9 @@ public class EnemyHealth : Health
         PhysicalDefense -= amt;
         MagicDefense -= amt;
     }
+
+    public void Reset()
+    {
+        currentHealth = startingHealth;
+    }
 }
