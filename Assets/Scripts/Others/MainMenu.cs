@@ -42,7 +42,16 @@ public class MainMenu : MonoBehaviour
         menus[3].SetActive(true);
     }
 
-    public void Return()
+    public void ReturnToSettings()
+    {
+        for (int i = 1; i < menus.Length; i++)
+        {
+            menus[i].SetActive(false);
+        }
+        menus[1].SetActive(true);
+    }
+
+    public void ReturnToMenu()
     {
         for (int i = 1; i < menus.Length; i++)
         {
@@ -50,7 +59,6 @@ public class MainMenu : MonoBehaviour
         }
         menus[0].SetActive(true);
         CheckSave();
-
     }
    public void ExitGame()
     {

@@ -201,7 +201,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1938298}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.9008765, y: 1.91801, z: -18.156334}
+  m_LocalPosition: {x: -5.200728, y: 1.91746, z: -18.156334}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5867,7 +5867,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.8377483, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -6994,6 +6994,13 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 3407064866308635216}
+    - target: {fileID: 7228386274589151565, guid: ab905d18808ac274090fa7b7ea945b87, type: 3}
+      propertyPath: m_text
+      value: 'Acquire this to temporary increase defense by 2.5 for this run.
+
+        Cost:
+        75 coins'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab905d18808ac274090fa7b7ea945b87, type: 3}
 --- !u!1001 &7370706026469770612
@@ -7074,7 +7081,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5306422756565133739, guid: e2476cdc73fc8a444b443c29a96ef0dc, type: 3}
       propertyPath: amt
-      value: 0.5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 5306422756565133739, guid: e2476cdc73fc8a444b443c29a96ef0dc, type: 3}
       propertyPath: purchaseDialog

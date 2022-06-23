@@ -58,17 +58,7 @@ public class Shop : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F) && playerInRange)
         {
             ToggleShop();
-        }
-
-        if (shopOn)
-        {
-            PauseGame();
-        } 
-        else
-        {
-            ResumeGame();
-        }
-        
+        }    
     }
 
     private void ToggleShop()
@@ -77,6 +67,15 @@ public class Shop : MonoBehaviour
         shopPanelWindow.SetActive(shopOn);
         shopCoinCounter.text = UI.coins.ToString();
         ResetPanels();
+
+        if (shopOn)
+        {
+            PauseGame();
+        }
+        else
+        {
+            ResumeGame();
+        }
     }
 
     public bool IsShopOn()

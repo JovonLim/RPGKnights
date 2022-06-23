@@ -6,17 +6,9 @@ using UnityEngine.SceneManagement;
 public class Escape : MonoBehaviour
 {
     [SerializeField] private GameObject menu;
-    [SerializeField] private GameObject controls;
-    [SerializeField] private GameObject saveNotice;
-    [SerializeField] private GameObject confirmation;
-    [SerializeField] private GameObject volume;
-    private bool inMenu;
+    [SerializeField] private GameObject[] options;
+    private bool inMenu = false;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -26,6 +18,7 @@ public class Escape : MonoBehaviour
             menu.SetActive(true);     
             Time.timeScale = 0;
             inMenu = true;
+         
         } else if (Input.GetKeyDown(KeyCode.Escape) && inMenu && menu.activeInHierarchy)
         {
             menu.SetActive(false);      
@@ -33,44 +26,39 @@ public class Escape : MonoBehaviour
             inMenu = false;
         }
     }
-    public void DisplayVolume()
-    {
-        menu.SetActive(false);
-        volume.SetActive(true);
-    }
 
-    public void CloseVolume()
+    public void ReturnToOptionMenu()
     {   
-        volume.SetActive(false);
-        Time.timeScale = 1;
-        inMenu = false;
+        for (int i = 0; i < options.Length; i++)
+        {
+            options[i].SetActive(false);
+        }
+        menu.SetActive(true);
     }
 
     public void DisplayControls()
     {
         menu.SetActive(false);
-        controls.SetActive(true);
+        options[0].SetActive(true);
     }
 
-    public void CloseControls()
+    public void DisplayVolume()
     {
-        controls.SetActive(false);
-        Time.timeScale = 1;
-        inMenu = false;
+        menu.SetActive(false);
+        options[1].SetActive(true);
+    }
+
+    void DisplayNotice()
+    {
+        menu.SetActive(false);
+        options[2].SetActive(true);
     }
 
     public void DisplayConfirmation()
     {
         menu.SetActive(false);
-        confirmation.SetActive(true);
+        options[3].SetActive(true);
 
-    }
-
-    public void CloseConfirmation()
-    {
-        confirmation.SetActive(false);
-        Time.timeScale = 1;
-        inMenu = false;
     }
 
     public void ReturnToMenu()
@@ -103,18 +91,5 @@ public class Escape : MonoBehaviour
             DisplayNotice();
         }
        
-    }
-
-    void DisplayNotice()
-    {
-        menu.SetActive(false);
-        saveNotice.SetActive(true);
-    }
-
-    public void CloseNotice()
-    {
-        saveNotice.SetActive(false);
-        Time.timeScale = 1;
-        inMenu = false;
     }
 }
