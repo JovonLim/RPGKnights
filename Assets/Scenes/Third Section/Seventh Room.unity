@@ -351,6 +351,10 @@ PrefabInstance:
       propertyPath: rangedDamage
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5210619565112353213, guid: 0a3047bc7da38a543b2fbf1742ab17fc, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 8701580875259986543, guid: 0a3047bc7da38a543b2fbf1742ab17fc, type: 3}
       propertyPath: MagicDefense
       value: 25
@@ -559,7 +563,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.8377483, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -658,6 +662,10 @@ PrefabInstance:
     - target: {fileID: 4302673381509020316, guid: 0a3047bc7da38a543b2fbf1742ab17fc, type: 3}
       propertyPath: rangedDamage
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5210619565112353213, guid: 0a3047bc7da38a543b2fbf1742ab17fc, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8701580875259986543, guid: 0a3047bc7da38a543b2fbf1742ab17fc, type: 3}
       propertyPath: MagicDefense
@@ -761,7 +769,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 631462317}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 68.62114, y: 46.98793, z: -25.557058}
+  m_LocalPosition: {x: 68.20133, y: 46.98932, z: -25.557058}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
