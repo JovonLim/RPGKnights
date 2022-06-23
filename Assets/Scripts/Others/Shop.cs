@@ -29,6 +29,8 @@ public class Shop : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI shopCoinCounter;
 
+    [SerializeField] private TextMeshProUGUI inventoryFullText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +39,7 @@ public class Shop : MonoBehaviour
         shopCoinCounter.text = UI.coins.ToString();
         shopPanelWindow.SetActive(shopOn);
         insufficentFundsText.gameObject.SetActive(shopOn);
+        inventoryFullText.gameObject.SetActive(shopOn);
         for (int i = 0; i < shopItems.Length; i++)
         {
             if (shopItems[i] != null)
@@ -70,11 +73,11 @@ public class Shop : MonoBehaviour
 
         if (shopOn)
         {
-            PauseGame();
+            //PauseGame();
         }
         else
         {
-            ResumeGame();
+            //ResumeGame();
         }
     }
 
@@ -112,19 +115,27 @@ public class Shop : MonoBehaviour
 
     public void PurchaseItem(int slotNum)
     {
-        if (UI.coins >= itemCosts[slotNum])
+        if (!FindObjectOfType<Inventory>().IsInventoryFull())
         {
-            UI.coins -= itemCosts[slotNum];
-            shopCoinCounter.text = UI.coins.ToString();
-            GameObject purchased = Instantiate(shopItems[slotNum]);
-            purchased.name = shopItems[slotNum].name;
-            purchased.gameObject.SetActive(true);
-            FindObjectOfType<Inventory>().AddItem(purchased);
-        }
+            if (UI.coins >= itemCosts[slotNum])
+            {
+                UI.coins -= itemCosts[slotNum];
+                shopCoinCounter.text = UI.coins.ToString();
+                GameObject purchased = Instantiate(shopItems[slotNum]);
+                purchased.name = shopItems[slotNum].name;
+                purchased.gameObject.SetActive(true);
+                FindObjectOfType<Inventory>().AddItem(purchased);
+            }
+            else
+            {
+                StartCoroutine(ShowInsufficientFunds(0.5f));
+            }
+        } 
         else
         {
-            StartCoroutine(ShowInsufficientFunds(0.5f));
+            StartCoroutine(ShowInventoryFull(0.5f));
         }
+        
         
     }
 
@@ -155,6 +166,13 @@ public class Shop : MonoBehaviour
         insufficentFundsText.gameObject.SetActive(true);
         yield return new WaitForSeconds(time);
         insufficentFundsText.gameObject.SetActive(false);
+    }
+
+    IEnumerator ShowInventoryFull(float time)
+    {
+        inventoryFullText.gameObject.SetActive(true);
+        yield return new WaitForSeconds(time);
+        inventoryFullText.gameObject.SetActive(false);
     }
 
     public void ResetPanels()
