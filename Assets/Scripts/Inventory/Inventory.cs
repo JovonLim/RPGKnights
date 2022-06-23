@@ -48,7 +48,7 @@ public class Inventory : MonoBehaviour
         {
             equipHolder[i] = null;
         }
-
+        currentInvCapacity = 0;
         UpdateStats();
 
     }
@@ -94,7 +94,8 @@ public class Inventory : MonoBehaviour
                 }      
                 break;
             }
-        } 
+        }
+        currentInvCapacity += 1;
         UpdateUI();
 
     }
@@ -119,6 +120,7 @@ public class Inventory : MonoBehaviour
             int posToRemove = InventoryDatabase.CurrentItems.IndexOf(itemList[invNum]);
             InventoryDatabase.CurrentItems.RemoveAt(posToRemove);
             itemList[invNum] = null;
+            currentInvCapacity -= 1;
             UpdateUI();
         } 
         else
@@ -136,6 +138,7 @@ public class Inventory : MonoBehaviour
             InventoryDatabase.CurrentItems.RemoveAt(posToRemove);
             itemList[invNum].GetComponent<Item>().BeingDropped();
             itemList[invNum] = null;
+            currentInvCapacity -= 1;
             UpdateUI();
         }
         else

@@ -11461,7 +11461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d163b0dbec249fb448de5f61b02d9657, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneNum: 3
+  sceneNum: 8
 --- !u!1 &1359679907
 GameObject:
   m_ObjectHideFlags: 0
@@ -21672,6 +21672,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1897389988}
   m_CullTransparentMesh: 1
+--- !u!114 &1934286178 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4090512566363770864, guid: fda3795f115835146b8ff88324a165db, type: 3}
+  m_PrefabInstance: {fileID: 8916496634031779846}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1934799159
 GameObject:
   m_ObjectHideFlags: 0
@@ -26353,6 +26364,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 667777254}
     - target: {fileID: 307150265953419709, guid: 9664faf12869a3747844e1bd58bcc733, type: 3}
+      propertyPath: inventoryFullText
+      value: 
+      objectReference: {fileID: 1934286178}
+    - target: {fileID: 307150265953419709, guid: 9664faf12869a3747844e1bd58bcc733, type: 3}
       propertyPath: insufficentFundsText
       value: 
       objectReference: {fileID: 1958322832}
@@ -27955,6 +27970,10 @@ PrefabInstance:
     - target: {fileID: 5761944522982870089, guid: 92f411271b723c949a411c7403a36f98, type: 3}
       propertyPath: speed
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5761944522982870089, guid: 92f411271b723c949a411c7403a36f98, type: 3}
+      propertyPath: jumpSpeed
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5761944522982870100, guid: 92f411271b723c949a411c7403a36f98, type: 3}
       propertyPath: m_RootOrder
