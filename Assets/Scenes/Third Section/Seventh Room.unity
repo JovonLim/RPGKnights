@@ -563,7 +563,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.8377483, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -681,6 +681,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a3047bc7da38a543b2fbf1742ab17fc, type: 3}
+--- !u!1 &577444446 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5405677235792910029, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
+  m_PrefabInstance: {fileID: 749545932}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &596078983 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6791184056669824720, guid: e1e65f806a4e43342bf2ae82bc1d43bf, type: 3}
@@ -769,7 +774,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 631462317}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 68.20133, y: 46.98932, z: -25.557058}
+  m_LocalPosition: {x: 68.62114, y: 46.98793, z: -25.557058}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -821,6 +826,7 @@ GameObject:
   - component: {fileID: 652439289}
   - component: {fileID: 652439288}
   - component: {fileID: 652439290}
+  - component: {fileID: 652439291}
   m_Layer: 0
   m_Name: Exit
   m_TagString: Untagged
@@ -908,13 +914,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buffText: {fileID: 749545933}
-  objectiveBox: {fileID: 1166241922}
+  objectiveBox: {fileID: 577444446}
   miniBossText: {fileID: 1858134801}
   mobsText: {fileID: 2067985101}
   bossText: {fileID: 1134370493}
   objectiveCleared: {fileID: 688743775}
   sceneNum: 15
   objective: 2
+--- !u!61 &652439291
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652439287}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.3125, y: 5}
+    newSize: {x: 3.3125, y: 5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.3125, y: 5}
+  m_EdgeRadius: 0
 --- !u!4 &671392071 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7272060991361480501, guid: 2965218d1b166f24789ca86ca3618368, type: 3}
@@ -1004,7 +1036,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 532807127, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 735729720, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 3.8884277
       objectReference: {fileID: 0}
     - target: {fileID: 1400219014, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1097,6 +1133,10 @@ PrefabInstance:
     - target: {fileID: 5405677235792910029, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
       propertyPath: m_Name
       value: RoomObjective
+      objectReference: {fileID: 0}
+    - target: {fileID: 5405677235792910029, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7980735511706005410, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1289,7 +1329,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &946587898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11768,11 +11808,6 @@ GameObject:
 Transform:
   m_CorrespondingSourceObject: {fileID: 388715428618949687, guid: f30276627de6cfd45a2842704fd79632, type: 3}
   m_PrefabInstance: {fileID: 1268913880}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1166241922 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 532807127, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
-  m_PrefabInstance: {fileID: 749545932}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1171399313
 GameObject:

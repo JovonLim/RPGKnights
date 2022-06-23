@@ -10712,6 +10712,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1590228645 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5405677235792910029, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
+  m_PrefabInstance: {fileID: 1640486403}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1620233711
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10853,7 +10858,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 532807127, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1400219014, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -10971,11 +10976,6 @@ GameObject:
 --- !u!1 &1640486407 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1400219013, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
-  m_PrefabInstance: {fileID: 1640486403}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1640486408 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 532807127, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
   m_PrefabInstance: {fileID: 1640486403}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1711782020
@@ -11113,6 +11113,7 @@ GameObject:
   - component: {fileID: 1739344371}
   - component: {fileID: 1739344370}
   - component: {fileID: 1739344369}
+  - component: {fileID: 1739344372}
   m_Layer: 0
   m_Name: Exit
   m_TagString: Untagged
@@ -11133,7 +11134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buffText: {fileID: 1406340812}
-  objectiveBox: {fileID: 1640486408}
+  objectiveBox: {fileID: 1590228645}
   miniBossText: {fileID: 1640486407}
   mobsText: {fileID: 1640486406}
   bossText: {fileID: 1640486405}
@@ -11207,6 +11208,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1739344372
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739344368}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.3125, y: 5}
+    newSize: {x: 3.3125, y: 5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.3125, y: 5}
+  m_EdgeRadius: 0
 --- !u!1001 &1769641526
 PrefabInstance:
   m_ObjectHideFlags: 0

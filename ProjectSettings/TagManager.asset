@@ -16,6 +16,7 @@ TagManager:
   - PlayerProjectile
   - Inventory
   - item
+  - QuestBoss
   layers:
   - Default
   - TransparentFX

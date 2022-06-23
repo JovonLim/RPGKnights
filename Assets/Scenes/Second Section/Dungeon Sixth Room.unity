@@ -2024,11 +2024,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!1 &60145124 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 532807127, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
-  m_PrefabInstance: {fileID: 1405058543}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &90605100 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1750333289, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
@@ -22311,7 +22306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buffText: {fileID: 1405058545}
-  objectiveBox: {fileID: 60145124}
+  objectiveBox: {fileID: 966795134}
   miniBossText: {fileID: 569030488}
   mobsText: {fileID: 1094355486}
   bossText: {fileID: 1405058544}
@@ -22396,6 +22391,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &966795134 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5405677235792910029, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
+  m_PrefabInstance: {fileID: 1405058543}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &974750669 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 388715428618949687, guid: f30276627de6cfd45a2842704fd79632, type: 3}
@@ -22751,7 +22751,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 532807127, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1400219014, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -24156,6 +24156,10 @@ PrefabInstance:
     - target: {fileID: 3350019087073473087, guid: 8257714fe39a9aa499d89fd62e621600, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3350019087073473087, guid: 8257714fe39a9aa499d89fd62e621600, type: 3}
+      propertyPath: m_TagString
+      value: QuestBoss
       objectReference: {fileID: 0}
     - target: {fileID: 7680846345885415916, guid: 8257714fe39a9aa499d89fd62e621600, type: 3}
       propertyPath: m_RootOrder

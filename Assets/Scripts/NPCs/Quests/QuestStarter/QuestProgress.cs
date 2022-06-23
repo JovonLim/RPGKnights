@@ -28,7 +28,7 @@ public class QuestProgress : QuestObjective
                 }
                 else if (objective == Objective.boss)
                 {
-                    questObjects = GameObject.FindGameObjectsWithTag("Boss");
+                    questObjects = GameObject.FindGameObjectsWithTag("QuestBoss");
                 }
                 else
                 {

@@ -6267,6 +6267,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5210619565112353213, guid: 0a3047bc7da38a543b2fbf1742ab17fc, type: 3}
+      propertyPath: m_TagString
+      value: QuestBoss
+      objectReference: {fileID: 0}
     - target: {fileID: 8701580875259986543, guid: 0a3047bc7da38a543b2fbf1742ab17fc, type: 3}
       propertyPath: MagicDefense
       value: 10
@@ -38195,6 +38199,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1896844260 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5405677235792910029, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
+  m_PrefabInstance: {fileID: 8684140992758531431}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1965294508
 GameObject:
   m_ObjectHideFlags: 0
@@ -38234,11 +38243,6 @@ GameObject:
 --- !u!1 &2044924448 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1284196440, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
-  m_PrefabInstance: {fileID: 8684140992758531431}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2063116223 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 532807127, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
   m_PrefabInstance: {fileID: 8684140992758531431}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2136300483
@@ -38652,7 +38656,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buffText: {fileID: 8684140992758531432}
-  objectiveBox: {fileID: 2063116223}
+  objectiveBox: {fileID: 1896844260}
   miniBossText: {fileID: 499480593}
   mobsText: {fileID: 2044924448}
   bossText: {fileID: 929699328}
@@ -39027,7 +39031,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 532807127, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1400219014, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
       propertyPath: m_AnchoredPosition.x
