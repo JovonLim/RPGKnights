@@ -35,25 +35,26 @@ public class SpellHolder : MonoBehaviour, IDataPersistence
         }
         return false;
     }
-    
-    protected bool SetActiveSpell(int slot, int num)
+
+    protected bool SetActiveSpell(int num)
     {
-        if (slot <= 3)
+        if (!ContainSpell(spells[num]))
         {
-            if (!ContainSpell(spells[num]))
+            for (int i = 0; i < activeSpells.Length; i++)
             {
-                activeSpells[slot] = spells[num];
-                updated = true;
-                return true;
-            } else
-            {
-                return false;
+                if (activeSpells[i] == null)
+                {
+                    activeSpells[i] = spells[num];
+                    updated = true;
+                    return true;
+                }
             }
-        } else
+            return false;
+        }
+        else
         {
             return false;
         }
-       
     }
 
     protected bool RemoveActiveSpell(int num)

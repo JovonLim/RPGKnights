@@ -120,9 +120,9 @@ public class SpellTree : SpellHolder
         selectedSkill = -1;
     }
 
-    public void SelectSkill()
+    public void AddSkill()
     {
-        if (SetActiveSpell(int.Parse(slot.text), selectedSkill))
+        if (SetActiveSpell(selectedSkill))
         {
             changed = true;
         }
