@@ -51,8 +51,8 @@ MonoBehaviour:
   itemDescription: A sword
   attackDamageBoost: 999
   attackSpeedBoost: 0
-  physicalDefenseBoost: 0
-  magicDefenseBoost: 0
+  physicalDefenseBoost: 999
+  magicDefenseBoost: 999
   healthBoost: 0
   speedBoost: 0
   defenseBoost: 0
