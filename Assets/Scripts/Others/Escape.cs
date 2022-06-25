@@ -63,6 +63,7 @@ public class Escape : MonoBehaviour
 
     public void ReturnToMenu()
     {
+        
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
         GameObject[] UIs = GameObject.FindGameObjectsWithTag("UI");
 

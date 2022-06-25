@@ -5,6 +5,8 @@ using UnityEngine;
 public class TheRival : MonoBehaviour
 {
     [SerializeField] GameObject bossPatrol;
+    [SerializeField] GameObject bow;
+    bool added;
 
     // Update is called once per frame
     void Update()
@@ -18,5 +20,16 @@ public class TheRival : MonoBehaviour
                 GetComponent<QuestEnd>().enabled = true;
             }
         }
+
+        if (!added)
+        {
+            if (GetComponent<QuestEnd>().cleared)
+            {
+                GameObject player = GameObject.FindGameObjectWithTag("Player");
+                player.GetComponent<Inventory>().AddItem(bow);
+                added = true;
+            }
+        }
+
     }
 }

@@ -28029,6 +28029,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6371153622120426286, guid: 92f411271b723c949a411c7403a36f98, type: 3}
+      propertyPath: minDmg
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6371153622120426286, guid: 92f411271b723c949a411c7403a36f98, type: 3}
       propertyPath: MagicDefense
       value: 0
       objectReference: {fileID: 0}

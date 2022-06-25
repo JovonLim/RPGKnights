@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class InventoryDatabase : MonoBehaviour, IDataPersistence
 {
     public static InventoryDatabase instance;
@@ -66,13 +66,15 @@ public class InventoryDatabase : MonoBehaviour, IDataPersistence
     // Update is called once per frame
     void Update()
     {
-        if (update)
+        if (update && SceneManager.GetActiveScene().buildIndex == 2)
         {
             int childs = transform.childCount;
             for (int i = childs - 1; i >= 0; i--)
             {
                 GameObject.Destroy(transform.GetChild(i).gameObject);
             }
+
+         
             foreach (GameObject item in CurrentItems)
             {
                 FindObjectOfType<Inventory>().AddItem(item);
@@ -81,10 +83,12 @@ public class InventoryDatabase : MonoBehaviour, IDataPersistence
 
             foreach (GameObject equip in currentEquip)
             {
+
                 FindObjectOfType<Inventory>().DirectEquip(equip);
                 equip.transform.SetParent(instance.transform);
+
             }
-   
+
             update = false;
         }
        

@@ -4747,7 +4747,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4253057179367056642, guid: e1e65f806a4e43342bf2ae82bc1d43bf, type: 3}
       propertyPath: damage
-      value: 3.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4253057179367056647, guid: e1e65f806a4e43342bf2ae82bc1d43bf, type: 3}
       propertyPath: m_LocalScale.x
@@ -28857,7 +28857,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4253057179367056642, guid: e1e65f806a4e43342bf2ae82bc1d43bf, type: 3}
       propertyPath: damage
-      value: 3.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4253057179367056647, guid: e1e65f806a4e43342bf2ae82bc1d43bf, type: 3}
       propertyPath: m_LocalScale.x
@@ -29603,7 +29603,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 141634868, guid: 67c3a17a620c9a64d9619da5afb4a055, type: 3}
       propertyPath: damage
-      value: 3
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 2245184789189085134, guid: 67c3a17a620c9a64d9619da5afb4a055, type: 3}
       propertyPath: MagicDefense

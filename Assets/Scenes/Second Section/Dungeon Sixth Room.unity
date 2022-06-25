@@ -2101,6 +2101,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8994620680720682575, guid: d6ead0a11e9ebf24fa55149b3a5ed9d3, type: 3}
+      propertyPath: damage
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8994620680720682575, guid: d6ead0a11e9ebf24fa55149b3a5ed9d3, type: 3}
       propertyPath: damageType
       value: 1
       objectReference: {fileID: 0}
@@ -23196,7 +23200,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 141634868, guid: 67c3a17a620c9a64d9619da5afb4a055, type: 3}
       propertyPath: damage
-      value: 3.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 141634869, guid: 67c3a17a620c9a64d9619da5afb4a055, type: 3}
       propertyPath: Defense
@@ -23368,6 +23372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossPatrol: {fileID: 3846471730818457895}
+  bow: {fileID: 6978762653724302630, guid: 4fcee78b99bb4c3428d126982da702b8, type: 3}
 --- !u!1 &1614243231
 GameObject:
   m_ObjectHideFlags: 0
@@ -24059,6 +24064,10 @@ PrefabInstance:
     - target: {fileID: 8315494755889010201, guid: d6ead0a11e9ebf24fa55149b3a5ed9d3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8994620680720682575, guid: d6ead0a11e9ebf24fa55149b3a5ed9d3, type: 3}
+      propertyPath: damage
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8994620680720682575, guid: d6ead0a11e9ebf24fa55149b3a5ed9d3, type: 3}
       propertyPath: damageType

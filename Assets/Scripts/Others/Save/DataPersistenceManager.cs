@@ -55,11 +55,7 @@ public class DataPersistenceManager : MonoBehaviour
 
     public void OnSceneUnloaded(Scene scene)
     {
-        if (scene.buildIndex <= 2)
-        {
-            SaveGame();
-        }
-        
+      
     }
 
     public void NewGame()
@@ -89,6 +85,7 @@ public class DataPersistenceManager : MonoBehaviour
         // push the loaded data to all other scripts that need it
         foreach (IDataPersistence dataPersistenceObj in dataPersistenceObjects)
         {
+            if (dataPersistenceObj != null) { }
             dataPersistenceObj.LoadData(gameData);
         }
     }
@@ -107,7 +104,11 @@ public class DataPersistenceManager : MonoBehaviour
         // pass the data to other scripts so they can update it
         foreach (IDataPersistence dataPersistenceObj in dataPersistenceObjects)
         {
-            dataPersistenceObj.SaveData(gameData);
+            if (dataPersistenceObj != null)
+            {
+                dataPersistenceObj.SaveData(gameData);
+            }
+           
         }
        
         // save that data to a file using the data handler
