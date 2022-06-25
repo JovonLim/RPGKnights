@@ -6911,7 +6911,7 @@ PrefabInstance:
       objectReference: {fileID: 1296130278}
     - target: {fileID: 7228386273405788380, guid: ab905d18808ac274090fa7b7ea945b87, type: 3}
       propertyPath: m_text
-      value: 'Acquire this to temporarily increase max health by 2 for this run.
+      value: 'Acquire this to temporarily increase max health by 1.5 for this run.
 
         Cost:
         75 Coins'
@@ -7172,7 +7172,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1296130278, guid: f33163ada2a5b8c4484c9464a0aba873, type: 3}
       propertyPath: amt
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1296130278, guid: f33163ada2a5b8c4484c9464a0aba873, type: 3}
       propertyPath: cost

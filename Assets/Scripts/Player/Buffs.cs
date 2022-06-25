@@ -40,8 +40,8 @@ public class Buffs : MonoBehaviour
             {
                 case Buff.health:
                     {
-                        player.GetComponent<PlayerHealth>().AddHealth(0.25f);
-                        FinalText = StartingText + " 0.25 Health " + BackText;
+                        player.GetComponent<PlayerHealth>().AddHealth(0.5f);
+                        FinalText = StartingText + " 0.5 Health " + BackText;
                         buffText.text = FinalText;
                     }
                     break;

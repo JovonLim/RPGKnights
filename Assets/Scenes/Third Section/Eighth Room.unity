@@ -19654,7 +19654,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 451497457611071573, guid: 8257714fe39a9aa499d89fd62e621600, type: 3}
       propertyPath: attackSpeed
-      value: 0.7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 451497457611071573, guid: 8257714fe39a9aa499d89fd62e621600, type: 3}
       propertyPath: boxCollider

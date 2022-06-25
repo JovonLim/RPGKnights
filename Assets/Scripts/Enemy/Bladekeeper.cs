@@ -103,6 +103,7 @@ public class Bladekeeper : MeleeAndRanged
 
         // Launch the projectile
         GameObject knife = Instantiate(this.prefab, projectileLaunchPoint.position, Quaternion.identity);
+        knife.transform.localScale = new Vector3(transform.localScale.x, 1, 1);
         knife.GetComponent<EnemyProjectile>().enemyDamage = rangedDamage;
         knife.GetComponent<EnemyProjectile>().ActivateProjectile();
     }
