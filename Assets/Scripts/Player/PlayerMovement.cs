@@ -70,7 +70,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (isGrounded() && isFalling)
         {
-            if (fallTimer > 0.6f)
+            if (fallTimer > 0.8f)
             {
                 FallDamage();
             }
