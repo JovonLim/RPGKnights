@@ -27,8 +27,8 @@ public class PlayerAttack : MonoBehaviour, IDataPersistence
     private float spellTimer;
 
     
-    public static bool rangedUnlock = true;
-    public static bool spellUnlock = true;
+    public static bool rangedUnlock = false;
+    public static bool spellUnlock = false;
 
     [SerializeField] private Transform projectileLaunchPoint;
     [SerializeField] private GameObject arrow;

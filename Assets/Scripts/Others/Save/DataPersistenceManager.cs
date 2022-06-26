@@ -55,7 +55,7 @@ public class DataPersistenceManager : MonoBehaviour
 
     public void OnSceneUnloaded(Scene scene)
     {
-      
+        
     }
 
     public void NewGame()
