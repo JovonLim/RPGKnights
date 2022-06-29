@@ -1,11 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Knight : MonoBehaviour, IDataPersistence
 {
+    [SerializeField] GameObject options;
+    [SerializeField] GameObject milestoneDialog;
     [SerializeField] GameObject shop;
     [SerializeField] GameObject introText;
+    [SerializeField] TextMeshProUGUI[] milestoneTitle;
+    [SerializeField] GameObject[] milestoneDescription;
+
     private static bool introduced = false;
     private bool playerInRange;
 
@@ -30,14 +36,36 @@ public class Knight : MonoBehaviour, IDataPersistence
         }
         else if (playerClicked && playerInRange)
         {
-            shop.SetActive(true);
-        } else
+            options.SetActive(true);
+        }
+        else
         {
-            shop.SetActive(false);
+            options.SetActive(false);
             playerClicked = false;
         }
     }
 
+    public void ExitMilestone()
+    {
+        milestoneDialog.SetActive(false);
+      
+    }
+    public void ExitShop()
+    {
+        shop.SetActive(false);
+    }
+
+    public void DisplayShop()
+    {
+        shop.SetActive(true);
+        playerClicked = false;
+    }
+
+    public void DisplayMilestones()
+    {
+        milestoneDialog.SetActive(true);
+        playerClicked = false;
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -53,12 +81,6 @@ public class Knight : MonoBehaviour, IDataPersistence
         {
             playerInRange = false;
         }
-    }
-
-    public void ExitShop()
-    {
-        shop.SetActive(false);
-        playerClicked = false;
     }
 
     IEnumerator Intro()
@@ -77,6 +99,18 @@ public class Knight : MonoBehaviour, IDataPersistence
     public void SaveData(GameData data)
     {
         data.intros[2] = introduced;
+    }
+
+    public void SelecttMilestone(int num)
+    {
+        milestoneTitle[num].color = Color.red;
+        milestoneDescription[num].SetActive(true);
+    }
+
+    public void DeselectMilestone(int num)
+    {
+        milestoneTitle[num].color = Color.black;
+        milestoneDescription[num].SetActive(false);
     }
 }
 

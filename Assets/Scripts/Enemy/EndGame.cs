@@ -16,6 +16,7 @@ public class EndGame : MonoBehaviour
     void Start()
     {
         StartCoroutine(Begin());
+        DataPersistenceManager.instance.SaveGame();
     }
 
     // Update is called once per frame

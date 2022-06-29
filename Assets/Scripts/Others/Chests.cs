@@ -22,6 +22,7 @@ public class Chests : MonoBehaviour
             {
                 anima.SetBool("Opening", true);
                 chestOpened = true;
+                PlayerQuestInteraction.ChestCount++;
                 this.GetComponent<CoinSpawn>().Spawn();
             }
         }

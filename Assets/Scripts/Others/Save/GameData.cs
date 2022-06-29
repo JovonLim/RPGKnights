@@ -15,12 +15,15 @@ public class GameData
     public bool spellUnlocked;
     public List<int> currentItems;
     public List<int> currentEquip;
+    public int RoomCount;
+    public int KillCount;
+    public int ChestCount;
 
     // the values defined in this constructor will be the default values
     // the game starts with when there's no data to load
     public GameData()
     {
-        coins = 0;
+        coins = 0; ChestCount = 0; KillCount = 0; RoomCount = 0;
         activeSpells = new Spell[4];
         spellsUnlocked = new bool[13];
         intros = new bool[3];

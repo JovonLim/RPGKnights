@@ -74,7 +74,7 @@ public class EnemyHealth : Health
             GetComponent<MeleeEnemy>().enabled = false;
             GetComponent<BoxCollider2D>().enabled = false;
             GetComponent<CoinSpawn>().Spawn();
-
+            PlayerQuestInteraction.KillCount++;
         }
 
         if (GetComponent<RangeEnemy>() != null)
@@ -82,6 +82,7 @@ public class EnemyHealth : Health
             GetComponent<RangeEnemy>().enabled = false;
             GetComponent<BoxCollider2D>().enabled = false;
             GetComponent<CoinSpawn>().Spawn();
+            PlayerQuestInteraction.KillCount++;
 
         }
 
@@ -90,6 +91,7 @@ public class EnemyHealth : Health
             GetComponent<MeleeAndRanged>().enabled = false;
             GetComponent<BoxCollider2D>().enabled = false;
             GetComponent<CoinSpawn>().Spawn();
+            PlayerQuestInteraction.KillCount++;
 
         }
         if (GetComponent<Aggro>() != null)
