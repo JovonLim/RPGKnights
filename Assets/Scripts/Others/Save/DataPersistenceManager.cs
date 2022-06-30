@@ -61,6 +61,7 @@ public class DataPersistenceManager : MonoBehaviour
     public void NewGame()
     {
         this.gameData = new GameData();
+     
     }
 
     public void LoadGame()
@@ -82,6 +83,7 @@ public class DataPersistenceManager : MonoBehaviour
             return;
         }
 
+       
         // push the loaded data to all other scripts that need it
         foreach (IDataPersistence dataPersistenceObj in dataPersistenceObjects)
         {

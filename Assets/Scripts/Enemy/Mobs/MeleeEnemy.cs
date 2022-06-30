@@ -77,4 +77,9 @@ public class MeleeEnemy : Damage
             }
         }
     }
+
+    public override void ScaleDifficulty(float Modifier)
+    {
+        damage *= Modifier;
+    }
 }

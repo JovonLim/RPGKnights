@@ -18,6 +18,7 @@ public class GameData
     public int RoomCount;
     public int KillCount;
     public int ChestCount;
+    public float Difficulty;
 
     // the values defined in this constructor will be the default values
     // the game starts with when there's no data to load
@@ -34,5 +35,6 @@ public class GameData
         currentEquip = new List<int>();
         rangedUnlocked = false;
         spellUnlocked = false;
+        Difficulty = 1f;
     }
 }

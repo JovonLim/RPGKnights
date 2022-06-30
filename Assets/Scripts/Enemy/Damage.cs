@@ -8,4 +8,9 @@ public class Damage : MonoBehaviour
     }
 
     public Dmg damageType;
+
+    public virtual void ScaleDifficulty(float Modifier)
+    {
+
+    }
 }

@@ -10,6 +10,11 @@ public class EnemyHealth : Health
         anima = GetComponent<Animator>();
     }
 
+    private void Update()
+    {
+       // Debug.Log(currentHealth);
+    }
+
     public override void TakePhysicalDamage(float damage)
     {
         float reduction = PhysicalDefense / 5;
@@ -165,5 +170,15 @@ public class EnemyHealth : Health
     public void Reset()
     {
         currentHealth = startingHealth;
+    }
+
+    public void ScaleDifficulty(float Modifier)
+    {
+        
+        startingHealth *= Modifier;
+        currentHealth = startingHealth;
+        double times = (Modifier - 1.0) / 0.2;
+        PhysicalDefense += (float) times * 5;
+        MagicDefense += (float) times * 5;
     }
 }

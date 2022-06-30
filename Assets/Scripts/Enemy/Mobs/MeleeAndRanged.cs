@@ -118,5 +118,9 @@ public class MeleeAndRanged : Damage
         spell.GetComponent<BringerOfDeathSpell>().ActivateProjectile();
     }
 
-
+    public override void ScaleDifficulty(float Modifier)
+    {
+        damage *= Modifier;
+        rangedDamage *= Modifier;
+    }
 }

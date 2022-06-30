@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class RangeEnemy : MonoBehaviour
+public class RangeEnemy : Damage
 {
     
     [SerializeField] private float attackRange;
@@ -71,5 +71,10 @@ public class RangeEnemy : MonoBehaviour
         fireball.transform.localScale = new Vector3(transform.localScale.x, 1, 1);
         fireball.GetComponent<EnemyProjectile>().enemyDamage = damage;
         fireball.GetComponent<EnemyProjectile>().ActivateProjectile();
+    }
+
+    public override void ScaleDifficulty(float Modifier)
+    {
+        damage *= Modifier;
     }
 }
