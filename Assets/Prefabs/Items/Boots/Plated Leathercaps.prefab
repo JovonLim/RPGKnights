@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 4
   itemId: 14
+  itemName: Plated Leathercaps
   itemDescription: Provides +2 Physical Defense
   attackDamageBoost: 0
   attackSpeedBoost: 0

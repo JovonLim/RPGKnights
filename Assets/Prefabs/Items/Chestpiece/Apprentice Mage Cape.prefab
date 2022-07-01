@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 2
   itemId: 6
+  itemName: Apprentice Mage Cape
   itemDescription: Provides +2 Magical defense boost
   attackDamageBoost: 0
   attackSpeedBoost: 0

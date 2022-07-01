@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 0
   itemId: 50
+  itemName: Advanced Gold Ring
   itemDescription: Provides +2 Magical Defense
   attackDamageBoost: 0
   attackSpeedBoost: 0

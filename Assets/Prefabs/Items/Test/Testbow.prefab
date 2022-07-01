@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 8
   itemId: 64
+  itemName: Testbow
   itemDescription: 
   attackDamageBoost: 2
   attackSpeedBoost: 0.2

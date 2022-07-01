@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 3
   itemId: 41
+  itemName: Dark Steel Leggings
   itemDescription: Provides +3 Physical Defense
   attackDamageBoost: 0
   attackSpeedBoost: 0

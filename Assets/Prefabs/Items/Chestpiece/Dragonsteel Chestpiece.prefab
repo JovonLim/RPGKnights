@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 2
   itemId: 16
+  itemName: Dragonsteel Chestpiece
   itemDescription: Provides +5 Physical Defense
   attackDamageBoost: 0
   attackSpeedBoost: 0

@@ -73,6 +73,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 7
+  itemId: 0
+  itemName: Health Potion
   itemDescription: Heals 1 heart
   attackDamageBoost: 0
   attackSpeedBoost: 0
@@ -82,6 +84,8 @@ MonoBehaviour:
   speedBoost: 0
   defenseBoost: 0
   regenerateHealth: 1
+  isOverTimeEffect: 0
+  duration: 0
 --- !u!212 &8390722276056878156
 SpriteRenderer:
   m_ObjectHideFlags: 0

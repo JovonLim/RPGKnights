@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 6
   itemId: 56
+  itemName: Ultimate Gold Ring
   itemDescription: Provides +3 Magic Defense and 1 Health
   attackDamageBoost: 0
   attackSpeedBoost: 0

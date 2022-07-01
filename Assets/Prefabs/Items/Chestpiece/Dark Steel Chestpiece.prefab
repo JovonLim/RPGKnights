@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 2
   itemId: 15
+  itemName: Dark Steel Chestpiece
   itemDescription: Provides +4 Physical Defense but slows speed by -1
   attackDamageBoost: 0
   attackSpeedBoost: 0

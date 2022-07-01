@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 7
   itemId: 27
+  itemName: Enhanced Physical Defense Potion
   itemDescription: Provides +2 Physical Defense Boost for 1.5 min
   attackDamageBoost: 0
   attackSpeedBoost: 0

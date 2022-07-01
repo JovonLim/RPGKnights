@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 5
   itemId: 48
+  itemName: Iron Necklace
   itemDescription: Provides +1 Physical Defense Boost
   attackDamageBoost: 0
   attackSpeedBoost: 0

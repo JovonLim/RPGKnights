@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 5
   itemId: 47
+  itemName: Horse Whip Necklace
   itemDescription: Provides +0.5 Speed Boost
   attackDamageBoost: 0
   attackSpeedBoost: 0

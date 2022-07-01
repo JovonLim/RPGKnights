@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 6
   itemId: 57
+  itemName: Ultimate Iron Ring
   itemDescription: Provides +3 Physical Defense and 1 Health
   attackDamageBoost: 0
   attackSpeedBoost: 0

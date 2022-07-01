@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 3
   itemId: 43
+  itemName: Iron Leggings
   itemDescription: Provides +2 Physical Defense
   attackDamageBoost: 0
   attackSpeedBoost: 0

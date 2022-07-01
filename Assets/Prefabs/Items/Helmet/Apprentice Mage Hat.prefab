@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 1
   itemId: 35
+  itemName: Apprentice Mage Hat
   itemDescription: Provides +2 Magic Defense Boost
   attackDamageBoost: 0
   attackSpeedBoost: 0

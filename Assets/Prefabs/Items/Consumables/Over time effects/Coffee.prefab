@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 7
   itemId: 23
+  itemName: Coffee
   itemDescription: Provides +1 Speed Boost for 30 seconds
   attackDamageBoost: 0
   attackSpeedBoost: 0

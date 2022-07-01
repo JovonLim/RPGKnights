@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 1
   itemId: 40
+  itemName: Leather Helmet
   itemDescription: Provides +1 Physical defense
   attackDamageBoost: 0
   attackSpeedBoost: 0

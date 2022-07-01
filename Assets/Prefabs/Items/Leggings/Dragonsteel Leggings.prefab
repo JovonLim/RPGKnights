@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 3
   itemId: 42
+  itemName: Dragonsteel Leggings
   itemDescription: Provides +5 Physical Defense
   attackDamageBoost: 0
   attackSpeedBoost: 0

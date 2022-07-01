@@ -22,6 +22,7 @@ public class Item: MonoBehaviour
 
     public ItemType itemType;
     public int itemId;
+    public string itemName;
     public string itemDescription;
     [SerializeField] public float attackDamageBoost;
     [SerializeField] public float attackSpeedBoost;

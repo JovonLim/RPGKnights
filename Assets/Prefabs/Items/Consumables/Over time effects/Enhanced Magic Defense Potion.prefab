@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 7
   itemId: 26
+  itemName: Enhanced Magic Defense Potion
   itemDescription: Provides +2 Magical Defense Boost for 1.5 min
   attackDamageBoost: 0
   attackSpeedBoost: 0

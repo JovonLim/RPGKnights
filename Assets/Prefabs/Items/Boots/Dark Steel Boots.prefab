@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 4
   itemId: 12
+  itemName: Dark Steel Boots
   itemDescription: 'Provides +3 Physical Defense '
   attackDamageBoost: 0
   attackSpeedBoost: 0

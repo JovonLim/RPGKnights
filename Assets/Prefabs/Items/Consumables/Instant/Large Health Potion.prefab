@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 7
   itemId: 20
+  itemName: Large Health Potion
   itemDescription: Heals 3 heart
   attackDamageBoost: 0
   attackSpeedBoost: 0

@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 5
   itemId: 46
+  itemName: Gold Necklace
   itemDescription: Provides +1 Magic Defense Boost
   attackDamageBoost: 0
   attackSpeedBoost: 0

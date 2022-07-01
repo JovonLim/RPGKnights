@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 7
   itemId: 19
+  itemName: Health Scroll
   itemDescription: Gives permanent 0.5 hearts
   attackDamageBoost: 0
   attackSpeedBoost: 0

@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 6
   itemId: 51
+  itemName: Advanced Iron Ring
   itemDescription: Provides +2 Physical Defense
   attackDamageBoost: 0
   attackSpeedBoost: 0
