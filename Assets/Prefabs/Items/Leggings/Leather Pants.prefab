@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 3
   itemId: 7
+  itemName: Leather Pants
   itemDescription: Provides +1 Physical Defense
   attackDamageBoost: 0
   attackSpeedBoost: 0

@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 6
   itemId: 54
+  itemName: Basic Iron Ring
   itemDescription: Provides +1 Physical Defense Boost
   attackDamageBoost: 0
   attackSpeedBoost: 0

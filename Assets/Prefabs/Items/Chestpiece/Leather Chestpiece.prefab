@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 2
   itemId: 18
+  itemName: Leather Chestpiece
   itemDescription: Provides +2 Physical Defense Boost
   attackDamageBoost: 0
   attackSpeedBoost: 0

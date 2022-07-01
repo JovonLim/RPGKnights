@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 0
   itemId: 59
+  itemName: Dragonsteel Blade
   itemDescription: Provides +7 Attack Damage Boost
   attackDamageBoost: 7
   attackSpeedBoost: 0

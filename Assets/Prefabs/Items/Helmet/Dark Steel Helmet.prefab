@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 1
   itemId: 37
+  itemName: Dark Steel Helmet
   itemDescription: Provides +3 Physical Defense but lower speed by -1
   attackDamageBoost: 0
   attackSpeedBoost: 0

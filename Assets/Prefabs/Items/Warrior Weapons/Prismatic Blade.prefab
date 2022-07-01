@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 0
   itemId: 60
+  itemName: Prismatic Blade
   itemDescription: Provides +5 Melee Attack Damage Boost
   attackDamageBoost: 5
   attackSpeedBoost: 0

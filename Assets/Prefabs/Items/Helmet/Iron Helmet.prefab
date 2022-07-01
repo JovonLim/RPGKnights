@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 1
   itemId: 39
+  itemName: Iron Helmet
   itemDescription: Provides +2 Physical Defense
   attackDamageBoost: 0
   attackSpeedBoost: 0

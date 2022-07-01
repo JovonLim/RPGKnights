@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 8
   itemId: 11
+  itemName: Wooden Bow
   itemDescription: Provides +1 Archer Damage
   attackDamageBoost: 1
   attackSpeedBoost: 0

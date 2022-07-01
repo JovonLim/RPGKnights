@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 6
   itemId: 55
+  itemName: Ultimate Dragonsteel Ring
   itemDescription: Provides +3 Defense Boost and 1 Health
   attackDamageBoost: 0
   attackSpeedBoost: 0

@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 2
   itemId: 17
+  itemName: Iron Chestpiece
   itemDescription: Provides +3 Physical Defense but slows speed by -1
   attackDamageBoost: 0
   attackSpeedBoost: 0

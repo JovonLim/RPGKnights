@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 8
   itemId: 9
+  itemName: Arcane Archer's Bow
   itemDescription: Provides +4 Archer Damage and faster attack speed
   attackDamageBoost: 4
   attackSpeedBoost: 0.4

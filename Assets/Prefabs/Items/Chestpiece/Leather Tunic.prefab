@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 2
   itemId: 5
+  itemName: Leather Tunic
   itemDescription: +1 Physical Defense
   attackDamageBoost: 0
   attackSpeedBoost: 0

@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 7
   itemId: 22
+  itemName: Berseker Potion
   itemDescription: Provides +5 Attack Damage Boost and attack twice as fast for 20
     seconds
   attackDamageBoost: 5

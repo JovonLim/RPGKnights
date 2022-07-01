@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 6
   itemId: 53
+  itemName: Basic Gold Ring
   itemDescription: Provides +1 Magical Defense Boost
   attackDamageBoost: 0
   attackSpeedBoost: 0

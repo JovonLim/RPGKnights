@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 0
   itemId: 2
+  itemName: Wooden Sword
   itemDescription: Provides + 1 Attack
   attackDamageBoost: 1
   attackSpeedBoost: 0

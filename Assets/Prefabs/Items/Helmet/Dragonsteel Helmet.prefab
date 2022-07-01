@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 1
   itemId: 38
+  itemName: Dragonsteel Helmet
   itemDescription: Provides +5 Defense boost
   attackDamageBoost: 0
   attackSpeedBoost: 0

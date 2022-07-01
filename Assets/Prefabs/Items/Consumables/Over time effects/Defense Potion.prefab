@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 7
   itemId: 24
+  itemName: Defense Potion
   itemDescription: Provides +1 Defense Boost for 1 min
   attackDamageBoost: 0
   attackSpeedBoost: 0

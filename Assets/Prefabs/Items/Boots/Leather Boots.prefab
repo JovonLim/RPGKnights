@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 4
   itemId: 8
+  itemName: Leather Boots
   itemDescription: Provides +1 Physical Defense
   attackDamageBoost: 0
   attackSpeedBoost: 0

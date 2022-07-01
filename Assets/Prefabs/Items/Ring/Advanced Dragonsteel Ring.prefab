@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 6
   itemId: 49
+  itemName: Advanced Dragonsteel Ring
   itemDescription: Provides +2 Defense Boost
   attackDamageBoost: 0
   attackSpeedBoost: 0

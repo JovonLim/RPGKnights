@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 5
   itemId: 44
+  itemName: Bonetooth Necklace
   itemDescription: Provides +3 Melee Attack Damage Boost
   attackDamageBoost: 3
   attackSpeedBoost: 0

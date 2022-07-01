@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 0
   itemId: 58
+  itemName: Dark Steel Sword
   itemDescription: Provides +3 Melee Attack Damage Boost but slows attack speed
   attackDamageBoost: 4
   attackSpeedBoost: -0.3

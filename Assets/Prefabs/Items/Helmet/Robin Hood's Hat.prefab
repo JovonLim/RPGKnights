@@ -74,6 +74,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 1
   itemId: 4
+  itemName: Robin Hood's Hat
   itemDescription: Improve Speed by 1
   attackDamageBoost: 0
   attackSpeedBoost: 0

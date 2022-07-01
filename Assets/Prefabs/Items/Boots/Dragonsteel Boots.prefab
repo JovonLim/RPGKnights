@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 4
   itemId: 13
+  itemName: Dragonsteel Boots
   itemDescription: Provides +3 Physical Defense and +1 Speed boost
   attackDamageBoost: 0
   attackSpeedBoost: 0

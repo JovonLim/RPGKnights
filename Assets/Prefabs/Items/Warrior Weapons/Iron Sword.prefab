@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 0
   itemId: 3
+  itemName: Iron Sword
   itemDescription: Provides +2 attacks but attacks slower
   attackDamageBoost: 2
   attackSpeedBoost: -0.2
