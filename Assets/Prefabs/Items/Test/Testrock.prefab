@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 7
   itemId: 65
+  itemName: Testrock
   itemDescription: Just a rock
   attackDamageBoost: 0
   attackSpeedBoost: 0

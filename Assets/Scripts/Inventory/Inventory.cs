@@ -528,7 +528,7 @@ public class Inventory : MonoBehaviour
     private void ShowItemInformationWindow(int inventoryNum)
     {
         // Retrieve item name and item description
-        itemName.text = itemList[inventoryNum].name;
+        itemName.text = itemList[inventoryNum].GetComponent<Item>().itemName;
         itemDescription.text = itemList[inventoryNum].GetComponent<Item>().itemDescription;
 
         // Show the item information window and text
@@ -548,7 +548,7 @@ public class Inventory : MonoBehaviour
     private void ShowEquipInformationWindow(int equipNum)
     {
         // Retrieve item name and item description
-        itemName.text = equipHolder[equipNum].name;
+        itemName.text = equipHolder[equipNum].GetComponent<Item>().itemName;
         itemDescription.text = equipHolder[equipNum].GetComponent<Item>().itemDescription;
 
         // Show the item information window and text

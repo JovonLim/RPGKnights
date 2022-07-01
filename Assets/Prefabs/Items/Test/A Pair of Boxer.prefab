@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 3
   itemId: 61
+  itemName: A Pair of Boxer
   itemDescription: Immunity
   attackDamageBoost: 50
   attackSpeedBoost: 0
