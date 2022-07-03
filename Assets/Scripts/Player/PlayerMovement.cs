@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -43,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
         {
             jumpCondition = jumpDelay;
         }
-        if (jumpCondition > 0)
+        if (jumpCondition > 0 && isGrounded())
         {
             jumpCondition -= Time.deltaTime;
             if (Input.GetKeyDown(KeyCode.Space))
@@ -54,8 +55,8 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Space) && canDouble)
         {
-            Jump();
             canDouble = false;
+            Jump();    
         }
 
         anima.SetFloat("yPos", body.velocity.y);
