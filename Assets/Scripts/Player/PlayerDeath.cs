@@ -24,6 +24,7 @@ public class PlayerDeath : MonoBehaviour
 
     IEnumerator Reload()
     {
+        UI.coins = (int) (UI.coins * 0.8);
         DataPersistenceManager.instance.SaveGame();
 
         yield return new WaitForSeconds(1);

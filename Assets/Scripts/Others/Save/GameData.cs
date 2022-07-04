@@ -27,7 +27,7 @@ public class GameData
         coins = 0; ChestCount = 0; KillCount = 0; RoomCount = 0;
         activeSpells = new Spell[4];
         spellsUnlocked = new bool[13];
-        intros = new bool[3];
+        intros = new bool[6];
         archerQuests = new bool[3];
         wizardQuests = new bool[4];
         wizardPurchased = new bool[11]; archerPurchased = new bool[2]; knightPurchased = new bool[2];

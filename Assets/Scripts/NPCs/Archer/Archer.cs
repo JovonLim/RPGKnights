@@ -11,6 +11,7 @@ public class Archer : MonoBehaviour, IDataPersistence
     [SerializeField] GameObject[] backstory;
     public Quest[] quests;
     private static bool introduced = false;
+    private static bool[] backstoryDone = new bool[2];
     private bool playerInRange;
 
     private bool playerClicked;
@@ -105,28 +106,34 @@ public class Archer : MonoBehaviour, IDataPersistence
     IEnumerator Backstory()
     {
 
-        if (PlayerQuestInteraction.ArcherQuest.questNum == 0)
+        if (PlayerQuestInteraction.ArcherQuest.questNum == 0 && !backstoryDone[0])
         {
             backstory[0].SetActive(true);
             yield return new WaitForSecondsRealtime(6);
             backstory[0].SetActive(false);
-        }
-        else if (PlayerQuestInteraction.ArcherQuest.questNum == 2)
+            backstoryDone[0] = true;
+        } 
+        else if (PlayerQuestInteraction.ArcherQuest.questNum == 2 && !backstoryDone[1])
         {
             backstory[1].SetActive(true);
             yield return new WaitForSecondsRealtime(10);
             backstory[1].SetActive(false);
+            backstoryDone[1] = true;
         }
     }
 
     public void LoadData(GameData data)
     {
         introduced = data.intros[1];
+        backstoryDone[0] = data.intros[4];
+        backstoryDone[1] = data.intros[5];
     }
 
     public void SaveData(GameData data)
     {
         data.intros[1] = introduced;
+        data.intros[4] = backstoryDone[0];
+        data.intros[5] = backstoryDone[1];
     }
 }
 

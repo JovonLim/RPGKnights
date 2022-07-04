@@ -11,6 +11,7 @@ public class Wizard : MonoBehaviour, IDataPersistence
     [SerializeField] GameObject backstory;
     public Quest[] quests;
     private static bool introduced;
+    private static bool backstoryDone;
     private bool playerInRange;
     
     private bool playerClicked;
@@ -67,9 +68,10 @@ public class Wizard : MonoBehaviour, IDataPersistence
     {
         questDialog.SetActive(false);
         Time.timeScale = 1;
-        if (PlayerQuestInteraction.questActive && PlayerQuestInteraction.WizardQuest.questNum == 1)
+        if (PlayerQuestInteraction.questActive && PlayerQuestInteraction.WizardQuest.questNum == 1 && !backstoryDone)
         {
             StartCoroutine(Backstory());
+            backstoryDone = true;
         }
     }
 
@@ -115,10 +117,12 @@ public class Wizard : MonoBehaviour, IDataPersistence
     public void LoadData(GameData data)
     {
         introduced = data.intros[0];
+        backstoryDone = data.intros[3];
     }
 
     public void SaveData(GameData data)
     {
         data.intros[0] = introduced;
+        data.intros[3] = backstoryDone;
     }
 }
