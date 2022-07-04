@@ -12,9 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private float horizontalInput;
     private bool canDouble = false;
     private bool isFalling = false;
-    private float jumpDelay = 0.5f;
-    private float jumpCondition = 0;
-    private float fallTimer = 0;
+    private float maxVelocity;
 
 
     // Awake is called when the script instance is being loaded
@@ -40,13 +38,9 @@ public class PlayerMovement : MonoBehaviour
 
 
         // Player jumping
-        if (isGrounded())
+        if (isGrounded() && !isFalling)
         {
-            jumpCondition = jumpDelay;
-        }
-        if (jumpCondition > 0 && isGrounded())
-        {
-            jumpCondition -= Time.deltaTime;
+            maxVelocity = 0;
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 Jump();
@@ -55,32 +49,31 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Space) && canDouble)
         {
+            Jump();
             canDouble = false;
-            Jump();    
         }
 
-        anima.SetFloat("yPos", body.velocity.y);
-
+       
         if (!isGrounded())
         {
             isFalling = true;
-            if (body.velocity.y < 0)
+            if (body.velocity.y < maxVelocity)
             {
-                fallTimer += Time.deltaTime;
+                maxVelocity = body.velocity.y;
             }
         }
         else if (isGrounded() && isFalling)
         {
-            if (fallTimer > 0.8f)
+            if (maxVelocity <= -20)
             {
                 FallDamage();
             }
             isFalling = false;
-            fallTimer = 0;
         }
 
 
         // Set animation parameters
+        anima.SetFloat("yPos", body.velocity.y);
         anima.SetBool("run", horizontalInput != 0);
         anima.SetBool("grounded", isGrounded());
 
@@ -89,6 +82,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
+        
         body.velocity = new Vector2(body.velocity.x, jumpSpeed);
     }
 
