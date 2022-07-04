@@ -127,14 +127,14 @@ MonoBehaviour:
   itemType: 6
   itemId: 52
   itemName: Basic Dragonsteel Ring
-  itemDescription: Provides +2 Defense
+  itemDescription: Provides +1 Defense Boost
   attackDamageBoost: 0
   attackSpeedBoost: 0
   physicalDefenseBoost: 0
   magicDefenseBoost: 0
   healthBoost: 0
   speedBoost: 0
-  defenseBoost: 2
+  defenseBoost: 1
   regenerateHealth: 0
   isOverTimeEffect: 0
   duration: 0

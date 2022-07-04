@@ -61,5 +61,6 @@ public class ReturnToTown : MonoBehaviour
         Destroy(player);
         Destroy(UITab);
         SceneManager.LoadScene(2);
+        InventoryDatabase.update = true;
     }
 }
