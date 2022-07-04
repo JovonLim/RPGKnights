@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13dad931fbd254a4fb88326b30c810b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 0
+  itemType: 6
   itemId: 50
   itemName: Advanced Gold Ring
   itemDescription: Provides +2 Magical Defense

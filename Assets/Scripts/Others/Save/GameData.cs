@@ -10,6 +10,7 @@ public class GameData
     public bool[] spellsUnlocked;
     public bool[] intros;
     public bool[] archerQuests; public bool[] wizardQuests;
+    public int activeWizard; public int activeArcher;
     public bool[] wizardPurchased; public bool[] archerPurchased; public bool[] knightPurchased;
     public bool rangedUnlocked;
     public bool spellUnlocked;
@@ -24,7 +25,9 @@ public class GameData
     // the game starts with when there's no data to load
     public GameData()
     {
-        coins = 0; ChestCount = 0; KillCount = 0; RoomCount = 0;
+        activeWizard = -1;
+        activeArcher = -1;
+        coins = 0; ChestCount = 0; KillCount = 0; RoomCount = 0;     
         activeSpells = new Spell[4];
         spellsUnlocked = new bool[13];
         intros = new bool[6];

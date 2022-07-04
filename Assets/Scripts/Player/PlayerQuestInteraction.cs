@@ -19,6 +19,24 @@ public class PlayerQuestInteraction : MonoBehaviour, IDataPersistence
         RoomCount = data.RoomCount;
         KillCount = data.KillCount;
         ChestCount = data.ChestCount;
+        if (data.activeWizard >= 0)
+        {
+            WizardQuest = WizardQuestLog.instance.quests[data.activeWizard];
+            ArcherQuest = null;
+            questActive = true;
+        }
+        else if (data.activeArcher >= 0)
+        {
+            ArcherQuest = ArcherQuestLog.instance.quests[data.activeArcher];
+            WizardQuest = null;
+            questActive = true;
+        }
+        else
+        {
+            questActive = false;
+            WizardQuest = null;
+            ArcherQuest = null;
+        }
     }
 
     public void SaveData(GameData data)
@@ -26,15 +44,45 @@ public class PlayerQuestInteraction : MonoBehaviour, IDataPersistence
         data.RoomCount = RoomCount;
         data.KillCount = KillCount;
         data.ChestCount = ChestCount;
+        if (WizardQuest == null)
+        {
+            data.activeWizard = -1;
+        } else
+        {
+            data.activeWizard = WizardQuest.questNum;
+        }
+        if (ArcherQuest == null)
+        {
+            data.activeArcher = -1;
+        }
+        else
+        {
+            data.activeArcher = ArcherQuest.questNum;
+        }
     }
 
-    // Start is called before the first frame update
-    void Start()
+    void Update()
     {
-        questActive = false;
-        
 
+        if (ChestCount >= 5)
+        {
+            UI.coins += 30;
+            ChestCount -= 5;
+        }
+
+        if (KillCount >= 5)
+        {
+            UI.coins += 20;
+            KillCount -= 5;
+        }
+
+        if (RoomCount >= 3)
+        {
+            UI.coins += 40;
+            RoomCount -= 3;
+        }
     }
+
 
     private void OnEnable()
     {
@@ -62,25 +110,6 @@ public class PlayerQuestInteraction : MonoBehaviour, IDataPersistence
         }
     }
 
-    void Update()
-    {
-        if (ChestCount >= 5)
-        {
-            UI.coins += 30;
-            ChestCount -= 5;
-        }
 
-        if (KillCount >= 5)
-        {
-            UI.coins += 20;
-            KillCount -= 5;
-        }
-
-        if (RoomCount >= 3)
-        {
-            UI.coins += 40;
-            RoomCount -= 3;
-        }
-    }
 }
 

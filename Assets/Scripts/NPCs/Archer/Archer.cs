@@ -9,7 +9,6 @@ public class Archer : MonoBehaviour, IDataPersistence
     [SerializeField] GameObject shop;
     [SerializeField] GameObject introText;
     [SerializeField] GameObject[] backstory;
-    public Quest[] quests;
     private static bool introduced = false;
     private static bool[] backstoryDone = new bool[2];
     private bool playerInRange;
@@ -19,10 +18,7 @@ public class Archer : MonoBehaviour, IDataPersistence
     void Start()
     {
         playerClicked = false;
-        foreach (Quest quest in quests)
-        {
-            questDialog.GetComponent<ArcherQuestLog>().AddQuest(quest);
-        }
+       
     }
 
     // Update is called once per frame

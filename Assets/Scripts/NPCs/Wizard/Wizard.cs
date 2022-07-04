@@ -9,7 +9,6 @@ public class Wizard : MonoBehaviour, IDataPersistence
     [SerializeField] GameObject shop;
     [SerializeField] GameObject introText;
     [SerializeField] GameObject backstory;
-    public Quest[] quests;
     private static bool introduced;
     private static bool backstoryDone;
     private bool playerInRange;
@@ -18,11 +17,7 @@ public class Wizard : MonoBehaviour, IDataPersistence
     // Start is called before the first frame update
     void Start()
     {
-        playerClicked = false;
-        foreach (Quest quest in quests)
-        {
-            questDialog.GetComponent<WizardQuestLog>().AddQuest(quest);
-        }
+        playerClicked = false;  
     }
 
     // Update is called once per frame

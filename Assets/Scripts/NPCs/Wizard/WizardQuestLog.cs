@@ -5,117 +5,106 @@ using TMPro;
 
 public class WizardQuestLog : MonoBehaviour
 {
-    [SerializeField] private GameObject questPrefab;
-    [SerializeField] private Transform questParent;
-    [SerializeField] private TextMeshProUGUI description;
-
     public static WizardQuestLog instance;
-    private Quest selected;
-    private List<GameObject> listOfQuests = new List<GameObject>();
-    public static bool[] questStatus = new bool[4];
-    public static bool added;
+    [SerializeField] private TextMeshProUGUI[] questTitles;
+    [SerializeField] private TextMeshProUGUI description;
+    public Quest[] quests;
+    public static bool[] completedQuests = new bool[4];
+    private static int selected;
 
-    public static WizardQuestLog myInstance
-    {
-        get
-        {
-            if (instance == null)
-            {
-                instance = FindObjectOfType<WizardQuestLog>();
-            } 
-            return instance;
-        }
-    }
-    // Start is called before the first frame update
+  
     void Awake()
     {
-        questStatus = DataPersistenceManager.instance.gameData.wizardQuests;
-        for (int i = 0; i < questStatus.Length; i++)
+        if (instance == null)
         {
-            if (questStatus[i])
+            instance = this;
+        }
+        completedQuests = DataPersistenceManager.instance.gameData.wizardQuests;
+        for (int i = 0; i < completedQuests.Length; i++)
+        {
+            if (completedQuests[i])
             {
-                listOfQuests[i].GetComponent<QuestScript>().MarkCompleted();
-                listOfQuests[i].GetComponent<QuestScript>().MyQuest.isCompleted = true;
+                questTitles[i].text = quests[i].title + " (completed)";
             }
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (!added)
+        selected = DataPersistenceManager.instance.gameData.activeWizard;
+        if (selected >= 0)
         {
-            for (int i = 0; i < questStatus.Length; i++)
-            {
-                if (questStatus[i])
-                {
-                    listOfQuests[i].GetComponent<QuestScript>().MarkCompleted();
-                    listOfQuests[i].GetComponent<QuestScript>().MyQuest.isCompleted = true;
-                }
-            }
-            added = true;
-        }
-    }
-
-    public void AddQuest(Quest quest)
-    {
-        GameObject selectedQuest = Instantiate(questPrefab, questParent);
-        listOfQuests.Add(selectedQuest);
-        QuestScript qs = selectedQuest.GetComponent<QuestScript>();
-        quest.myQuestScript = qs;
-        qs.MyQuest = quest;
-        selectedQuest.GetComponent<TextMeshProUGUI>().text = quest.MyTitle;
-    }
-
-    public void ShowDescription(Quest quest)
-    {
-        if (selected != null)
-        {
-            selected.myQuestScript.DeSelect();
-        }
-        selected = quest;
-        description.text = selected.MyDescription;
-    }
-
-    public void AcceptQuest()
-    {
-        if (!PlayerQuestInteraction.questActive && !selected.isCompleted)
-        {
-            if (selected.questNum == 2)
-            {
-                if (PlayerAttack.spellUnlock && SpellHolder.IsUnlocked(1))
-                {
-                    selected.myQuestScript.AddActive();
-                    PlayerQuestInteraction.WizardQuest = selected;
-                    PlayerQuestInteraction.questActive = true;
-                }
-            }
-            else if (selected.questNum == 3)
-            {
-                if (PlayerAttack.spellUnlock && SpellHolder.IsUnlocked(2))
-                {
-                    selected.myQuestScript.AddActive();
-                    PlayerQuestInteraction.WizardQuest = selected;
-                    PlayerQuestInteraction.questActive = true;
-                }
-            } else
-            {
-                selected.myQuestScript.AddActive();
-                PlayerQuestInteraction.WizardQuest = selected;
-                PlayerQuestInteraction.questActive = true;
-            }
-            
-        } 
-    }
-
-    public void Untrack()
-    {
-        if (!questStatus[selected.questNum])
-        {
-            selected.myQuestScript.RemoveActive();
-            PlayerQuestInteraction.WizardQuest = null;
-            PlayerQuestInteraction.questActive = false;
+            AddActive();
+            ShowDescription();
         }
         
     }
+    public void AcceptQuest()
+    {
+        if (!PlayerQuestInteraction.questActive && !completedQuests[selected])
+        {
+            if (selected == 2)
+            {
+                if (PlayerAttack.spellUnlock && SpellHolder.IsUnlocked(1))
+                {
+                    AddActive();
+                    PlayerQuestInteraction.WizardQuest = quests[selected];
+                    PlayerQuestInteraction.questActive = true;
+                }
+            }
+            else if (selected == 3)
+            {
+                if (PlayerAttack.spellUnlock && SpellHolder.IsUnlocked(2))
+                {
+                    AddActive();
+                    PlayerQuestInteraction.WizardQuest = quests[selected];
+                    PlayerQuestInteraction.questActive = true;
+                }
+            }
+            else
+            {
+                AddActive();
+                PlayerQuestInteraction.WizardQuest = quests[selected];
+                PlayerQuestInteraction.questActive = true;
+            }
+
+        }
+    }
+
+    public void ShowDescription()
+    {
+        description.text = quests[selected].description;
+    }
+
+    public void Select(int num)
+    {
+     
+        for (int i = 0; i < questTitles.Length; i++)
+        {
+            questTitles[i].color = Color.black;
+        }
+        selected = num;
+        if (!completedQuests[selected])
+        {
+            questTitles[selected].color = Color.red;
+            ShowDescription();
+        }
+     
+    }
+    private void AddActive()
+    {
+        questTitles[selected].color = Color.red;
+        questTitles[selected].text += " (active)";
+    }
+
+    private void RemoveActive()
+    {
+        questTitles[selected].color = Color.black;
+        questTitles[selected].text = quests[selected].title;
+    }
+    public void Untrack()
+    {
+        if (!completedQuests[selected])
+        {
+            RemoveActive();
+            PlayerQuestInteraction.WizardQuest = null;
+            PlayerQuestInteraction.questActive = false;
+        }
+    }  
 }
