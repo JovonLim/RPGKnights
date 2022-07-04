@@ -22,6 +22,10 @@ public class Inventory : MonoBehaviour
 
     private static bool inventoryOn = false;
 
+    private static bool hasBuff = false;
+    private Coroutine currCoroutine;
+    private GameObject currItemConsumed;
+
     [SerializeField] private TextMeshProUGUI meleeAD;
     [SerializeField] private TextMeshProUGUI meleeAS;
     [SerializeField] private TextMeshProUGUI rangedAD;
@@ -435,9 +439,23 @@ public class Inventory : MonoBehaviour
         {
             if (itemList[invNum].GetComponent<Item>().isOverTimeEffect)
             {
-                StartCoroutine(ConsumeOverTime(itemList[invNum]));
-                RemoveItem(invNum);
-                UpdateUI();
+                if (hasBuff)
+                {
+                    StopCoroutine(currCoroutine);
+                    UnequipStats(currItemConsumed);
+                    currCoroutine = StartCoroutine(ConsumeOverTime(itemList[invNum]));
+                    currItemConsumed = itemList[invNum];
+                    RemoveItem(invNum);
+                    UpdateUI();
+                }
+                else
+                {
+                    currCoroutine = StartCoroutine(ConsumeOverTime(itemList[invNum]));
+                    currItemConsumed = itemList[invNum];
+                    RemoveItem(invNum);
+                    UpdateUI();
+                }
+                
             } 
             else
             {
@@ -457,8 +475,10 @@ public class Inventory : MonoBehaviour
     IEnumerator ConsumeOverTime(GameObject item)
     {
         EquipStats(item);
+        hasBuff = true;
         yield return new WaitForSeconds(item.GetComponent<Item>().duration);
         UnequipStats(item);
+        hasBuff = false;
         item.GetComponent<Item>().BeingConsumed();
     }
 

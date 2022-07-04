@@ -127,11 +127,11 @@ MonoBehaviour:
   itemType: 1
   itemId: 34
   itemName: Adept Mage Hat
-  itemDescription: Provides +2 Magic Defense Boost
+  itemDescription: Provides +4 Magic Defense Boost
   attackDamageBoost: 0
   attackSpeedBoost: 0
   physicalDefenseBoost: 0
-  magicDefenseBoost: 2
+  magicDefenseBoost: 4
   healthBoost: 0
   speedBoost: 0
   defenseBoost: 0

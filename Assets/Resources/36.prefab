@@ -127,11 +127,11 @@ MonoBehaviour:
   itemType: 1
   itemId: 36
   itemName: Archmage Hat
-  itemDescription: Provides +3 Magic Defense Boost
+  itemDescription: Provides +6 Magic Defense Boost
   attackDamageBoost: 0
   attackSpeedBoost: 0
   physicalDefenseBoost: 0
-  magicDefenseBoost: 3
+  magicDefenseBoost: 6
   healthBoost: 0
   speedBoost: 0
   defenseBoost: 0
