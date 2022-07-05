@@ -128,11 +128,15 @@ public class PlayerAttack : MonoBehaviour, IDataPersistence
                 break;
         }
 
-        if (Input.GetKeyDown(KeyCode.Q) && spellTimer > spellToCast.spell.cooldownTime && playerMove.canAttack())
+        if (spellToCast != null)
         {
-            spellTimer = 0;
-            CastSpell();
+            if (Input.GetKeyDown(KeyCode.Q) && spellTimer > spellToCast.spell.cooldownTime && playerMove.canAttack())
+            {
+                spellTimer = 0;
+                CastSpell();
+            }
         }
+     
        
         spellTimer += Time.deltaTime;
         resetTimer += Time.deltaTime;

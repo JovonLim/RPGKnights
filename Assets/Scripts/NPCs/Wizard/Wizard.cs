@@ -6,6 +6,7 @@ public class Wizard : MonoBehaviour, IDataPersistence
 {
     [SerializeField] GameObject options;
     [SerializeField] GameObject questDialog;
+    [SerializeField] GameObject classNotice;
     [SerializeField] GameObject shop;
     [SerializeField] GameObject introText;
     [SerializeField] GameObject backstory;
@@ -33,10 +34,10 @@ public class Wizard : MonoBehaviour, IDataPersistence
         }
         else if (playerClicked && playerInRange)
         {
-           
+            Time.timeScale = 0;      
             options.SetActive(true);
         } else
-        { 
+        {        
             options.SetActive(false);
             playerClicked = false;
         }
@@ -83,15 +84,20 @@ public class Wizard : MonoBehaviour, IDataPersistence
         if (PlayerAttack.spellUnlock)
         {
             shop.SetActive(true);
-            Time.timeScale = 0;
             playerClicked = false;
-        } 
+        } else
+        {
+            classNotice.SetActive(true);
+        }
     }
 
+    public void CloseNotice()
+    {
+        classNotice.SetActive(false);
+    }
     public void DisplayQuests()
     {
         questDialog.SetActive(true);
-        Time.timeScale = 0;
         playerClicked = false;
     }
     IEnumerator Intro()

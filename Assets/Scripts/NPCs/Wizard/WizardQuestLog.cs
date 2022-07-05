@@ -8,6 +8,7 @@ public class WizardQuestLog : MonoBehaviour
     public static WizardQuestLog instance;
     [SerializeField] private TextMeshProUGUI[] questTitles;
     [SerializeField] private TextMeshProUGUI description;
+    [SerializeField] private GameObject questNotice;
     public Quest[] quests;
     public static bool[] completedQuests = new bool[4];
     private static int selected;
@@ -64,6 +65,9 @@ public class WizardQuestLog : MonoBehaviour
                 PlayerQuestInteraction.questActive = true;
             }
 
+        } else
+        {
+            questNotice.SetActive(true);
         }
     }
 
@@ -106,5 +110,10 @@ public class WizardQuestLog : MonoBehaviour
             PlayerQuestInteraction.WizardQuest = null;
             PlayerQuestInteraction.questActive = false;
         }
-    }  
+    }
+
+    public void CloseNotice()
+    {
+        questNotice.SetActive(false);
+    }
 }

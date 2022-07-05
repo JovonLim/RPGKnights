@@ -93,8 +93,8 @@ public class ArcherShop : MonoBehaviour, IDataPersistence
 
     public void Exit()
     {
-        Time.timeScale = 1;
         insufficientFunds.SetActive(false);
+        gameObject.SetActive(true);
     }
 
     public void LoadData(GameData data)

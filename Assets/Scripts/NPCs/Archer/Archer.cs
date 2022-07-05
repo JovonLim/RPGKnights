@@ -6,6 +6,7 @@ public class Archer : MonoBehaviour, IDataPersistence
 {
     [SerializeField] GameObject options;
     [SerializeField] GameObject questDialog;
+    [SerializeField] GameObject classNotice;
     [SerializeField] GameObject shop;
     [SerializeField] GameObject introText;
     [SerializeField] GameObject[] backstory;
@@ -34,7 +35,7 @@ public class Archer : MonoBehaviour, IDataPersistence
         }
         else if (playerClicked && playerInRange)
         {
-
+            Time.timeScale = 0;
             options.SetActive(true);
         }
         else
@@ -64,6 +65,7 @@ public class Archer : MonoBehaviour, IDataPersistence
     public void ExitQuest()
     {
         questDialog.SetActive(false);
+        Time.timeScale = 1;
         if (PlayerQuestInteraction.questActive && PlayerQuestInteraction.ArcherQuest != null)
         {
             StartCoroutine(Backstory());
@@ -72,6 +74,7 @@ public class Archer : MonoBehaviour, IDataPersistence
 
     public void ExitShop()
     {
+        Time.timeScale = 1;
         shop.SetActive(false);
     }
 
@@ -83,7 +86,15 @@ public class Archer : MonoBehaviour, IDataPersistence
         {
             shop.SetActive(true);
             playerClicked = false;
+        } else
+        {
+            classNotice.SetActive(true);
         }
+    }
+
+    public void CloseNotice()
+    {
+        classNotice.SetActive(false);
     }
 
     public void DisplayQuests()

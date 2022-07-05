@@ -6,13 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class PlayerQuestInteraction : MonoBehaviour, IDataPersistence
 {
+    [SerializeField] GameObject tracker;
+    private bool display = false;
     public static bool questActive;
-
     public static Quest ArcherQuest;
     public static Quest WizardQuest;
     public static int KillCount;
     public static int RoomCount;
     public static int ChestCount;
+    
 
     public void LoadData(GameData data)
     {
@@ -63,6 +65,10 @@ public class PlayerQuestInteraction : MonoBehaviour, IDataPersistence
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            ToggleTracker();
+        }
 
         if (ChestCount >= 5)
         {
@@ -110,6 +116,24 @@ public class PlayerQuestInteraction : MonoBehaviour, IDataPersistence
         }
     }
 
+    void ToggleTracker()
+    {
+        display = !display;
+        tracker.SetActive(display);
+        if (display)
+        {
+            Time.timeScale = 0;
+        } else
+        {
+            Time.timeScale = 1;
+        }
+    }
 
+    public void CloseTracker()
+    {
+        tracker.SetActive(false);
+        Time.timeScale = 1;
+        display = !display;
+    }
 }
 

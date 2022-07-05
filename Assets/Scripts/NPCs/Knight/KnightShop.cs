@@ -94,7 +94,7 @@ public class KnightShop : MonoBehaviour, IDataPersistence
     public void Exit()
     {
         insufficientFunds.SetActive(false);
-        
+        gameObject.SetActive(true);
     }
 
     public void LoadData(GameData data)

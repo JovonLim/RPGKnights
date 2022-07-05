@@ -62,6 +62,10 @@ public class WizardShop : MonoBehaviour, IDataPersistence
 
     public void Purchase()
     {
+        if (selected < 0)
+        {
+            return;
+        }
         if (!purchased[selected] && UI.coins >= costs[selected])
         {
             UI.coins -= costs[selected];
@@ -81,8 +85,8 @@ public class WizardShop : MonoBehaviour, IDataPersistence
 
     public void Exit()
     {
-        Time.timeScale = 1;
         insufficientFunds.SetActive(false);
+        gameObject.SetActive(true);
     }
 
     public void LoadData(GameData data)

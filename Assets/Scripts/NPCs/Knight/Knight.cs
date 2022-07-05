@@ -36,6 +36,7 @@ public class Knight : MonoBehaviour, IDataPersistence
         }
         else if (playerClicked && playerInRange)
         {
+            Time.timeScale = 0;
             options.SetActive(true);
         }
         else
@@ -47,11 +48,13 @@ public class Knight : MonoBehaviour, IDataPersistence
 
     public void ExitMilestone()
     {
+        Time.timeScale = 1;
         milestoneDialog.SetActive(false);
       
     }
     public void ExitShop()
     {
+        Time.timeScale = 1;
         shop.SetActive(false);
     }
 

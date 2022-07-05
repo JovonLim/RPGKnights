@@ -8,6 +8,7 @@ public class ArcherQuestLog : MonoBehaviour
     public static ArcherQuestLog instance;
     [SerializeField] private TextMeshProUGUI[] questTitles;
     [SerializeField] private TextMeshProUGUI description;
+    [SerializeField] private GameObject questNotice;
     public Quest[] quests;
     public static bool[] completedQuests = new bool[3];
     private static int selected;
@@ -42,7 +43,15 @@ public class ArcherQuestLog : MonoBehaviour
             AddActive();
             PlayerQuestInteraction.ArcherQuest = quests[selected];
             PlayerQuestInteraction.questActive = true;
+        } else
+        {
+            questNotice.SetActive(true);
         }
+    }
+
+    public void CloseNotice()
+    {
+        questNotice.SetActive(false);
     }
 
     public void ShowDescription()

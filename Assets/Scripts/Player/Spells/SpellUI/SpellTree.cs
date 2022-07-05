@@ -48,6 +48,17 @@ public class SpellTree : SpellHolder
         display = !display;
         activeSkillHolders.SetActive(display);
         skillPanel[currentPage].SetActive(display);
+        GetComponent<PlayerAttack>().enabled = !display;
+        if (display)
+        {
+            Time.timeScale = 0;
+            
+        } else
+        {
+            skillBox.SetActive(false);
+            descriptionBox.SetActive(false);
+            Time.timeScale = 1;
+        }
     }
     void UpdateSkills()
     {
