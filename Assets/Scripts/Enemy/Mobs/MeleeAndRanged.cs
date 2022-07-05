@@ -17,6 +17,7 @@ public class MeleeAndRanged : Damage
     [SerializeField] protected GameObject prefab;
 
     protected float attackCooldownTimer = float.MaxValue;
+    protected float collisionTimer = float.MaxValue;
     protected Animator anima;
     protected Health playerHealth;
     private GameObject player;
@@ -32,7 +33,7 @@ public class MeleeAndRanged : Damage
     protected virtual void Update()
     {
         attackCooldownTimer += Time.deltaTime;
-
+        collisionTimer += Time.deltaTime;
         if (PlayerInMeleeSight())
         {
             if (attackCooldownTimer >= attackSpeed)
@@ -81,16 +82,7 @@ public class MeleeAndRanged : Damage
     {
         if (PlayerInMeleeSight())
         {
-            if (damageType == Dmg.physical)
-            {
-                playerHealth.TakePhysicalDamage(damage);
-            } else if (damageType == Dmg.magic)
-            {
-                playerHealth.TakeMagicDamage(damage);
-            } else
-            {
-                playerHealth.TakeTrueDamage(damage);
-            }         
+            ApplyDamage();        
         }
     }
 
@@ -120,7 +112,33 @@ public class MeleeAndRanged : Damage
 
     public override void ScaleDifficulty(float Modifier)
     {
-        damage *= Modifier;
-        rangedDamage *= Modifier;
+        float times = (Modifier - 1.0f) / 0.2f;
+        damage += times * 0.5f;
+        rangedDamage += times * 0.5f;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player") && collisionTimer >= 2.0f)
+        {
+            ApplyDamage();
+            collisionTimer = 0;
+        }
+    }
+
+    void ApplyDamage()
+    {
+        if (damageType == Dmg.physical)
+        {
+            playerHealth.TakePhysicalDamage(damage);
+        }
+        else if (damageType == Dmg.magic)
+        {
+            playerHealth.TakeMagicDamage(damage);
+        }
+        else
+        {
+            playerHealth.TakeTrueDamage(damage);
+        }
     }
 }

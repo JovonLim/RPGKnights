@@ -20,7 +20,9 @@ public class RangeEnemy : Damage
     }
 
     private float attackCooldownTimer = float.MaxValue;
+    private float collisionTimer = float.MaxValue;
     public float attackSpeed;
+    private PlayerHealth playerHealth;
 
     // Reference variables
     protected Animator anima;
@@ -75,6 +77,33 @@ public class RangeEnemy : Damage
 
     public override void ScaleDifficulty(float Modifier)
     {
-        damage *= Modifier;
+        float times = (Modifier - 1.0f) / 0.2f;
+        damage += times * 0.5f;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player") && collisionTimer >= 2.0f)
+        {
+            playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
+            ApplyDamage();
+            collisionTimer = 0;
+        }
+    }
+
+    void ApplyDamage()
+    {
+        if (damageType == Dmg.physical)
+        {
+            playerHealth.TakePhysicalDamage(damage);
+        }
+        else if (damageType == Dmg.magic)
+        {
+            playerHealth.TakeMagicDamage(damage);
+        }
+        else
+        {
+            playerHealth.TakeTrueDamage(damage);
+        }
     }
 }

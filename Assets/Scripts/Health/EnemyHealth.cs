@@ -177,8 +177,8 @@ public class EnemyHealth : Health
         
         startingHealth *= Modifier;
         currentHealth = startingHealth;
-        double times = (Modifier - 1.0) / 0.2;
-        PhysicalDefense += (float) times * 5;
-        MagicDefense += (float) times * 5;
+        float times = (Modifier - 1.0f) / 0.2f;
+        PhysicalDefense += times * 5;
+        MagicDefense += times * 5;
     }
 }

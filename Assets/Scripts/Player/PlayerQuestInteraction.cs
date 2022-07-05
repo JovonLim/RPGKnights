@@ -72,19 +72,19 @@ public class PlayerQuestInteraction : MonoBehaviour, IDataPersistence
 
         if (ChestCount >= 5)
         {
-            UI.coins += 30;
+            UI.coins += 80;
             ChestCount -= 5;
         }
 
         if (KillCount >= 5)
         {
-            UI.coins += 20;
+            UI.coins += 60;
             KillCount -= 5;
         }
 
         if (RoomCount >= 3)
         {
-            UI.coins += 40;
+            UI.coins += 120;
             RoomCount -= 3;
         }
     }
