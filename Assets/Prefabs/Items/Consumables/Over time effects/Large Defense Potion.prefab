@@ -127,14 +127,14 @@ MonoBehaviour:
   itemType: 7
   itemId: 28
   itemName: Large Defense Potion
-  itemDescription: Provides +3 Defense Boost for 2 mins
+  itemDescription: Provides +15 Defense Boost for 1 min
   attackDamageBoost: 0
   attackSpeedBoost: 0
   physicalDefenseBoost: 0
   magicDefenseBoost: 0
   healthBoost: 0
   speedBoost: 0
-  defenseBoost: 3
+  defenseBoost: 15
   regenerateHealth: 0
   isOverTimeEffect: 1
-  duration: 120
+  duration: 60

@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6837621051861367003
 Transform:
   m_ObjectHideFlags: 0
@@ -127,14 +127,14 @@ MonoBehaviour:
   itemType: 4
   itemId: 13
   itemName: Dragonsteel Boots
-  itemDescription: Provides +3 Physical Defense and +1 Speed boost
+  itemDescription: Provides +3 Defense and +1 Speed boost
   attackDamageBoost: 0
   attackSpeedBoost: 0
-  physicalDefenseBoost: 3
+  physicalDefenseBoost: 0
   magicDefenseBoost: 0
   healthBoost: 0
   speedBoost: 1
-  defenseBoost: 0
+  defenseBoost: 3
   regenerateHealth: 0
   isOverTimeEffect: 0
   duration: 0

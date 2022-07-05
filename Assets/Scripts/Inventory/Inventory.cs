@@ -63,14 +63,18 @@ public class Inventory : MonoBehaviour
         {
             ToggleInventory();
         }
-        
+
     }
 
     private void ToggleInventory()
     {
         inventoryOn = !inventoryOn;
+        FindObjectOfType<PlayerMovement>().FreezeMovement();
+        FindObjectOfType<PlayerMovement>().enabled = !inventoryOn;
+        FindObjectOfType<PlayerAttack>().enabled = !inventoryOn;
         itemPanelWindow.SetActive(inventoryOn);
         UpdateUI();
+        
     }
 
     public bool IsInventoryOn()

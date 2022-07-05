@@ -127,14 +127,14 @@ MonoBehaviour:
   itemType: 7
   itemId: 29
   itemName: Large Magic Defense Potion
-  itemDescription: Provides +3 Magic Defense Boost for 2 mins
+  itemDescription: Provides +15 Magic Defense Boost for 1 min
   attackDamageBoost: 0
   attackSpeedBoost: 0
   physicalDefenseBoost: 0
-  magicDefenseBoost: 3
+  magicDefenseBoost: 15
   healthBoost: 0
   speedBoost: 0
   defenseBoost: 0
   regenerateHealth: 0
   isOverTimeEffect: 1
-  duration: 120
+  duration: 60

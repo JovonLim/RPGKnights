@@ -79,6 +79,10 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    public void FreezeMovement()
+    {
+        body.velocity = new Vector2(0, 0);
+    }
 
     private void Jump()
     {

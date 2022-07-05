@@ -31,15 +31,16 @@ public class Shop : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI inventoryFullText;
 
+    [SerializeField] private TextMeshProUGUI purchasedText;
+
     // Start is called before the first frame update
     void Start()
     {
-        
-        
         shopCoinCounter.text = UI.coins.ToString();
         shopPanelWindow.SetActive(shopOn);
         insufficentFundsText.gameObject.SetActive(shopOn);
         inventoryFullText.gameObject.SetActive(shopOn);
+        purchasedText.gameObject.SetActive(shopOn);
         for (int i = 0; i < shopItems.Length; i++)
         {
             if (shopItems[i] != null)
@@ -61,41 +62,23 @@ public class Shop : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F) && playerInRange)
         {
             ToggleShop();
-        }    
+        }
     }
 
     private void ToggleShop()
     {
         shopOn = !shopOn;
+        FindObjectOfType<PlayerMovement>().FreezeMovement();
+        FindObjectOfType<PlayerMovement>().enabled = !shopOn;
         shopPanelWindow.SetActive(shopOn);
         shopCoinCounter.text = UI.coins.ToString();
         ResetPanels();
-
-        if (shopOn)
-        {
-            //PauseGame();
-        }
-        else
-        {
-            //ResumeGame();
-        }
     }
 
     public bool IsShopOn()
     {
         return shopOn;
     }
-
-    private void ResumeGame()
-    {
-        Time.timeScale = 1;
-    }
-
-    private void PauseGame()
-    {
-        Time.timeScale = 0;
-    }
-
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -125,6 +108,7 @@ public class Shop : MonoBehaviour
                 purchased.name = shopItems[slotNum].name;
                 purchased.gameObject.SetActive(true);
                 FindObjectOfType<Inventory>().AddItem(purchased);
+                StartCoroutine(ShowPurchased(0.5f));
             }
             else
             {
@@ -173,6 +157,13 @@ public class Shop : MonoBehaviour
         inventoryFullText.gameObject.SetActive(true);
         yield return new WaitForSeconds(time);
         inventoryFullText.gameObject.SetActive(false);
+    }
+
+    IEnumerator ShowPurchased(float time)
+    {
+        purchasedText.gameObject.SetActive(true);
+        yield return new WaitForSeconds(time);
+        purchasedText.gameObject.SetActive(false);
     }
 
     public void ResetPanels()
