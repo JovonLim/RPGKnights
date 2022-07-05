@@ -127,14 +127,14 @@ MonoBehaviour:
   itemType: 7
   itemId: 30
   itemName: Large Physical Defense Potion
-  itemDescription: Provides +3 Physical Defense Boost for 2 mins
+  itemDescription: Provides +15 Physical Defense Boost for 1 mins
   attackDamageBoost: 0
   attackSpeedBoost: 0
-  physicalDefenseBoost: 3
+  physicalDefenseBoost: 15
   magicDefenseBoost: 0
   healthBoost: 0
   speedBoost: 0
   defenseBoost: 0
   regenerateHealth: 0
   isOverTimeEffect: 1
-  duration: 120
+  duration: 60

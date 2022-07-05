@@ -127,14 +127,14 @@ MonoBehaviour:
   itemType: 7
   itemId: 24
   itemName: Defense Potion
-  itemDescription: Provides +1 Defense Boost for 1 min
+  itemDescription: Provides +5 Defense Boost for 1 min
   attackDamageBoost: 0
   attackSpeedBoost: 0
   physicalDefenseBoost: 0
   magicDefenseBoost: 0
   healthBoost: 0
   speedBoost: 0
-  defenseBoost: 1
+  defenseBoost: 5
   regenerateHealth: 0
   isOverTimeEffect: 1
   duration: 60

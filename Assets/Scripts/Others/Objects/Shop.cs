@@ -34,8 +34,6 @@ public class Shop : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-        
         shopCoinCounter.text = UI.coins.ToString();
         shopPanelWindow.SetActive(shopOn);
         insufficentFundsText.gameObject.SetActive(shopOn);

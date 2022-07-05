@@ -127,11 +127,11 @@ MonoBehaviour:
   itemType: 7
   itemId: 31
   itemName: Magic Defense Potion
-  itemDescription: Provides +1 Magic Defense Boost for 1 min
+  itemDescription: Provides +5 Magic Defense Boost for 1 min
   attackDamageBoost: 0
   attackSpeedBoost: 0
   physicalDefenseBoost: 0
-  magicDefenseBoost: 1
+  magicDefenseBoost: 5
   healthBoost: 0
   speedBoost: 0
   defenseBoost: 0
