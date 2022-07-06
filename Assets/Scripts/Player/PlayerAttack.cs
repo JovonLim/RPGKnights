@@ -381,37 +381,6 @@ public class PlayerAttack : MonoBehaviour, IDataPersistence
     }
 
 
-    private void SwitchMage()
-    {
-        if (spellUnlock)
-        {
-            classType = Class.mage;
-            
-            classHud.transform.GetChild(0).GetComponent<Image>().enabled = false;
-            classHud.transform.GetChild(1).GetComponent<Image>().enabled = false;
-            classHud.transform.GetChild(2).GetComponent<Image>().enabled = true;
-        }
-    }
-
-    private void SwitchArcher()
-    {
-        if (rangedUnlock)
-        {
-            classType = Class.ranged;
-            classHud.transform.GetChild(0).GetComponent<Image>().enabled = false;
-            classHud.transform.GetChild(1).GetComponent<Image>().enabled = true;
-            classHud.transform.GetChild(2).GetComponent<Image>().enabled = false;
-        }
-    }
-
-    private void SwitchMelee()
-    {
-        classType = Class.melee;
-        classHud.transform.GetChild(0).GetComponent<Image>().enabled = true;
-        classHud.transform.GetChild(1).GetComponent<Image>().enabled = false;
-        classHud.transform.GetChild(2).GetComponent<Image>().enabled = false;
-    }
-
     private void InitializeAttack()
     {
         int childCount = classHud.transform.childCount;
@@ -447,6 +416,7 @@ public class PlayerAttack : MonoBehaviour, IDataPersistence
         attackDark.fillClockwise = false;
         attackDark.fillOrigin = (int)Image.Origin360.Top;
         attackDark.fillAmount = 0;
+        attackCooldownTimer = 0;
         attacked = true;
     }
 
