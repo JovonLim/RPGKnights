@@ -15,9 +15,10 @@ public class PlayerAttack : MonoBehaviour, IDataPersistence
 
     public Animator anima;
     public Transform attackPoint;
-    public float attackRange = 0.5f;
+    public float attackRange;
     [SerializeField] private float meleeAttackDamage;
     [SerializeField] private float rangedAttackDamage;
+    [SerializeField] private BoxCollider2D boxCollider;
     public LayerMask enemyLayer;
 
     private int combo = 0;
@@ -34,6 +35,10 @@ public class PlayerAttack : MonoBehaviour, IDataPersistence
     [SerializeField] private GameObject arrow;
     [SerializeField] private Spell defaultSpell;
     [SerializeField] private GameObject classHud;
+    private Image attack;
+    private Image attackDark;
+    private bool attacked = false;
+    private float cooldown;
     public static Spell spellToCast = SpellHolder.activeSpells[0];
     public static Passives[] rangedPassives = new Passives[2];
     public static Passives[] meleePassives = new Passives[2];
@@ -48,11 +53,18 @@ public class PlayerAttack : MonoBehaviour, IDataPersistence
     private void Awake()
     {
         classType = Class.melee;
-        classHud.transform.GetChild(0).GetComponent<Image>().enabled = true;
+        InitializeAttack();
         anima = GetComponent<Animator>();
         playerMove = GetComponent<PlayerMovement>();
         resetTimer = 0;
        
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(boxCollider.bounds.center + transform.right * attackRange * transform.localScale.x * attackRange,
+            new Vector3(boxCollider.bounds.size.x * attackRange, boxCollider.bounds.size.y, boxCollider.bounds.size.z));
     }
 
     // Update is called once per frame
@@ -61,15 +73,33 @@ public class PlayerAttack : MonoBehaviour, IDataPersistence
        
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            SwitchMelee();
+            if (classType != Class.melee)
+            {
+                classType = Class.melee;
+                InitializeAttack();
+            }
+            
         }
         if (Input.GetKeyDown(KeyCode.X))
         {
-            SwitchArcher();
+            if (rangedUnlock)
+            {
+                if (classType != Class.ranged) {
+                    classType = Class.ranged;
+                    InitializeAttack();
+                }
+            } 
         }
         if (Input.GetKeyDown(KeyCode.C))
         {
-            SwitchMage();
+            if (spellUnlock)
+            {
+                if (classType != Class.mage)
+                {
+                    classType = Class.mage;
+                    InitializeAttack();
+                }                           
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -104,6 +134,7 @@ public class PlayerAttack : MonoBehaviour, IDataPersistence
                     if (Input.GetMouseButtonDown(0) && attackCooldownTimer > meleeAttackSpeed && playerMove.canAttack())
                     {
                         MeleeAttack();
+                        attacked = true;
                     }
                    
                 }
@@ -114,6 +145,7 @@ public class PlayerAttack : MonoBehaviour, IDataPersistence
                     if (Input.GetMouseButtonDown(0) && attackCooldownTimer > rangedAttackSpeed && playerMove.canAttack())
                     {
                         RangedAttack();
+                        
                     }
                 }
                 break;
@@ -123,6 +155,7 @@ public class PlayerAttack : MonoBehaviour, IDataPersistence
                     {
                         attackCooldownTimer = 0;
                         CastDefaultSpell();
+                        attacked = true;
                     }
                 }
                 break;
@@ -136,8 +169,9 @@ public class PlayerAttack : MonoBehaviour, IDataPersistence
                 CastSpell();
             }
         }
-     
-       
+        ShowCooldown();
+         
+        
         spellTimer += Time.deltaTime;
         resetTimer += Time.deltaTime;
         attackCooldownTimer += Time.deltaTime;
@@ -215,7 +249,7 @@ public class PlayerAttack : MonoBehaviour, IDataPersistence
 
     private void LaunchProjectile()
     {
-        attackCooldownTimer = 0;
+        
         arrowCount += 1;
 
         if (arrowCount == 2 && rangedPassives[0] != null)
@@ -244,6 +278,8 @@ public class PlayerAttack : MonoBehaviour, IDataPersistence
         projectile.transform.localScale = new Vector3(projectileLaunchPoint.transform.localScale.x, 1, 1);
         projectile.GetComponent<Projectile>().projectileDamage = rangedAttackDamage;
         projectile.GetComponent<Projectile>().SetDirection(Mathf.Sign(transform.localScale.x));
+        attackCooldownTimer = 0;
+        attacked = true;
     }
 
     public float GetRangedAttack()
@@ -350,6 +386,7 @@ public class PlayerAttack : MonoBehaviour, IDataPersistence
         if (spellUnlock)
         {
             classType = Class.mage;
+            
             classHud.transform.GetChild(0).GetComponent<Image>().enabled = false;
             classHud.transform.GetChild(1).GetComponent<Image>().enabled = false;
             classHud.transform.GetChild(2).GetComponent<Image>().enabled = true;
@@ -373,6 +410,77 @@ public class PlayerAttack : MonoBehaviour, IDataPersistence
         classHud.transform.GetChild(0).GetComponent<Image>().enabled = true;
         classHud.transform.GetChild(1).GetComponent<Image>().enabled = false;
         classHud.transform.GetChild(2).GetComponent<Image>().enabled = false;
+    }
+
+    private void InitializeAttack()
+    {
+        int childCount = classHud.transform.childCount;
+        for (int i = 0; i < childCount; i++)
+        {
+            classHud.transform.GetChild(i).GetComponent<Image>().enabled = false;
+        }
+       
+        switch (classType)
+        {
+            case Class.melee:
+                {
+                    attack = classHud.transform.GetChild(0).GetComponent<Image>();   
+                    attackDark = classHud.transform.GetChild(3).GetComponent<Image>();                  
+                }
+                break;
+            case Class.ranged:
+                {
+                    attack = classHud.transform.GetChild(1).GetComponent<Image>();
+                    attackDark = classHud.transform.GetChild(4).GetComponent<Image>();
+                }
+                break;
+            case Class.mage:
+                {
+                    attack = classHud.transform.GetChild(2).GetComponent<Image>();
+                    attackDark = classHud.transform.GetChild(5).GetComponent<Image>();
+                }
+                break;
+        }
+        attack.enabled = true;
+        attackDark.enabled = true;
+        attackDark.type = Image.Type.Filled;
+        attackDark.fillClockwise = false;
+        attackDark.fillOrigin = (int)Image.Origin360.Top;
+        attackDark.fillAmount = 0;
+        attacked = true;
+    }
+
+    private void ShowCooldown()
+    {
+        if (attacked)
+        {   
+            attackDark.fillAmount = 1;
+            attacked = false;
+        }  
+        
+        switch (classType)
+        {
+            case Class.melee:
+                {
+                    cooldown = meleeAttackSpeed;                                     
+                }
+                break;
+            case Class.ranged:
+                {
+                    cooldown = rangedAttackSpeed;
+                }
+                break;
+            case Class.mage:
+                {
+                    cooldown = defaultSpell.spell.cooldownTime;
+                }
+                break;
+        }
+        attackDark.fillAmount -= 1 / cooldown * Time.deltaTime;
+        if (attackDark.fillAmount <= 0)
+        {
+            attackDark.fillAmount = 0;
+        }    
     }
 
     public void LoadData(GameData data)

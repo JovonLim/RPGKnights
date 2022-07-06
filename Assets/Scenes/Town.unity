@@ -31321,10 +31321,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
-    - target: {fileID: 2002780164619503152, guid: 5245e38b2784a5646b8b084fb6f29329, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2002780164619503156, guid: 5245e38b2784a5646b8b084fb6f29329, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -31801,10 +31797,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 5761944521595046711}
-    - target: {fileID: 6979393900643831730, guid: 5245e38b2784a5646b8b084fb6f29329, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7022043350290651174, guid: 5245e38b2784a5646b8b084fb6f29329, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -33488,6 +33480,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2728203840256646172}
     - target: {fileID: 5761944521595046690, guid: 92f411271b723c949a411c7403a36f98, type: 3}
+      propertyPath: attackRange
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 5761944521595046690, guid: 92f411271b723c949a411c7403a36f98, type: 3}
+      propertyPath: boxCollider
+      value: 
+      objectReference: {fileID: 5761944521595046683}
+    - target: {fileID: 5761944521595046690, guid: 92f411271b723c949a411c7403a36f98, type: 3}
       propertyPath: meleeAttackSpeed
       value: 0.8
       objectReference: {fileID: 0}
@@ -33753,6 +33753,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92f411271b723c949a411c7403a36f98, type: 3}
+--- !u!61 &5761944521595046683 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 5761944522982870090, guid: 92f411271b723c949a411c7403a36f98, type: 3}
+  m_PrefabInstance: {fileID: 5761944521595046682}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &5761944521595046692 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5587785694126439929, guid: 92f411271b723c949a411c7403a36f98, type: 3}
