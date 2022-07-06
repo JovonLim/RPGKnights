@@ -15,6 +15,7 @@ public class Inventory : MonoBehaviour
     [SerializeField] private GameObject itemInformationWindow;
     [SerializeField] private TextMeshProUGUI itemName;
     [SerializeField] private TextMeshProUGUI itemDescription;
+    [SerializeField] private TextMeshProUGUI itemType;
 
     public static GameObject[] equipHolder;
     [SerializeField] private GameObject equipWindow;
@@ -554,11 +555,13 @@ public class Inventory : MonoBehaviour
         // Retrieve item name and item description
         itemName.text = itemList[inventoryNum].GetComponent<Item>().itemName;
         itemDescription.text = itemList[inventoryNum].GetComponent<Item>().itemDescription;
+        itemType.text = itemList[inventoryNum].GetComponent<Item>().itemType.ToString();
 
         // Show the item information window and text
         itemInformationWindow.SetActive(true);
         itemName.gameObject.SetActive(true);
         itemDescription.gameObject.SetActive(true);
+        itemType.gameObject.SetActive(true);
     }
 
     private void HideItemInformationWindow()
@@ -567,6 +570,7 @@ public class Inventory : MonoBehaviour
         itemName.gameObject.SetActive(false);
         itemDescription.gameObject.SetActive(false);
         itemInformationWindow.SetActive(false);
+        itemType.gameObject.SetActive(false);
     }
 
     private void ShowEquipInformationWindow(int equipNum)
@@ -579,6 +583,7 @@ public class Inventory : MonoBehaviour
         itemInformationWindow.SetActive(true);
         itemName.gameObject.SetActive(true);
         itemDescription.gameObject.SetActive(true);
+        itemType.gameObject.SetActive(true);
     }
 
 }
