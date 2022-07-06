@@ -24,6 +24,7 @@ public class Shop : MonoBehaviour
     [SerializeField] public TextMeshProUGUI itemName;
     [SerializeField] public TextMeshProUGUI itemDescription;
     [SerializeField] public TextMeshProUGUI itemCost;
+    [SerializeField] public TextMeshProUGUI itemType;
 
     [SerializeField] private TextMeshProUGUI insufficentFundsText;
 
@@ -128,12 +129,14 @@ public class Shop : MonoBehaviour
         itemName.text = shopItems[slotNum].name;
         itemDescription.text = shopItems[slotNum].GetComponent<Item>().itemDescription;
         itemCost.text = itemCosts[slotNum].ToString();
+        itemType.text = shopItems[slotNum].GetComponent<Item>().itemType.ToString();
 
         // Show the item information window and text
         itemInformationWindow.SetActive(true);
         itemName.gameObject.SetActive(true);
         itemDescription.gameObject.SetActive(true);
         itemCost.gameObject.SetActive(true);
+        itemType.gameObject.SetActive(true);
     }
 
     public void HideItemInformationWindow()
@@ -143,6 +146,7 @@ public class Shop : MonoBehaviour
         itemDescription.gameObject.SetActive(false);
         itemCost.gameObject.SetActive(false);
         itemInformationWindow.SetActive(false);
+        itemType.gameObject.SetActive(false);
     }
 
     IEnumerator ShowInsufficientFunds(float time)
