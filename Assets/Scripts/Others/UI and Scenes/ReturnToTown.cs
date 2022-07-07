@@ -22,11 +22,13 @@ public class ReturnToTown : MonoBehaviour
         if (playerClicked && playerInRange)
         {
             warning.SetActive(true);
+            Time.timeScale = 0;
         }
         else
         {
             warning.SetActive(false);
             playerClicked = false;
+            Time.timeScale = 1;
         }
     }
 
@@ -50,10 +52,12 @@ public class ReturnToTown : MonoBehaviour
     {
         warning.SetActive(false);
         playerClicked = false;
+        Time.timeScale = 1;
     }
 
     public void Accept()
     {
+        Time.timeScale = 1;
         UI.coins = (int) (UI.coins * 0.9);
         DataPersistenceManager.instance.SaveGame();
         GameObject player = GameObject.FindGameObjectWithTag("Player");

@@ -6,6 +6,7 @@ public class DemonEmerges : MonoBehaviour
 {
     [SerializeField] GameObject door;
     [SerializeField] GameObject bossPatrol;
+    [SerializeField] GameObject classNotice;
     bool unlocked;
 
     // Start is called before the first frame update
@@ -31,8 +32,22 @@ public class DemonEmerges : MonoBehaviour
         if (!unlocked && GetComponent<QuestProgress>().questCompleted)
         {
            PlayerAttack.rangedUnlock = true;
+           StartCoroutine(ShowClassChange());
            unlocked = true;
         } 
+    }
+
+    IEnumerator ShowClassChange()
+    {
+        yield return new WaitForSeconds(3f);
+        classNotice.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void CloseNotice()
+    {
+        classNotice.SetActive(false);
+        Time.timeScale = 1;
     }
 }
 

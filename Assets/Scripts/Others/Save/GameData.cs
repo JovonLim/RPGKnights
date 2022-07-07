@@ -6,6 +6,7 @@ using UnityEngine;
 public class GameData
 {
     public int coins;
+    public bool tutorialDone;
     public Spell[] activeSpells;
     public bool[] spellsUnlocked;
     public bool[] intros;
@@ -25,6 +26,7 @@ public class GameData
     // the game starts with when there's no data to load
     public GameData()
     {
+        tutorialDone = false;
         activeWizard = -1;
         activeArcher = -1;
         coins = 0; ChestCount = 0; KillCount = 0; RoomCount = 0;     

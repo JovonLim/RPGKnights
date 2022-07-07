@@ -63,7 +63,6 @@ public class Escape : MonoBehaviour
 
     public void ReturnToMenu()
     {
-        
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
         GameObject[] UIs = GameObject.FindGameObjectsWithTag("UI");
 
@@ -76,10 +75,11 @@ public class Escape : MonoBehaviour
             Destroy(UI);
         }
         
-        SceneManager.LoadScene(0);
+       
         menu.SetActive(false);
         Time.timeScale = 1;
         inMenu = false;
+        SceneManager.LoadScene(0);
     }
 
     public void Save()
