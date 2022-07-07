@@ -11,7 +11,7 @@ public class Tutorial : MonoBehaviour, IDataPersistence
     private int page = 0;
     private static bool tutorialDone = false;
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         if (!tutorialDone)
         {
