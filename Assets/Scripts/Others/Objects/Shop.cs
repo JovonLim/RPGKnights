@@ -19,6 +19,7 @@ public class Shop : MonoBehaviour
     [SerializeField] private static int currentPage;
     [SerializeField] private GameObject prevPanelButton;
     [SerializeField] private GameObject nextPanelButton;
+    [SerializeField] private GameObject CloseShopButton;
 
     [SerializeField] private GameObject itemInformationWindow;
     [SerializeField] public TextMeshProUGUI itemName;
@@ -71,9 +72,22 @@ public class Shop : MonoBehaviour
         shopOn = !shopOn;
         FindObjectOfType<PlayerMovement>().FreezeMovement();
         FindObjectOfType<PlayerMovement>().enabled = !shopOn;
+        CloseShopButton.gameObject.SetActive(shopOn);
         shopPanelWindow.SetActive(shopOn);
         shopCoinCounter.text = UI.coins.ToString();
         ResetPanels();
+    }
+
+    public void CloseShop()
+    {
+        shopOn = false;
+        FindObjectOfType<PlayerMovement>().FreezeMovement();
+        FindObjectOfType<PlayerMovement>().enabled = true;
+        CloseShopButton.gameObject.SetActive(false);
+        shopPanelWindow.SetActive(false);
+        shopCoinCounter.text = UI.coins.ToString();
+        ResetPanels();
+
     }
 
     public bool IsShopOn()
