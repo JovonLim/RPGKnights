@@ -531,13 +531,28 @@ public class Inventory : MonoBehaviour
 
     private void UpdateStats()
     {
-        meleeAD.text = FindObjectOfType<PlayerAttack>().GetAttack().ToString();
-        meleeAS.text = FindObjectOfType<PlayerAttack>().GetAttackSpeed().ToString();
-        rangedAD.text = FindObjectOfType<PlayerAttack>().GetRangedAttack().ToString();
-        rangedAS.text = FindObjectOfType<PlayerAttack>().GetRangedAttackSpeed().ToString();
-        physicalDef.text = FindObjectOfType<PlayerHealth>().GetPhysicalDefense().ToString();
-        magicDef.text = FindObjectOfType<PlayerHealth>().GetMagicDefense().ToString();
-        speed.text = FindObjectOfType<PlayerMovement>().GetSpeed().ToString();
+
+        double meleeADDouble = System.Math.Round(FindObjectOfType<PlayerAttack>().GetAttack(), 2);
+        meleeAD.text = meleeADDouble.ToString();
+
+        double meleeASDouble = System.Math.Round(FindObjectOfType<PlayerAttack>().GetAttackSpeed(), 2);
+        meleeAS.text = meleeASDouble.ToString();
+
+        double rangedADDouble = System.Math.Round(FindObjectOfType<PlayerAttack>().GetRangedAttack(), 2);
+        rangedAD.text = rangedADDouble.ToString();
+
+        double rangedASDouble = System.Math.Round(FindObjectOfType<PlayerAttack>().GetRangedAttackSpeed(), 2);
+        rangedAS.text = rangedASDouble.ToString();
+
+        double physicalDefDouble = System.Math.Round(FindObjectOfType<PlayerHealth>().GetPhysicalDefense(), 2);
+        physicalDef.text = physicalDefDouble.ToString();
+
+        double magicDefDouble = System.Math.Round(FindObjectOfType<PlayerHealth>().GetMagicDefense(), 2);
+        magicDef.text = magicDefDouble.ToString();
+
+        double speedDouble = System.Math.Round(FindObjectOfType<PlayerMovement>().GetSpeed(), 2);
+        speed.text = speedDouble.ToString();
+
 
     }
 
