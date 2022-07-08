@@ -26,8 +26,7 @@ public class TheRival : MonoBehaviour
             if (GetComponent<QuestEnd>().cleared)
             {
                 GameObject player = GameObject.FindGameObjectWithTag("Player");
-                GameObject reward = Instantiate(bow);
-                player.GetComponent<Inventory>().AddItem(reward);
+                Instantiate(bow, player.transform.position, Quaternion.identity);          
                 added = true;
             }
         }

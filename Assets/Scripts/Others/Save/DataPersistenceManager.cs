@@ -55,6 +55,10 @@ public class DataPersistenceManager : MonoBehaviour
 
     public void OnSceneUnloaded(Scene scene)
     {
+        if (scene.buildIndex == 2)
+        {
+            SaveGame();
+        }
         
     }
 

@@ -1100,6 +1100,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2932792766604840258, guid: f3c90661f7d387c4490a9f3b4b34690c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2149054255116149211}
+    - target: {fileID: 2932792766604840258, guid: f3c90661f7d387c4490a9f3b4b34690c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Cancel
+      objectReference: {fileID: 0}
+    - target: {fileID: 2932792767872776865, guid: f3c90661f7d387c4490a9f3b4b34690c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2149054255116149211}
+    - target: {fileID: 2932792767872776865, guid: f3c90661f7d387c4490a9f3b4b34690c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Accept
+      objectReference: {fileID: 0}
     - target: {fileID: 2932792768519993237, guid: f3c90661f7d387c4490a9f3b4b34690c, type: 3}
       propertyPath: m_Name
       value: ReturnToTownWarning

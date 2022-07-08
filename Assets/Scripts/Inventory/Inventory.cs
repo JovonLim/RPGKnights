@@ -334,8 +334,16 @@ public class Inventory : MonoBehaviour
         {
             return;
         }
-        FindObjectOfType<PlayerAttack>().AddAttack(equip.GetComponent<Item>().attackDamageBoost);
-        FindObjectOfType<PlayerAttack>().AddAttackSpeed(equip.GetComponent<Item>().attackSpeedBoost);
+
+        if (equip.GetComponent<Item>().itemType == Item.ItemType.ArcherWeapon)
+        {
+            FindObjectOfType<PlayerAttack>().AddRangedAttack(equip.GetComponent<Item>().attackDamageBoost);
+            FindObjectOfType<PlayerAttack>().AddRangedAttackSpeed(equip.GetComponent<Item>().attackSpeedBoost);
+        } else
+        {
+            FindObjectOfType<PlayerAttack>().AddAttack(equip.GetComponent<Item>().attackDamageBoost);
+            FindObjectOfType<PlayerAttack>().AddAttackSpeed(equip.GetComponent<Item>().attackSpeedBoost);
+        }    
         FindObjectOfType<PlayerHealth>().AddHealth(equip.GetComponent<Item>().healthBoost);
         FindObjectOfType<PlayerHealth>().AddDefense(equip.GetComponent<Item>().defenseBoost);
         FindObjectOfType<PlayerHealth>().AddMagicDefense(equip.GetComponent<Item>().magicDefenseBoost);

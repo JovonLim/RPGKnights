@@ -9,6 +9,7 @@ public class WizardQuestLog : MonoBehaviour
     [SerializeField] private TextMeshProUGUI[] questTitles;
     [SerializeField] private TextMeshProUGUI description;
     [SerializeField] private GameObject questNotice;
+    [SerializeField] private GameObject unlockNotice;
     public Quest[] quests;
     public static bool[] completedQuests = new bool[4];
     private static int selected;
@@ -47,6 +48,10 @@ public class WizardQuestLog : MonoBehaviour
                     AddActive();
                     PlayerQuestInteraction.WizardQuest = quests[selected];
                     PlayerQuestInteraction.questActive = true;
+                } else 
+                {
+                    unlockNotice.SetActive(true);
+                    unlockNotice.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "Requires lightning bolt unlocked to accept quest";
                 }
             }
             else if (selected == 3)
@@ -56,6 +61,11 @@ public class WizardQuestLog : MonoBehaviour
                     AddActive();
                     PlayerQuestInteraction.WizardQuest = quests[selected];
                     PlayerQuestInteraction.questActive = true;
+                }
+                else
+                {
+                    unlockNotice.SetActive(true);
+                    unlockNotice.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "Requires water ball unlocked to accept quest";
                 }
             }
             else
@@ -115,5 +125,6 @@ public class WizardQuestLog : MonoBehaviour
     public void CloseNotice()
     {
         questNotice.SetActive(false);
+        unlockNotice.SetActive(false);
     }
 }
