@@ -40,8 +40,8 @@ public class PlayerAttack : MonoBehaviour, IDataPersistence
     private bool attacked = false;
     private float cooldown;
     public static Spell spellToCast = SpellHolder.activeSpells[0];
-    public static Passives[] rangedPassives = new Passives[2];
-    public static Passives[] meleePassives = new Passives[2];
+    public static bool[] rangedPassives = new bool[2];
+    public static bool[] meleePassives = new bool[2];
     
     [SerializeField] private enum Class
     {
@@ -197,7 +197,7 @@ public class PlayerAttack : MonoBehaviour, IDataPersistence
 
         else if (combo == 2)
         {
-            if (meleePassives[0] != null)
+            if (meleePassives[0])
             {
                 StartCoroutine(Increase(1));
             }
@@ -206,7 +206,7 @@ public class PlayerAttack : MonoBehaviour, IDataPersistence
 
         else if (combo == 3)
         {
-            if (meleePassives[0] != null)
+            if (meleePassives[0])
             {
                 StartCoroutine(Increase(2));
             }
@@ -223,12 +223,15 @@ public class PlayerAttack : MonoBehaviour, IDataPersistence
         foreach(Collider2D enemy in hitEnemies)
         {
             enemy.GetComponent<EnemyHealth>().TakePhysicalDamage(meleeAttackDamage);
-            swordCount += 1;
+            if (meleePassives[1])
+            {
+                swordCount += 1;
+            }     
         }
 
-        if (swordCount >= 5 && meleePassives[1] != null)
+        if (swordCount >= 5)
         {
-            GetComponent<PlayerHealth>().GainHealth(0.2f);
+            GetComponent<PlayerHealth>().GainHealth(0.5f);
             swordCount -= 5;
         }
       
@@ -252,7 +255,7 @@ public class PlayerAttack : MonoBehaviour, IDataPersistence
         
         arrowCount += 1;
 
-        if (arrowCount == 2 && rangedPassives[0] != null)
+        if (arrowCount == 2 && rangedPassives[0])
         {
             rangedAttackDamage += 0.5f;
             Launch();
@@ -269,7 +272,7 @@ public class PlayerAttack : MonoBehaviour, IDataPersistence
         GameObject projectile = Instantiate(arrow, projectileLaunchPoint.position, Quaternion.identity);
         if (arrowCount == 2)
         {
-            if (rangedPassives[1] != null)
+            if (rangedPassives[1])
             {
                 projectile.GetComponent<Projectile>().damageType = Damage.Dmg.magic;
             }
@@ -457,6 +460,8 @@ public class PlayerAttack : MonoBehaviour, IDataPersistence
     {
         rangedUnlock = data.rangedUnlocked;
         spellUnlock = data.spellUnlocked;
+        meleePassives = data.knightPurchased;
+        rangedPassives = data.archerPurchased;
     }
 
     public void SaveData(GameData data)

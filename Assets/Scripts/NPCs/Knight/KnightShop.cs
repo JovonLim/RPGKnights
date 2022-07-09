@@ -69,7 +69,7 @@ public class KnightShop : MonoBehaviour, IDataPersistence
             purchased[selected] = true;
             SaveData(DataPersistenceManager.instance.gameData);
             update = true;
-            PlayerAttack.meleePassives[selected] = passives[selected];
+            PlayerAttack.meleePassives[selected] = true;
             Deselect();
         }
         else if (UI.coins < passives[selected].cost)

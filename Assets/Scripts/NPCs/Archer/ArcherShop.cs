@@ -69,7 +69,7 @@ public class ArcherShop : MonoBehaviour, IDataPersistence
             purchased[selected] = true;
             SaveData(DataPersistenceManager.instance.gameData);
             update = true;
-            PlayerAttack.rangedPassives[selected] = passives[selected];
+            PlayerAttack.rangedPassives[selected] = true;
             Deselect();
         }
         else if (UI.coins < passives[selected].cost)

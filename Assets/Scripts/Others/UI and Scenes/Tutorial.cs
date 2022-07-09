@@ -6,6 +6,7 @@ public class Tutorial : MonoBehaviour, IDataPersistence
 {
     [SerializeField] private GameObject[] tutorials;
     [SerializeField] private GameObject nextButton;
+    [SerializeField] private GameObject prevButton;
     [SerializeField] private GameObject closeButton;
     [SerializeField] private GameObject skipButton;
     private int page = 0;
@@ -29,20 +30,38 @@ public class Tutorial : MonoBehaviour, IDataPersistence
         CheckPage();       
     }
 
+    public void PrevPage()
+    {
+        tutorials[page].SetActive(false);
+        page--;
+        CheckPage();
+    }
+
     private void CheckPage()
     {
         if (page == tutorials.Length - 1)
         {
             nextButton.SetActive(false);
             closeButton.SetActive(true);
-            skipButton.SetActive(false);       
+            skipButton.SetActive(false);
         }
+        else if (page != 0)
+        {
+            nextButton.SetActive(true);
+            prevButton.SetActive(true);
+            closeButton.SetActive(false);
+            skipButton.SetActive(true);
+        } else
+        {
+            prevButton.SetActive(false);
+        } 
         tutorials[page].SetActive(true);
     }
 
     public void CloseTutorial()
     {
         nextButton.SetActive(false);
+        prevButton.SetActive(false);
         closeButton.SetActive(false);
         skipButton.SetActive(false);
         for (int i = 0; i < tutorials.Length; i++)
