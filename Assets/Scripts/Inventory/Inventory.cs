@@ -121,7 +121,6 @@ public class Inventory : MonoBehaviour
         return false;
     }
 
-    // For internal inventory usage
     public void RemoveItem(int invNum)
     {
         if (itemList[invNum] != null)
