@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 8563555684586409691}
   - component: {fileID: 5071959240932390938}
   - component: {fileID: 8030819260734194354}
-  - component: {fileID: 7344346432313160479}
   - component: {fileID: 702312909093803046}
+  - component: {fileID: 3045483686534263768}
   m_Layer: 0
   m_Name: Acid
   m_TagString: PlayerProjectile
@@ -172,19 +172,6 @@ MonoBehaviour:
   spell: {fileID: 11400000, guid: a1b7b8e43cb8ad64da69feb1a97ec470, type: 2}
   dir: 1
   offset: 0
---- !u!114 &7344346432313160479
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4665838142601874446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba956ab43e76e3747b76ceae2d33162f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spell: {fileID: 11400000, guid: a1b7b8e43cb8ad64da69feb1a97ec470, type: 2}
 --- !u!114 &702312909093803046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,3 +189,16 @@ MonoBehaviour:
   repeatTime: 0
   enemy: {fileID: 0}
   reduction: 10
+--- !u!114 &3045483686534263768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4665838142601874446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba956ab43e76e3747b76ceae2d33162f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spell: {fileID: 11400000, guid: a1b7b8e43cb8ad64da69feb1a97ec470, type: 2}

@@ -122,6 +122,12 @@ public class SpellTree : SpellHolder
         {
             descriptionBox.SetActive(false);
             skillBox.SetActive(true);           
+        } else
+        {
+            if (skillBox.activeInHierarchy)
+            {
+                skillBox.SetActive(false);
+            }
         }
     }
 

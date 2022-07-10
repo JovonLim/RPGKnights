@@ -138,4 +138,9 @@ public class DataPersistenceManager : MonoBehaviour
     {
         return gameData != null;
     }
+
+    public void SaveVolume()
+    {
+        dataHandler.Save(gameData);
+    }
 }

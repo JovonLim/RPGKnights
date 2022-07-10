@@ -2495,7 +2495,9 @@ MonoBehaviour:
   fileName: Game
   useEncryption: 0
   gameData:
+    volume: 1
     coins: 2000
+    tutorialDone: 0
     activeSpells:
     - {fileID: 0}
     - {fileID: 0}

@@ -178,7 +178,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 128
-  attackSpeed: 2
+  attackSpeed: 1
 --- !u!114 &4405718109264744031
 MonoBehaviour:
   m_ObjectHideFlags: 0

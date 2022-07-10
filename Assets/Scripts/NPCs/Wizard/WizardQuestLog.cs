@@ -12,7 +12,7 @@ public class WizardQuestLog : MonoBehaviour
     [SerializeField] private GameObject unlockNotice;
     public Quest[] quests;
     public static bool[] completedQuests = new bool[4];
-    private static int selected;
+    private static int selected = -1;
 
   
     void Awake()
@@ -39,6 +39,10 @@ public class WizardQuestLog : MonoBehaviour
     }
     public void AcceptQuest()
     {
+        if (selected < 0)
+        {
+            return;
+        }
         if (!PlayerQuestInteraction.questActive && !completedQuests[selected])
         {
             if (selected == 2)
@@ -114,7 +118,11 @@ public class WizardQuestLog : MonoBehaviour
     }
     public void Untrack()
     {
-        if (!completedQuests[selected])
+        if (selected < 0)
+        {
+            return;
+        }
+        if (!completedQuests[selected] && PlayerQuestInteraction.WizardQuest.questNum == selected)
         {
             RemoveActive();
             PlayerQuestInteraction.WizardQuest = null;

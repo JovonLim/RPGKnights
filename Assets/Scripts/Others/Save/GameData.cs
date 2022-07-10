@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class GameData
 {
+    public float volume;
     public int coins;
     public bool tutorialDone;
     public Spell[] activeSpells;
@@ -26,16 +27,17 @@ public class GameData
     // the game starts with when there's no data to load
     public GameData()
     {
+        volume = 1;
         tutorialDone = false;
         activeWizard = -1;
         activeArcher = -1;
         coins = 0; ChestCount = 0; KillCount = 0; RoomCount = 0;     
         activeSpells = new Spell[4];
-        spellsUnlocked = new bool[13];
+        spellsUnlocked = new bool[16];
         intros = new bool[6];
         archerQuests = new bool[3];
         wizardQuests = new bool[4];
-        wizardPurchased = new bool[11]; archerPurchased = new bool[2]; knightPurchased = new bool[2];
+        wizardPurchased = new bool[14]; archerPurchased = new bool[2]; knightPurchased = new bool[2];
         currentItems = new List<int>();
         currentEquip = new List<int>();
         rangedUnlocked = false;

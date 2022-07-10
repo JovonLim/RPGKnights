@@ -8,7 +8,7 @@ public class Burn : StatusEffects
 
     protected override void ApplyEffect()
     {
-       enemy.GetComponent<EnemyHealth>().TakeMagicDamage(damage);
+       enemy.GetComponent<EnemyHealth>().TakeTrueDamage(damage);
     }
 }
 

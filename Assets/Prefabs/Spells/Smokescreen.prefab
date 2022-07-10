@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 8026055692707775281}
   - component: {fileID: 170292346937768636}
   - component: {fileID: 4798428436537471637}
-  - component: {fileID: 475888140172586746}
   - component: {fileID: 6191827334656512598}
+  - component: {fileID: -2236748198963536370}
   m_Layer: 0
   m_Name: Smokescreen
   m_TagString: PlayerProjectile
@@ -171,19 +171,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spell: {fileID: 11400000, guid: 08c9b4eaf3e20a64592fe0fec8455754, type: 2}
   range: 6
---- !u!114 &475888140172586746
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5746020636681006456}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba956ab43e76e3747b76ceae2d33162f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spell: {fileID: 11400000, guid: 08c9b4eaf3e20a64592fe0fec8455754, type: 2}
 --- !u!114 &6191827334656512598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,3 +188,16 @@ MonoBehaviour:
   repeatTime: 0
   enemy: {fileID: 0}
   damage: 1
+--- !u!114 &-2236748198963536370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5746020636681006456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba956ab43e76e3747b76ceae2d33162f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spell: {fileID: 11400000, guid: 08c9b4eaf3e20a64592fe0fec8455754, type: 2}

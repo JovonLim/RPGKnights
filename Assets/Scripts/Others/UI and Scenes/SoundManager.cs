@@ -2,7 +2,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SoundManager : MonoBehaviour
+public class SoundManager : MonoBehaviour, IDataPersistence
 {
     [SerializeField] Slider slider;
     [SerializeField] AudioClip townClip;
@@ -10,6 +10,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] AudioClip victoryClip;
     public static SoundManager instance;
     private new AudioSource audio;
+    private float volume;
     bool changedTrack;
     private void Awake()
     {
@@ -26,14 +27,7 @@ public class SoundManager : MonoBehaviour
 
     private void Start()
     {
-        if (!PlayerPrefs.HasKey("audio"))
-        {
-            PlayerPrefs.SetFloat("audio", 1);
-            Load();
-        } else
-        {
-            Load();
-        }
+        audio.volume = volume;
     }
 
     private void Update()
@@ -44,8 +38,8 @@ public class SoundManager : MonoBehaviour
             if (sliderObj != null)
             {
                 slider = (Slider) sliderObj;
-                slider.onValueChanged.AddListener(delegate { ChangeVolume(); });
                 Load();
+                slider.onValueChanged.AddListener(delegate { ChangeVolume(); });               
             }
         }
 
@@ -98,22 +92,30 @@ public class SoundManager : MonoBehaviour
     {
         if (slider != null)
         {
-            GetComponent<AudioSource>().volume = slider.value;
-            Save();
+            audio.volume = slider.value;
+            volume = slider.value;           
+            SaveData(DataPersistenceManager.instance.gameData);
         }
         
     }
 
     void Load()
-    {
+    {  
         if (slider != null)
-        slider.value = PlayerPrefs.GetFloat("audio");
+        {
+            LoadData(DataPersistenceManager.instance.gameData);
+            slider.value = volume;
+        }          
     }
 
-    private void Save()
+    public void LoadData(GameData data)
     {
-        if (slider != null)
-        PlayerPrefs.SetFloat("audio", slider.value);
-    
+        volume = data.volume;
+    }
+
+    public void SaveData(GameData data)
+    {
+       data.volume = volume;
+       DataPersistenceManager.instance.SaveVolume();
     }
 }

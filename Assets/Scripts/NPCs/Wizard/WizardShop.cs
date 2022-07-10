@@ -11,7 +11,7 @@ public class WizardShop : MonoBehaviour, IDataPersistence
     [SerializeField] int[] costs;
     [SerializeField] GameObject insufficientFunds;
     [SerializeField] TextMeshProUGUI coinAmt;
-    private static bool[] purchased = new bool[11];
+    private static bool[] purchased = new bool[14];
     private bool update;
     private int selected = -1;
     private int currentPage = 0;
@@ -102,7 +102,7 @@ public class WizardShop : MonoBehaviour, IDataPersistence
     public void NextPage()
     {
         panels[currentPage].SetActive(false);
-        currentPage = 1;
+        currentPage++;
         panels[currentPage].SetActive(true);
         update = true;
     }
@@ -110,7 +110,7 @@ public class WizardShop : MonoBehaviour, IDataPersistence
     public void PrevPage()
     {
         panels[currentPage].SetActive(false);
-        currentPage = 0;
+        currentPage--;
         panels[currentPage].SetActive(true);
         update = true;
     }

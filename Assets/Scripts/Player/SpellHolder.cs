@@ -4,7 +4,7 @@ public class SpellHolder : MonoBehaviour, IDataPersistence
 {
     public Spell[] spells;
     public static Spell[] activeSpells = new Spell[4];
-    protected static bool[] unlocked = new bool[13];
+    protected static bool[] unlocked = new bool[16];
     public bool updated;
 
 

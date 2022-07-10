@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 4486455533892582912}
   - component: {fileID: 2527203546460180456}
   - component: {fileID: 8864320492457125211}
-  - component: {fileID: 6939082660989739908}
   - component: {fileID: 803264876095687844}
+  - component: {fileID: -2967930459818996917}
   m_Layer: 0
   m_Name: Air Burst
   m_TagString: PlayerProjectile
@@ -171,19 +171,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spell: {fileID: 11400000, guid: caa0b4076b0dcab4a8e7457da0d2c1e1, type: 2}
   range: 6
---- !u!114 &6939082660989739908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4863216547705783714}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba956ab43e76e3747b76ceae2d33162f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spell: {fileID: 11400000, guid: caa0b4076b0dcab4a8e7457da0d2c1e1, type: 2}
 --- !u!114 &803264876095687844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,3 +188,16 @@ MonoBehaviour:
   repeatTime: 0
   enemy: {fileID: 0}
   speedAmt: 1.5
+--- !u!114 &-2967930459818996917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4863216547705783714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba956ab43e76e3747b76ceae2d33162f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spell: {fileID: 11400000, guid: caa0b4076b0dcab4a8e7457da0d2c1e1, type: 2}

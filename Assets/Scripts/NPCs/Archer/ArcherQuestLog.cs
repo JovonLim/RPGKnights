@@ -11,7 +11,7 @@ public class ArcherQuestLog : MonoBehaviour
     [SerializeField] private GameObject questNotice;
     public Quest[] quests;
     public static bool[] completedQuests = new bool[3];
-    private static int selected;
+    private static int selected = -1;
 
 
     void Awake()
@@ -38,6 +38,10 @@ public class ArcherQuestLog : MonoBehaviour
 
     public void AcceptQuest()
     {
+        if (selected < 0)
+        {
+            return;
+        }
         if (!PlayerQuestInteraction.questActive && !completedQuests[selected])
         {
             AddActive();
@@ -87,7 +91,11 @@ public class ArcherQuestLog : MonoBehaviour
     }
     public void Untrack()
     {
-        if (!completedQuests[selected])
+        if (selected < 0)
+        {
+            return;
+        }
+        if (!completedQuests[selected] && PlayerQuestInteraction.ArcherQuest.questNum == selected)
         {
             RemoveActive();
             PlayerQuestInteraction.ArcherQuest = null;
