@@ -122,10 +122,11 @@ public class PlayerHealth : Health
     public override void AddHealth(float amt)
     {
         startingHealth += amt;
-        float temp = currentHealth;
-        currentHealth = startingHealth;
-        FindObjectOfType<Healthbar>().UpdateStartingHealth();
-        currentHealth = temp + amt;
+    }
+
+    public float GetStartingHealth()
+    {
+        return startingHealth;
     }
 
     public override void AddPhysicalDefense(float amt)

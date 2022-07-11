@@ -7,10 +7,17 @@ using TMPro;
 public class Inventory : MonoBehaviour
 {
     private static int currentInvCapacity;
-    private const int totalInvCapacity = 9;
+    private const int totalInvCapacity = 18;
     public static GameObject[] itemList;
     [SerializeField] private GameObject itemPanelWindow;
     [SerializeField] private Image[] inventoryItemsImages;
+
+    [SerializeField] private GameObject[] listOfItemPanels;
+    [SerializeField] private static int currentPage;
+    [SerializeField] private GameObject prevPanelButton;
+    [SerializeField] private GameObject nextPanelButton;
+    [SerializeField] private GameObject CloseShopButton;
+
 
     [SerializeField] private GameObject itemInformationWindow;
     [SerializeField] private TextMeshProUGUI itemName;
@@ -40,7 +47,7 @@ public class Inventory : MonoBehaviour
         itemPanelWindow.SetActive(inventoryOn);
 
         // Initialising Array for inventory
-        itemList = new GameObject[9];
+        itemList = new GameObject[18];
         for (int i = 0; i < itemList.Length; i++)
         {
             itemList[i] = null;
@@ -74,8 +81,69 @@ public class Inventory : MonoBehaviour
         FindObjectOfType<PlayerMovement>().enabled = !inventoryOn;
         FindObjectOfType<PlayerAttack>().enabled = !inventoryOn;
         itemPanelWindow.SetActive(inventoryOn);
+        ResetPanels();
         UpdateUI();
         
+    }
+
+    public void CloseInventory()
+    {
+        inventoryOn = false;
+        FindObjectOfType<PlayerMovement>().FreezeMovement();
+        FindObjectOfType<PlayerMovement>().enabled = true;
+        FindObjectOfType<PlayerAttack>().enabled = true;
+        itemPanelWindow.SetActive(false);
+        ResetPanels();
+        UpdateUI();
+    }
+
+    private void ResetPanels()
+    {
+        currentPage = 0;
+        listOfItemPanels[0].gameObject.SetActive(true);
+        for (int i = 1; i < listOfItemPanels.Length; i++)
+        {
+            listOfItemPanels[i].gameObject.SetActive(false);
+        }
+        UpdateButton();
+    }
+
+    public void NextPanel()
+    {
+        currentPage += 1;
+        listOfItemPanels[currentPage - 1].gameObject.SetActive(false);
+        listOfItemPanels[currentPage].gameObject.SetActive(true);
+        UpdateButton();
+    }
+
+    public void PrevPanel()
+    {
+        currentPage -= 1;
+        listOfItemPanels[currentPage + 1].gameObject.SetActive(false);
+        listOfItemPanels[currentPage].gameObject.SetActive(true);
+        UpdateButton();
+    }
+
+    public void UpdateButton()
+    {
+        if (currentPage == 0)
+        {
+            // Currently at first panel
+            prevPanelButton.gameObject.SetActive(false);
+            nextPanelButton.gameObject.SetActive(true);
+        }
+        else if (currentPage == (listOfItemPanels.Length - 1))
+        {
+            //Currently at last panel
+            nextPanelButton.gameObject.SetActive(false);
+            prevPanelButton.gameObject.SetActive(true);
+
+        }
+        else
+        {
+            prevPanelButton.gameObject.SetActive(true);
+            nextPanelButton.gameObject.SetActive(true);
+        }
     }
 
     public bool IsInventoryOn()
