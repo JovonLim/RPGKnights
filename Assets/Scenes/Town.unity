@@ -21069,28 +21069,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneNum: 3
---- !u!114 &1339258534 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 451949550501412968, guid: 5245e38b2784a5646b8b084fb6f29329, type: 3}
-  m_PrefabInstance: {fileID: 2002780164395657273}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1339258535 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6023210126165932088, guid: 5245e38b2784a5646b8b084fb6f29329, type: 3}
-  m_PrefabInstance: {fileID: 2002780164395657273}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1359679907
 GameObject:
   m_ObjectHideFlags: 0
@@ -39626,14 +39604,6 @@ PrefabInstance:
       propertyPath: playerHealth
       value: 
       objectReference: {fileID: 5761944521595046712}
-    - target: {fileID: 1399072800255208407, guid: 5245e38b2784a5646b8b084fb6f29329, type: 3}
-      propertyPath: totalPlayerHealth
-      value: 
-      objectReference: {fileID: 1339258535}
-    - target: {fileID: 1399072800255208407, guid: 5245e38b2784a5646b8b084fb6f29329, type: 3}
-      propertyPath: currentPlayerHealth
-      value: 
-      objectReference: {fileID: 1339258534}
     - target: {fileID: 1794407768008225315, guid: 5245e38b2784a5646b8b084fb6f29329, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -45320,7 +45290,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8916496633986047900, guid: fda3795f115835146b8ff88324a165db, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8916496634144032032, guid: fda3795f115835146b8ff88324a165db, type: 3}
       propertyPath: m_AnchoredPosition.x
