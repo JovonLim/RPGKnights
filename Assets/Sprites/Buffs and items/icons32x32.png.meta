@@ -196,7 +196,7 @@ TextureImporter:
         width: 28
         height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -204,6 +204,27 @@ TextureImporter:
       bones: []
       spriteID: b887a94763a4f09479d0659b00c65691
       internalID: 852596426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icons32x32_5
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 129
+        width: 33
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee2e65a2f946b2c489db383c83593273
+      internalID: 110494897
       vertices: []
       indices: 
       edges: []
@@ -223,6 +244,7 @@ TextureImporter:
       icons32x32_2: -1704636156
       icons32x32_0: -825196274
       icons32x32_1: 774818141
+      icons32x32_5: 110494897
       icons32x32_4: 852596426
   spritePackingTag: 
   pSDRemoveMatte: 0
