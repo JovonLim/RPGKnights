@@ -154,6 +154,7 @@ public class PlayerHealth : Health
     public override void AddHealth(float amt)
     {
         startingHealth += amt;
+        currentHealth = Mathf.Clamp(currentHealth + amt, 1, startingHealth);
     }
 
     public float GetStartingHealth()
@@ -180,6 +181,10 @@ public class PlayerHealth : Health
     public override void SubtractHealth(float amt)
     {
         startingHealth -= amt;
+        if (startingHealth < currentHealth)
+        {
+            currentHealth = startingHealth;
+        }
     }
 
     public override void SubtractPhysicalDefense(float amt)
