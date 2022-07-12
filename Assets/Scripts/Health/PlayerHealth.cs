@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : Health
 {
@@ -12,7 +13,19 @@ public class PlayerHealth : Health
         anima = GetComponent<Animator>();
     }
 
- 
+    private void Update()
+    {
+        if (SceneManager.GetActiveScene().buildIndex == 2 || SceneManager.GetActiveScene().buildIndex == 7 ||
+            SceneManager.GetActiveScene().buildIndex == 13)
+        {
+            currentHealth = startingHealth;
+        }
+
+        if (currentHealth > startingHealth)
+        {
+            currentHealth = startingHealth;
+        }
+    }
 
 
     public override void TakePhysicalDamage(float damage)
