@@ -572,6 +572,13 @@ public class Inventory : MonoBehaviour
             if (itemList[i] != null)
             {
                 inventoryItemsImages[i].sprite = itemList[i].GetComponent<SpriteRenderer>().sprite;
+                if (itemList[i].GetComponent<Item>().itemId == 13 || itemList[i].GetComponent<Item>().itemId == 42)
+                {
+                    inventoryItemsImages[i].color = Color.red;
+                } else
+                {
+                    inventoryItemsImages[i].color = Color.white;
+                }
                 inventoryItemsImages[i].gameObject.SetActive(true);
             } 
             else
@@ -585,6 +592,14 @@ public class Inventory : MonoBehaviour
             if (equipHolder[k] != null)
             {
                 equipImages[k].sprite = equipHolder[k].GetComponent<SpriteRenderer>().sprite;
+                if (equipHolder[k].GetComponent<Item>().itemId == 13 || equipHolder[k].GetComponent<Item>().itemId == 42)
+                {
+                    equipImages[k].color = Color.red;
+                }
+                else
+                {
+                    equipImages[k].color = Color.white;
+                }
                 equipImages[k].gameObject.SetActive(true);
             }
             else

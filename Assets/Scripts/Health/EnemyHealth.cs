@@ -12,33 +12,48 @@ public class EnemyHealth : Health
 
     private void Update()
     {
-       // Debug.Log(currentHealth);
+    
     }
 
     public override void TakePhysicalDamage(float damage)
     {
-        float reduction = PhysicalDefense / 5;
-        float netDamage = damage - reduction * 0.5f;
-        if (netDamage < 0)
+        float netDamage;
+        if (damage == 0)
         {
-            netDamage = minDmg;
+            netDamage = 0;
+        }
+        else
+        {
+            float reduction = PhysicalDefense * 0.1f;
+            netDamage = damage - reduction;
+            if (netDamage <= 0)
+            {
+                netDamage = minDmg;
+            }
         }
         GameObject damageInd = Instantiate(prefab, transform.position, Quaternion.identity);
-        damageInd.transform.GetChild(0).GetComponent<TextMesh>().text = netDamage.ToString();
+        damageInd.transform.GetChild(0).GetComponent<TextMesh>().text = netDamage.ToString("F1");
         ApplyDmg(netDamage);
     }
 
     public override void TakeMagicDamage(float damage)
     {
-        float reduction = MagicDefense / 5;
-        float netDamage = damage - reduction * 0.5f;
-        if (netDamage < 0)
+        float netDamage;
+        if (damage == 0)
         {
-            netDamage = minDmg;
-        }
+            netDamage = 0;
+        } else
+        {
+            float reduction = MagicDefense * 0.1f;
+            netDamage = damage - reduction;
+            if (netDamage <= 0)
+            {
+                netDamage = minDmg;
+            }
+        }    
         GameObject damageInd = Instantiate(prefab, transform.position, Quaternion.identity);
         damageInd.transform.GetChild(0).GetComponent<TextMesh>().color = Color.blue;
-        damageInd.transform.GetChild(0).GetComponent<TextMesh>().text = netDamage.ToString();
+        damageInd.transform.GetChild(0).GetComponent<TextMesh>().text = netDamage.ToString("F1");
         ApplyDmg(netDamage);
     }
 
@@ -46,7 +61,7 @@ public class EnemyHealth : Health
     {
         GameObject damageInd = Instantiate(prefab, transform.position, Quaternion.identity);
         damageInd.transform.GetChild(0).GetComponent<TextMesh>().color = Color.white;
-        damageInd.transform.GetChild(0).GetComponent<TextMesh>().text = damage.ToString();
+        damageInd.transform.GetChild(0).GetComponent<TextMesh>().text = damage.ToString("F1");
         ApplyDmg(damage);
     }
 
