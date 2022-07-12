@@ -21,7 +21,7 @@ public class NewHealthBar : MonoBehaviour
     void Update()
     {
         currentPlayerHealth.fillAmount = playerHealth.currentHealth / playerHealth.GetStartingHealth();
-        currentHealth.text = playerHealth.currentHealth.ToString();
-        totalHealth.text = playerHealth.GetStartingHealth().ToString();
+        currentHealth.text = playerHealth.currentHealth.ToString("F1");
+        totalHealth.text = playerHealth.GetStartingHealth().ToString("F1");
     }
 }

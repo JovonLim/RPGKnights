@@ -8,6 +8,8 @@ public class MainMenu : MonoBehaviour
     [SerializeField] GameObject NewGame;
     [SerializeField] GameObject ContinueGame;
     [SerializeField] GameObject[] menus;
+    [SerializeField] GameObject creditButton;
+    [SerializeField] GameObject musicCredits;
     private void Start()
     {
         CheckSave();
@@ -78,5 +80,17 @@ public class MainMenu : MonoBehaviour
             ContinueGame.SetActive(false);
             NewGame.SetActive(true);
         }
+    }
+
+    public void OpenMusicCredits()
+    {
+        creditButton.SetActive(false);
+        musicCredits.SetActive(true);
+    }
+
+    public void CloseMusicCredits()
+    {
+        creditButton.SetActive(true);
+        musicCredits.SetActive(false);
     }
 }

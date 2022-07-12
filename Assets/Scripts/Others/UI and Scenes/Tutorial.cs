@@ -43,7 +43,6 @@ public class Tutorial : MonoBehaviour, IDataPersistence
         {
             nextButton.SetActive(false);
             closeButton.SetActive(true);
-            skipButton.SetActive(false);
         }
         else if (page != 0)
         {
