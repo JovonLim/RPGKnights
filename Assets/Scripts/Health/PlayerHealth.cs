@@ -148,10 +148,6 @@ public class PlayerHealth : Health
     public override void SubtractHealth(float amt)
     {
         startingHealth -= amt;
-        float temp = currentHealth;
-        currentHealth = startingHealth;
-        FindObjectOfType<Healthbar>().UpdateStartingHealth();
-        currentHealth = Mathf.Clamp(temp - amt, 1, startingHealth);
     }
 
     public override void SubtractPhysicalDefense(float amt)
