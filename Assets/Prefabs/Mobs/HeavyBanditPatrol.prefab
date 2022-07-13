@@ -159,6 +159,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: HeavyBanditMelee
       objectReference: {fileID: 0}
+    - target: {fileID: 7787345655744628148, guid: cb932742793ce9647817d1a3311239e3, type: 3}
+      propertyPath: Loots.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787345655744628148, guid: cb932742793ce9647817d1a3311239e3, type: 3}
+      propertyPath: chanceOfDropping
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787345655744628148, guid: cb932742793ce9647817d1a3311239e3, type: 3}
+      propertyPath: Loots.Array.data[0]
+      value: 
+      objectReference: {fileID: 92792569188782242, guid: 9effeeb29a1c4184c8ecdc6f15a3953d, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb932742793ce9647817d1a3311239e3, type: 3}
 --- !u!4 &1212441531146956026 stripped

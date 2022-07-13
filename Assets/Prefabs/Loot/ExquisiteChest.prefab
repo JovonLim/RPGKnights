@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6776490306763003043}
   - component: {fileID: 3984747785555265560}
   - component: {fileID: 3948222588313560041}
+  - component: {fileID: 3860223569573784685}
   m_Layer: 9
   m_Name: ExquisiteChest
   m_TagString: Chest
@@ -190,3 +191,19 @@ MonoBehaviour:
   maxCoin: 11
   offset: 0
   prefab: {fileID: 5015637550736375931, guid: 7fd6ab4c788ddee49839223a767d1cde, type: 3}
+--- !u!114 &3860223569573784685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7539173459142366050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a998f19775799f74092fc5bc401b848e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: 0
+  Loots:
+  - {fileID: 92792569188782242, guid: 9effeeb29a1c4184c8ecdc6f15a3953d, type: 3}
+  chanceOfDropping: 10

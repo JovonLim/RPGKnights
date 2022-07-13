@@ -87,48 +87,39 @@ public class EnemyHealth : Health
     public override void OnDeath()
     {
         anima.SetTrigger("die");
+        GetComponent<BoxCollider2D>().enabled = false;
+        PlayerQuestInteraction.KillCount++;
 
-        // For enemy
         if (GetComponent<MeleeEnemy>() != null)
         {
             GetComponent<MeleeEnemy>().enabled = false;
-            GetComponent<BoxCollider2D>().enabled = false;
-            GetComponent<CoinSpawn>().Spawn();
-            GetComponent<MobDrop>().DropLoots();
-            PlayerQuestInteraction.KillCount++;
+  
         }
 
         if (GetComponent<RangeEnemy>() != null)
         {
             GetComponent<RangeEnemy>().enabled = false;
-            GetComponent<BoxCollider2D>().enabled = false;
-            GetComponent<CoinSpawn>().Spawn();
-            GetComponent<MobDrop>().DropLoots();
-            PlayerQuestInteraction.KillCount++;
-
         }
 
         if (GetComponent<MeleeAndRanged>() != null)
         {
-            GetComponent<MeleeAndRanged>().enabled = false;
-            GetComponent<BoxCollider2D>().enabled = false;
-            GetComponent<CoinSpawn>().Spawn();
-            GetComponent<MobDrop>().DropLoots();
-            PlayerQuestInteraction.KillCount++;
-
+            GetComponent<MeleeAndRanged>().enabled = false;        
         }
+
         if (GetComponent<Aggro>() != null)
         {
             GetComponentInParent<Aggro>().enabled = false;
         }
 
-        // For player
-        if (GetComponent<PlayerMovement>() != null)
+        if (GetComponent<Drop>() != null)
         {
-            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-            GetComponent<PlayerMovement>().enabled = false;
-            GetComponent<PlayerDeath>().Respawn();
+            GetComponent<Drop>().DropLoots();
         }
+
+        if (GetComponent<CoinSpawn>() != null)
+        {
+            GetComponent<CoinSpawn>().Spawn();
+        }    
     }
 
     public override void GainHealth(float damage)
@@ -185,11 +176,6 @@ public class EnemyHealth : Health
         MagicDefense -= amt;
     }
 
-    public void Reset()
-    {
-        currentHealth = startingHealth;
-    }
-
     public void ScaleDifficulty(float Modifier)
     {
         
@@ -198,5 +184,15 @@ public class EnemyHealth : Health
         float times = (Modifier - 1.0f) / 0.2f;
         PhysicalDefense += times * 5;
         MagicDefense += times * 5;
+    }
+
+    public override void LoadData(GameData data)
+    {
+        return;
+    }
+
+    public override void SaveData(GameData data)
+    {
+       return;
     }
 }

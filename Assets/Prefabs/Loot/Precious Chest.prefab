@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1897625170}
   - component: {fileID: 1897625171}
   - component: {fileID: 1897625165}
+  - component: {fileID: 7562192455908034689}
   m_Layer: 9
   m_Name: Precious Chest
   m_TagString: Chest
@@ -190,3 +191,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7562192455908034689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4483616848279000382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a998f19775799f74092fc5bc401b848e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: 0
+  Loots:
+  - {fileID: 92792569188782242, guid: 9effeeb29a1c4184c8ecdc6f15a3953d, type: 3}
+  chanceOfDropping: 30

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 818a38bb625a33b4db5b4983764ae5ea, type: 3}
   m_Name: Fireball
   m_EditorClassIdentifier: 
-  cooldownTime: 3
+  cooldownTime: 4
   speed: 5
   damage: 4
   activeTime: 4

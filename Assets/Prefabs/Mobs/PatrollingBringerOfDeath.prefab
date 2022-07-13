@@ -346,7 +346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a998f19775799f74092fc5bc401b848e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropPoint: {fileID: 0}
-  Loots: []
-  health: {fileID: 0}
-  chanceOfDropping: 0
+  offset: 0
+  Loots:
+  - {fileID: 92792569188782242, guid: 9effeeb29a1c4184c8ecdc6f15a3953d, type: 3}
+  chanceOfDropping: 100

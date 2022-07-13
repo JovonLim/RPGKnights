@@ -24,6 +24,7 @@ public class Chests : MonoBehaviour
                 chestOpened = true;
                 PlayerQuestInteraction.ChestCount++;
                 this.GetComponent<CoinSpawn>().Spawn();
+                this.GetComponent<Drop>().DropLoots();
             }
         }
         else

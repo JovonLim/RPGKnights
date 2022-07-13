@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spell: {fileID: 11400000, guid: 0534cac4d224b034d84dd289de95ad4c, type: 2}
-  dir: -1
+  dir: 1
   offset: 0
 --- !u!114 &3721919546951015009
 MonoBehaviour:
@@ -197,8 +197,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: addcb1dce5f4c534bade4995c5ba112e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 2
-  startTime: 0
+  duration: 3
+  startTime: 0.5
   repeatTime: 0.5
   enemy: {fileID: 0}
   damage: 1

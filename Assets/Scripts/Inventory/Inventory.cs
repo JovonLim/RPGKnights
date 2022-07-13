@@ -540,6 +540,10 @@ public class Inventory : MonoBehaviour
             else
             {
                 EquipStats(invNum);
+                if (itemList[invNum].GetComponent<Item>().itemId == 19)
+                {
+                    PlayerHealth.scrollsUsed++;
+                }
                 itemList[invNum].GetComponent<Item>().BeingConsumed();
                 RemoveItem(invNum);
                 UpdateUI();

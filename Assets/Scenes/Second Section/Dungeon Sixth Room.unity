@@ -1706,6 +1706,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1700811027}
     m_Modifications:
+    - target: {fileID: 25565442677929294, guid: d6ead0a11e9ebf24fa55149b3a5ed9d3, type: 3}
+      propertyPath: chanceOfDropping
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 2886250469837231068, guid: d6ead0a11e9ebf24fa55149b3a5ed9d3, type: 3}
       propertyPath: minDmg
       value: 1
@@ -23733,6 +23737,10 @@ PrefabInstance:
       propertyPath: PhysicalDefense
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2797494311585768833, guid: 67c3a17a620c9a64d9619da5afb4a055, type: 3}
+      propertyPath: chanceOfDropping
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4677545481968304326, guid: 67c3a17a620c9a64d9619da5afb4a055, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -24512,6 +24520,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1700811027}
     m_Modifications:
+    - target: {fileID: 25565442677929294, guid: d6ead0a11e9ebf24fa55149b3a5ed9d3, type: 3}
+      propertyPath: chanceOfDropping
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 2886250469837231068, guid: d6ead0a11e9ebf24fa55149b3a5ed9d3, type: 3}
       propertyPath: minDmg
       value: 1
@@ -24611,7 +24623,7 @@ PrefabInstance:
       objectReference: {fileID: 1959481042}
     - target: {fileID: 451497457611071573, guid: 8257714fe39a9aa499d89fd62e621600, type: 3}
       propertyPath: damage
-      value: 4
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 451497457611071573, guid: 8257714fe39a9aa499d89fd62e621600, type: 3}
       propertyPath: prefab

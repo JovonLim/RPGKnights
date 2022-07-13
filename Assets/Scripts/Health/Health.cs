@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class Health : MonoBehaviour
+public abstract class Health : MonoBehaviour, IDataPersistence
 {
     [SerializeField] protected float startingHealth;
     // Ensures that health can only be get from this script from anywhere but not allowed to be modified
@@ -50,4 +50,6 @@ public abstract class Health : MonoBehaviour
         return MagicDefense;
     }
 
+    public abstract void LoadData(GameData data);
+    public abstract void SaveData(GameData data);
 }

@@ -17276,11 +17276,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4302673381509020316, guid: 0a3047bc7da38a543b2fbf1742ab17fc, type: 3}
       propertyPath: damage
-      value: 2.5
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 4302673381509020316, guid: 0a3047bc7da38a543b2fbf1742ab17fc, type: 3}
       propertyPath: rangedDamage
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4302673381709117161, guid: 0a3047bc7da38a543b2fbf1742ab17fc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -38964,7 +38964,7 @@ PrefabInstance:
       objectReference: {fileID: 1965294509}
     - target: {fileID: 1680955126415942245, guid: 8426d018568aad84ca537689487f167c, type: 3}
       propertyPath: damage
-      value: 2.5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1680955126415942245, guid: 8426d018568aad84ca537689487f167c, type: 3}
       propertyPath: dissappearingGround

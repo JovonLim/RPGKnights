@@ -5,10 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : Health
 {
-    
+    public static int scrollsUsed = 0;
     private void Awake()
     {
-       
+        LoadData(DataPersistenceManager.instance.gameData);
+        startingHealth = 3.0f + scrollsUsed * 1.0f;
         currentHealth = startingHealth;
         anima = GetComponent<Animator>();
     }
@@ -102,35 +103,6 @@ public class PlayerHealth : Health
     {
         anima.SetTrigger("die");
 
-        // For enemy
-        if (GetComponent<MeleeEnemy>() != null)
-        {
-            GetComponent<MeleeEnemy>().enabled = false;
-            GetComponent<BoxCollider2D>().enabled = false;
-            GetComponent<CoinSpawn>().Spawn();
-
-        }
-
-        if (GetComponent<RangeEnemy>() != null)
-        {
-            GetComponent<RangeEnemy>().enabled = false;
-            GetComponent<BoxCollider2D>().enabled = false;
-            GetComponent<CoinSpawn>().Spawn();
-
-        }
-
-        if (GetComponent<MeleeAndRanged>() != null)
-        {
-            GetComponent<MeleeAndRanged>().enabled = false;
-            GetComponent<BoxCollider2D>().enabled = false;
-            GetComponent<CoinSpawn>().Spawn();
-
-        }
-        if (GetComponent<Aggro>() != null)
-        {
-            GetComponentInParent<Aggro>().enabled = false;
-        }
-
         // For player
         if (GetComponent<PlayerMovement>() != null)
         {
@@ -203,4 +175,13 @@ public class PlayerHealth : Health
         MagicDefense -= amt;
     }
 
+    public override void LoadData(GameData data)
+    {
+        scrollsUsed = data.scrollsUsed;
+    }
+
+    public override void SaveData(GameData data)
+    {
+        data.scrollsUsed = scrollsUsed;
+    }
 }

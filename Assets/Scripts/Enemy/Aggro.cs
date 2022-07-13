@@ -9,7 +9,6 @@ public class Aggro : MonoBehaviour
     [SerializeField] GameObject player;
     [SerializeField] private LayerMask playerLayer;
     [SerializeField] private float offset;
-    private float ResetTimer;
     public float speed;
    
 
@@ -55,7 +54,6 @@ public class Aggro : MonoBehaviour
         
         if (CheckPlayer())
         {
-            ResetTimer = 0;
             switch (et)
             {
              
@@ -110,11 +108,6 @@ public class Aggro : MonoBehaviour
         } else
         {
             OnDisable();
-            ResetTimer += Time.deltaTime;
-            if (ResetTimer >= 10f)
-            {
-                GetComponent<EnemyHealth>().Reset();
-            }
         }
     }
 

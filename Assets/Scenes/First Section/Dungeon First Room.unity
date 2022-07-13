@@ -31133,6 +31133,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1574258899245446681, guid: e1e65f806a4e43342bf2ae82bc1d43bf, type: 3}
+      propertyPath: chanceOfDropping
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 6791184056669824720, guid: e1e65f806a4e43342bf2ae82bc1d43bf, type: 3}
       propertyPath: m_RootOrder
       value: 1

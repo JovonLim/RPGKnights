@@ -7,6 +7,7 @@ public class GameData
 {
     public float volume;
     public int coins;
+    public int scrollsUsed;
     public bool tutorialDone;
     public Spell[] activeSpells;
     public bool[] spellsUnlocked;
@@ -28,6 +29,7 @@ public class GameData
     public GameData()
     {
         volume = 1;
+        scrollsUsed = 0;
         tutorialDone = false;
         activeWizard = -1;
         activeArcher = -1;

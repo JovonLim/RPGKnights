@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8481458029388192057}
   - component: {fileID: -7137512869647219326}
   - component: {fileID: 2122383606993628787}
+  - component: {fileID: 6493720055812744698}
   m_Layer: 9
   m_Name: Chest
   m_TagString: Chest
@@ -190,3 +191,19 @@ MonoBehaviour:
   maxCoin: 6
   offset: 0
   prefab: {fileID: 5015637550736375931, guid: 7fd6ab4c788ddee49839223a767d1cde, type: 3}
+--- !u!114 &6493720055812744698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4836401399515717368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a998f19775799f74092fc5bc401b848e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: 0
+  Loots:
+  - {fileID: 92792569188782242, guid: 9effeeb29a1c4184c8ecdc6f15a3953d, type: 3}
+  chanceOfDropping: 5
