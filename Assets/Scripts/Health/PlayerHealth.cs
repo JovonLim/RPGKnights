@@ -6,9 +6,8 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : Health
 {
     public static int scrollsUsed = 0;
-    private void Awake()
+    private void Start()
     {
-        LoadData(DataPersistenceManager.instance.gameData);
         startingHealth = 3.0f + scrollsUsed * 1.0f;
         currentHealth = startingHealth;
         anima = GetComponent<Animator>();
