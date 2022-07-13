@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 1697457261}
   - component: {fileID: 451497457611071573}
   - component: {fileID: 1864583046189662007}
+  - component: {fileID: 8226360640430886927}
   m_Layer: 10
   m_Name: Arcane Archer
   m_TagString: Boss
@@ -239,7 +240,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4218b5d8c8961604a804c270d8b5d034, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageType: 0
   attackRange: 0
+  damage: 0
   colliderDistance: 0
   boxCollider: {fileID: 0}
   playerLayer:
@@ -265,3 +268,19 @@ MonoBehaviour:
   MagicDefense: 0
   minDmg: 0
   prefab: {fileID: 4997623711577133293, guid: 555ca5c4a4a0517489f53b54e10f9cee, type: 3}
+--- !u!114 &8226360640430886927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3350019087073473087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a998f19775799f74092fc5bc401b848e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropPoint: {fileID: 0}
+  Loots: []
+  health: {fileID: 0}
+  chanceOfDropping: 1

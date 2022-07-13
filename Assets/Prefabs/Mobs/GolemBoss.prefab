@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 2258608998219809151}
   - component: {fileID: 2258608998219809147}
   - component: {fileID: 470195881935950011}
+  - component: {fileID: 6073004127005397713}
   m_Layer: 10
   m_Name: Golem
   m_TagString: Boss
@@ -208,6 +209,7 @@ MonoBehaviour:
   meleeAttackRange: 1.3
   rangedAttackRange: 0
   damage: 0
+  rangedDamage: 0
   meleeColliderDistance: 0.4
   rangedColliderDistance: 0.9
   boxCollider: {fileID: 2258608998219809150}
@@ -272,6 +274,22 @@ MonoBehaviour:
   MagicDefense: 0
   minDmg: 0
   prefab: {fileID: 4997623711577133293, guid: 555ca5c4a4a0517489f53b54e10f9cee, type: 3}
+--- !u!114 &6073004127005397713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2258608998219809139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a998f19775799f74092fc5bc401b848e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropPoint: {fileID: 0}
+  Loots: []
+  health: {fileID: 0}
+  chanceOfDropping: 0
 --- !u!1 &2258608998219867769
 GameObject:
   m_ObjectHideFlags: 0

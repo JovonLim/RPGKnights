@@ -51,6 +51,7 @@ GameObject:
   - component: {fileID: 4927827378758511870}
   - component: {fileID: 3998970765818918773}
   - component: {fileID: 6564169949888985700}
+  - component: {fileID: 6438757295481848068}
   m_Layer: 10
   m_Name: ImpDemon
   m_TagString: Enemy
@@ -267,6 +268,22 @@ MonoBehaviour:
   MagicDefense: 0
   minDmg: 0
   prefab: {fileID: 4997623711577133293, guid: 555ca5c4a4a0517489f53b54e10f9cee, type: 3}
+--- !u!114 &6438757295481848068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5136352805044766022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a998f19775799f74092fc5bc401b848e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropPoint: {fileID: 0}
+  Loots: []
+  health: {fileID: 0}
+  chanceOfDropping: 0
 --- !u!1 &7675277322311680729
 GameObject:
   m_ObjectHideFlags: 0

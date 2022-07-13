@@ -113,6 +113,7 @@ GameObject:
   - component: {fileID: 4302673381509020316}
   - component: {fileID: 4302673380595227118}
   - component: {fileID: 2026861992}
+  - component: {fileID: 6907427885213071022}
   m_Layer: 10
   m_Name: Bringer-of-Death
   m_TagString: Boss
@@ -333,3 +334,19 @@ MonoBehaviour:
   offset: 0.6
   speed: 4
   et: 0
+--- !u!114 &6907427885213071022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5210619565112353213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a998f19775799f74092fc5bc401b848e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropPoint: {fileID: 0}
+  Loots: []
+  health: {fileID: 0}
+  chanceOfDropping: 0

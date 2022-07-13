@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 8132907877290221978}
   - component: {fileID: 1324590620365905125}
   - component: {fileID: 7928420975968836918}
+  - component: {fileID: 3309229280400714748}
   m_Layer: 10
   m_Name: AxeDemon
   m_TagString: Boss
@@ -233,3 +234,19 @@ MonoBehaviour:
   MagicDefense: 0
   minDmg: 0
   prefab: {fileID: 4997623711577133293, guid: 555ca5c4a4a0517489f53b54e10f9cee, type: 3}
+--- !u!114 &3309229280400714748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4379145109735915172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a998f19775799f74092fc5bc401b848e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropPoint: {fileID: 0}
+  Loots: []
+  health: {fileID: 0}
+  chanceOfDropping: 0

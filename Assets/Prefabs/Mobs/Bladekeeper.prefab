@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 4961528480597592015}
   - component: {fileID: 4961528480597592054}
   - component: {fileID: 1451908451238737430}
+  - component: {fileID: 7297955341769954150}
   m_Layer: 10
   m_Name: Bladekeeper
   m_TagString: Boss
@@ -155,6 +156,7 @@ MonoBehaviour:
   meleeAttackRange: 2
   rangedAttackRange: 9
   damage: 1
+  rangedDamage: 0
   meleeColliderDistance: 0.4
   rangedColliderDistance: 0.5
   boxCollider: {fileID: 4961528480597592051}
@@ -238,6 +240,22 @@ MonoBehaviour:
   MagicDefense: 0
   minDmg: 0
   prefab: {fileID: 4997623711577133293, guid: 555ca5c4a4a0517489f53b54e10f9cee, type: 3}
+--- !u!114 &7297955341769954150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4961528480597592008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a998f19775799f74092fc5bc401b848e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropPoint: {fileID: 0}
+  Loots: []
+  health: {fileID: 0}
+  chanceOfDropping: 0
 --- !u!1 &4961528480644384056
 GameObject:
   m_ObjectHideFlags: 0

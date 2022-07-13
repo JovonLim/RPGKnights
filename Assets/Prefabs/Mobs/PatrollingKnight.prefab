@@ -82,6 +82,7 @@ GameObject:
   - component: {fileID: 8605975078203210874}
   - component: {fileID: 8605975078203210866}
   - component: {fileID: 2484455348701596513}
+  - component: {fileID: 4714964310765910366}
   m_Layer: 10
   m_Name: Rogue Knight
   m_TagString: Enemy
@@ -304,6 +305,22 @@ MonoBehaviour:
   MagicDefense: 0
   minDmg: 0
   prefab: {fileID: 4997623711577133293, guid: 555ca5c4a4a0517489f53b54e10f9cee, type: 3}
+--- !u!114 &4714964310765910366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8605975078203210872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a998f19775799f74092fc5bc401b848e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropPoint: {fileID: 0}
+  Loots: []
+  health: {fileID: 0}
+  chanceOfDropping: 0
 --- !u!1 &8605975078898848147
 GameObject:
   m_ObjectHideFlags: 0
