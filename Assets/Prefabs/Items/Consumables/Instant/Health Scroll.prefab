@@ -127,12 +127,12 @@ MonoBehaviour:
   itemType: 7
   itemId: 19
   itemName: Health Scroll
-  itemDescription: Gives permanent 0.5 hearts
+  itemDescription: Gives permanent 1 hp
   attackDamageBoost: 0
   attackSpeedBoost: 0
   physicalDefenseBoost: 0
   magicDefenseBoost: 0
-  healthBoost: 0.5
+  healthBoost: 1
   speedBoost: 0
   defenseBoost: 0
   regenerateHealth: 0
