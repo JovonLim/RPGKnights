@@ -104,26 +104,41 @@ public class PlayerAttack : MonoBehaviour, IDataPersistence
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            spellToCast = SpellHolder.activeSpells[0];
-            UpdateSpellHUD();
+            if (spellToCast != SpellHolder.activeSpells[0])
+            {
+                spellToCast = SpellHolder.activeSpells[0];
+                UpdateSpellHUD();
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            spellToCast = SpellHolder.activeSpells[1];
-            UpdateSpellHUD();
+
+            if (spellToCast != SpellHolder.activeSpells[1])
+            {
+                spellToCast = SpellHolder.activeSpells[1];
+                UpdateSpellHUD();
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            spellToCast = SpellHolder.activeSpells[2];
-            UpdateSpellHUD();
+
+            if (spellToCast != SpellHolder.activeSpells[2])
+            {
+                spellToCast = SpellHolder.activeSpells[2];
+                UpdateSpellHUD();
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            spellToCast = SpellHolder.activeSpells[3];
-            UpdateSpellHUD();
+
+            if (spellToCast != SpellHolder.activeSpells[3])
+            {
+                spellToCast = SpellHolder.activeSpells[3];
+                UpdateSpellHUD();
+            }
         }
 
         switch (classType)
@@ -179,6 +194,7 @@ public class PlayerAttack : MonoBehaviour, IDataPersistence
 
     void UpdateSpellHUD()
     {
+        spellTimer = 0;
         GetComponent<SpellHud>().InitializeSpell();
         GetComponent<SpellHud>().SetCooldown();
     }
