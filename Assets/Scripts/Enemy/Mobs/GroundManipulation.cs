@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GroundManipulation : MonoBehaviour
+public class GroundManipulation : Damage
 {
     // References
     [SerializeField] private float colliderDistance;
@@ -18,6 +18,8 @@ public class GroundManipulation : MonoBehaviour
 
     private static bool casting = false;
     private float castCooldownTimer = float.MaxValue;
+    private float collisionTimer = float.MaxValue;
+    private PlayerHealth playerHealth;
 
     // Ranged Attacks
     [SerializeField] private Transform projectileLaunchPoint;
@@ -38,7 +40,7 @@ public class GroundManipulation : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        
+        collisionTimer += Time.deltaTime;
         if (casting)
         {
             castCooldownTimer = 0;
@@ -59,7 +61,7 @@ public class GroundManipulation : MonoBehaviour
                     anima.SetTrigger("cast");
                 }
             }
-        } 
+        }
     }
 
     private void CastSpell()
@@ -98,5 +100,35 @@ public class GroundManipulation : MonoBehaviour
         Gizmos.color = Color.blue;
         Gizmos.DrawWireCube(boxCollider.bounds.center + transform.right * attackRange * transform.localScale.x * colliderDistance,
             new Vector3(boxCollider.bounds.size.x * attackRange, boxCollider.bounds.size.y, boxCollider.bounds.size.z));
+    }
+
+    public override void ScaleDifficulty(float Modifier)
+    {
+        damage *= Modifier;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player") && collisionTimer >= 2.0f)
+        {
+            playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
+            ApplyDamage();
+            collisionTimer = 0;
+        }
+    }
+    void ApplyDamage()
+    {
+        if (damageType == Dmg.physical)
+        {
+            playerHealth.TakePhysicalDamage(damage);
+        }
+        else if (damageType == Dmg.magic)
+        {
+            playerHealth.TakeMagicDamage(damage);
+        }
+        else
+        {
+            playerHealth.TakeTrueDamage(damage);
+        }
     }
 }

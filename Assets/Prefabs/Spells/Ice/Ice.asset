@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldownTime: 4
   speed: 6
-  damage: 3
+  damage: 3.5
   activeTime: 5
   spellName: Icicle
   description: Shoots an icicle projectile that reduces enemies' attack speed temporarily.

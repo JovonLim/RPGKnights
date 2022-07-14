@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 818a38bb625a33b4db5b4983764ae5ea, type: 3}
   m_Name: HolyBolt
   m_EditorClassIdentifier: 
-  cooldownTime: 5
+  cooldownTime: 6
   speed: 4
   damage: 3
   activeTime: 4

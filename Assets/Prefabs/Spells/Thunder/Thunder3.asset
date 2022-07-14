@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 818a38bb625a33b4db5b4983764ae5ea, type: 3}
   m_Name: Thunder3
   m_EditorClassIdentifier: 
-  cooldownTime: 10
+  cooldownTime: 8
   speed: 0
-  damage: 5
+  damage: 7
   activeTime: 3
   spellName: ThunderStrike
   description: Call a thunderstrike on your enemies positions, stunning them.

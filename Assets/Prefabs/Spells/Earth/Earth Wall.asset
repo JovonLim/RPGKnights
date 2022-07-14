@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldownTime: 7
   speed: 0
-  damage: 5
+  damage: 6
   activeTime: 4
   spellName: Earth Wall
   description: Spawns an earth wall on your enemies, greatly increasing your physical

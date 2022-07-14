@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldownTime: 6
   speed: 3
-  damage: 3
+  damage: 4
   activeTime: 3
   spellName: Acid Ball
   description: Launches a ball of acid that reduces physical defense temporarily

@@ -168,6 +168,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageType: 1
-  projectileSpeed: 3
-  projectileResetTime: 2
+  projectileSpeed: 4
+  projectileResetTime: 5
   enemyDamage: 2

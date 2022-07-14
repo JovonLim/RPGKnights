@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 818a38bb625a33b4db5b4983764ae5ea, type: 3}
   m_Name: Holy Light
   m_EditorClassIdentifier: 
-  cooldownTime: 11
+  cooldownTime: 9
   speed: 0
-  damage: 4
+  damage: 5
   activeTime: 3
   spellName: Holy Light
   description: Call upon the light on your enemies, healing you upon impact.

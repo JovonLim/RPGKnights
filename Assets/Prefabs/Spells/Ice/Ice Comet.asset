@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldownTime: 8
   speed: 0
-  damage: 4
+  damage: 5.5
   activeTime: 4
   spellName: Ice Comet
   description: Spawns a comet above enemies, temporarily reducing their attack speed

@@ -9192,7 +9192,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 875102706}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.76, y: 9.51, z: -0.956502}
+  m_LocalPosition: {x: 3.69, y: 9.56, z: -0.956502}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10057,7 +10057,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1008403335 stripped
 Transform:
@@ -10689,7 +10689,7 @@ Transform:
   - {fileID: 1292910818}
   - {fileID: 2028433327}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1563143250
 GameObject:
@@ -10724,7 +10724,7 @@ Transform:
   - {fileID: 64706927}
   - {fileID: 904304767}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1590228645 stripped
 GameObject:
@@ -11439,7 +11439,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2932792768519993241, guid: f3c90661f7d387c4490a9f3b4b34690c, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2932792768519993241, guid: f3c90661f7d387c4490a9f3b4b34690c, type: 3}
       propertyPath: m_AnchorMax.x
@@ -11640,15 +11640,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1451908451238737430, guid: b00e6aa163f42cd42ad3a3e7cf6ec47a, type: 3}
       propertyPath: MagicDefense
-      value: 20
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 1451908451238737430, guid: b00e6aa163f42cd42ad3a3e7cf6ec47a, type: 3}
       propertyPath: startingHealth
-      value: 80
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 1451908451238737430, guid: b00e6aa163f42cd42ad3a3e7cf6ec47a, type: 3}
       propertyPath: PhysicalDefense
-      value: 35
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4961528480597592008, guid: b00e6aa163f42cd42ad3a3e7cf6ec47a, type: 3}
       propertyPath: m_Name
@@ -11662,6 +11662,18 @@ PrefabInstance:
       propertyPath: pos2
       value: 
       objectReference: {fileID: 64706927}
+    - target: {fileID: 4961528480597592015, guid: b00e6aa163f42cd42ad3a3e7cf6ec47a, type: 3}
+      propertyPath: offset
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4961528480597592015, guid: b00e6aa163f42cd42ad3a3e7cf6ec47a, type: 3}
+      propertyPath: maxCoin
+      value: 46
+      objectReference: {fileID: 0}
+    - target: {fileID: 4961528480597592015, guid: b00e6aa163f42cd42ad3a3e7cf6ec47a, type: 3}
+      propertyPath: minCoin
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 4961528480597592048, guid: b00e6aa163f42cd42ad3a3e7cf6ec47a, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -11707,8 +11719,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4961528480597592055, guid: b00e6aa163f42cd42ad3a3e7cf6ec47a, type: 3}
+      propertyPath: damage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4961528480597592055, guid: b00e6aa163f42cd42ad3a3e7cf6ec47a, type: 3}
       propertyPath: rangedDamage
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7297955341769954150, guid: b00e6aa163f42cd42ad3a3e7cf6ec47a, type: 3}
+      propertyPath: offset
+      value: 1.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b00e6aa163f42cd42ad3a3e7cf6ec47a, type: 3}

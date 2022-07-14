@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 818a38bb625a33b4db5b4983764ae5ea, type: 3}
   m_Name: Thunder2
   m_EditorClassIdentifier: 
-  cooldownTime: 7
+  cooldownTime: 8
   speed: 4
   damage: 8
   activeTime: 6

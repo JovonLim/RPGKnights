@@ -71,14 +71,14 @@ public class MeleeEnemy : Damage
 
     public override void ScaleDifficulty(float Modifier)
     {
-        float times = (Modifier - 1.0f) / 0.2f;
-        damage += times * 0.5f;
+        damage *= Modifier;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player") && collisionTimer >= 2.0f)
         {
+            playerHealth = collision.GetComponent<PlayerHealth>();
             ApplyDamage();
             collisionTimer = 0;
         }

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldownTime: 4
   speed: 3
-  damage: 3
+  damage: 3.5
   activeTime: 5
   spellName: Earth Shard
   description: Launches an earth shard that shatters upon impact, increasing your

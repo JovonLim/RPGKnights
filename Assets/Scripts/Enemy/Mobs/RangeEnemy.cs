@@ -35,7 +35,7 @@ public class RangeEnemy : Damage
     private void Update()
     {
         attackCooldownTimer += Time.deltaTime;
-
+        collisionTimer += Time.deltaTime;
         if (PlayerInSight())
         {
             if (attackCooldownTimer >= attackSpeed)
@@ -77,8 +77,7 @@ public class RangeEnemy : Damage
 
     public override void ScaleDifficulty(float Modifier)
     {
-        float times = (Modifier - 1.0f) / 0.2f;
-        damage += times * 0.5f;
+        damage *= Modifier;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
