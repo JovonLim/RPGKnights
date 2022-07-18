@@ -63,6 +63,10 @@ public class ArcherShop : MonoBehaviour, IDataPersistence
 
     public void Purchase()
     {
+        if (selected < 0)
+        {
+            return;
+        }
         if (!purchased[selected] && UI.coins >= passives[selected].cost)
         {
             UI.coins -= passives[selected].cost;
