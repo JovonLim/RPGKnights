@@ -6,9 +6,10 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : Health
 {
     public static int scrollsUsed = 0;
+    [SerializeField] private float startingAmt;
     private void Start()
     {
-        startingHealth = 3.0f + scrollsUsed * 1.0f;
+        startingHealth = startingAmt + scrollsUsed * 1.0f;
         currentHealth = startingHealth;
         anima = GetComponent<Animator>();
     }

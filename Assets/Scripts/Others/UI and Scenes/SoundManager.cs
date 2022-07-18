@@ -10,7 +10,7 @@ public class SoundManager : MonoBehaviour, IDataPersistence
     [SerializeField] AudioClip victoryClip;
     public static SoundManager instance;
     private new AudioSource audio;
-    private float volume;
+    public float volume = 1;
     bool changedTrack;
     private void Awake()
     {
@@ -93,8 +93,11 @@ public class SoundManager : MonoBehaviour, IDataPersistence
         if (slider != null)
         {
             audio.volume = slider.value;
-            volume = slider.value;           
-            SaveData(DataPersistenceManager.instance.gameData);
+            volume = slider.value;
+            if (DataPersistenceManager.instance.HasGameData())
+            {
+                SaveData(DataPersistenceManager.instance.gameData);
+            }          
         }
         
     }
@@ -103,7 +106,10 @@ public class SoundManager : MonoBehaviour, IDataPersistence
     {  
         if (slider != null)
         {
-            LoadData(DataPersistenceManager.instance.gameData);
+            if (DataPersistenceManager.instance.HasGameData())
+            {
+                LoadData(DataPersistenceManager.instance.gameData);
+            }   
             slider.value = volume;
         }          
     }

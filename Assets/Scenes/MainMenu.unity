@@ -292,6 +292,7 @@ MonoBehaviour:
   townClip: {fileID: 8300000, guid: 2ecfb80464e6c584cbaa7af607a1ca39, type: 3}
   battleClip: {fileID: 8300000, guid: 640682d97bfaa074cac10b86065a80be, type: 3}
   victoryClip: {fileID: 8300000, guid: 7296f06415842db419b396697ba2c348, type: 3}
+  volume: 1
 --- !u!82 &26559957
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2905,6 +2906,7 @@ MonoBehaviour:
   gameData:
     volume: 1
     coins: 2000
+    scrollsUsed: 0
     tutorialDone: 0
     activeSpells:
     - {fileID: 0}
