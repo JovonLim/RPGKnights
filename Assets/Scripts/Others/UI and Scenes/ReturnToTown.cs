@@ -28,7 +28,6 @@ public class ReturnToTown : MonoBehaviour
         {
             warning.SetActive(false);
             playerClicked = false;
-            Time.timeScale = 1;
         }
     }
 
