@@ -44,6 +44,6 @@ public class GameData
         currentEquip = new List<int>();
         rangedUnlocked = false;
         spellUnlocked = false;
-        Difficulty = 1f;
+        Difficulty = 1.0f;
     }
 }
