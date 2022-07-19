@@ -3,16 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class KnightShop : MonoBehaviour, IDataPersistence
+public class PassiveShop : MonoBehaviour, IDataPersistence
 {
     [SerializeField] Passives[] passives;
     [SerializeField] TextMeshProUGUI[] texts;
     [SerializeField] GameObject insufficientFunds;
     [SerializeField] TextMeshProUGUI coinAmt;
     [SerializeField] TextMeshProUGUI description;
-    private static bool[] purchased = new bool[2];
+    private bool[] purchased = new bool[2];
     private bool update;
     private int selected = -1;
+
+    private enum NPCType
+    {
+        archer, knight
+    }
+
+    [SerializeField] private NPCType npc;
     // Start is called before the first frame update
     void Start()
     {
@@ -67,14 +74,19 @@ public class KnightShop : MonoBehaviour, IDataPersistence
         {
             return;
         }
-
         if (!purchased[selected] && UI.coins >= passives[selected].cost)
         {
             UI.coins -= passives[selected].cost;
             purchased[selected] = true;
             SaveData(DataPersistenceManager.instance.gameData);
             update = true;
-            PlayerAttack.meleePassives[selected] = true;
+            if (npc == NPCType.archer)
+            {
+                PlayerAttack.rangedPassives[selected] = true;
+            } else
+            {
+                PlayerAttack.meleePassives[selected] = true;
+            }
             Deselect();
         }
         else if (UI.coins < passives[selected].cost)
@@ -104,11 +116,26 @@ public class KnightShop : MonoBehaviour, IDataPersistence
 
     public void LoadData(GameData data)
     {
-        purchased = data.knightPurchased;
+        if (npc == NPCType.archer)
+        {
+            purchased = data.archerPurchased;
+        } else
+        {
+            purchased = data.knightPurchased;
+        }
+     
     }
 
     public void SaveData(GameData data)
     {
-        data.knightPurchased = purchased;
+        if (npc == NPCType.archer)
+        {
+            data.archerPurchased = purchased;
+        }
+        else
+        {
+            data.knightPurchased = purchased;
+        }
     }
 }
+

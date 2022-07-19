@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class RangeEnemy : Damage
+public class RangeEnemy : CombatManager
 {
     
     [SerializeField] private float attackRange;

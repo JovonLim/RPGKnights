@@ -3,90 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Knight : MonoBehaviour, IDataPersistence
+public class Knight : NPC
 {
-    [SerializeField] GameObject options;
-    [SerializeField] GameObject milestoneDialog;
-    [SerializeField] GameObject shop;
-    [SerializeField] GameObject introText;
     [SerializeField] TextMeshProUGUI[] milestoneTitle;
     [SerializeField] GameObject[] milestoneDescription;
 
-    private static bool introduced = false;
-    private bool playerInRange;
-
-    private bool playerClicked;
-    // Start is called before the first frame update
-    void Start()
+    public override IEnumerator Backstory()
     {
-        playerClicked = false;
-       
+        yield break;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKey(KeyCode.F))
-        {
-            playerClicked = true;
-        }
-        if (playerClicked && playerInRange && !introduced)
-        {
-            StartCoroutine(Intro());
-        }
-        else if (playerClicked && playerInRange)
-        {
-            Time.timeScale = 0;
-            options.SetActive(true);
-        }
-        else
-        {
-            options.SetActive(false);
-            playerClicked = false;
-        }
-    }
-
-    public void ExitMilestone()
-    {
-        Time.timeScale = 1;
-        milestoneDialog.SetActive(false);
-      
-    }
-    public void ExitShop()
-    {
-        Time.timeScale = 1;
-        shop.SetActive(false);
-    }
-
-    public void DisplayShop()
+    public override void DisplayShop()
     {
         shop.SetActive(true);
         playerClicked = false;
     }
 
-    public void DisplayMilestones()
+    public override void ExitQuest()
     {
-        milestoneDialog.SetActive(true);
-        playerClicked = false;
+        Time.timeScale = 1;
+        questDialog.SetActive(false);
     }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            playerInRange = true;
-        }
-    }
-
-    void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            playerInRange = false;
-        }
-    }
-
-    IEnumerator Intro()
+    public override IEnumerator Intro()
     {
         introText.SetActive(true);
         yield return new WaitForSecondsRealtime(8);
@@ -94,17 +33,7 @@ public class Knight : MonoBehaviour, IDataPersistence
         introduced = true;
     }
 
-    public void LoadData(GameData data)
-    {
-        introduced = data.intros[2];
-    }
-
-    public void SaveData(GameData data)
-    {
-        data.intros[2] = introduced;
-    }
-
-    public void SelecttMilestone(int num)
+    public void SelectMilestone(int num)
     {
         milestoneTitle[num].color = Color.red;
         milestoneDescription[num].SetActive(true);
@@ -115,5 +44,14 @@ public class Knight : MonoBehaviour, IDataPersistence
         milestoneTitle[num].color = Color.black;
         milestoneDescription[num].SetActive(false);
     }
-}
 
+    public override void LoadData(GameData data)
+    {
+        introduced = data.intros[2];
+    }
+
+    public override void SaveData(GameData data)
+    {
+        data.intros[2] = introduced;
+    }
+}

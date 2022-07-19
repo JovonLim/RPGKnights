@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Lifesteal
   m_EditorClassIdentifier: 
   cost: 800
-  description: Every 5th attack heals for 0.5 health.
+  description: Every 5th attack heals for 1 health.
   passiveName: Lifesteal
   id: 1

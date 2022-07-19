@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Damage : MonoBehaviour
+public class CombatManager : MonoBehaviour
 {
     public enum Dmg
     {

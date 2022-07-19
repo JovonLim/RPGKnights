@@ -82,28 +82,28 @@ public class DifficultyManager : MonoBehaviour, IDataPersistence
         for (int i = 0; i < mobs.Length; i++)
         {
 
-            if (mobs[i].GetComponent<Damage>() != null)
+            if (mobs[i].GetComponent<CombatManager>() != null)
             {
-                mobs[i].GetComponent<Damage>().ScaleDifficulty(Difficulty);
+                mobs[i].GetComponent<CombatManager>().ScaleDifficulty(Difficulty);
             }
             mobs[i].GetComponent<EnemyHealth>().ScaleDifficulty(Difficulty);
         }
 
         for (int i = 0; i < miniBosses.Length; i++)
         {
-            miniBosses[i].GetComponent<Damage>().ScaleDifficulty(Difficulty);
+            miniBosses[i].GetComponent<CombatManager>().ScaleDifficulty(Difficulty);
             miniBosses[i].GetComponent<EnemyHealth>().ScaleDifficulty(Difficulty);
         }
 
         for (int i = 0; i < bosses.Length; i++)
         {
-            bosses[i].GetComponent<Damage>().ScaleDifficulty(Difficulty);
+            bosses[i].GetComponent<CombatManager>().ScaleDifficulty(Difficulty);
             bosses[i].GetComponent<EnemyHealth>().ScaleDifficulty(Difficulty);
         }
 
         for (int i = 0; i < questBosses.Length; i++)
         {
-            questBosses[i].GetComponent<Damage>().ScaleDifficulty(Difficulty);
+            questBosses[i].GetComponent<CombatManager>().ScaleDifficulty(Difficulty);
             questBosses[i].GetComponent<EnemyHealth>().ScaleDifficulty(Difficulty);
         }
     }

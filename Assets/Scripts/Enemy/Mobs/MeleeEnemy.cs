@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class MeleeEnemy : Damage
+public class MeleeEnemy : CombatManager
 {
     [SerializeField] private float attackRange;
     [SerializeField] public float damage;

@@ -2,65 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Wizard : MonoBehaviour, IDataPersistence
+public class Wizard : NPC
 {
-    [SerializeField] GameObject options;
-    [SerializeField] GameObject questDialog;
-    [SerializeField] GameObject classNotice;
-    [SerializeField] GameObject shop;
-    [SerializeField] GameObject introText;
-    [SerializeField] GameObject backstory;
-    private static bool introduced;
-    private static bool backstoryDone;
-    private bool playerInRange;
-    
-    private bool playerClicked;
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private GameObject classNotice;
+  
+    public override void DisplayShop()
     {
-        playerClicked = false;  
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKey(KeyCode.F))
+        if (PlayerAttack.spellUnlock)
         {
-            playerClicked = true;
-        }
-        if (playerClicked && playerInRange && !introduced)
-        {
-            StartCoroutine(Intro());
-        }
-        else if (playerClicked && playerInRange)
-        {
-            Time.timeScale = 0;      
-            options.SetActive(true);
-        } else
-        {        
-            options.SetActive(false);
+            shop.SetActive(true);
             playerClicked = false;
         }
-    }
-
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
+        else
         {
-            playerInRange = true;
+            classNotice.SetActive(true);
         }
     }
 
-    void OnTriggerExit2D(Collider2D other)
+    public void CloseNotice()
     {
-        if (other.CompareTag("Player"))
-        {
-            playerInRange = false;
-        }
+        classNotice.SetActive(false);
     }
 
-    public void ExitQuest()
+
+    public override void ExitQuest()
     {
         questDialog.SetActive(false);
         Time.timeScale = 1;
@@ -71,36 +36,7 @@ public class Wizard : MonoBehaviour, IDataPersistence
         }
     }
 
-    public void ExitShop()
-    {
-        Time.timeScale = 1;
-        shop.SetActive(false);
-    }
-
- 
-
-    public void DisplayShop()
-    {
-        if (PlayerAttack.spellUnlock)
-        {
-            shop.SetActive(true);
-            playerClicked = false;
-        } else
-        {
-            classNotice.SetActive(true);
-        }
-    }
-
-    public void CloseNotice()
-    {
-        classNotice.SetActive(false);
-    }
-    public void DisplayQuests()
-    {
-        questDialog.SetActive(true);
-        playerClicked = false;
-    }
-    IEnumerator Intro()
+    public override IEnumerator Intro()
     {
         introText.SetActive(true);
         yield return new WaitForSecondsRealtime(10);
@@ -108,20 +44,20 @@ public class Wizard : MonoBehaviour, IDataPersistence
         introduced = true;
     }
 
-    IEnumerator Backstory()
+    public override IEnumerator Backstory()
     {
-        backstory.SetActive(true);
+        backstory[0].SetActive(true);
         yield return new WaitForSecondsRealtime(9);
-        backstory.SetActive(false);
+        backstory[0].SetActive(false);
     }
 
-    public void LoadData(GameData data)
+    public override void LoadData(GameData data)
     {
         introduced = data.intros[0];
         backstoryDone = data.intros[3];
     }
 
-    public void SaveData(GameData data)
+    public override void SaveData(GameData data)
     {
         data.intros[0] = introduced;
         data.intros[3] = backstoryDone;

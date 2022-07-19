@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BringerOfDeathSpell : Damage
+public class BringerOfDeathSpell : CombatManager
 { 
     [SerializeField] protected float projectileResetTime;
     public float enemyDamage;

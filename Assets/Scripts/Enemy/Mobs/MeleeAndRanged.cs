@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleeAndRanged : Damage
+public class MeleeAndRanged : CombatManager
 {
     
     [SerializeField] private float meleeAttackRange;

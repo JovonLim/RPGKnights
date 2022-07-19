@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class Projectile : Damage
+public class Projectile : CombatManager
 {
     [SerializeField] private float projectileSpeed;
     private bool hit;

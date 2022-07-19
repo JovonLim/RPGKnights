@@ -978,6 +978,7 @@ MonoBehaviour:
   text: {fileID: 137606053}
   MenuButton: {fileID: 345025367}
   NewGamePlusButton: {fileID: 527793189}
+  skipButton: {fileID: 166244337}
 --- !u!4 &571851403
 Transform:
   m_ObjectHideFlags: 0
@@ -1143,7 +1144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 0.05
   fullText: 'After defeating the dungeon, you returned back to town and regrouped
-    with the archer and wizard.  '
+    with your fellow adventurers. '
 --- !u!1 &753325117
 GameObject:
   m_ObjectHideFlags: 0
@@ -2285,6 +2286,8 @@ PlayableDirector:
     - bcd0f865d036db145a050112183f8860: {fileID: 345025367}
     - b666145387f954e4ab161b4244f81f47: {fileID: 1327434726}
     - 2033bc00d6c872940b80e866ad07e1db: {fileID: 559527919}
+    - eddbb9fde38955e459ec2e1f8edcf85d: {fileID: 166244337}
+    - 5e1808e17b2301a48a7063d229405827: {fileID: 166244337}
     - 7c5ba0eccfa765f4a8c46d55df68d434: {fileID: 1430415951}
     - af1fb296181188b4eba68009ef89a1b3: {fileID: 588593957}
     - bbe007dee325bd143a239174c7dfa55a: {fileID: 753325117}

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GroundManipulation : Damage
+public class GroundManipulation : CombatManager
 {
     // References
     [SerializeField] private float colliderDistance;

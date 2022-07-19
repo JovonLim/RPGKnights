@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BladeTrap : Damage
+public class BladeTrap : CombatManager
 {
     [SerializeField] private float enemyDamage;
     private GameObject player;

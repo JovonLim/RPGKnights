@@ -2847,8 +2847,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1425078275}
-        m_TargetAssemblyTypeName: KnightShop, Assembly-CSharp
+      - m_Target: {fileID: 1425078278}
+        m_TargetAssemblyTypeName: PassiveShop, Assembly-CSharp
         m_MethodName: Select
         m_Mode: 3
         m_Arguments:
@@ -3040,8 +3040,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 571876327}
-        m_TargetAssemblyTypeName: Wizard, Assembly-CSharp
+      - m_Target: {fileID: 571876328}
+        m_TargetAssemblyTypeName: NPC, Assembly-CSharp
         m_MethodName: DisplayQuests
         m_Mode: 1
         m_Arguments:
@@ -4951,8 +4951,8 @@ GameObject:
   - component: {fileID: 308245275}
   - component: {fileID: 308245274}
   - component: {fileID: 308245276}
-  - component: {fileID: 308245277}
   - component: {fileID: 308245278}
+  - component: {fileID: 308245279}
   m_Layer: 0
   m_Name: Archer
   m_TagString: Untagged
@@ -5047,26 +5047,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &308245277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 308245273}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1f07ff929af28e4bbe03d53f0165bdf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  options: {fileID: 1821783620}
-  questDialog: {fileID: 1005111392809555629}
-  classNotice: {fileID: 451063584}
-  shop: {fileID: 1514209190}
-  introText: {fileID: 587042983}
-  backstory:
-  - {fileID: 1967632017}
-  - {fileID: 1588635423}
 --- !u!61 &308245278
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5093,6 +5073,26 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.539203, y: 1.15625}
   m_EdgeRadius: 0
+--- !u!114 &308245279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308245273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 523eaa60c2691e7458d2d92df51403e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  options: {fileID: 1821783620}
+  questDialog: {fileID: 1005111392809555629}
+  shop: {fileID: 1514209190}
+  introText: {fileID: 587042983}
+  backstory:
+  - {fileID: 1967632017}
+  - {fileID: 1588635423}
+  classNotice: {fileID: 451063584}
 --- !u!1 &309933373
 GameObject:
   m_ObjectHideFlags: 0
@@ -5510,7 +5510,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1739352661}
           m_TargetAssemblyTypeName: Knight, Assembly-CSharp
-          m_MethodName: SelecttMilestone
+          m_MethodName: SelectMilestone
           m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -5525,7 +5525,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1739352661}
-          m_TargetAssemblyTypeName: Knight, Assembly-CSharp
+          m_TargetAssemblyTypeName: NewKnight, Assembly-CSharp
           m_MethodName: DeselectMilestone
           m_Mode: 3
           m_Arguments:
@@ -9180,7 +9180,7 @@ GameObject:
   - component: {fileID: 571876322}
   - component: {fileID: 571876324}
   - component: {fileID: 571876326}
-  - component: {fileID: 571876327}
+  - component: {fileID: 571876328}
   m_Layer: 0
   m_Name: Wizard
   m_TagString: Untagged
@@ -9301,7 +9301,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.8307762, y: 1.34375}
   m_EdgeRadius: 0
---- !u!114 &571876327
+--- !u!114 &571876328
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9310,15 +9310,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 571876321}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e24a25e36af9e684da39e7ba35c9ac72, type: 3}
+  m_Script: {fileID: 11500000, guid: 281d6c59852361b4d850d1366092a7e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   options: {fileID: 735562992}
   questDialog: {fileID: 1655641802}
-  classNotice: {fileID: 2136562134}
   shop: {fileID: 1748838433}
   introText: {fileID: 1665456406}
-  backstory: {fileID: 1560509451}
+  backstory:
+  - {fileID: 1560509451}
+  classNotice: {fileID: 2136562134}
 --- !u!1 &573868108
 GameObject:
   m_ObjectHideFlags: 0
@@ -10922,8 +10923,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 571876327}
-        m_TargetAssemblyTypeName: Wizard, Assembly-CSharp
+      - m_Target: {fileID: 571876328}
+        m_TargetAssemblyTypeName: NewWizard, Assembly-CSharp
         m_MethodName: ExitQuest
         m_Mode: 1
         m_Arguments:
@@ -11450,8 +11451,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 308245277}
-        m_TargetAssemblyTypeName: Archer, Assembly-CSharp
+      - m_Target: {fileID: 308245279}
+        m_TargetAssemblyTypeName: NewArcher, Assembly-CSharp
         m_MethodName: DisplayShop
         m_Mode: 1
         m_Arguments:
@@ -12516,8 +12517,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1739352661}
-        m_TargetAssemblyTypeName: Knight, Assembly-CSharp
-        m_MethodName: DisplayMilestones
+        m_TargetAssemblyTypeName: NPC, Assembly-CSharp
+        m_MethodName: DisplayQuests
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13102,7 +13103,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -14.528056, y: 2.99194}
+  m_AnchoredPosition: {x: -14.75577, y: 2.99139}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &788711928
@@ -14045,7 +14046,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1425078275}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: KnightShop, Assembly-CSharp
         m_MethodName: Exit
         m_Mode: 1
@@ -14282,7 +14283,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.8347107, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -15307,8 +15308,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 571876327}
-        m_TargetAssemblyTypeName: Wizard, Assembly-CSharp
+      - m_Target: {fileID: 571876328}
+        m_TargetAssemblyTypeName: NewWizard, Assembly-CSharp
         m_MethodName: DisplayShop
         m_Mode: 1
         m_Arguments:
@@ -15518,7 +15519,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 926651857}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -15576,8 +15577,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 308245277}
-        m_TargetAssemblyTypeName: Archer, Assembly-CSharp
+      - m_Target: {fileID: 308245279}
+        m_TargetAssemblyTypeName: NPC, Assembly-CSharp
         m_MethodName: DisplayQuests
         m_Mode: 1
         m_Arguments:
@@ -18355,8 +18356,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1425078275}
-        m_TargetAssemblyTypeName: KnightShop, Assembly-CSharp
+      - m_Target: {fileID: 1425078278}
+        m_TargetAssemblyTypeName: PassiveShop, Assembly-CSharp
         m_MethodName: Purchase
         m_Mode: 1
         m_Arguments:
@@ -18463,7 +18464,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1739352661}
           m_TargetAssemblyTypeName: Knight, Assembly-CSharp
-          m_MethodName: SelecttMilestone
+          m_MethodName: SelectMilestone
           m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -18478,7 +18479,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1739352661}
-          m_TargetAssemblyTypeName: Knight, Assembly-CSharp
+          m_TargetAssemblyTypeName: NewKnight, Assembly-CSharp
           m_MethodName: DeselectMilestone
           m_Mode: 3
           m_Arguments:
@@ -19724,7 +19725,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1739352661}
-        m_TargetAssemblyTypeName: Knight, Assembly-CSharp
+        m_TargetAssemblyTypeName: NewKnight, Assembly-CSharp
         m_MethodName: DisplayShop
         m_Mode: 1
         m_Arguments:
@@ -20485,7 +20486,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1739352661}
           m_TargetAssemblyTypeName: Knight, Assembly-CSharp
-          m_MethodName: SelecttMilestone
+          m_MethodName: SelectMilestone
           m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -20500,7 +20501,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1739352661}
-          m_TargetAssemblyTypeName: Knight, Assembly-CSharp
+          m_TargetAssemblyTypeName: NewKnight, Assembly-CSharp
           m_MethodName: DeselectMilestone
           m_Mode: 3
           m_Arguments:
@@ -22430,8 +22431,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1425078275}
-        m_TargetAssemblyTypeName: KnightShop, Assembly-CSharp
+      - m_Target: {fileID: 1425078278}
+        m_TargetAssemblyTypeName: PassiveShop, Assembly-CSharp
         m_MethodName: Select
         m_Mode: 3
         m_Arguments:
@@ -22653,7 +22654,7 @@ GameObject:
   - component: {fileID: 1425078274}
   - component: {fileID: 1425078277}
   - component: {fileID: 1425078276}
-  - component: {fileID: 1425078275}
+  - component: {fileID: 1425078278}
   m_Layer: 5
   m_Name: Shop
   m_TagString: Quest
@@ -22686,27 +22687,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1751.682, y: 1115.9241}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1425078275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1425078273}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b4e4b74306f55145b94c7a9d1dd8336, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  passives:
-  - {fileID: 11400000, guid: 2a797d3bf7f73f2418bc2de41cb5149b, type: 2}
-  - {fileID: 11400000, guid: c7d18dec08eb03f44b794017de83e7cc, type: 2}
-  texts:
-  - {fileID: 165935217}
-  - {fileID: 1407109092}
-  insufficientFunds: {fileID: 1934799159}
-  coinAmt: {fileID: 1872879149}
-  description: {fileID: 1618604213}
 --- !u!114 &1425078276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22745,6 +22725,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1425078273}
   m_CullTransparentMesh: 1
+--- !u!114 &1425078278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425078273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b70bf8cc7298ab459fe8bd362aaa07c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  passives:
+  - {fileID: 11400000, guid: 2a797d3bf7f73f2418bc2de41cb5149b, type: 2}
+  - {fileID: 11400000, guid: c7d18dec08eb03f44b794017de83e7cc, type: 2}
+  texts:
+  - {fileID: 165935217}
+  - {fileID: 1407109092}
+  insufficientFunds: {fileID: 1934799159}
+  coinAmt: {fileID: 1872879149}
+  description: {fileID: 1618604213}
+  npc: 1
 --- !u!1 &1436205468
 GameObject:
   m_ObjectHideFlags: 0
@@ -24002,6 +24004,7 @@ MonoBehaviour:
   insufficientFunds: {fileID: 2065453142}
   coinAmt: {fileID: 340707472}
   description: {fileID: 2095741439}
+  npc: 0
 --- !u!1 &1519995080
 GameObject:
   m_ObjectHideFlags: 0
@@ -25201,7 +25204,6 @@ GameObject:
   - component: {fileID: 1618604211}
   - component: {fileID: 1618604214}
   - component: {fileID: 1618604213}
-  - component: {fileID: 1618604212}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -25229,62 +25231,6 @@ RectTransform:
   m_AnchoredPosition: {x: 307.75214, y: -333.38876}
   m_SizeDelta: {x: 501.5044, y: 522.7775}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1618604212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1618604210}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1618604213}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: WizardShop, Assembly-CSharp
-        m_MethodName: Select
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1618604213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25544,8 +25490,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 308245277}
-        m_TargetAssemblyTypeName: Archer, Assembly-CSharp
+      - m_Target: {fileID: 308245279}
+        m_TargetAssemblyTypeName: NPC, Assembly-CSharp
         m_MethodName: ExitShop
         m_Mode: 1
         m_Arguments:
@@ -26360,8 +26306,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 571876327}
-        m_TargetAssemblyTypeName: Wizard, Assembly-CSharp
+      - m_Target: {fileID: 571876328}
+        m_TargetAssemblyTypeName: NPC, Assembly-CSharp
         m_MethodName: ExitShop
         m_Mode: 1
         m_Arguments:
@@ -26495,8 +26441,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1739352661}
-        m_TargetAssemblyTypeName: Knight, Assembly-CSharp
-        m_MethodName: ExitMilestone
+        m_TargetAssemblyTypeName: NewKnight, Assembly-CSharp
+        m_MethodName: ExitQuest
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -26955,8 +26901,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 308245277}
-        m_TargetAssemblyTypeName: Archer, Assembly-CSharp
+      - m_Target: {fileID: 308245279}
+        m_TargetAssemblyTypeName: NewArcher, Assembly-CSharp
         m_MethodName: CloseNotice
         m_Mode: 1
         m_Arguments:
@@ -31878,13 +31824,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1739352656}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94315f7692f6ad54f9943a8a4d7a25b1, type: 3}
+  m_Script: {fileID: 11500000, guid: 0bdee513c3fca4e4e8896886292cc177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   options: {fileID: 652909980}
-  milestoneDialog: {fileID: 109617164}
+  questDialog: {fileID: 109617164}
   shop: {fileID: 1425078273}
   introText: {fileID: 2011264682}
+  backstory: []
   milestoneTitle:
   - {fileID: 1300494015}
   - {fileID: 323333562}
@@ -34489,8 +34436,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 571876327}
-        m_TargetAssemblyTypeName: Wizard, Assembly-CSharp
+      - m_Target: {fileID: 571876328}
+        m_TargetAssemblyTypeName: NewWizard, Assembly-CSharp
         m_MethodName: CloseNotice
         m_Mode: 1
         m_Arguments:
@@ -34702,7 +34649,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1739352661}
-        m_TargetAssemblyTypeName: Knight, Assembly-CSharp
+        m_TargetAssemblyTypeName: NPC, Assembly-CSharp
         m_MethodName: ExitShop
         m_Mode: 1
         m_Arguments:
@@ -37507,7 +37454,6 @@ GameObject:
   - component: {fileID: 2095741437}
   - component: {fileID: 2095741440}
   - component: {fileID: 2095741439}
-  - component: {fileID: 2095741438}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -37535,62 +37481,6 @@ RectTransform:
   m_AnchoredPosition: {x: 307.75214, y: -333.38876}
   m_SizeDelta: {x: 501.5044, y: 522.7775}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2095741438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2095741436}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 2095741439}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: WizardShop, Assembly-CSharp
-        m_MethodName: Select
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &2095741439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40024,8 +39914,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 308245277}
-        m_TargetAssemblyTypeName: Archer, Assembly-CSharp
+      - m_Target: {fileID: 308245279}
+        m_TargetAssemblyTypeName: NewArcher, Assembly-CSharp
         m_MethodName: ExitQuest
         m_Mode: 1
         m_Arguments:

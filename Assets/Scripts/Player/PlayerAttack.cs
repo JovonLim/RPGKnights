@@ -247,7 +247,7 @@ public class PlayerAttack : MonoBehaviour, IDataPersistence
 
         if (swordCount >= 5)
         {
-            GetComponent<PlayerHealth>().GainHealth(0.5f);
+            GetComponent<PlayerHealth>().GainHealth(1f);
             swordCount -= 5;
         }
       
@@ -290,7 +290,7 @@ public class PlayerAttack : MonoBehaviour, IDataPersistence
         {
             if (rangedPassives[1])
             {
-                projectile.GetComponent<Projectile>().damageType = Damage.Dmg.magic;
+                projectile.GetComponent<Projectile>().damageType = CombatManager.Dmg.magic;
             }
             arrowCount = 0;
         }
