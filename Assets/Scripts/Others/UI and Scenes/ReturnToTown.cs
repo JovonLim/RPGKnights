@@ -1,21 +1,24 @@
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using System.Collections;
 
 public class ReturnToTown : MonoBehaviour
 {
     [SerializeField] private GameObject warning;
+    private bool Delayed;
     private bool playerInRange;
     private bool playerClicked;
     // Start is called before the first frame update
     void Start()
     {
         warning.SetActive(false);
+        StartCoroutine(SetDelay());
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.F))
+        if (Input.GetKey(KeyCode.F) && Delayed)
         {
             playerClicked = true;
         }
@@ -65,5 +68,11 @@ public class ReturnToTown : MonoBehaviour
         Destroy(UITab);
         SceneManager.LoadScene(2);
         InventoryDatabase.update = true;
+    }
+
+    IEnumerator SetDelay()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Delayed = true;
     }
 }
