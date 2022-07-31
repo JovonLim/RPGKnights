@@ -18,7 +18,7 @@ public class TypeWriter : MonoBehaviour
         for (int i = 0; i < fullText.Length; i++)
         {
             GetComponent<TextMeshProUGUI>().text = fullText.Substring(0, i);
-            yield return new WaitForSeconds(delay);
+            yield return new WaitForSecondsRealtime(delay);
         }
     }
 }

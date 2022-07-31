@@ -23,6 +23,8 @@ public class Archer : NPC
     public void CloseNotice()
     {
         classNotice.SetActive(false);
+        playerClicked = false;
+        Time.timeScale = 1;
     }
 
     public override void ExitQuest()
@@ -41,6 +43,7 @@ public class Archer : NPC
         yield return new WaitForSecondsRealtime(10);
         introText.SetActive(false);
         introduced = true;
+        talking = false;
     }
 
     public override IEnumerator Backstory()

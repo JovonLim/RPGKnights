@@ -9,6 +9,7 @@ public abstract class NPC : MonoBehaviour, IDataPersistence
     [SerializeField] protected GameObject shop;
     [SerializeField] protected GameObject introText;
     [SerializeField] protected GameObject[] backstory;
+    protected static bool talking;
     protected bool introduced;
     protected bool backstoryDone;
     protected bool playerInRange;
@@ -26,11 +27,12 @@ public abstract class NPC : MonoBehaviour, IDataPersistence
         {
             playerClicked = true;
         }
-        if (playerClicked && playerInRange && !introduced)
+        if (playerClicked && playerInRange && !introduced && !talking)
         {
             StartCoroutine(Intro());
+            talking = true;
         }
-        else if (playerClicked && playerInRange)
+        else if (playerClicked && playerInRange && !talking)
         {
             Time.timeScale = 0;
             options.SetActive(true);

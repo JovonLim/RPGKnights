@@ -43761,6 +43761,14 @@ PrefabInstance:
       propertyPath: jumpSpeed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5761944522982870090, guid: 92f411271b723c949a411c7403a36f98, type: 3}
+      propertyPath: m_Size.y
+      value: 1.2661712
+      objectReference: {fileID: 0}
+    - target: {fileID: 5761944522982870090, guid: 92f411271b723c949a411c7403a36f98, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.101848006
+      objectReference: {fileID: 0}
     - target: {fileID: 5761944522982870100, guid: 92f411271b723c949a411c7403a36f98, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -43813,6 +43821,10 @@ PrefabInstance:
       propertyPath: m_LinearDrag
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 5761944522982870101, guid: 92f411271b723c949a411c7403a36f98, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5761944522982870102, guid: 92f411271b723c949a411c7403a36f98, type: 3}
       propertyPath: m_Name
       value: Player
@@ -43823,7 +43835,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6371153622120426286, guid: 92f411271b723c949a411c7403a36f98, type: 3}
       propertyPath: startingAmt
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6371153622120426286, guid: 92f411271b723c949a411c7403a36f98, type: 3}
       propertyPath: MagicDefense
@@ -43831,7 +43843,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6371153622120426286, guid: 92f411271b723c949a411c7403a36f98, type: 3}
       propertyPath: startingHealth
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6371153622120426286, guid: 92f411271b723c949a411c7403a36f98, type: 3}
       propertyPath: PhysicalDefense

@@ -31,6 +31,7 @@ public class Knight : NPC
         yield return new WaitForSecondsRealtime(8);
         introText.SetActive(false);
         introduced = true;
+        talking = false;
     }
 
     public void SelectMilestone(int num)
