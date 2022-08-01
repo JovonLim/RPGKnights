@@ -12,24 +12,32 @@ public class UI : MonoBehaviour, IDataPersistence
     // Start is called before the first frame update
     void Start()
     {
-       if (instance != null)
+        if (instance != null)
         {
             Destroy(gameObject);
-        } else
+        }
+        else
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
-      
 
 
-        coinAmt.text = coins.ToString();
+        if (coinAmt != null)
+        {
+            coinAmt.text = coins.ToString();
+        }
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        coinAmt.text = coins.ToString();
+        if (coinAmt != null)
+        {
+            coinAmt.text = coins.ToString();
+        }
+      
     }
 
     public void LoadData(GameData data)

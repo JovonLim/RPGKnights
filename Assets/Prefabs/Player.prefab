@@ -254,7 +254,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.010715485, y: -0.119797885}
+  m_Offset: {x: -0.010715485, y: -0.101848006}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -265,7 +265,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6666393, y: 1.3020709}
+  m_Size: {x: 0.6666393, y: 1.2661712}
   m_EdgeRadius: 0
 --- !u!50 &5761944522982870101
 Rigidbody2D:
@@ -280,13 +280,13 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 0.1
   m_AngularDrag: 0.05
   m_GravityScale: 3
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!95 &5761944522982870088
 Animator:
@@ -320,19 +320,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47f7cb5abf386b448ae22c9de30d23f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeAttackSpeed: 1
-  rangedAttackSpeed: 1
+  meleeAttackSpeed: 0.8
+  rangedAttackSpeed: 1.2
   anima: {fileID: 5761944522982870088}
   attackPoint: {fileID: 415745996}
-  attackRange: 0.5
-  meleeAttackDamage: 20
-  rangedAttackDamage: 1.5
+  attackRange: 0.75
+  meleeAttackDamage: 2
+  rangedAttackDamage: 3
+  boxCollider: {fileID: 5761944522982870090}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 1024
   projectileLaunchPoint: {fileID: 2021855709}
   arrow: {fileID: 8159956084251475531, guid: 5857c47d299303b4aa0eed82bb756532, type: 3}
-  defaultSpell: {fileID: 5175091635343005432, guid: 76adc9e1317d8404a8fc8834486ae0ff, type: 3}
+  defaultSpell: {fileID: 7221197700999325522, guid: 76adc9e1317d8404a8fc8834486ae0ff, type: 3}
   classHud: {fileID: 0}
 --- !u!114 &1949877067971610857
 MonoBehaviour:
@@ -346,6 +347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddf163f29c8815341bfae5d211b1d9f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tracker: {fileID: 0}
 --- !u!114 &4296736515542544597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -388,11 +390,28 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  listOfItemPanels:
+  - {fileID: 0}
+  - {fileID: 0}
+  prevPanelButton: {fileID: 0}
+  nextPanelButton: {fileID: 0}
+  CloseShopButton: {fileID: 0}
   itemInformationWindow: {fileID: 0}
   itemName: {fileID: 0}
   itemDescription: {fileID: 0}
+  itemType: {fileID: 0}
   equipWindow: {fileID: 0}
   equipImages:
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -440,6 +459,14 @@ MonoBehaviour:
   - {fileID: 4249574838981342308, guid: b1f14490295ac274bb44246a133c1505, type: 3}
   - {fileID: 4509507476311784675, guid: 3704e1f37927679448db0548dc601fd5, type: 3}
   - {fileID: 157699722, guid: 9b764b29c192be54b8809f908a9aa890, type: 3}
+  - {fileID: 8030819260734194354, guid: e0795b7c7674ef54cb617d389d187269, type: 3}
+  - {fileID: 4798428436537471637, guid: f5b4a4183c7cd554b867a84faaccc004, type: 3}
+  - {fileID: 1386552860057948415, guid: 09e68d533adba0543afd4489a2d395de, type: 3}
+  - {fileID: 4029973698094421556, guid: 52bce493435f02d46812d23a5730c651, type: 3}
+  - {fileID: 8864320492457125211, guid: f885b9dc980e84244addac08c3cf83be, type: 3}
+  - {fileID: 3460622556969434567, guid: 1bfb5f7fcd09a814886ab6c90b2cf446, type: 3}
+  - {fileID: 3637434484485908033, guid: eac9654bab30f5543a434075df1f74a9, type: 3}
+  - {fileID: 4577215477350667926, guid: d447f64b778e4c44cbfd0b2cf28b8761, type: 3}
   updated: 0
   ability: {fileID: 0}
   abilityDark: {fileID: 0}
@@ -464,8 +491,24 @@ MonoBehaviour:
   - {fileID: 4249574838981342308, guid: b1f14490295ac274bb44246a133c1505, type: 3}
   - {fileID: 4509507476311784675, guid: 3704e1f37927679448db0548dc601fd5, type: 3}
   - {fileID: 157699722, guid: 9b764b29c192be54b8809f908a9aa890, type: 3}
+  - {fileID: 8030819260734194354, guid: e0795b7c7674ef54cb617d389d187269, type: 3}
+  - {fileID: 4798428436537471637, guid: f5b4a4183c7cd554b867a84faaccc004, type: 3}
+  - {fileID: 1386552860057948415, guid: 09e68d533adba0543afd4489a2d395de, type: 3}
+  - {fileID: 4029973698094421556, guid: 52bce493435f02d46812d23a5730c651, type: 3}
+  - {fileID: 8864320492457125211, guid: f885b9dc980e84244addac08c3cf83be, type: 3}
+  - {fileID: 3460622556969434567, guid: 1bfb5f7fcd09a814886ab6c90b2cf446, type: 3}
+  - {fileID: 3637434484485908033, guid: eac9654bab30f5543a434075df1f74a9, type: 3}
+  - {fileID: 4577215477350667926, guid: d447f64b778e4c44cbfd0b2cf28b8761, type: 3}
   updated: 0
   icons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -481,6 +524,7 @@ MonoBehaviour:
   - {fileID: 0}
   activeSkillHolders: {fileID: 0}
   skillPanel:
+  - {fileID: 0}
   - {fileID: 0}
   descriptionBox: {fileID: 0}
   skillBox: {fileID: 0}
@@ -499,8 +543,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58bee6173bb9a9d4db699fa0673b38c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 3
+  startingHealth: 10
   PhysicalDefense: 0
   MagicDefense: 0
-  minDmg: 0
+  minDmg: 0.5
   prefab: {fileID: 4997623711577133293, guid: 555ca5c4a4a0517489f53b54e10f9cee, type: 3}
+  startingAmt: 10

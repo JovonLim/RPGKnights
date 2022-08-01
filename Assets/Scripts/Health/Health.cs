@@ -11,7 +11,7 @@ public abstract class Health : MonoBehaviour, IDataPersistence
     [SerializeField] protected float PhysicalDefense = 0;
     [SerializeField] protected float MagicDefense = 0;
     [SerializeField] protected float minDmg;
-    [SerializeField] protected GameObject prefab;
+    [SerializeField] public GameObject prefab;
 
     public abstract void TakePhysicalDamage(float damage);
     public abstract void TakeMagicDamage(float damage);

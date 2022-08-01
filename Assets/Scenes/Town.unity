@@ -416,11 +416,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 21510672}
   m_CullTransparentMesh: 1
---- !u!1 &23339347 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 23339347, guid: 5245e38b2784a5646b8b084fb6f29329, type: 3}
-  m_PrefabInstance: {fileID: 2002780164395657273}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &44247847
 GameObject:
   m_ObjectHideFlags: 0
@@ -4531,11 +4526,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 278673486}
   m_CullTransparentMesh: 1
---- !u!1 &286069167 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 286069167, guid: 5245e38b2784a5646b8b084fb6f29329, type: 3}
-  m_PrefabInstance: {fileID: 2002780164395657273}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &292426721
 GameObject:
   m_ObjectHideFlags: 0
@@ -43146,11 +43136,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5513868105455181124, guid: 5245e38b2784a5646b8b084fb6f29329, type: 3}
   m_PrefabInstance: {fileID: 2002780164395657273}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &5513868105488401737 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5513868105488401737, guid: 5245e38b2784a5646b8b084fb6f29329, type: 3}
-  m_PrefabInstance: {fileID: 2002780164395657273}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &5513868105506515197 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5513868105506515197, guid: 5245e38b2784a5646b8b084fb6f29329, type: 3}
@@ -43386,10 +43371,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 140760505}
     - target: {fileID: 5587785694126439929, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: equipImages.Array.size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5587785694126439929, guid: 92f411271b723c949a411c7403a36f98, type: 3}
       propertyPath: equipImages.Array.data[0]
       value: 
       objectReference: {fileID: 104183667}
@@ -43422,10 +43403,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1033314814}
     - target: {fileID: 5587785694126439929, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: listOfItemPanels.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5587785694126439929, guid: 92f411271b723c949a411c7403a36f98, type: 3}
       propertyPath: listOfItemPanels.Array.data[0]
       value: 
       objectReference: {fileID: 2002780164395657286}
@@ -43433,10 +43410,6 @@ PrefabInstance:
       propertyPath: listOfItemPanels.Array.data[1]
       value: 
       objectReference: {fileID: 2002780164395657285}
-    - target: {fileID: 5587785694126439929, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: inventoryItemsImages.Array.size
-      value: 18
-      objectReference: {fileID: 0}
     - target: {fileID: 5587785694126439929, guid: 92f411271b723c949a411c7403a36f98, type: 3}
       propertyPath: inventoryItemsImages.Array.data[0]
       value: 
@@ -43513,34 +43486,6 @@ PrefabInstance:
       propertyPath: classHud
       value: 
       objectReference: {fileID: 2728203840256646172}
-    - target: {fileID: 5761944521595046690, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: attackRange
-      value: 0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 5761944521595046690, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: boxCollider
-      value: 
-      objectReference: {fileID: 5761944521595046683}
-    - target: {fileID: 5761944521595046690, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: defaultSpell
-      value: 
-      objectReference: {fileID: 7221197700999325522, guid: 76adc9e1317d8404a8fc8834486ae0ff, type: 3}
-    - target: {fileID: 5761944521595046690, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: meleeAttackSpeed
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5761944521595046690, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: meleeAttackDamage
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5761944521595046690, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: rangedAttackSpeed
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5761944521595046690, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: rangedAttackDamage
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 5761944521595046710, guid: 92f411271b723c949a411c7403a36f98, type: 3}
       propertyPath: ability
       value: 
@@ -43549,54 +43494,6 @@ PrefabInstance:
       propertyPath: abilityDark
       value: 
       objectReference: {fileID: 2728203841370232838}
-    - target: {fileID: 5761944521595046710, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: spells.Array.size
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 5761944521595046710, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: spells.Array.data[8]
-      value: 
-      objectReference: {fileID: 8030819260734194354, guid: e0795b7c7674ef54cb617d389d187269, type: 3}
-    - target: {fileID: 5761944521595046710, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: spells.Array.data[9]
-      value: 
-      objectReference: {fileID: 4798428436537471637, guid: f5b4a4183c7cd554b867a84faaccc004, type: 3}
-    - target: {fileID: 5761944521595046710, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: spells.Array.data[10]
-      value: 
-      objectReference: {fileID: 1386552860057948415, guid: 09e68d533adba0543afd4489a2d395de, type: 3}
-    - target: {fileID: 5761944521595046710, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: spells.Array.data[11]
-      value: 
-      objectReference: {fileID: 4029973698094421556, guid: 52bce493435f02d46812d23a5730c651, type: 3}
-    - target: {fileID: 5761944521595046710, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: spells.Array.data[12]
-      value: 
-      objectReference: {fileID: 8864320492457125211, guid: f885b9dc980e84244addac08c3cf83be, type: 3}
-    - target: {fileID: 5761944521595046710, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: spells.Array.data[13]
-      value: 
-      objectReference: {fileID: 3460622556969434567, guid: 1bfb5f7fcd09a814886ab6c90b2cf446, type: 3}
-    - target: {fileID: 5761944521595046710, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: spells.Array.data[14]
-      value: 
-      objectReference: {fileID: 3637434484485908033, guid: eac9654bab30f5543a434075df1f74a9, type: 3}
-    - target: {fileID: 5761944521595046710, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: spells.Array.data[15]
-      value: 
-      objectReference: {fileID: 4577215477350667926, guid: d447f64b778e4c44cbfd0b2cf28b8761, type: 3}
-    - target: {fileID: 5761944521595046711, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: slot
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5761944521595046711, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: nextPage
-      value: 
-      objectReference: {fileID: 23339347}
-    - target: {fileID: 5761944521595046711, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: prevPage
-      value: 
-      objectReference: {fileID: 286069167}
     - target: {fileID: 5761944521595046711, guid: 92f411271b723c949a411c7403a36f98, type: 3}
       propertyPath: skillBox
       value: 
@@ -43606,10 +43503,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5513868107113109794}
     - target: {fileID: 5761944521595046711, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: skillPanel
-      value: 
-      objectReference: {fileID: 5513868105488401737}
-    - target: {fileID: 5761944521595046711, guid: 92f411271b723c949a411c7403a36f98, type: 3}
       propertyPath: description
       value: 
       objectReference: {fileID: 5513868106046274799}
@@ -43617,14 +43510,6 @@ PrefabInstance:
       propertyPath: descriptionBox
       value: 
       objectReference: {fileID: 5513868105455181124}
-    - target: {fileID: 5761944521595046711, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: icons.Array.size
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 5761944521595046711, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: spells.Array.size
-      value: 16
-      objectReference: {fileID: 0}
     - target: {fileID: 5761944521595046711, guid: 92f411271b723c949a411c7403a36f98, type: 3}
       propertyPath: activeSkillHolders
       value: 
@@ -43694,42 +43579,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2099192178}
     - target: {fileID: 5761944521595046711, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: spells.Array.data[8]
-      value: 
-      objectReference: {fileID: 8030819260734194354, guid: e0795b7c7674ef54cb617d389d187269, type: 3}
-    - target: {fileID: 5761944521595046711, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: spells.Array.data[9]
-      value: 
-      objectReference: {fileID: 4798428436537471637, guid: f5b4a4183c7cd554b867a84faaccc004, type: 3}
-    - target: {fileID: 5761944521595046711, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: skillPanel.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5761944521595046711, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: spells.Array.data[10]
-      value: 
-      objectReference: {fileID: 1386552860057948415, guid: 09e68d533adba0543afd4489a2d395de, type: 3}
-    - target: {fileID: 5761944521595046711, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: spells.Array.data[11]
-      value: 
-      objectReference: {fileID: 4029973698094421556, guid: 52bce493435f02d46812d23a5730c651, type: 3}
-    - target: {fileID: 5761944521595046711, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: spells.Array.data[12]
-      value: 
-      objectReference: {fileID: 8864320492457125211, guid: f885b9dc980e84244addac08c3cf83be, type: 3}
-    - target: {fileID: 5761944521595046711, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: spells.Array.data[13]
-      value: 
-      objectReference: {fileID: 3460622556969434567, guid: 1bfb5f7fcd09a814886ab6c90b2cf446, type: 3}
-    - target: {fileID: 5761944521595046711, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: spells.Array.data[14]
-      value: 
-      objectReference: {fileID: 3637434484485908033, guid: eac9654bab30f5543a434075df1f74a9, type: 3}
-    - target: {fileID: 5761944521595046711, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: spells.Array.data[15]
-      value: 
-      objectReference: {fileID: 4577215477350667926, guid: d447f64b778e4c44cbfd0b2cf28b8761, type: 3}
-    - target: {fileID: 5761944521595046711, guid: 92f411271b723c949a411c7403a36f98, type: 3}
       propertyPath: skillPanel.Array.data[0]
       value: 
       objectReference: {fileID: 1373536669}
@@ -43753,22 +43602,6 @@ PrefabInstance:
       propertyPath: activeSkills.Array.data[3]
       value: 
       objectReference: {fileID: 5513868106954137217}
-    - target: {fileID: 5761944522982870089, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: speed
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5761944522982870089, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: jumpSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5761944522982870090, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: m_Size.y
-      value: 1.2661712
-      objectReference: {fileID: 0}
-    - target: {fileID: 5761944522982870090, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.101848006
-      objectReference: {fileID: 0}
     - target: {fileID: 5761944522982870100, guid: 92f411271b723c949a411c7403a36f98, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -43813,49 +43646,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5761944522982870101, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: m_BodyType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5761944522982870101, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: m_LinearDrag
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5761944522982870101, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5761944522982870102, guid: 92f411271b723c949a411c7403a36f98, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6371153622120426286, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: minDmg
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6371153622120426286, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: startingAmt
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6371153622120426286, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: MagicDefense
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6371153622120426286, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: startingHealth
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6371153622120426286, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-      propertyPath: PhysicalDefense
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: prefab
+      value: 
+      objectReference: {fileID: 8400806180048802283, guid: 2938f6428624fe845b1bfc444e47bd11, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92f411271b723c949a411c7403a36f98, type: 3}
---- !u!61 &5761944521595046683 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 5761944522982870090, guid: 92f411271b723c949a411c7403a36f98, type: 3}
-  m_PrefabInstance: {fileID: 5761944521595046682}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &5761944521595046692 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5587785694126439929, guid: 92f411271b723c949a411c7403a36f98, type: 3}

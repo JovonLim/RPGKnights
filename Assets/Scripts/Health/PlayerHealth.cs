@@ -86,7 +86,11 @@ public class PlayerHealth : Health
         if (currentHealth > 0)
         {
             // Player is hurt
-            anima.SetTrigger("hurt");
+            if (anima != null)
+            {
+                anima.SetTrigger("hurt");
+            }
+        
         }
         else
         {
@@ -101,11 +105,11 @@ public class PlayerHealth : Health
 
     public override void OnDeath()
     {
-        anima.SetTrigger("die");
-
+      
         // For player
         if (GetComponent<PlayerMovement>() != null)
         {
+            anima.SetTrigger("die");
             GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
             GetComponent<PlayerMovement>().enabled = false;
             GetComponent<PlayerDeath>().Respawn();
@@ -183,5 +187,10 @@ public class PlayerHealth : Health
     public override void SaveData(GameData data)
     {
         data.scrollsUsed = scrollsUsed;
+    }
+
+    public void SetTestHealth(float amt)
+    {
+        startingAmt = amt;
     }
 }

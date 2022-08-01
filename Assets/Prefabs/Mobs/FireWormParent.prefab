@@ -104,6 +104,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 6791184056669824720}
     m_Modifications:
     - target: {fileID: 224334621074770500, guid: 39009279321f48448814ba3d4c30efea, type: 3}
+      propertyPath: prefab
+      value: 
+      objectReference: {fileID: 8400806180048802283, guid: 2938f6428624fe845b1bfc444e47bd11, type: 3}
+    - target: {fileID: 224334621074770500, guid: 39009279321f48448814ba3d4c30efea, type: 3}
       propertyPath: startingHealth
       value: 10
       objectReference: {fileID: 0}

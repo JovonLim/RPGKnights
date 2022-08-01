@@ -267,7 +267,7 @@ MonoBehaviour:
   PhysicalDefense: 0
   MagicDefense: 0
   minDmg: 0
-  prefab: {fileID: 4997623711577133293, guid: 555ca5c4a4a0517489f53b54e10f9cee, type: 3}
+  prefab: {fileID: 8400806180048802283, guid: 2938f6428624fe845b1bfc444e47bd11, type: 3}
 --- !u!114 &6438757295481848068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,9 +280,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a998f19775799f74092fc5bc401b848e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropPoint: {fileID: 0}
+  offset: 0
   Loots: []
-  health: {fileID: 0}
   chanceOfDropping: 0
 --- !u!1 &7675277322311680729
 GameObject:

@@ -135,5 +135,12 @@ public class PlayerQuestInteraction : MonoBehaviour, IDataPersistence
         Time.timeScale = 1;
         display = !display;
     }
+
+    public void SetTestValues(int kills, int chests, int rooms)
+    {
+        KillCount = kills;
+        ChestCount = chests;
+        RoomCount = rooms;
+    }
 }
 
