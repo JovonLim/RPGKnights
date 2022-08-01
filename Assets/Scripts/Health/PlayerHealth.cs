@@ -191,6 +191,7 @@ public class PlayerHealth : Health
 
     public void SetTestHealth(float amt)
     {
-        startingAmt = amt;
+        startingHealth = amt;
+        currentHealth = amt;
     }
 }
