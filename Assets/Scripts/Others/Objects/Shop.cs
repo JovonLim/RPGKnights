@@ -38,7 +38,7 @@ public class Shop : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        shopCoinCounter.text = UI.coins.ToString();
+        shopCoinCounter.text = CoinCounter.coins.ToString();
         shopPanelWindow.SetActive(shopOn);
         insufficentFundsText.gameObject.SetActive(shopOn);
         inventoryFullText.gameObject.SetActive(shopOn);
@@ -74,7 +74,7 @@ public class Shop : MonoBehaviour
         FindObjectOfType<PlayerMovement>().enabled = !shopOn;
         CloseShopButton.gameObject.SetActive(shopOn);
         shopPanelWindow.SetActive(shopOn);
-        shopCoinCounter.text = UI.coins.ToString();
+        shopCoinCounter.text = CoinCounter.coins.ToString();
         ResetPanels();
     }
 
@@ -85,7 +85,7 @@ public class Shop : MonoBehaviour
         FindObjectOfType<PlayerMovement>().enabled = true;
         CloseShopButton.gameObject.SetActive(false);
         shopPanelWindow.SetActive(false);
-        shopCoinCounter.text = UI.coins.ToString();
+        shopCoinCounter.text = CoinCounter.coins.ToString();
         ResetPanels();
 
     }
@@ -115,10 +115,10 @@ public class Shop : MonoBehaviour
     {
         if (!FindObjectOfType<Inventory>().IsInventoryFull())
         {
-            if (UI.coins >= itemCosts[slotNum])
+            if (CoinCounter.coins >= itemCosts[slotNum])
             {
-                UI.coins -= itemCosts[slotNum];
-                shopCoinCounter.text = UI.coins.ToString();
+                CoinCounter.coins -= itemCosts[slotNum];
+                shopCoinCounter.text = CoinCounter.coins.ToString();
                 GameObject purchased = Instantiate(shopItems[slotNum]);
                 purchased.name = shopItems[slotNum].name;
                 purchased.gameObject.SetActive(true);

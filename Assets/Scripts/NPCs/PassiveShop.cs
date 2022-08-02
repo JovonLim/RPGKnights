@@ -25,7 +25,7 @@ public class PassiveShop : MonoBehaviour, IDataPersistence
     {
         LoadData(DataPersistenceManager.instance.gameData);
         update = true;
-        coinAmt.text = UI.coins.ToString();
+        coinAmt.text = CoinCounter.coins.ToString();
     }
 
     // Update is called once per frame
@@ -34,7 +34,7 @@ public class PassiveShop : MonoBehaviour, IDataPersistence
 
         if (update)
         {
-            coinAmt.text = UI.coins.ToString();
+            coinAmt.text = CoinCounter.coins.ToString();
             for (int i = 0; i < purchased.Length; i++)
             {
                 if (purchased[i])
@@ -74,9 +74,9 @@ public class PassiveShop : MonoBehaviour, IDataPersistence
         {
             return;
         }
-        if (!purchased[selected] && UI.coins >= passives[selected].cost)
+        if (!purchased[selected] && CoinCounter.coins >= passives[selected].cost)
         {
-            UI.coins -= passives[selected].cost;
+            CoinCounter.coins -= passives[selected].cost;
             purchased[selected] = true;
             SaveData(DataPersistenceManager.instance.gameData);
             update = true;
@@ -89,7 +89,7 @@ public class PassiveShop : MonoBehaviour, IDataPersistence
             }
             Deselect();
         }
-        else if (UI.coins < passives[selected].cost)
+        else if (CoinCounter.coins < passives[selected].cost)
         {
             Deselect();
             insufficientFunds.SetActive(true);

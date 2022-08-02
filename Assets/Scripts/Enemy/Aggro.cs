@@ -16,11 +16,10 @@ public class Aggro : MonoBehaviour
     MeleeAndRanged attack1;
     MeleeEnemy attack2;
     RangeEnemy attack3;
-    Necromancer attack4;
 
     public enum EnemyType
     {
-        meleeAndRanged, melee, ranged, necromancer,
+        meleeAndRanged, melee, ranged,
     }
 
     public EnemyType et;
@@ -40,9 +39,6 @@ public class Aggro : MonoBehaviour
                 break;
             case EnemyType.ranged:
                 attack3 = GetComponent<RangeEnemy>();
-                break;
-            case EnemyType.necromancer:
-                attack4 = GetComponent<Necromancer>();
                 break;
         }
         
@@ -92,18 +88,7 @@ public class Aggro : MonoBehaviour
                             Move();
                         }
                         break;
-                    }
-                case EnemyType.necromancer:
-                    {
-                        if (attack4.PlayerInSight())
-                        {
-                            OnDisable();
-                        } else
-                        {
-                            Move();
-                        }
-                        break;
-                    }
+                    } 
             }
         } else
         {
@@ -141,5 +126,11 @@ public class Aggro : MonoBehaviour
             transform.localScale = new Vector3(-transform.localScale.x, 1, 1);
         else if (relativePoint.x >= 0.0)
             transform.localScale = new Vector3(transform.localScale.x, 1, 1);
+    }
+
+    public void SetTestAggro(Vector3 left, Vector3 right)
+    {
+        pos1.position = left;
+        pos2.position = right;
     }
 }

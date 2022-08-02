@@ -60,7 +60,7 @@ public class ReturnToTown : MonoBehaviour
     public void Accept()
     {
         Time.timeScale = 1;
-        UI.coins = (int) (UI.coins * 0.9);
+        CoinCounter.coins = (int) (CoinCounter.coins * 0.9);
         DataPersistenceManager.instance.SaveGame();
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         GameObject UITab = GameObject.FindGameObjectWithTag("UI");

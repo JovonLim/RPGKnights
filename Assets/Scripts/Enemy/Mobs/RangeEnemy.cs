@@ -27,12 +27,12 @@ public class RangeEnemy : CombatManager
     // Reference variables
     protected Animator anima;
 
-    public virtual void Awake()
+    private void Awake()
     {
         anima = GetComponent<Animator>();
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         attackCooldownTimer += Time.deltaTime;
         collisionTimer += Time.deltaTime;
@@ -80,7 +80,7 @@ public class RangeEnemy : CombatManager
         damage *= Modifier;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player") && collisionTimer >= 2.0f)
         {

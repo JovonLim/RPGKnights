@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class UI : MonoBehaviour, IDataPersistence
+public class CoinCounter : MonoBehaviour, IDataPersistence
 {
-    public static UI instance;
+    public static CoinCounter instance;
     [SerializeField]
     private TextMeshProUGUI coinAmt;
     public static int coins = 0; 
@@ -42,11 +42,11 @@ public class UI : MonoBehaviour, IDataPersistence
 
     public void LoadData(GameData data)
     {
-        UI.coins = data.coins;
+        CoinCounter.coins = data.coins;
     }
 
     public void SaveData(GameData data)
     {
-        data.coins = UI.coins;
+        data.coins = CoinCounter.coins;
     }
 }

@@ -11,10 +11,107 @@ public class PlayerQuestInteraction : MonoBehaviour, IDataPersistence
     public static bool questActive;
     public static Quest ArcherQuest;
     public static Quest WizardQuest;
-    public static int KillCount;
-    public static int RoomCount;
-    public static int ChestCount;
+    protected static int KillCount;
+    protected static int RoomCount;
+    protected static int ChestCount;
     
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            ToggleTracker();
+        }
+    }
+
+    public static void IncreaseChestCount()
+    {
+        ChestCount++;
+        AllocateChestCoins();
+    }
+
+    public static void AllocateChestCoins()
+    {
+        if (ChestCount >= 5)
+        {
+            CoinCounter.coins += 80;
+            ChestCount -= 5;
+        }
+    }
+
+    public static void IncreaseKillCount()
+    {
+        KillCount++;
+        AllocateKillCoins();
+    }
+    public static void AllocateKillCoins()
+    {
+        if (KillCount >= 5)
+        {
+            CoinCounter.coins += 60;
+            KillCount -= 5;
+        }
+    }
+
+    public static void IncreaseRoomCount()
+    {
+        RoomCount++;
+        AllocateRoomCoins();
+    }
+
+    public static void AllocateRoomCoins()
+    {
+        if (RoomCount >= 3)
+        {
+            CoinCounter.coins += 120;
+            RoomCount -= 3;
+        }
+    }
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        SceneManager.sceneUnloaded += OnSceneUnloaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+        SceneManager.sceneUnloaded -= OnSceneUnloaded;
+    }
+
+    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        
+    }
+
+
+    public void OnSceneUnloaded(Scene scene)
+    {
+        if (scene.buildIndex > 2 && scene.buildIndex < 17)
+        {
+            IncreaseRoomCount();
+        }
+    }
+
+    void ToggleTracker()
+    {
+        display = !display;
+        tracker.SetActive(display);
+        if (display)
+        {
+            Time.timeScale = 0;
+        } else
+        {
+            Time.timeScale = 1;
+        }
+    }
+
+    public void CloseTracker()
+    {
+        tracker.SetActive(false);
+        Time.timeScale = 1;
+        display = !display;
+    }
 
     public void LoadData(GameData data)
     {
@@ -49,7 +146,8 @@ public class PlayerQuestInteraction : MonoBehaviour, IDataPersistence
         if (WizardQuest == null)
         {
             data.activeWizard = -1;
-        } else
+        }
+        else
         {
             data.activeWizard = WizardQuest.questNum;
         }
@@ -61,79 +159,6 @@ public class PlayerQuestInteraction : MonoBehaviour, IDataPersistence
         {
             data.activeArcher = ArcherQuest.questNum;
         }
-    }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            ToggleTracker();
-        }
-
-        if (ChestCount >= 5)
-        {
-            UI.coins += 80;
-            ChestCount -= 5;
-        }
-
-        if (KillCount >= 5)
-        {
-            UI.coins += 60;
-            KillCount -= 5;
-        }
-
-        if (RoomCount >= 3)
-        {
-            UI.coins += 120;
-            RoomCount -= 3;
-        }
-    }
-
-
-    private void OnEnable()
-    {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-        SceneManager.sceneUnloaded += OnSceneUnloaded;
-    }
-
-    private void OnDisable()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-        SceneManager.sceneUnloaded -= OnSceneUnloaded;
-    }
-
-    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        
-    }
-
-
-    public void OnSceneUnloaded(Scene scene)
-    {
-        if (scene.buildIndex > 2 && scene.buildIndex < 17)
-        {
-            RoomCount += 1;
-        }
-    }
-
-    void ToggleTracker()
-    {
-        display = !display;
-        tracker.SetActive(display);
-        if (display)
-        {
-            Time.timeScale = 0;
-        } else
-        {
-            Time.timeScale = 1;
-        }
-    }
-
-    public void CloseTracker()
-    {
-        tracker.SetActive(false);
-        Time.timeScale = 1;
-        display = !display;
     }
 
     public void SetTestValues(int kills, int chests, int rooms)

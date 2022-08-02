@@ -20,7 +20,7 @@ public class WizardShop : MonoBehaviour, IDataPersistence
         LoadData(DataPersistenceManager.instance.gameData);
         update = true;
         panels[currentPage].SetActive(true);
-        coinAmt.text = UI.coins.ToString();
+        coinAmt.text = CoinCounter.coins.ToString();
     }
 
     // Update is called once per frame
@@ -29,7 +29,7 @@ public class WizardShop : MonoBehaviour, IDataPersistence
         
         if (update)
         {
-            coinAmt.text = UI.coins.ToString();
+            coinAmt.text = CoinCounter.coins.ToString();
             for (int i = 0; i < purchased.Length; i++)
             {
                 if (purchased[i])
@@ -66,15 +66,15 @@ public class WizardShop : MonoBehaviour, IDataPersistence
         {
             return;
         }
-        if (!purchased[selected] && UI.coins >= costs[selected])
+        if (!purchased[selected] && CoinCounter.coins >= costs[selected])
         {
-            UI.coins -= costs[selected];
+            CoinCounter.coins -= costs[selected];
             purchased[selected] = true;
             SaveData(DataPersistenceManager.instance.gameData);
             update = true;
             SpellHolder.UnlockSpell(spells[selected].spell.id);
             Deselect();
-        } else if (UI.coins < costs[selected])
+        } else if (CoinCounter.coins < costs[selected])
         {
             Deselect();
             insufficientFunds.SetActive(true);

@@ -88,7 +88,7 @@ public class EnemyHealth : Health
     {
         anima.SetTrigger("die");
         GetComponent<BoxCollider2D>().enabled = false;
-        PlayerQuestInteraction.KillCount++;
+        PlayerQuestInteraction.IncreaseKillCount();
 
         if (GetComponent<MeleeEnemy>() != null)
         {

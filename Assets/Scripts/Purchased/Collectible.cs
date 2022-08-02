@@ -58,7 +58,7 @@ public class Collectible : MonoBehaviour
 
     public void Purchased()
     {
-        if (UI.coins >= cost)
+        if (CoinCounter.coins >= cost)
         {
             switch (stat)
             {
@@ -80,7 +80,7 @@ public class Collectible : MonoBehaviour
                         break;
                     }
             }
-            UI.coins -= cost;
+            CoinCounter.coins -= cost;
             Destroy(purchaseDialog);
             Destroy(gameObject);
         } else

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Necromancer : RangeEnemy
 {
-    [SerializeField] private GameObject dissappearingGround;
+    [SerializeField] private GameObject disappearingGround;
     [SerializeField] private float castCooldown;
     [SerializeField] private float spellDuration;
     private float spellActiveDuration = 0;
@@ -10,15 +10,11 @@ public class Necromancer : RangeEnemy
     private static bool casting = false;
     private float castCooldownTimer = float.MaxValue;
 
-    public override void Awake()
-    {
-        base.Awake();
-
-    }
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
+        collisionTimer += Time.deltaTime;
         if (casting)
         {
             castCooldownTimer = 0;
@@ -45,13 +41,13 @@ public class Necromancer : RangeEnemy
     private void CastSpell()
     {
         casting = true;
-        dissappearingGround.SetActive(false);
+        disappearingGround.SetActive(false);
     }
 
     private void FinishSpell()
     {
         casting = false;
         spellActiveDuration = 0;
-        dissappearingGround.SetActive(true);
+        disappearingGround.SetActive(true);
     }
 }

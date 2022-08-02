@@ -11,26 +11,27 @@ public class TestPlayerMilestones
     {
         var player = new GameObject();
         PlayerQuestInteraction questInteraction = player.AddComponent<PlayerQuestInteraction>();
-        player.AddComponent<UI>();
-        UI.coins = 0;
+        player.AddComponent<CoinCounter>();
+        CoinCounter.coins = 0;
         questInteraction.SetTestValues(kills, chests, rooms);
+        PlayerQuestInteraction.AllocateChestCoins();
+        PlayerQuestInteraction.AllocateKillCoins();
+        PlayerQuestInteraction.AllocateRoomCoins();
     }
 
     // Test whether coins are given correctly per milestone
-    [UnityTest]
-    public IEnumerator TestPlayerMilestonesWithCoinGainEnumeratorPasses()
+    [Test]
+    public void TestPlayerMilestonesWithCoinGain()
     {
-        InitializeQuestInteraction(10, 5, 6);
-        yield return new WaitForSeconds(1);
-        Assert.AreEqual(440, UI.coins);
+        InitializeQuestInteraction(5, 5, 3);
+        Assert.AreEqual(260, CoinCounter.coins);
     }
 
     // Test that no coins are given when none of the milestones are hit
-    [UnityTest]
-    public IEnumerator TestPlayerMilestonesWithoutCoinGainEnumeratorPasses()
+    [Test]
+    public void TestPlayerMilestonesWithoutCoinGain()
     {
         InitializeQuestInteraction(2, 1, 2);
-        yield return new WaitForSeconds(1);
-        Assert.AreEqual(0, UI.coins);
+        Assert.AreEqual(0, CoinCounter.coins);
     }
 }

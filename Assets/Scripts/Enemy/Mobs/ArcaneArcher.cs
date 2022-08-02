@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class ArcaneArcher : RangeEnemy
 {
-    public override void Awake()
+ 
+    protected override void OnTriggerEnter2D(Collider2D collision)
     {
-        base.Awake();
-        
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
+        base.OnTriggerEnter2D(collision);
         if (collision.CompareTag("PlayerProjectile"))
         {
             anima.SetTrigger("roll");

@@ -51,7 +51,7 @@ public class QuestEnd : MonoBehaviour
         {
             reward.SetActive(true);
         }
-        UI.coins += coins;
+        CoinCounter.coins += coins;
         questDialog.SetActive(true);
         endingText.SetActive(true);
         yield return new WaitForSeconds(2);
