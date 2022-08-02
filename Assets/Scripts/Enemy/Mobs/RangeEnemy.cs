@@ -20,7 +20,7 @@ public class RangeEnemy : CombatManager
     }
 
     private float attackCooldownTimer = float.MaxValue;
-    private float collisionTimer = float.MaxValue;
+    protected float collisionTimer = float.MaxValue;
     public float attackSpeed;
     private PlayerHealth playerHealth;
 
