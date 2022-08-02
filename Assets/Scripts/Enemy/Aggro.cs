@@ -16,7 +16,7 @@ public class Aggro : MonoBehaviour
     MeleeAndRanged attack1;
     MeleeEnemy attack2;
     RangeEnemy attack3;
-    GroundManipulation attack4;
+    Necromancer attack4;
 
     public enum EnemyType
     {
@@ -42,7 +42,7 @@ public class Aggro : MonoBehaviour
                 attack3 = GetComponent<RangeEnemy>();
                 break;
             case EnemyType.necromancer:
-                attack4 = GetComponent<GroundManipulation>();
+                attack4 = GetComponent<Necromancer>();
                 break;
         }
         

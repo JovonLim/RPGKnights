@@ -11224,7 +11224,7 @@ Transform:
   - {fileID: 346810264}
   - {fileID: 117362821}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &223346035 stripped
 GameObject:
@@ -11268,7 +11268,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2932792768519993241, guid: f3c90661f7d387c4490a9f3b4b34690c, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2932792768519993241, guid: f3c90661f7d387c4490a9f3b4b34690c, type: 3}
       propertyPath: m_AnchorMax.x
@@ -13724,7 +13724,7 @@ Transform:
   - {fileID: 45476768}
   - {fileID: 69384852}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &822000643
 GameObject:
@@ -17228,7 +17228,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4302673381425180297, guid: 0a3047bc7da38a543b2fbf1742ab17fc, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4302673381425180297, guid: 0a3047bc7da38a543b2fbf1742ab17fc, type: 3}
       propertyPath: m_LocalScale.x
@@ -17703,7 +17703,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1332108817
 GameObject:
@@ -38428,7 +38428,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1564080590 stripped
 Transform:
@@ -38675,7 +38675,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.8347107, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -38698,7 +38698,7 @@ Transform:
   m_Children:
   - {fileID: 702424621}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1896844260 stripped
 GameObject:
@@ -39030,8 +39030,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: Necromancer
       objectReference: {fileID: 0}
+    - target: {fileID: 3973996406311519682, guid: 8426d018568aad84ca537689487f167c, type: 3}
+      propertyPath: prefab
+      value: 
+      objectReference: {fileID: 2285797850257833682, guid: 1446584ecd987204498d5d1f4cb5e715, type: 3}
+    - target: {fileID: 3973996406311519682, guid: 8426d018568aad84ca537689487f167c, type: 3}
+      propertyPath: boxCollider
+      value: 
+      objectReference: {fileID: 1680955127673723829}
+    - target: {fileID: 3973996406311519682, guid: 8426d018568aad84ca537689487f167c, type: 3}
+      propertyPath: playerLayer.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 3973996406311519682, guid: 8426d018568aad84ca537689487f167c, type: 3}
+      propertyPath: dissappearingGround
+      value: 
+      objectReference: {fileID: 346810263}
+    - target: {fileID: 3973996406311519682, guid: 8426d018568aad84ca537689487f167c, type: 3}
+      propertyPath: projectileLaunchPoint
+      value: 
+      objectReference: {fileID: 1680955127673723828}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8426d018568aad84ca537689487f167c, type: 3}
+--- !u!4 &1680955127673723828 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1680955126643081455, guid: 8426d018568aad84ca537689487f167c, type: 3}
+  m_PrefabInstance: {fileID: 1680955127673723827}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1680955127673723829 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 1680955126415942247, guid: 8426d018568aad84ca537689487f167c, type: 3}
+  m_PrefabInstance: {fileID: 1680955127673723827}
+  m_PrefabAsset: {fileID: 0}
 --- !u!61 &2431910747736219217
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -39562,7 +39592,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4901881530744513867, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4901881530744513867, guid: c1ea3d52b38664940913ce284aaa269a, type: 3}
       propertyPath: m_AnchorMax.x
