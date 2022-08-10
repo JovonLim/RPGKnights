@@ -6,12 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class DataPersistenceManager : MonoBehaviour
 {
-    [Header("Debugging")]
-    [SerializeField] private bool initializeDataIfNull = false;
 
     [Header("File Storage Config")]
     [SerializeField] private string fileName;
-    [SerializeField] private bool useEncryption;
 
     public GameData gameData;
     private List<IDataPersistence> dataPersistenceObjects;
@@ -28,7 +25,7 @@ public class DataPersistenceManager : MonoBehaviour
         }
         instance = this;
         DontDestroyOnLoad(this.gameObject);
-        this.dataHandler = new FileDataHandler(Application.persistentDataPath, fileName, useEncryption);
+        this.dataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
     }
 
     private void OnEnable()
@@ -72,12 +69,6 @@ public class DataPersistenceManager : MonoBehaviour
         // load any saved data from a file using the data handler
         this.gameData = dataHandler.Load();
         
-
-        // start a new game if the data is null and we're configured to initialize data for debugging purposes
-        if (this.gameData == null && initializeDataIfNull)
-        {
-            NewGame();
-        }
 
         // if no data can be loaded, don't continue
         if (this.gameData == null)
